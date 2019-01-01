@@ -1,0 +1,53 @@
+package com.eighttwentyeightsoftware.pensiltikbackend.controller;
+
+import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
+import com.eighttwentyeightsoftware.pensiltikbackend.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
+
+@RestController
+@RequestMapping("/pensiltik")
+public class UsuarioController {
+
+    @Autowired
+    private UsuarioService usuarioService;
+
+    @GetMapping("/buscarusuarioporid/{id}")
+    public ResponseEntity<UsuarioDto> buscarUsuarioPorId(@PathVariable("id") String id){
+        UsuarioDto usuarioDto = usuarioService.buscarUsuarioPorId(id);
+        return new ResponseEntity<>(usuarioDto, HttpStatus.OK);
+    }
+
+    @GetMapping("/buscartodososusuarios")
+    public ResponseEntity<List<UsuarioDto>> buscarTodosOsUsuarios() {
+        List<UsuarioDto> usuariosDto = usuarioService.buscarTodosOsUsuarios();
+        return new ResponseEntity<>(usuariosDto, HttpStatus.OK);
+    }
+
+    @PostMapping("/salvarusuario")
+    public ResponseEntity<UsuarioDto> salvarUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
+        return new ResponseEntity<>(usuarioService.salvarUsuario(usuarioDto), HttpStatus.OK);
+    }
+
+    @PutMapping("/atualizarusuario")
+    public ResponseEntity<UsuarioDto> atualizarUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
+        return new ResponseEntity<>(usuarioService.atualizarUsuario(usuarioDto), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deletarusuarioporid/{id}")
+    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable("id") String id) {
+        usuarioService.deletarUsuarioPorId(id);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @GetMapping("/login/{email}/{senha}")
+    public ResponseEntity<UsuarioDto> login(@PathVariable("email") String email, @PathVariable("senha") String senha) {
+        return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
+    }
+
+}

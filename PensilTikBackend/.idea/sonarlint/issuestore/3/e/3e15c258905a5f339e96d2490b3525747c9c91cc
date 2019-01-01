@@ -1,0 +1,6 @@
+
+Ksquid:S2885"/Make "SIMPLE_DATE_FORMAT" an instance variable.(ÑÏÝÄÿÿÿÿÿ
+Qsquid:S1118":Add a private constructor to hide the implicit public one.(ìÛÖù
+Ysquid:S1068";Remove this unused "SIMPLE_TIMESTAMP_FORMAT" private field.(Ü‚œ¢8øóƒ¤€-
+Rsquid:S2885"4Make "SIMPLE_TIMESTAMP_FORMAT" an instance variable.(Ü‚œ¢8øóƒ¤€-
+‹squid:S4144"hUpdate this method so that its implementation is not identical to "getSimpleTimesTampFormat" on line 15.(ÉÚ«ìýÿÿÿÿ8ž¢‡¤€-

@@ -1,0 +1,9 @@
+
+Osquid:UnusedPrivateMethod0"+Remove this unused private "random" method.(³ÏÕ"
+Usquid:UnusedPrivateMethod4"+Remove this unused private "random" method.(…¸Ø’ûÿÿÿÿ
+Usquid:UnusedPrivateMethod$"+Remove this unused private "random" method.(Ž…ë™ÿÿÿÿÿ
+4squid:S1118
+"Hide this public constructor.(ß®­‘
+isquid:S3776B"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ÌÌ·ž
+˜squid:S1186
+"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ß®­‘
