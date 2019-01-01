@@ -14,8 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.eighttwentyeightsoftware.pensiltikbackend.util.UrlPrefixFactory;
 import java.util.Date;
 import static org.assertj.core.api.BDDAssertions.then;
-import static com.cecilsoftwares.pensiltikbackend.util.RandomValue.randomAlphabetic;
-import static com.cecilsoftwares.pensiltikbackend.util.RandomValue.randomAlphanumeric;
+import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphabetic;
+import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
