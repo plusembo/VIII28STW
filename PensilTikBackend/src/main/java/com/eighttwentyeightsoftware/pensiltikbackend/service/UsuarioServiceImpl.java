@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service("usuarioService")
 public class UsuarioServiceImpl implements UsuarioService {
@@ -19,11 +20,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public UsuarioDto buscarUsuarioPorId(String id) {
-        try {
-            return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuarioRepository.findById(id).get());
-        } catch (NoSuchElementException e) {
-            throw new NoSuchElementException("Não existe usuário com o ID informado");
-        }
+        Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
+
+        if(usuarioOptional.isPresent()){
+            return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuarioOptional.get());
+        } else throw new NoSuchElementException("Não existe usuário com o ID informado");
     }
 
     @Override

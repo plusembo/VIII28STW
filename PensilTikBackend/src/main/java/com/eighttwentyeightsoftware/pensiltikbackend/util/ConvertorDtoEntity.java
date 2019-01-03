@@ -2,11 +2,15 @@ package com.eighttwentyeightsoftware.pensiltikbackend.util;
 
 import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
 import com.eighttwentyeightsoftware.pensiltikbackend.model.entity.Usuario;
-import com.eighttwentyeightsoftware.pensiltikbackend.util.SimpleDateFormatFactory;
 
 import java.text.ParseException;
 
 public class ConvertorDtoEntity {
+
+    private ConvertorDtoEntity() {
+        throw new IllegalStateException("Utility class");
+    }
+
 
     public static Usuario convertUsuarioDtoToUsuario(UsuarioDto usuarioDto) {
         Usuario usuario = null;
@@ -21,13 +25,13 @@ public class ConvertorDtoEntity {
                     .dataNascimento(SimpleDateFormatFactory.getSimpleDateFormat().parse(usuarioDto.getDataNascimento()))
                     .build();
         } catch (ParseException e) {
-            e.printStackTrace();
+            throw new IllegalArgumentException("Erro ao fazer o parsing do SimpleDateFormat: " + e);
         }
         return usuario;
     }
 
     public static UsuarioDto convertUsuarioToUsuarioDto(Usuario usuario) {
-        UsuarioDto usuarioDto = UsuarioDto.builder()
+        return UsuarioDto.builder()
                 .id(usuario.getId())
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
@@ -36,8 +40,6 @@ public class ConvertorDtoEntity {
                 .sexoEnum(usuario.getSexoEnum())
                 .dataNascimento(SimpleDateFormatFactory.getSimpleDateFormat().format(usuario.getDataNascimento()))
                 .build();
-
-        return usuarioDto;
     }
 
 }
