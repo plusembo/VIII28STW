@@ -3,7 +3,6 @@ package com.eighttwentyeightsoftware.pensiltikbackend.service;
 import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
 import com.eighttwentyeightsoftware.pensiltikbackend.model.entity.Usuario;
 import com.eighttwentyeightsoftware.pensiltikbackend.repository.UsuarioRepository;
-import com.eighttwentyeightsoftware.pensiltikbackend.util.ConvertorDtoEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,17 @@ public class UsuarioServiceImpl implements UsuarioService {
         Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
 
         if(usuarioOptional.isPresent()){
-            return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuarioOptional.get());
+            Usuario usuario = usuarioOptional.get();
+            return UsuarioDto.builder()
+                    .id(usuario.getId())
+                    .nome(usuario.getNome())
+                    .sobreNome(usuario.getSobreNome())
+                    .email(usuario.getEmail())
+                    .senha(usuario.getSenha())
+                    .sexoEnum(usuario.getSexoEnum())
+                    .dataNascimento(usuario.getDataNascimento())
+                    .build();
+
         } else throw new NoSuchElementException("Não existe usuário com o ID informado");
     }
 
@@ -31,27 +40,45 @@ public class UsuarioServiceImpl implements UsuarioService {
     public List<UsuarioDto> buscarTodosOsUsuarios(){
         List<UsuarioDto> usuariosDto = new ArrayList();
         for(Usuario usuario : usuarioRepository.findAll()) {
-            usuariosDto.add(ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuario));
+            usuariosDto.add(UsuarioDto.builder()
+                    .id(usuario.getId())
+                    .nome(usuario.getNome())
+                    .sobreNome(usuario.getSobreNome())
+                    .email(usuario.getEmail())
+                    .senha(usuario.getSenha())
+                    .sexoEnum(usuario.getSexoEnum())
+                    .dataNascimento(usuario.getDataNascimento())
+                    .build());
         }
         return usuariosDto;
     }
 
     @Override
     public UsuarioDto salvarUsuario(UsuarioDto usuarioDto) {
-        if(usuarioRepository.existsByEmail(usuarioDto.getEmail())) {
-            throw new IllegalArgumentException("Este e-mail já existe");
+        if ((usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty())
+                && (usuarioRepository.existsByEmail(usuarioDto.getEmail()))) {
+                throw new IllegalArgumentException("Este e-mail já existe");
         }
-        Usuario usuario = usuarioRepository.save(ConvertorDtoEntity.convertUsuarioDtoToUsuario(usuarioDto));
-        return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuario);
-    }
 
-    @Override
-    public UsuarioDto atualizarUsuario(UsuarioDto usuarioDto){
-        if (usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty()) {
-            throw new IllegalArgumentException("O usuário informado não contem ID");
-        }
-        Usuario usuario = usuarioRepository.save(ConvertorDtoEntity.convertUsuarioDtoToUsuario(usuarioDto));
-        return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuario);
+        Usuario usuario = usuarioRepository.save(Usuario.builder()
+                                                    .id(usuarioDto.getId())
+                                                    .nome(usuarioDto.getNome())
+                                                    .sobreNome(usuarioDto.getSobreNome())
+                                                    .email(usuarioDto.getEmail())
+                                                    .senha(usuarioDto.getSenha())
+                                                    .sexoEnum(usuarioDto.getSexoEnum())
+                                                    .dataNascimento(usuarioDto.getDataNascimento())
+                                                    .build());
+
+        return UsuarioDto.builder()
+                .id(usuario.getId())
+                .nome(usuario.getNome())
+                .sobreNome(usuario.getSobreNome())
+                .email(usuario.getEmail())
+                .senha(usuario.getSenha())
+                .sexoEnum(usuario.getSexoEnum())
+                .dataNascimento(usuario.getDataNascimento())
+                .build();
     }
 
     @Override
@@ -61,11 +88,21 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public UsuarioDto login(String email, String senha){
-        Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);
-        if(usuario == null) {
+        if(usuarioRepository.findByEmailAndSenha(email, senha) == null) {
             throw new IllegalArgumentException("E-mail ou senha incorreta");
         }
-        return ConvertorDtoEntity.convertUsuarioToUsuarioDto(usuarioRepository.findByEmailAndSenha(email, senha));
+
+        Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+
+        return UsuarioDto.builder()
+                .id(usuario.getId())
+                .nome(usuario.getNome())
+                .sobreNome(usuario.getSobreNome())
+                .email(usuario.getEmail())
+                .senha(usuario.getSenha())
+                .sexoEnum(usuario.getSexoEnum())
+                .dataNascimento(usuario.getDataNascimento())
+                .build();
     }
 
 }

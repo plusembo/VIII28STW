@@ -13,8 +13,6 @@ public interface UsuarioService {
 
     UsuarioDto salvarUsuario(UsuarioDto usuarioDto);
 
-    UsuarioDto atualizarUsuario(UsuarioDto usuarioDto);
-
     void deletarUsuarioPorId(String id);
 
     UsuarioDto login(String email, String senha);

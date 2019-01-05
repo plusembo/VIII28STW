@@ -3,6 +3,8 @@ package com.eighttwentyeightsoftware.pensiltikbackend.model.entity;
 import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
+import org.joda.time.LocalDate;
+
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
@@ -43,7 +45,6 @@ public class Usuario implements Serializable {
     @Column(name = "SEXO", nullable = false)
     private SexoEnum sexoEnum;
 
-    @Temporal(TemporalType.DATE)
     @Column(name = "DATA_NASCIMENTO", nullable = false)
     private Date dataNascimento;
 
