@@ -82,8 +82,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public void deletarUsuarioPorId(String id){
+    public boolean deletarUsuarioPorId(String id){
         usuarioRepository.deleteById(id);
+        return true;
     }
 
     @Override

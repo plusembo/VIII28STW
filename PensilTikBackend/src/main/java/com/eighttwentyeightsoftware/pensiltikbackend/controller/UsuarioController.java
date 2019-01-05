@@ -43,9 +43,8 @@ public class UsuarioController {
     }
 
     @DeleteMapping("/deletarusuarioporid/{id}")
-    public ResponseEntity<Void> deletarUsuarioPorId(@PathVariable("id") String id) {
-        usuarioService.deletarUsuarioPorId(id);
-        return new ResponseEntity<>(HttpStatus.OK);
+    public ResponseEntity<Boolean> deletarUsuarioPorId(@PathVariable("id") String id) {
+        return new ResponseEntity<>(usuarioService.deletarUsuarioPorId(id), HttpStatus.OK);
     }
 
     @GetMapping("/login/{email}/{senha}")
