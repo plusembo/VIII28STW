@@ -2,6 +2,8 @@ package com.eighttwentyeightsoftware.pensiltikbackend.model.dto;
 
 import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
 import lombok.*;
+import org.joda.time.DateTime;
+
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.util.Date;
@@ -32,5 +34,5 @@ public class UsuarioDto{
 
     private SexoEnum sexoEnum;
 
-    private Date dataNascimento;
+    private DateTime dataNascimento;
 }

@@ -4,6 +4,7 @@ package com.eighttwentyeightsoftware.pensiltikbackend.controller;
 import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
 import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,7 +55,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -84,7 +85,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -102,7 +103,7 @@ public class UsuarioControllerTest {
         usuarioDto1.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
         usuarioDto1.setSenha(randomAlphanumeric(8));
         usuarioDto1.setSexoEnum(SexoEnum.FEMININO);
-        usuarioDto1.setDataNascimento(new Date());
+        usuarioDto1.setDataNascimento(new DateTime());
 
         ResponseEntity responseEntityUsuario1 = testRestTemplate
                 .exchange(UrlPrefixFactory.getUrlPrefix() + ATUALIZAR_USUARIO, HttpMethod.PUT,
@@ -143,7 +144,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -164,7 +165,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -184,7 +185,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -205,7 +206,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -225,7 +226,7 @@ public class UsuarioControllerTest {
                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -246,7 +247,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -266,7 +267,7 @@ public class UsuarioControllerTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -290,7 +291,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -339,7 +340,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -378,7 +379,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -417,7 +418,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
@@ -456,7 +457,7 @@ public class UsuarioControllerTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate

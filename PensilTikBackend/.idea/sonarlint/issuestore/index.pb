@@ -13,10 +13,6 @@ Hsrc/main/java/com/eighttwentyeightsoftware/pensiltikbackend/MainApp.java,9\a\9
 Usrc/main/java/com/eighttwentyeightsoftware/pensiltikbackend/model/entity/Usuario.java,4\1\415d58b9643f3a20b4a58268380f8a34a4bdc36b
 à
 Xsrc/main/java/com/eighttwentyeightsoftware/pensiltikbackend/enumeration/DespesaEnum.java,b\8\b80d17bfc7248097e09706d2068266dd86828ff3
-ç
-]src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/util/SimpleDateFormatFactory.java,3\e\3e15c258905a5f339e96d2490b3525747c9c91cc
-à
-Xsrc/main/java/com/eighttwentyeightsoftware/pensiltikbackend/util/ConvertorDtoEntity.java,a\0\a0a3bf74b65320ed87b08102fc5d4c71a5f3a2f8
 Ö
 Usrc/main/java/com/eighttwentyeightsoftware/pensiltikbackend/enumeration/SexoEnum.java,8\d\8d7ae144efcf92510ac1805842f4c944f43a73fa
 Ü

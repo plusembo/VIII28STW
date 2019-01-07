@@ -2,6 +2,7 @@ package com.eighttwentyeightsoftware.pensiltikbackend.service;
 
 import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
 import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
+import org.joda.time.DateTime;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -31,7 +32,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -46,7 +47,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -56,17 +57,13 @@ public class UsuarioServiceTest {
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
         usuarioDto.setSenha(randomAlphanumeric(8));
         usuarioDto.setSexoEnum(SexoEnum.FEMININO);
-        usuarioDto.setDataNascimento(new Date());
+        usuarioDto.setDataNascimento(new DateTime());
 
         assertNotNull(usuarioService.atualizarUsuario(usuarioDto));
 
         UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getId());
         assertNotNull(usuarioDto1);
-        assertEquals(usuarioDto1.getId(), usuarioDto.getId());
-        assertEquals(usuarioDto1.getNome(), usuarioDto.getNome());
-        assertEquals(usuarioDto1.getSobreNome(), usuarioDto.getSobreNome());
-        assertEquals(usuarioDto1.getEmail(), usuarioDto.getEmail());
-        assertEquals(usuarioDto1.getSexoEnum(), usuarioDto.getSexoEnum());
+        assertEquals(usuarioDto1, usuarioDto);
 
         usuarioDto.setId(null);
         usuarioService.atualizarUsuario(usuarioDto);
@@ -79,7 +76,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -90,7 +87,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -101,7 +98,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -112,7 +109,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
     }
 
@@ -123,7 +120,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         usuarioService.salvarUsuario(usuarioDto);
@@ -137,7 +134,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -159,7 +156,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -179,7 +176,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -196,7 +193,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -213,7 +210,7 @@ public class UsuarioServiceTest {
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
+                .dataNascimento(new DateTime())
                 .build());
 
         assertNotNull(usuarioDto);
@@ -221,11 +218,7 @@ public class UsuarioServiceTest {
         UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
 
         assertNotNull(usuarioDto1);
-        assertEquals(usuarioDto1.getId(), usuarioDto.getId());
-        assertEquals(usuarioDto1.getNome(), usuarioDto.getNome());
-        assertEquals(usuarioDto1.getSobreNome(), usuarioDto.getSobreNome());
-        assertEquals(usuarioDto1.getEmail(), usuarioDto.getEmail());
-        assertEquals(usuarioDto1.getSexoEnum(), usuarioDto.getSexoEnum());
+        assertEquals(usuarioDto1, usuarioDto);
 
         assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
         usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
