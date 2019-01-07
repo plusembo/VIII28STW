@@ -1,6 +1,6 @@
 package com.eighttwentyeightsoftware.pensiltikfrontend.service;
 
-import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
+import com.eighttwentyeightsoftware.pensiltikfrontend.dto.UsuarioDto;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

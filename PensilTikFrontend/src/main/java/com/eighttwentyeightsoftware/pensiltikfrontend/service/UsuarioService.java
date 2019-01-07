@@ -1,7 +1,7 @@
 package com.eighttwentyeightsoftware.pensiltikfrontend.service;
 
 
-import com.eighttwentyeightsoftware.pensiltikbackend.model.dto.UsuarioDto;
+import com.eighttwentyeightsoftware.pensiltikfrontend.dto.UsuarioDto;
 
 import java.util.List;
 
