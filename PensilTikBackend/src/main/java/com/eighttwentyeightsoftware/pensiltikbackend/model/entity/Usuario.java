@@ -3,7 +3,6 @@ package com.eighttwentyeightsoftware.pensiltikbackend.model.entity;
 import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-import org.joda.time.LocalDate;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;

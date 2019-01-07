@@ -54,7 +54,7 @@ public class IdGenerator implements IdentifierGenerator {
         if (start == 0 && end == 0) {
             end = 123;
             start = 32;
-            if ((!letters) && (!numbers)) {
+            if (!letters && !numbers) {
                 start = 0;
                 end = Integer.MAX_VALUE;
             }
@@ -67,7 +67,7 @@ public class IdGenerator implements IdentifierGenerator {
             char ch;
             ch = chars == null ? (char) (random.nextInt(gap) + start) : chars[(random.nextInt(gap) + start)];
 
-            if ((letters && Character.isLetter(ch)) || (numbers && Character.isDigit(ch)) || ((!letters) && (!numbers))) {
+            if ((letters && Character.isLetter(ch)) || (numbers && Character.isDigit(ch)) || (!letters && !numbers)) {
                 if (ch >= 56320 && ch <= 57343) {
                     if (count == 0) {
                         count++;

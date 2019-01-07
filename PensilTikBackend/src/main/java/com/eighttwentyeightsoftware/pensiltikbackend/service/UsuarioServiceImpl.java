@@ -55,20 +55,32 @@ public class UsuarioServiceImpl implements UsuarioService {
 
     @Override
     public UsuarioDto salvarUsuario(UsuarioDto usuarioDto) {
-        if ((usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty())
-                && (usuarioRepository.existsByEmail(usuarioDto.getEmail()))) {
+        if (usuarioRepository.existsByEmail(usuarioDto.getEmail())) {
                 throw new IllegalArgumentException("Este e-mail já existe");
         }
 
+        return persistir(usuarioDto);
+    }
+
+    @Override
+    public UsuarioDto atualizarUsuario(UsuarioDto usuarioDto) {
+        if (usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty()) {
+                throw new IllegalArgumentException("O usuário informado não contem ID");
+        }
+
+        return persistir(usuarioDto);
+    }
+
+    private UsuarioDto persistir(UsuarioDto usuarioDto) {
         Usuario usuario = usuarioRepository.save(Usuario.builder()
-                                                    .id(usuarioDto.getId())
-                                                    .nome(usuarioDto.getNome())
-                                                    .sobreNome(usuarioDto.getSobreNome())
-                                                    .email(usuarioDto.getEmail())
-                                                    .senha(usuarioDto.getSenha())
-                                                    .sexoEnum(usuarioDto.getSexoEnum())
-                                                    .dataNascimento(usuarioDto.getDataNascimento())
-                                                    .build());
+                .id(usuarioDto.getId())
+                .nome(usuarioDto.getNome())
+                .sobreNome(usuarioDto.getSobreNome())
+                .email(usuarioDto.getEmail())
+                .senha(usuarioDto.getSenha())
+                .sexoEnum(usuarioDto.getSexoEnum())
+                .dataNascimento(usuarioDto.getDataNascimento())
+                .build());
 
         return UsuarioDto.builder()
                 .id(usuario.getId())
@@ -88,9 +100,9 @@ public class UsuarioServiceImpl implements UsuarioService {
     }
 
     @Override
-    public UsuarioDto login(String email, String senha){
+    public UsuarioDto fazerLogin(String email, String senha){
         if(usuarioRepository.findByEmailAndSenha(email, senha) == null) {
-            throw new IllegalArgumentException("E-mail ou senha incorreta");
+            throw new NoSuchElementException("E-mail ou senha incorreta");
         }
 
         Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);

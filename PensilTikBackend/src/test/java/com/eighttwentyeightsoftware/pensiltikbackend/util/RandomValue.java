@@ -7,7 +7,8 @@ public class RandomValue {
     private static RandomValue uniqueInstance;
     private static final Random RANDOM = new Random();
 
-    public RandomValue() {
+    private RandomValue() {
+        throw new IllegalStateException("Utility class");
     }
 
     public static synchronized RandomValue getInstance() {
@@ -33,7 +34,7 @@ public class RandomValue {
         return random(count, false, true);
     }
 
-    private static String random(int count) {
+    public static String random(int count) {
         return random(count, false, false);
     }
 
@@ -45,11 +46,11 @@ public class RandomValue {
         return random(count, start, end, letters, numbers, null, RANDOM);
     }
 
-    private static String random(int count, int start, int end, boolean letters, boolean numbers, char... chars) {
+    public static String random(int count, int start, int end, boolean letters, boolean numbers, char... chars) {
         return random(count, start, end, letters, numbers, chars, RANDOM);
     }
 
-    private static String random(int count, String chars) {
+    public static String random(int count, String chars) {
         if (chars == null) {
             return random(count, 0, 0, false, false, null, RANDOM);
         }

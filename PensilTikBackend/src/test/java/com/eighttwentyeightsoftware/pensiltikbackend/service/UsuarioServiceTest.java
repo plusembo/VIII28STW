@@ -9,10 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphabetic;
 import static com.eighttwentyeightsoftware.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 import static org.junit.Assert.*;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.test.context.junit4.SpringRunner;
-import javax.persistence.RollbackException;
 import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
@@ -37,8 +39,42 @@ public class UsuarioServiceTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void atualizarUsuarioNaoPodeRetornarNuloEOUsuarioASerAtualizadoDeveConterID() {
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(8))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(new Date())
+                .build());
+
+        assertNotNull(usuarioDto);
+
+        usuarioDto.setNome(randomAlphabetic(25));
+        usuarioDto.setSobreNome(randomAlphabetic(25));
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
+        usuarioDto.setSenha(randomAlphanumeric(8));
+        usuarioDto.setSexoEnum(SexoEnum.FEMININO);
+        usuarioDto.setDataNascimento(new Date());
+
+        assertNotNull(usuarioService.atualizarUsuario(usuarioDto));
+
+        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+        assertNotNull(usuarioDto1);
+        assertEquals(usuarioDto1.getId(), usuarioDto.getId());
+        assertEquals(usuarioDto1.getNome(), usuarioDto.getNome());
+        assertEquals(usuarioDto1.getSobreNome(), usuarioDto.getSobreNome());
+        assertEquals(usuarioDto1.getEmail(), usuarioDto.getEmail());
+        assertEquals(usuarioDto1.getSexoEnum(), usuarioDto.getSexoEnum());
+
+        usuarioDto.setId(null);
+        usuarioService.atualizarUsuario(usuarioDto);
+    }
+
+    @Test(expected = DataIntegrityViolationException.class)
     public void naoDeixarSalvarUsuarioSemNome() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+        usuarioService.salvarUsuario(UsuarioDto.builder()
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
@@ -47,21 +83,9 @@ public class UsuarioServiceTest {
                 .build());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void naoDeixarSalvarUsuarioComNomeVazio() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-                .nome("   ")
-                .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-                .senha(randomAlphanumeric(8))
-                .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
-                .build());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DataIntegrityViolationException.class)
     public void naoDeixarSalvarUsuarioSemSobrenome() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+        usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
@@ -70,21 +94,9 @@ public class UsuarioServiceTest {
                 .build());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void naoDeixarSalvarUsuarioComSobrenomeVazio() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-                .nome(randomAlphabetic(25))
-                .sobreNome("    ")
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-                .senha(randomAlphanumeric(8))
-                .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
-                .build());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DataIntegrityViolationException.class)
     public void naoDeixarSalvarUsuarioSemEmail() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+        usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
@@ -93,33 +105,9 @@ public class UsuarioServiceTest {
                 .build());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void naoDeixarSalvarUsuarioComEmailVazio() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-                .nome(randomAlphabetic(25))
-                .sobreNome(randomAlphabetic(25))
-                .email("    ")
-                .senha(randomAlphanumeric(8))
-                .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
-                .build());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
-    public void naoDeixarSalvarUsuarioComFormatoErrado() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-                .nome(randomAlphabetic(25))
-                .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "." + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-                .senha(randomAlphanumeric(8))
-                .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
-                .build());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DataIntegrityViolationException.class)
     public void naoDeixarSalvarUsuarioSemSenha() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+        usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
@@ -128,19 +116,7 @@ public class UsuarioServiceTest {
                 .build());
     }
 
-    @Test(expected = IllegalArgumentException.class)
-    public void naoDeixarSalvarUsuarioComSenhaVazio() {
-        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-                .nome(randomAlphabetic(25))
-                .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-                .senha("     ")
-                .sexoEnum(SexoEnum.MASCULINO)
-                .dataNascimento(new Date())
-                .build());
-    }
-
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = DataIntegrityViolationException.class)
     public void naoDeixarSalvarUsuarioSemSexo() {
         UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -153,7 +129,7 @@ public class UsuarioServiceTest {
         usuarioService.salvarUsuario(usuarioDto);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expected = NoSuchElementException.class)
     public void buscarUsuarioPorIdNaoPodeRetornarNulo() {
         UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -169,14 +145,11 @@ public class UsuarioServiceTest {
         UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getId());
 
         assertNotNull(usuarioDto1);
-        assertTrue(usuarioDto.equals(usuarioDto1));
+        assertEquals(usuarioDto, usuarioDto1);
 
         assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
         usuarioService.buscarUsuarioPorId(usuarioDto.getId());
     }
-
-
-
 
     @Test
     public void buscarTodosOsUsuarios(){
@@ -194,116 +167,68 @@ public class UsuarioServiceTest {
         List<UsuarioDto> listUsuariosDto = usuarioService.buscarTodosOsUsuarios();
 
         assertNotNull(listUsuariosDto);
-        assertTrue(listUsuariosDto.size() > 0);
+        assertFalse(listUsuariosDto.isEmpty());
         assertNotNull(listUsuariosDto.get(0));
     }
 
+    @Test(expected = NoSuchElementException.class)
+    public void deletarUsuarioPorId() {
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(8))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(new Date())
+                .build());
 
-//
-//    @Test
-//    public void testUpdateUsuario() {
-//        testSaveUsuario(); //Para garantir que existirá pelo menos um registro no banco
-//
-//        List<UsuarioDto> listUsuariosDto = usuarioService.findAllUsuarios();
-//
-//        assertNotNull(listUsuariosDto);
-//        assertTrue(listUsuariosDto.size() > 0);
-//        assertNotNull(listUsuariosDto.get(0));
-//
-//        UsuarioDto usuarioDto = listUsuariosDto.get(0);
-//
-//        usuarioDto.setNome(randomAlphabetic(25));
-//        usuarioDto.setSobreNome(randomAlphabetic(25));
-//        usuarioDto.setEmail(randomAlphabetic(15));
-//        usuarioDto.setSenha(randomAlphanumeric(8));
-//
-//        assertTrue(usuarioService.updateUsuario(usuarioDto));
-//        assertEquals(usuarioService.findUsuarioById(usuarioDto.getId()), usuarioDto);
-//    }
-//
-//    @Test
-//    public void testDeleteUsuarioById() {
-//        testSaveUsuario(); //Para garantir que existirá pelo menos um registro no banco
-//
-//        List<UsuarioDto> listUsuariosDto = usuarioService.findAllUsuarios();
-//
-//        assertNotNull(listUsuariosDto);
-//        assertTrue(listUsuariosDto.size() > 0);
-//        assertNotNull(listUsuariosDto.get(0));
-//
-//        UsuarioDto usuarioDto = listUsuariosDto.get(0);
-//        try {
-//            assertTrue(usuarioService.deleteUsuarioById(usuarioDto.getId()));
-//            assertNull(usuarioService.findUsuarioById(usuarioDto.getId()));
-//        } catch (RollbackException rbe) {
-//        }
-//    }
-//
-//    @Test
-//    public void testLogin() {
-//        testSaveUsuario(); //Para garantir que existirá pelo menos um registro no banco
-//
-//        List<UsuarioDto> listUsuariosDto = usuarioService.findAllUsuarios();
-//
-//        assertNotNull(listUsuariosDto);
-//        assertTrue(listUsuariosDto.size() > 0);
-//        assertNotNull(listUsuariosDto.get(0));
-//
-//        UsuarioDto usuarioDto = listUsuariosDto.get(0);
-//
-//        assertNotNull(usuarioService.login(usuarioDto.getEmail(), usuarioDto.getSenha()));
-//        assertEquals(usuarioService.login(usuarioDto.getEmail(), usuarioDto.getSenha()), usuarioDto);
-//
-//        try {
-//            assertTrue(usuarioService.deleteUsuarioById(usuarioDto.getId()));
-//            assertNull(usuarioService.findUsuarioById(usuarioDto.getId()));
-//            assertNull(usuarioService.login(usuarioDto.getEmail(), usuarioDto.getSenha()));
-//        } catch (RollbackException rbe) {
-//        }
-//    }
-//
-//    @Test
-//    public void testIsUsuarioExist() {
-//        testSaveUsuario(); //Para garantir que existirá pelo menos um registro no banco
-//
-//        List<UsuarioDto> listUsuariosDto = usuarioService.findAllUsuarios();
-//
-//        assertNotNull(listUsuariosDto);
-//        assertTrue(listUsuariosDto.size() > 0);
-//        assertNotNull(listUsuariosDto.get(0));
-//
-//        UsuarioDto usuarioDto = listUsuariosDto.get(0);
-//
-//        assertTrue(usuarioService.isUsuarioExists(usuarioDto));
-//
-//        try {
-//            assertTrue(usuarioService.deleteUsuarioById(usuarioDto.getId()));
-//            assertNull(usuarioService.findUsuarioById(usuarioDto.getId()));
-//            assertFalse(usuarioService.isUsuarioExists(usuarioDto)); //O registro não deve mais existir após ser deletado
-//        } catch (RollbackException rbe) {
-//        }
-//    }
-//
-//    @Test
-//    public void testIsEmailUsuarioExists() {
-//        testSaveUsuario(); //Para garantir que existirá pelo menos um registro no banco
-//
-//        List<UsuarioDto> listUsuariosDto = usuarioService.findAllUsuarios();
-//
-//        assertNotNull(listUsuariosDto);
-//        assertTrue(listUsuariosDto.size() > 0);
-//        assertNotNull(listUsuariosDto.get(0));
-//
-//        UsuarioDto usuarioDto = listUsuariosDto.get(0);
-//
-//        assertTrue(usuarioService.isEmailUsuarioExists(usuarioDto.getEmail()));
-//
-//        try {
-//            assertTrue(usuarioService.deleteUsuarioById(usuarioDto.getId()));
-//            assertNull(usuarioService.findUsuarioById(usuarioDto.getId()));
-//            assertFalse(usuarioService.isEmailUsuarioExists(usuarioDto.getEmail())); //O registro não deve mais existir após ser deletado
-//        } catch (RollbackException rbe) {
-//        }
-//    }
+        assertNotNull(usuarioDto);
+
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
+        usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+    }
+
+    @Test(expected = EmptyResultDataAccessException.class)
+    public void deletarUsuarioPorIdInexistente() {
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(8))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(new Date())
+                .build());
+
+        assertNotNull(usuarioDto);
+
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
+        usuarioService.deletarUsuarioPorId(usuarioDto.getId());
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void fazerLogin() {
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(8))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(new Date())
+                .build());
+
+        assertNotNull(usuarioDto);
+
+        UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+
+        assertNotNull(usuarioDto1);
+        assertEquals(usuarioDto1.getId(), usuarioDto.getId());
+        assertEquals(usuarioDto1.getNome(), usuarioDto.getNome());
+        assertEquals(usuarioDto1.getSobreNome(), usuarioDto.getSobreNome());
+        assertEquals(usuarioDto1.getEmail(), usuarioDto.getEmail());
+        assertEquals(usuarioDto1.getSexoEnum(), usuarioDto.getSexoEnum());
+
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
+        usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+    }
 
 }

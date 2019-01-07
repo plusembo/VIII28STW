@@ -8,6 +8,10 @@ public class UrlPrefixFactory {
         URL_PREFIX = "http://localhost:9000/pensiltik";
     }
 
+    private UrlPrefixFactory() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static String getUrlPrefix() {
         return URL_PREFIX;
     }

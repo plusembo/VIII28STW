@@ -36,10 +36,7 @@ public class UsuarioController {
 
     @PutMapping("/atualizarusuario")
     public ResponseEntity<UsuarioDto> atualizarUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
-        if (usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty()) {
-            throw new IllegalArgumentException("O usuário informado não contem ID");
-        }
-        return new ResponseEntity<>(usuarioService.salvarUsuario(usuarioDto), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.atualizarUsuario(usuarioDto), HttpStatus.OK);
     }
 
     @DeleteMapping("/deletarusuarioporid/{id}")
@@ -47,9 +44,9 @@ public class UsuarioController {
         return new ResponseEntity<>(usuarioService.deletarUsuarioPorId(id), HttpStatus.OK);
     }
 
-    @GetMapping("/login/{email}/{senha}")
+    @GetMapping("/fazerlogin/{email}/{senha}")
     public ResponseEntity<UsuarioDto> login(@PathVariable("email") String email, @PathVariable("senha") String senha) {
-        return new ResponseEntity<>(usuarioService.login(email, senha), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.fazerLogin(email, senha), HttpStatus.OK);
     }
 
 }

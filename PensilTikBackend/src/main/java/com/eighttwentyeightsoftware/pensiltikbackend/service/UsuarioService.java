@@ -13,8 +13,10 @@ public interface UsuarioService {
 
     UsuarioDto salvarUsuario(UsuarioDto usuarioDto);
 
+    UsuarioDto atualizarUsuario(UsuarioDto usuarioDto);
+
     boolean deletarUsuarioPorId(String id);
 
-    UsuarioDto login(String email, String senha);
+    UsuarioDto fazerLogin(String email, String senha);
 
 }
