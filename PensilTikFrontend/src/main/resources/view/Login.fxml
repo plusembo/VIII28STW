@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="363.0" stylesheets="@../stylesheet/Login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.LoginController">
+   <children>
+      <AnchorPane prefHeight="485.0" prefWidth="363.0" />
+      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="211.0" prefHeight="17.0" prefWidth="250.0" promptText="E-mail">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="289.0" prefWidth="250.0" promptText="Senha">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="357.0" text="Lembra-se de mim">
+         <font>
+            <Font name="Segoe UI Light" size="13.0" />
+         </font>
+      </JFXCheckBox>
+      <JFXButton buttonType="RAISED" layoutX="192.0" layoutY="409.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXButton>
+      <ImageView fx:id="imgvwLogoVergo" fitHeight="133.0" fitWidth="185.0" layoutX="87.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

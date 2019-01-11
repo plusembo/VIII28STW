@@ -1,0 +1,45 @@
+.label {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: #c00d0d;
+}
+
+.jfx-text-field {
+    -jfx-focus-color: #0f9d58;
+    -jfx-unfocus-color: #4050a8;
+    -jfx-label-float: true;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 11pt;
+}
+
+.jfx-password-field {
+    -jfx-focus-color: #0f9d58;
+    -jfx-unfocus-color: #4050a8;
+    -jfx-label-float: true;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 11pt;
+}
+
+.text-field {
+    -fx-prompt-text-fill: #4050a8;
+    -fx-text-fill: #42064d;
+    -fx-highlight-fill: #4050a8;
+}
+
+.jfx-check-box {
+    -jfx-checked-color: #0f9d58;
+    -jfx-unchecked-color: #5a5a5a;
+    -fx-font-family: "Segoe UI Light";
+    -fx-font-size: 10pt;
+}
+
+.jfx-button {
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-size: 11pt;
+    -fx-background-color: #0f9d58;
+    -fx-text-fill: #FFFFFF;
+    -jfx-button-type: "FLAT";
+    -fx-border-style: solid;
+    -fx-border-color: #0f9d58;
+}
+

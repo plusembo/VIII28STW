@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="238.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.SplashScreenController">
+   <children>
+      <Pane prefHeight="238.0" prefWidth="585.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="106.0" fitWidth="153.0" layoutX="17.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/CecilLogo.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="140.0" layoutY="53.0" text="Cecil" textFill="#1c245e">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <Label layoutX="225.0" layoutY="53.0" text="Systems" textFill="#1c245e">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </Label>
+            <Label layoutX="386.0" layoutY="62.0" text="Mistersoft">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Separator layoutX="373.0" layoutY="25.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="7.0" />
+            <Label layoutX="388.0" layoutY="98.0" text="Version" />
+            <Label layoutX="109.0" layoutY="176.0" text="© Copyright 2017 Mistersoft powered by Cecil Systems. All rights reserved" />
+            <Label layoutX="184.0" layoutY="195.0" text="Software developed by Plamedi L. Lusembo" />
+            <Label fx:id="lblVersao" layoutX="432.0" layoutY="98.0" text="versao" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>

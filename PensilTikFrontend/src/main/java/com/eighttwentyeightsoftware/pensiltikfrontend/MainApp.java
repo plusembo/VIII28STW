@@ -4,6 +4,7 @@ package com.eighttwentyeightsoftware.pensiltikfrontend;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -15,12 +16,12 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/view/hello-world.fxml"));
-        VBox vbox = (VBox) loader.load();
-
-        Scene scene = new Scene(vbox);
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        Stage splashScreenStage = new Stage();
+        StackPane splashLayoutPane = FXMLLoader.load(getClass().getResource("/view/SplashScreen.fxml"));
+        Scene scene = new Scene(splashLayoutPane);
+        splashScreenStage.setResizable(false);
+        splashScreenStage.setMaximized(false);
+        splashScreenStage.setScene(scene);
+        splashScreenStage.show();
     }
 }
