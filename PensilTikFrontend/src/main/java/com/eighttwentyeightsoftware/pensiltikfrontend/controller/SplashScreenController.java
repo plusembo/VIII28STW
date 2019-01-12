@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 /**
  * @author Plamedi L. Lusembo
  */
+
 public class SplashScreenController implements Initializable {
 
     private Stage splashStage;
@@ -54,8 +55,7 @@ public class SplashScreenController implements Initializable {
             try {
                 Stage loginStage = new Stage();
                 splashStage = (Stage) lblVersao.getScene().getWindow();
-                AnchorPane loginAnchorPane = FXMLLoader.load(MainApp.class
-                        .getResource("/view/Login.fxml"));
+                AnchorPane loginAnchorPane = FXMLLoader.load(MainApp.class.getResource("/view/Login.fxml"));
                 Scene scene = new Scene(loginAnchorPane);
 //                loginStage.getIcons().add(new Image(PathEnum.IMAGES_PATH + "mistersoftlogo.png"));
                 loginStage.setResizable(false);

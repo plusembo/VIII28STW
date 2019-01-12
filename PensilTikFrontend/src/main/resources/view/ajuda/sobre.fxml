@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="284.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.ajuda.SobreController">
+   <children>
+      <Pane prefHeight="448.0" prefWidth="501.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="106.0" fitWidth="153.0" layoutX="17.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../image/cecil-logo.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="142.0" layoutY="53.0" text="Cecil" textFill="#1c245e">
+               <font>
+                  <Font name="System Bold" size="39.0" />
+               </font>
+            </Label>
+            <Label layoutX="227.0" layoutY="53.0" text="Systems" textFill="#1c245e">
+               <font>
+                  <Font size="39.0" />
+               </font>
+            </Label>
+            <Label layoutX="388.0" layoutY="62.0" text="Mistersoft">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Label>
+            <Separator layoutX="375.0" layoutY="25.0" orientation="VERTICAL" prefHeight="105.0" prefWidth="7.0" />
+            <Label layoutX="390.0" layoutY="98.0" text="Version" />
+            <Label fx:id="lblVersao" layoutX="435.0" layoutY="98.0" text="Label" />
+            <Label layoutX="111.0" layoutY="167.0" text="© Copyright 2017 Mistersoft powered by Cecil Systems. All rights reserved." />
+            <Label layoutX="187.0" layoutY="186.0" text="Software developed by Plamedi L. Lusembo" />
+            <Label layoutX="183.0" layoutY="206.0" text="Contact us: plam.l@live.fr  |  (47) 9 9955 4078" />
+            <JFXButton layoutX="456.0" layoutY="225.0" onAction="#jbtnFecharAction" prefHeight="45.0" prefWidth="121.0" text="Fechar" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>

@@ -1,0 +1,35 @@
+.label {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-text-fill: black;
+}
+
+.hyperlink {
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI Light";
+}
+
+.labelhyperlink {
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: black;
+}
+
+.menu-bar {
+    -fx-background-color: derive(#BDBDBD, 100%);
+}
+
+.context-menu {
+    -fx-background-color: derive(#FFFFFF, 100%);
+}
+
+.menu-bar .label {
+    -fx-font-size: 13pt;
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: black;
+}
+
+.menu .left-container {
+    -fx-background-color: black;
+}
+

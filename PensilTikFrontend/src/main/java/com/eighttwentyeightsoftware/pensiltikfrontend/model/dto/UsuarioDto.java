@@ -1,8 +1,12 @@
-package com.eighttwentyeightsoftware.pensiltikfrontend.dto;
+package com.eighttwentyeightsoftware.pensiltikfrontend.model.dto;
 
-import com.eighttwentyeightsoftware.pensiltikbackend.enumeration.SexoEnum;
+import com.eighttwentyeightsoftware.pensiltikfrontend.enumeration.SexoEnum;
 import lombok.*;
-import java.util.Date;
+import org.joda.time.DateTime;
+
+/**
+ * @author Plamedi L. Lusembo
+ */
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,16 +18,10 @@ import java.util.Date;
 public class UsuarioDto{
 
     private String id;
-
     private String nome;
-
     private String sobreNome;
-
     private String email;
-
     private String senha;
-
     private SexoEnum sexoEnum;
-
-    private Date dataNascimento;
+    private DateTime dataNascimento;
 }

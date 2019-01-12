@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../stylesheet/mdi.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.MDIController">
+   <children>
+      <BorderPane prefHeight="418.0" prefWidth="624.0">
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <MenuBar id="M" fx:id="menubarpricipal" prefWidth="604.0" style="-fx-border-style: solid; -fx-border-color: #CDC9C9;">
+                     <menus>
+                        <Menu fx:id="mnConfiguracoes" mnemonicParsing="false" text="CONFIGURAÇÕES">
+                           <items>
+                              <MenuItem id="CFG001" mnemonicParsing="false" onAction="#mnuConfiguracaoContaUsuarioAction" text="Minha conta" />
+                           </items>
+                        </Menu>
+                        <Menu fx:id="mnCadastro" mnemonicParsing="false" text="CADASTROS">
+                           <items>
+                              <MenuItem id="CAD001" mnemonicParsing="false" onAction="#mnuCadastroTipoRendaAction" text="Tipo Renda" />
+                              <MenuItem id="CAD002" mnemonicParsing="false" onAction="#mnuCadastroRendaAction" text="Renda" />
+                              <MenuItem id="CAD003" mnemonicParsing="false" onAction="#mnuCadastroTipoDespesaAction" text="Tipo Despesa" />
+                              <MenuItem id="CAD004" mnemonicParsing="false" onAction="#mnuCadastroDespesaAction" text="Despesa" />
+                           </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="RELATÓRIOS">
+                          <items>
+                            <MenuItem id="REL001" mnemonicParsing="false" onAction="#mnuRelatorioRendaAction" text="Renda" />
+                              <MenuItem id="REL002" mnemonicParsing="false" onAction="#mnuRelatorioDespesasAction" text="Despesas" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="AJUDA">
+                           <items>
+                              <MenuItem id="SBR001" mnemonicParsing="false" onAction="#mnuAjudaSobreAction" text="Sobre" />
+                           </items>
+                        </Menu>
+                     </menus>
+                  </MenuBar>
+                  <VBox prefHeight="331.0" prefWidth="600.0">
+                     <children>
+                        <Pane nodeOrientation="RIGHT_TO_LEFT" prefHeight="27.0" prefWidth="624.0">
+                           <children>
+                              <Hyperlink fx:id="hlkSair" layoutX="13.0" layoutY="1.0" onAction="#hlkSairOnAction" text="Sair" />
+                              <Hyperlink fx:id="hlkNomeUsuario" layoutX="48.0" layoutY="1.0" onAction="#mnuConfiguracaoContaUsuarioAction" text="Usuário" />
+                           </children>
+                        </Pane>
+                        <Pane prefHeight="307.0" prefWidth="600.0">
+                           <children>
+                              <ImageView fx:id="imgvwLogoVergo" fitHeight="57.0" fitWidth="271.0" layoutX="387.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../image/vergo-logo-mdi.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Pane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </center>
+         <bottom>
+            <GridPane style="-fx-border-style: solid; -fx-border-color: #CDC9C9;" BorderPane.alignment="CENTER">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Hyperlink onAction="#mnuAjudaSobreAction" styleClass="labelhyperlink" text="© Copyright 2017 Mistersoft. All rights reserved." />
+                  <Label fx:id="lblDataHora" text="Data/Hora" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets right="5.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+            </GridPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</StackPane>

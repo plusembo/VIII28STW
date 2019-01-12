@@ -1,9 +1,12 @@
 package com.eighttwentyeightsoftware.pensiltikfrontend.service;
 
-import com.eighttwentyeightsoftware.pensiltikfrontend.dto.UsuarioDto;
+import com.eighttwentyeightsoftware.pensiltikfrontend.model.dto.UsuarioDto;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
+
+/**
+ * @author Plamedi L. Lusembo
+ */
 
 @Service("usuarioService")
 public class UsuarioServiceImpl implements UsuarioService {

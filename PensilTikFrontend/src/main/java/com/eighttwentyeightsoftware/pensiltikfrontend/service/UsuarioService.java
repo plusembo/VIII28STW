@@ -1,9 +1,12 @@
 package com.eighttwentyeightsoftware.pensiltikfrontend.service;
 
 
-import com.eighttwentyeightsoftware.pensiltikfrontend.dto.UsuarioDto;
-
+import com.eighttwentyeightsoftware.pensiltikfrontend.model.dto.UsuarioDto;
 import java.util.List;
+
+/**
+ * @author Plamedi L. Lusembo
+ */
 
 public interface UsuarioService {
 
