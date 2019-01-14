@@ -3,6 +3,10 @@ package com.eighttwentyeightsoftware.pensiltikfrontend.util;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+/**
+ * @author Plamedi L. Lusembo
+ */
+
 public class DateTimeFormatterFactory {
 
     private static final DateTimeFormatter DATE_FORMAT;
