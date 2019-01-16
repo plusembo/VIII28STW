@@ -2,6 +2,7 @@ package com.eighttwentyeightsoftware.pensiltikfrontend.controller;
 
 
 import com.eighttwentyeightsoftware.pensiltikfrontend.MainApp;
+import com.eighttwentyeightsoftware.pensiltikfrontend.enumeration.MenuEnum;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
@@ -21,6 +22,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -33,7 +35,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LoginController implements Initializable {
 
-    private Stage loginStage;
     @FXML
     private JFXTextField jtxEmail;
     @FXML
@@ -99,6 +100,32 @@ public class LoginController implements Initializable {
         }
     }
 
+
+    @FXML
+    private void hlkAbrirUmaContaAction() {
+        jtxEmail.resetValidation();
+        jpwSenha.resetValidation();
+
+        try {
+            Stage cadastroUsuarioStage = new Stage();
+            Stage loginStage = (Stage) jtxEmail.getScene().getWindow();
+            StackPane cadastroUsuarioStackPane = FXMLLoader.load(MainApp.class.getResource("/view/cadastro-usuario.fxml"));
+            Scene scene = new Scene(cadastroUsuarioStackPane);
+//                cadastroUsuarioStage.getIcons().add(new Image(PathEnum.IMAGES_PATH + "mistersoftlogo.png"));
+            cadastroUsuarioStage.setResizable(false);
+            cadastroUsuarioStage.setMaximized(false);
+            cadastroUsuarioStage.setTitle("Cadastro de usuário");
+            cadastroUsuarioStage.setScene(scene);
+            loginStage.close();
+            cadastroUsuarioStage.show();
+        } catch (IOException ex) {
+            System.out.println(ex);
+        }
+
+
+
+    }
+
     @FXML
     private void jbtnEntrarOnAction() {
         if (!jtxEmail.validate() && !jpwSenha.validate()) {
@@ -118,7 +145,7 @@ public class LoginController implements Initializable {
 //
 //            if (LoginService.getInstance().entrar(usuario, jchxLembrarDeMim.isSelected())) {
                 Stage mainLayoutStage = new Stage();
-                loginStage = (Stage) jchxLembrarDeMim.getScene().getWindow();
+                Stage loginStage = (Stage) jchxLembrarDeMim.getScene().getWindow();
 
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(MainApp.class.getResource("/view/MDI.fxml"));

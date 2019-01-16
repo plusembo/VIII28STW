@@ -22,7 +22,6 @@ import javafx.stage.Stage;
 
 public class SplashScreenController implements Initializable {
 
-    private Stage splashStage;
     @FXML
     private Label lblVersao;
 
@@ -54,16 +53,16 @@ public class SplashScreenController implements Initializable {
         service.setOnSucceeded((WorkerStateEvent event) -> {
             try {
                 Stage loginStage = new Stage();
-                splashStage = (Stage) lblVersao.getScene().getWindow();
-                AnchorPane loginAnchorPane = FXMLLoader.load(MainApp.class.getResource("/view/Login.fxml"));
+                Stage splashStage = (Stage) lblVersao.getScene().getWindow();
+                AnchorPane loginAnchorPane = FXMLLoader.load(MainApp.class.getResource("/view/login.fxml"));
                 Scene scene = new Scene(loginAnchorPane);
 //                loginStage.getIcons().add(new Image(PathEnum.IMAGES_PATH + "mistersoftlogo.png"));
                 loginStage.setResizable(false);
                 loginStage.setMaximized(false);
                 loginStage.setTitle("Login");
                 loginStage.setScene(scene);
-                loginStage.show();
                 splashStage.close();
+                loginStage.show();
             } catch (IOException ex) {
             }
         });

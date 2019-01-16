@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62ceace0-e481-4169-a8dc-523a336deac0" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../PensilTikBackend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikBackend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/cadastros/CadastroUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/util/DateTimeFormatterFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/util/DateTimeFormatterFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/util/RestTemplateFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/util/RestTemplateFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cadastros/cadastro-usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -21,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3252">
-              <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="334" />
+            <state relative-caret-position="362">
+              <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -37,17 +34,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml">
           <provider editor-type-id="JavaFX-Scene-Builder" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+            <state relative-caret-position="167">
+              <caret line="85" column="69" lean-forward="true" selection-start-line="85" selection-start-column="69" selection-end-line="85" selection-end-column="69" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/entity/Usuario.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+            <state relative-caret-position="277">
+              <caret line="70" column="63" lean-forward="true" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -56,10 +53,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
+            <state relative-caret-position="215">
+              <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -72,7 +72,9 @@
       <find>modu</find>
       <find>modul</find>
       <find>MaskedJFXTextField</find>
+      <find>loginSta</find>
       <find>CENTER</find>
+      <find>limparA</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -87,8 +89,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/view/Login.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/AplicacaoConfig.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/login.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/enumeration/SexoEnum.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/domain/UsuarioLogado.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/dto/UsuarioDto.java" />
@@ -99,7 +99,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/MainApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/enumeration/MenuEnum.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/MDI.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/ajuda/sobre.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/MDIController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/util/DateTimeFormatterFactory.java" />
@@ -108,6 +107,9 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/cadastros/CadastroUsuarioController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/cadastros/cadastro-usuario.fxml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java" />
       </list>
@@ -343,7 +345,7 @@
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -351,14 +353,14 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32872504" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.5545315" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.2780338" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.23963134" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.1766513" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="SonarLint" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13517666" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.1766513" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -367,6 +369,31 @@
       <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
       <window_info anchor="right" id="Palette&#9;" order="5" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19894099" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32872504" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.23963134" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.1766513" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="SonarLint" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.1766513" />
+      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" weight="0.32980332" />
+      <window_info anchor="right" id="Palette&#9;" order="5" />
+    </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/dto/UsuarioDto.java" />
@@ -379,21 +406,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/AplicacaoConfig.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/login.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder" />
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/domain/UsuarioLogado.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -491,28 +503,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="30" lean-forward="true" selection-start-line="49" selection-start-column="30" selection-end-line="49" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="39" column="30" lean-forward="true" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#690#691#0" expanded="true" />
-            <element signature="e#737#738#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/MDIController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
@@ -560,19 +550,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/tema-geral.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/view/login.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="26" column="53" selection-start-line="26" selection-start-column="53" selection-end-line="26" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" selection-start-line="15" selection-end-line="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/SplashScreenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="65" column="38" lean-forward="true" selection-start-line="65" selection-start-column="38" selection-end-line="65" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
+        <state relative-caret-position="2040">
           <caret line="120" column="19" selection-start-line="120" selection-start-column="19" selection-end-line="120" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/stylesheet/tema-geral.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/entity/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
+        <state relative-caret-position="442">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -583,15 +601,25 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/cadastro-usuario.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="60" selection-start-line="39" selection-start-column="60" selection-end-line="39" selection-end-column="60" />
+        <state relative-caret-position="167">
+          <caret line="85" column="69" lean-forward="true" selection-start-line="85" selection-start-column="69" selection-end-line="85" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="59" column="53" lean-forward="true" selection-start-line="59" selection-start-column="53" selection-end-line="59" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3252">
-          <caret line="334" lean-forward="true" selection-start-line="334" selection-end-line="334" />
+        <state relative-caret-position="277">
+          <caret line="70" column="63" lean-forward="true" selection-start-line="70" selection-start-column="63" selection-end-line="70" selection-end-column="63" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

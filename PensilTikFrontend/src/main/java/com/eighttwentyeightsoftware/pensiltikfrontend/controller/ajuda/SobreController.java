@@ -14,11 +14,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @NoArgsConstructor
-@Setter
 public class SobreController implements Initializable {
 
     @FXML
     private Label lblVersao;
+    @Setter
     private Stage formStage;
     private static SobreController uniqueInstance;
 

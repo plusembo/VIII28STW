@@ -12,29 +12,29 @@
 
 <AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="415.0" stylesheets="@../stylesheet/login.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.LoginController">
    <children>
-      <ImageView fx:id="imgvwLogoVergo" fitHeight="91.0" fitWidth="183.0" layoutX="146.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgvwLogoVergo" fitHeight="76.0" fitWidth="103.0" layoutX="146.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../image/vergo-logo-login.jpg" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="175.0" onKeyPressed="#jtxEmailOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="E-mail">
+      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="165.0" onKeyPressed="#jtxEmailOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="E-mail">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="253.0" onKeyPressed="#jpwSenhaOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="Senha">
+      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="243.0" onKeyPressed="#jpwSenhaOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="Senha">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="330.0" text="Lembra-se de mim">
+      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="320.0" text="Lembrar de mim">
          <font>
             <Font name="Segoe UI Light" size="13.0" />
          </font>
       </JFXCheckBox>
-      <Hyperlink layoutX="241.0" layoutY="329.0" text="Esqueci minha senha" />
-      <Hyperlink layoutX="53.0" layoutY="397.0" text="Abrir uma conta" />
-      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="382.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
+      <Hyperlink layoutX="241.0" layoutY="319.0" text="Esqueci minha senha" />
+      <Hyperlink layoutX="53.0" layoutY="387.0" onAction="#hlkAbrirUmaContaAction" text="Abrir uma conta" />
+      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="372.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
