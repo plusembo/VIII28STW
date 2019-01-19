@@ -103,9 +103,6 @@ public class LoginController implements Initializable {
 
     @FXML
     private void hlkAbrirUmaContaAction() {
-        jtxEmail.resetValidation();
-        jpwSenha.resetValidation();
-
         try {
             Stage cadastroUsuarioStage = new Stage();
             Stage loginStage = (Stage) jtxEmail.getScene().getWindow();

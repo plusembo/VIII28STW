@@ -35,5 +35,5 @@ Vsrc/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/model/dto/UsuarioD
 bsrc/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/ajuda/SobreController.java,2\5\25aa1e348a3b73b9345e1dd40eee15be73b37ed0
 Š
 Zsrc/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/MDIController.java,9\1\919ce0bb2039c4a988421cabf9da4cde439f2261
- 
-psrc/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/cadastros/CadastroUsuarioController.java,8\2\82400d98e892132f0122183c19fb2c0b00d19c22
+–
+fsrc/main/java/com/eighttwentyeightsoftware/pensiltikfrontend/controller/CadastroUsuarioController.java,6\3\635786633c1b39457929bd107d8558f9b0fb662c

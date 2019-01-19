@@ -29,9 +29,9 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     private JFXTextField jtxEmail;
     @FXML
-    private JFXPasswordField jpwSenhaUsuario;
+    private JFXPasswordField jpwSenha;
     @FXML
-    private JFXPasswordField jpwConfirmarSenhaUsuario;
+    private JFXPasswordField jpwConfirmarSenha;
 
     @FXML
     private JFXButton jbtnSalvar;
@@ -53,6 +53,7 @@ public class CadastroUsuarioController implements Initializable {
     private Label lblConfirmarSenha;
     @FXML
     private ImageView imgvwConfirmarSenha;
+    private RequiredFieldValidator confirmarSenhaValidator3 = new RequiredFieldValidator();
 
     @Setter
     private Stage formStage;
@@ -88,11 +89,14 @@ public class CadastroUsuarioController implements Initializable {
         RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
         RequiredFieldValidator confirmarSenhaValidator = new RequiredFieldValidator();
 
+        confirmarSenhaValidator3.setMessage("Confirmar nhase: Campo obrigatório");
+        jpwConfirmarSenha.getValidators().add(confirmarSenhaValidator3);
+
         jtxNome.getValidators().add(nomeValidator);
         jtxSobrenome.getValidators().add(sobrenomeValidator);
         jtxEmail.getValidators().add(emailValidator);
-        jpwSenhaUsuario.getValidators().add(senhaValidator);
-        jpwConfirmarSenhaUsuario.getValidators().add(confirmarSenhaValidator);
+        jpwSenha.getValidators().add(senhaValidator);
+        jpwConfirmarSenha.getValidators().add(confirmarSenhaValidator);
 
         nomeValidator.setMessage("Nome: Campo obrigatório");
         sobrenomeValidator.setMessage("Sobrenome: Campo obrigatório");
@@ -108,6 +112,10 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     private void jbtnSalvarAction() {
 
+        jpwConfirmarSenha.getValidators();
+
+
+        jpwConfirmarSenha.validate();
     }
 
     @FXML
