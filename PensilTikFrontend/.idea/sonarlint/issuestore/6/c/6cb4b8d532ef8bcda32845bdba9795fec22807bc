@@ -1,19 +1,0 @@
-
-Rsquid:S1481"3Remove this unused "mainController" local variable.(øœ¬8ŸÂ›„-
-fsquid:UselessImportCheck";Remove this unused import 'javafx.scene.layout.AnchorPane'.(Ø µ8“ÁÁö„-
-‹squid:UselessImportCheck"`Remove this unused import 'com.eighttwentyeightsoftware.pensiltikfrontend.enumeration.MenuEnum'.(µ€Ğ¸8‘ğÂ÷„-
-osquid:CommentedOutCodeLine’"<This block of commented-out lines of code should be removed.(Íûïÿÿÿÿÿ8ŸÂ›„-
-asquid:S1854"BRemove this useless assignment to local variable "mainController".(øœ¬8ŸÂ›„-
-jsquid:CommentedOutCodeLine«"<This block of commented-out lines of code should be removed.(¡Õ±š8ŸÂ›„-
-lsquid:S1871†"MThis branch's code block is the same as the block for the branch on line 131.(Ğ½ö®8ŸÂ›„-
-jsquid:CommentedOutCodeLine¡"<This block of commented-out lines of code should be removed.(ğÍËÔ8ŸÂ›„-
-osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(·‡³ìıÿÿÿÿ8ŸÂ›„-
-V
-squid:S106z"9Replace this use of System.out or System.err by a logger.(ö¬8õ¼Ëö„-
-Isquid:S00108®")Either remove or fill this block of code.(Ãôş•8ŸÂ›„-
-?squid:S1604I"(Make this anonymous inner class a lambda(ÚÁÀ
-]squid:UselessImportCheck"2Remove this unused import 'java.sql.SQLException'.(ÛïÆŸ8¹õöš„-
-jsquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(¸ÖÃ¶8¶³›„-
-Dsquid:S1604A"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
-isquid:CommentedOutCodeLiner"<This block of commented-out lines of code should be removed.(€Ë„8†ßŒö„-
-osquid:CommentedOutCodeLine£"<This block of commented-out lines of code should be removed.(åñµŠüÿÿÿÿ8ŸÂ›„-

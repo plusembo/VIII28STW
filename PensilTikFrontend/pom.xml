@@ -144,7 +144,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.eighttwentyeightsoftware.pensiltikfrontend.MainApp</mainClass>
+                    <mainClass>com.viii28stw.pensiltikfrontend.MainApp</mainClass>
                 </configuration>
             </plugin>
         </plugins>

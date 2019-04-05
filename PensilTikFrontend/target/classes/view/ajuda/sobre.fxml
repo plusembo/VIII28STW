@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<StackPane prefHeight="284.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eighttwentyeightsoftware.pensiltikfrontend.controller.ajuda.SobreController">
+<StackPane prefHeight="284.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.ajuda.SobreController">
    <children>
       <Pane prefHeight="448.0" prefWidth="501.0" style="-fx-background-color: white;">
          <children>
