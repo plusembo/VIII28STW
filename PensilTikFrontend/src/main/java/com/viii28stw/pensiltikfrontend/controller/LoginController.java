@@ -194,9 +194,6 @@ public class LoginController implements Initializable {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                System.out.println("Teste");
-
             });
 
             loginStage.close();

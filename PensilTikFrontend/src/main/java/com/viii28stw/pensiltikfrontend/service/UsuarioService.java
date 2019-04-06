@@ -1,25 +1,48 @@
 package com.viii28stw.pensiltikfrontend.service;
 
-
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
+import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
  * @author Plamedi L. Lusembo
  */
 
-public interface UsuarioService {
+@Service("usuarioService")
+public class UsuarioService implements IUsuarioService {
 
-    UsuarioDto buscarUsuarioPorId(String id);
+    @Override
+    public UsuarioDto buscarUsuarioPorId(String id) {
+    return null;
+    }
 
-    List<UsuarioDto> buscarTodosOsUsuarios();
+    @Override
+    public List<UsuarioDto> buscarTodosOsUsuarios(){
+        return null;
+    }
 
-    UsuarioDto salvarUsuario(UsuarioDto usuarioDto);
+    @Override
+    public UsuarioDto salvarUsuario(UsuarioDto usuarioDto) {
+        return usuarioDto;
+    }
 
-    UsuarioDto atualizarUsuario(UsuarioDto usuarioDto);
+    @Override
+    public UsuarioDto atualizarUsuario(UsuarioDto usuarioDto) {
+        return null;
+    }
 
-    boolean deletarUsuarioPorId(String id);
+    private UsuarioDto persistir(UsuarioDto usuarioDto) {
+        return null;
+    }
 
-    UsuarioDto fazerLogin(String email, String senha);
+    @Override
+    public boolean deletarUsuarioPorId(String id){
+        return false;
+    }
+
+    @Override
+    public UsuarioDto fazerLogin(String email, String senha){
+        return null;
+    }
 
 }

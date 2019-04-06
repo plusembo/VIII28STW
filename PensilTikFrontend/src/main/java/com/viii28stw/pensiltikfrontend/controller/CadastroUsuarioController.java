@@ -4,24 +4,28 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
 
+import com.jfoenix.controls.*;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
-import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXPasswordField;
-import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.validation.RequiredFieldValidator;
+import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
+import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Paint;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @NoArgsConstructor
 public class CadastroUsuarioController implements Initializable {
@@ -64,7 +68,10 @@ public class CadastroUsuarioController implements Initializable {
     private boolean modoEdicao;
     private static CadastroUsuarioController uniqueInstance;
 
-    private final ObservableList<SexoEnum> obsLstSexo = FXCollections.observableArrayList();
+    private final ObservableList<SexoEnum> obsListSexo = FXCollections.observableArrayList();
+
+    @Autowired
+    IUsuarioService usuarioService;
 
     public static synchronized CadastroUsuarioController getInstance() {
         if (uniqueInstance == null) {
@@ -105,14 +112,38 @@ public class CadastroUsuarioController implements Initializable {
         emailValidator.setMessage("E-mail: Campo obrigatório");
         senhaValidator.setMessage("Senha: Campo obrigatório");
 
-        Arrays.asList(SexoEnum.values()).forEach(obsLstSexo::add);
-        jcbxSexo.setItems(obsLstSexo);
+        SexoEnum.getList().forEach(obsListSexo::add);
+        jcbxSexo.setItems(obsListSexo);
 
         jtxNome.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (oldValue) {
                     jtxNome.validate();
+                }
+            }
+        });
+
+        jtxSobrenome.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (oldValue) {
+                    jtxSobrenome.validate();
+                }
+            }
+        });
+
+        jcbxSexo.focusedProperty().addListener(new ChangeListener<Boolean>() {
+            @Override
+            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
+                if (oldValue) {
+                    if (jcbxSexo.getValue() == null) {
+                        lblSexoObrigatorio.setVisible(true);
+                        imgvwSexoObrigatorio.setVisible(true);
+                    } else {
+                        lblSexoObrigatorio.setVisible(false);
+                        imgvwSexoObrigatorio.setVisible(false);
+                    }
                 }
             }
         });
@@ -166,31 +197,113 @@ public class CadastroUsuarioController implements Initializable {
 
     @FXML
     private void jbtnSalvarAction() {
+        if(!validaTodosOsCampos()) {
+            return;
+        }
 
-        jpwConfirmarSenha.getValidators();
+        UsuarioDto usuarioDto = UsuarioDto.builder()
+                .nome(jtxNome.getText())
+                .sobreNome(jtxSobrenome.getText())
+                .sexoEnum(jcbxSexo.getValue())
+                .email(jtxEmail.getText())
+                .senha(jpwSenha.getText())
+                .build();
 
-
-        jpwConfirmarSenha.validate();
+        UsuarioDto usuarioSalvo = usuarioService.salvarUsuario(usuarioDto);
+        boolean salvou = usuarioSalvo == null;
 
         jbtnSalvar.setText("SALVAR");
 
+        JFXDialogLayout content = new JFXDialogLayout();
+        content.setHeading(new Text("Salvar Usuário"));
+        content.setBody(new Text("Usuário salvo com sucesso"));
+
+        content.setBody(new Text("Usuário salvo com sucesso!\n"
+                .concat(usuarioSalvo.toString())));
+
+        JFXDialog dialog = new JFXDialog(null, content, JFXDialog.DialogTransition.CENTER);
+        JFXButton btnOK = new JFXButton("OK");
+        btnOK.setStyle("-fx-background-color: #0091EA;");
+        btnOK.setButtonType(JFXButton.ButtonType.RAISED);
+        btnOK.setTextFill(Paint.valueOf("WHITE"));
+        btnOK.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                dialog.close();
+            }
+        });
+        content.setActions(btnOK);
+        dialog.show();
+
+    }
+
+    private boolean validaTodosOsCampos() {
+        int campoIndex = 0;
+
+        if (!jpwSenha.getText().equals(jpwConfirmarSenha.getText())) {
+            lblConfirmarSenha.setVisible(true);
+            imgvwConfirmarSenha.setVisible(true);
+            campoIndex = 6;
+        }
+
+        campoIndex = jpwSenha.validate() ? campoIndex : 5;
+
+        if(jtxEmail.validate()) {
+            if (!EmailValidator.isValidEmail(jtxEmail.getText())) {
+                lblEmailInvalido.setText("E-mail: Inválido");
+                lblEmailInvalido.setVisible(true);
+                imgvwEmailInvalido.setVisible(true);
+                campoIndex = 4;
+            }
+        } else {
+            campoIndex = 4;
+        }
+
+        if (jcbxSexo.getValue() == null) {
+            lblSexoObrigatorio.setVisible(true);
+            imgvwSexoObrigatorio.setVisible(true);
+            campoIndex = 3;
+        }
+
+        campoIndex = jtxSobrenome.validate() ? campoIndex : 2;
+        campoIndex = jtxNome.validate() ? campoIndex : 1;
+
+        switch (campoIndex) {
+            case 1: jtxNome.requestFocus(); return false;
+            case 2: jtxSobrenome.requestFocus(); return false;
+            case 3: jcbxSexo.requestFocus(); return false;
+            case 4: jtxEmail.requestFocus(); return false;
+            case 5: jpwSenha.requestFocus(); return false;
+            case 6: jpwConfirmarSenha.requestFocus(); return false;
+            default: return true;
+        }
     }
 
     @FXML
     private void jbtnLimparAction() {
         jtxNome.resetValidation();
         jtxSobrenome.resetValidation();
+
+        lblSexoObrigatorio.setVisible(false);
+        imgvwSexoObrigatorio.setVisible(false);
+
         jtxEmail.resetValidation();
+        lblEmailInvalido.setVisible(false);
+        imgvwEmailInvalido.setVisible(false);
+
         jpwSenha.resetValidation();
+
+        lblConfirmarSenha.setVisible(false);
+        imgvwConfirmarSenha.setVisible(false);
 
         jtxNome.clear();
         jtxSobrenome.clear();
+        jcbxSexo.getSelectionModel().select(null);
         jtxEmail.clear();
         jpwSenha.clear();
         jpwConfirmarSenha.clear();
 
-
-
+        jtxNome.requestFocus();
 
     }
 

@@ -37,7 +37,7 @@
                   </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="599.0" spacing="52.0" GridPane.rowIndex="1">
                      <children>
-                        <JFXComboBox prefWidth="259.0" promptText="Sexo" />
+                        <JFXComboBox fx:id="jcbxSexo" prefWidth="259.0" promptText="Sexo" />
                         <JFXTextField fx:id="jtxEmail" prefWidth="259.0" promptText="E-mail" />
                      </children>
                   </HBox>

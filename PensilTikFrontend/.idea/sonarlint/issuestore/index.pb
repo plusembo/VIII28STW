@@ -39,3 +39,5 @@ Tsrc/main/java/com/viii28stw/pensiltikfrontend/controller/SplashScreenController
 Wsrc/main/java/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.java,a\2\a2b30a99c9579eb86cb483dfb92c7a16226926a2
 v
 Fsrc/main/java/com/viii28stw/pensiltikfrontend/util/EmailValidator.java,c\a\ca2000bda165e8120c1beca421fd7c70e1a068e4
+z
+Jsrc/main/java/com/viii28stw/pensiltikfrontend/service/IUsuarioService.java,9\e\9e6d5ca88c516eb829fc3c37a1b82306ce0e62ba
