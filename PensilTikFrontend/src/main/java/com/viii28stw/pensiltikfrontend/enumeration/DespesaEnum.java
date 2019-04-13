@@ -1,4 +1,4 @@
-package com.viii28stw.pensiltikbackend.enumeration;
+package com.viii28stw.pensiltikfrontend.enumeration;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

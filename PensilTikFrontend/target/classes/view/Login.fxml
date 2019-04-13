@@ -32,9 +32,9 @@
             <Font name="Segoe UI Light" size="13.0" />
          </font>
       </JFXCheckBox>
-      <Hyperlink layoutX="241.0" layoutY="319.0" text="Esqueci minha senha" />
-      <Hyperlink layoutX="242.0" layoutY="338.0" onAction="#hlkAbrirUmaContaAction" text="Abrir uma conta" />
-      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="376.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
+      <Hyperlink layoutX="52.0" layoutY="344.0" text="Esqueci minha senha" />
+      <Hyperlink layoutX="268.0" layoutY="320.0" onAction="#hlkAbrirUmaContaAction" text="Abrir uma conta" />
+      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>

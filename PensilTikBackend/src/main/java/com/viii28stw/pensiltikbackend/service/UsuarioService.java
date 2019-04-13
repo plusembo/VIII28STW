@@ -5,7 +5,6 @@ import com.viii28stw.pensiltikbackend.model.entity.Usuario;
 import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;

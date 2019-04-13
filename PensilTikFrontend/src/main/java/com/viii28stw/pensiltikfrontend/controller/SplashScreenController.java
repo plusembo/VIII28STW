@@ -1,8 +1,5 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -13,6 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lombok.Setter;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * @author Plamedi L. Lusembo

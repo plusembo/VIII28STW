@@ -2,7 +2,8 @@ package com.viii28stw.pensiltikfrontend.model.dto;
 
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import lombok.*;
-import org.joda.time.DateTime;
+
+import java.time.LocalDate;
 
 /**
  * @author Plamedi L. Lusembo
@@ -23,5 +24,5 @@ public class UsuarioDto{
     private String email;
     private String senha;
     private SexoEnum sexoEnum;
-    private DateTime dataNascimento;
+    private LocalDate dataNascimento;
 }

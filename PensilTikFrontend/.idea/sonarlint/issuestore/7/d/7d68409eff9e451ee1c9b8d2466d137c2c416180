@@ -1,13 +1,13 @@
 
-„squid:S2273Á"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8îÜ-
-W
-squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬8××Öà-
-Gsquid:S1604·"(Make this anonymous inner class a lambda(Åì€8ïÄ‚±-
-Gsquid:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8îÜ-
-esquid:S2142Â"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8îÜ-
+Bsquid:S00108Î")Either remove or fill this block of code.(Ãôş•
+@squid:S1148Ã"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+P
+squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬
+^squid:S2142Â"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+?squid:S1604K"(Make this anonymous inner class a lambda(ÚÁÀ
+Rsquid:S2274Á":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ
+}squid:S2273Á"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ
 esquid:S1871’"MThis branch's code block is the same as the block for the branch on line 143.(Ğ½ö®
-Fsquid:S1604K"(Make this anonymous inner class a lambda(ÚÁÀ8××Öà-
-Ksquid:S1604C"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8××Öà-
-Gsquid:S1604¯"(Make this anonymous inner class a lambda(¾à–8ïÄ‚±-
-Ysquid:S2274Á":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8îÜ-
-Isquid:S00108Î")Either remove or fill this block of code.(Ãôş•8îÜ-
+@squid:S1604¯"(Make this anonymous inner class a lambda(¾à–
+Dsquid:S1604C"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
+@squid:S1604·"(Make this anonymous inner class a lambda(Åì€

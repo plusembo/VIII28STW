@@ -2,7 +2,6 @@ package com.viii28stw.pensiltikfrontend.enumeration;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.ToString;
 
 import java.util.ArrayList;
 import java.util.Arrays;

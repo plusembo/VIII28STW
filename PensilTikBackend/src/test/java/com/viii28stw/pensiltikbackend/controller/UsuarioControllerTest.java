@@ -313,7 +313,7 @@ public class UsuarioControllerTest {
         assertEquals(usuarioDto2, usuarioDto1);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
-                .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
+                .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.GET,
                         request, String.class);
 
         then(responseEntityUsuario3.getStatusCode()).isEqualTo(HttpStatus.OK);

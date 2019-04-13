@@ -1,17 +1,17 @@
 package com.viii28stw.pensiltikfrontend.controller.ajuda;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-import com.eighttwentyeightsoftware.pensiltikfrontend.controller.MDIController;
-import com.eighttwentyeightsoftware.pensiltikfrontend.enumeration.MenuEnum;
-import com.eighttwentyeightsoftware.pensiltikfrontend.model.domain.FormMenu;
+import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
+import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.net.URL;
+import java.util.ResourceBundle;
 
 @NoArgsConstructor
 public class SobreController implements Initializable {

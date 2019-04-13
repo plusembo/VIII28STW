@@ -1,11 +1,8 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import com.jfoenix.controls.*;
-import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import com.jfoenix.validation.RequiredFieldValidator;
+import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
@@ -25,11 +22,11 @@ import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 @NoArgsConstructor
 public class CadastroUsuarioController implements Initializable {
-
-
     @Setter
     private Stage cadastroUsuarioStage;
     @FXML
@@ -70,7 +67,7 @@ public class CadastroUsuarioController implements Initializable {
     private final ObservableList<SexoEnum> obsListSexo = FXCollections.observableArrayList();
 
     @Autowired
-    IUsuarioService usuarioService;
+    private IUsuarioService usuarioService;
 
     public static synchronized CadastroUsuarioController getInstance() {
         if (uniqueInstance == null) {

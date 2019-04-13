@@ -2,7 +2,6 @@ package com.viii28stw.pensiltikbackend.service;
 
 
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
-
 import java.util.List;
 
 public interface IUsuarioService {

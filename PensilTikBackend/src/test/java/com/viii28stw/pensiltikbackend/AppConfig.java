@@ -1,4 +1,4 @@
-package com.eighttwentyeightsoftware.pensiltikbackend;
+package com.viii28stw.pensiltikbackend;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

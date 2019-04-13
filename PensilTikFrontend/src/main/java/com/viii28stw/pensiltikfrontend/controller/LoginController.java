@@ -2,12 +2,8 @@ package com.viii28stw.pensiltikfrontend.controller;
 
 
 import com.jfoenix.controls.*;
-import com.viii28stw.pensiltikfrontend.MainApp;
 import com.jfoenix.validation.RequiredFieldValidator;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
+import com.viii28stw.pensiltikfrontend.MainApp;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -25,8 +21,12 @@ import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import lombok.Setter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 /**
  * @author Plamedi L. Lusembo
