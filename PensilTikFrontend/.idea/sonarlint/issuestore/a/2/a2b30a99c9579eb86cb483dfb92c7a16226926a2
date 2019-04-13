@@ -1,13 +1,12 @@
 
-Fsquid:S1604v"(Make this anonymous inner class a lambda(½¶½Ş8ØŒ¾Ü-
-]squid:UselessImportCheck"-Remove this unused import 'java.util.Arrays'.(î–˜Éüÿÿÿÿ8¶¶Şÿ-
-Gsquid:S1604å"(Make this anonymous inner class a lambda(ô¸‡í8Ç¤ÿŸ-
-tsquid:S1192W"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 3 times.(ÉÌ¤Ùùÿÿÿÿ
-Lsquid:S1604—"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8ØŒ¾Ü-
-Gsquid:S1604¬"(Make this anonymous inner class a lambda(ÚÁÀ8ØŒ¾Ü-
-Gsquid:S1604ˆ"(Make this anonymous inner class a lambda(ç¿—8ƒ¯Ì€Ÿ-
-usquid:S3776T"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8Ê€½Ü-
-Jsquid:S1481Õ"+Remove this unused "salvou" local variable.(™‹°¼8Ç¤ÿŸ-
-Fsquid:S1604"(Make this anonymous inner class a lambda(ˆê¤8ë¿½€Ÿ-
-Ysquid:S1854Õ":Remove this useless assignment to local variable "salvou".(™‹°¼8Ç¤ÿŸ-
-Lsquid:S1604µ"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8Â¦€Ÿ-
+Jsquid:S1481Ô"+Remove this unused "salvou" local variable.(™‹°¼8Ç¤ÿŸ-
+Gsquid:S1604«"(Make this anonymous inner class a lambda(ÚÁÀ8ØŒ¾Ü-
+tsquid:S1192V"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 3 times.(ÉÌ¤Ùùÿÿÿÿ
+Ysquid:S1854Ô":Remove this useless assignment to local variable "salvou".(™‹°¼8Ç¤ÿŸ-
+Gsquid:S1604‡"(Make this anonymous inner class a lambda(ç¿—8ƒ¯Ì€Ÿ-
+Fsquid:S1604u"(Make this anonymous inner class a lambda(½¶½Ş8ØŒ¾Ü-
+usquid:S3776S"RRefactor this method to reduce its Cognitive Complexity from 29 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8Ê€½Ü-
+Lsquid:S1604–"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8ØŒ¾Ü-
+Gsquid:S1604ä"(Make this anonymous inner class a lambda(ô¸‡í8Ç¤ÿŸ-
+Lsquid:S1604´"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8Â¦€Ÿ-
+Fsquid:S1604~"(Make this anonymous inner class a lambda(ˆê¤8ë¿½€Ÿ-

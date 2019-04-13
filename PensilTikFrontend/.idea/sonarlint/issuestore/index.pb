@@ -15,12 +15,8 @@ Hsrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/FormMenu.java,d\1\d
 Msrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/UsuarioLogado.java,2\2\228a9d40eaa59029cd5cb832499ff5b1807bc144
 w
 Gsrc/main/java/com/viii28stw/pensiltikfrontend/model/dto/UsuarioDto.java,2\c\2c8b95fd43b43c4aee6bc105a4d44abc6809315a
-w
-Gsrc/main/java/com/viii28stw/pensiltikfrontend/model/entity/Usuario.java,b\8\b8c41ec7f96c883eec24e029a8ef91870f58320a
 y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/service/UsuarioService.java,f\8\f893f5dd23b4b61bd2dad0f66f328bf5e9c793b2
-}
-Msrc/main/java/com/viii28stw/pensiltikfrontend/service/UsuarioServiceImpl.java,2\f\2fa7fac9bfb61bf2306bc78d7c6e640a03d30cbf
 €
 Psrc/main/java/com/viii28stw/pensiltikfrontend/util/DateTimeFormatterFactory.java,3\3\33a762e8476cc85f04adb4429d6c50474e67b80a
 {

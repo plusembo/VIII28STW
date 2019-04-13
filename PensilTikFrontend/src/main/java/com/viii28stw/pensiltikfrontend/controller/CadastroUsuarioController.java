@@ -1,7 +1,6 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import java.net.URL;
-import java.util.Arrays;
 import java.util.ResourceBundle;
 
 import com.jfoenix.controls.*;
