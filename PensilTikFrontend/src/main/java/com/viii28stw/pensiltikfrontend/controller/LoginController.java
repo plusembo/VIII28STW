@@ -4,6 +4,8 @@ package com.viii28stw.pensiltikfrontend.controller;
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
+import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
+import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -35,15 +37,11 @@ import java.util.ResourceBundle;
 @NoArgsConstructor
 public class LoginController implements Initializable {
 
-    @Setter
-    private Stage loginStage;
-    @FXML
-    private JFXTextField jtxEmail;
-    @FXML
-    private JFXPasswordField jpwSenha;
-    @FXML
-    private JFXCheckBox jchxLembrarDeMim;
-
+    @Setter private Stage loginStage;
+    @FXML private JFXTextField jtxEmail;
+    @FXML private JFXPasswordField jpwSenha;
+    @FXML private JFXCheckBox jchxLembrarDeMim;
+    private IUsuarioService usuarioService = UsuarioService.getInstance();
     private static LoginController uniqueInstance;
 
     public static synchronized LoginController getInstance() {
@@ -102,7 +100,6 @@ public class LoginController implements Initializable {
         }
     }
 
-
     @FXML
     private void hlkAbrirUmaContaAction() {
         try {
@@ -150,6 +147,23 @@ public class LoginController implements Initializable {
             jpwSenha.requestFocus();
             return;
         }
+
+        usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
+
+/*
+        if (lembrarDeMim) {
+            Gson gson = new Gson();
+            String json = gson.toJson(usuario);
+
+            try (FileWriter writer = new FileWriter(MainService.getInstance()
+                    .getMacAddress() + ".msst")) {
+                writer.write(json);
+            }
+        } else {
+            new File(MainService.getInstance().getMacAddress() + ".msst").delete();
+        }*/
+
+
         try {
             Stage mdiStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
@@ -167,7 +181,7 @@ public class LoginController implements Initializable {
                 content.setBody(new Text("Você está prestes a fechar o sistema\n"
                         .concat("Tem certeza que deseja fechar o Pensil Tik?")));
 
-                JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
+                    JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
                 JFXButton btnFechar = new JFXButton("Fechar");
                 btnFechar.setStyle("-fx-background-color: #0091EA;");
                 btnFechar.setButtonType(JFXButton.ButtonType.RAISED);

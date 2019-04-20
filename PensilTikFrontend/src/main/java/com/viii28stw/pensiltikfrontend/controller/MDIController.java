@@ -23,7 +23,6 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.awt.*;
 import java.io.IOException;
@@ -54,7 +53,6 @@ public class MDIController implements Initializable {
     @FXML
     private Menu mnCadastro;
 
-    @Autowired
     private Sessao usuarioLogado;
 
     private static MDIController uniqueInstance;
@@ -86,7 +84,7 @@ public class MDIController implements Initializable {
 
         lblDataHora.setText("");
         lstFormsMenu = new ArrayList();
-        KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaHoras());
+        KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaDataHora());
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
@@ -95,10 +93,11 @@ public class MDIController implements Initializable {
         imgvwLogoVergo.setY(50);
     }
 
-    private void atualizaHoras() {
+    private void atualizaDataHora() {
         Locale.setDefault(new Locale("pt", "BR"));
         SimpleDateFormat sdf = new SimpleDateFormat("EEEEEE',' dd/MM/yyyy HH:mm:ss");
-        lblDataHora.setText(sdf.format(Calendar.getInstance().getTime()));
+        String dataHora = sdf.format(Calendar.getInstance().getTime());
+        lblDataHora.setText(dataHora.substring(0,1).toUpperCase().concat(dataHora.substring(1)));
     }
 
     private double calculaX(double w) {

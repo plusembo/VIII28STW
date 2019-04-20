@@ -1,7 +1,9 @@
 package com.viii28stw.pensiltikfrontend.service;
 
+import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
+import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
-import org.springframework.stereotype.Service;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
@@ -9,8 +11,17 @@ import java.util.List;
  * @author Plamedi L. Lusembo
  */
 
-@Service("usuarioService")
+@NoArgsConstructor
 public class UsuarioService implements IUsuarioService {
+
+    private static UsuarioService uniqueInstance;
+
+    public static synchronized UsuarioService getInstance() {
+        if (uniqueInstance == null) {
+            uniqueInstance = new UsuarioService();
+        }
+        return uniqueInstance;
+    }
 
     @Override
     public UsuarioDto buscarUsuarioPorId(String id) {
@@ -43,7 +54,22 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto fazerLogin(String email, String senha){
-        return null;
+        UsuarioDto usuarioDto = null;
+
+
+  /*
+
+        if (usuario != null) {
+            Sessao.getInstance().setUsuario(usuarioDto);
+            Sessao.getInstance().setRequerLogout(false);
+
+
+            return true;
+        }
+*/
+
+
+        return usuarioDto;
     }
 
 }

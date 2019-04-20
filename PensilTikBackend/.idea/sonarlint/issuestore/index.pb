@@ -19,8 +19,6 @@ Fsrc/main/java/com/viii28stw/pensiltikbackend/model/entity/Usuario.java,3\c\3c9
 Nsrc/main/java/com/viii28stw/pensiltikbackend/repository/UsuarioRepository.java,7\7\77151c84a8d3642bc69a0399e4d278987fd4334f
 x
 Hsrc/main/java/com/viii28stw/pensiltikbackend/service/UsuarioService.java,6\9\69fb0cc0e592b5480c5e4f7238ac7c1e5e10fd21
-z
-Jsrc/main/java/com/viii28stw/pensiltikbackend/util/RestTemplateFactory.java,a\7\a784d103f07deb2c891d4b41ea62708988885e84
 r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/util/RandomValue.java,4\9\49484a860d21dbba65f86f7376d3cdbc9435b2a4
 w
@@ -45,7 +43,7 @@ U
 Ptarget/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst,3\d\3da01db98b88a8057c03354880f06dba49d3e795
 ‚
 Rtarget/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst,8\a\8ae396f369da14bb5c0973286facff8fb2c70d56
-|
-Lsrc/main/java/com/viii28stw/pensiltikbackend/service/UsuarioServiceImpl.java,d\c\dc5fedf085059f038a6264f5d7bce2543d9f2b64
 y
 Isrc/main/java/com/viii28stw/pensiltikbackend/service/IUsuarioService.java,4\2\424d6035a72fc225095f98f15c13cf38f24be6a6
+u
+Esrc/main/java/com/viii28stw/pensiltikbackend/util/EmailValidator.java,1\0\10ed1054d30f326d1bc158ede5f6c17f6980e63e

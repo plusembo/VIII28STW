@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
+import javafx.application.Platform;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -9,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.util.ResourceBundle;
  * @author Plamedi L. Lusembo
  */
 
+@NoArgsConstructor
 public class SplashScreenController implements Initializable {
 
     @Setter
@@ -32,7 +35,7 @@ public class SplashScreenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        longStart();
+            longStart();
     }
 
     private void longStart() {

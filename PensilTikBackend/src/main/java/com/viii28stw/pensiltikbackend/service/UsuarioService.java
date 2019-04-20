@@ -3,6 +3,7 @@ package com.viii28stw.pensiltikbackend.service;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.model.entity.Usuario;
 import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
+import com.viii28stw.pensiltikbackend.util.EmailValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -54,7 +55,9 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto salvarUsuario(UsuarioDto usuarioDto) {
-        if (usuarioRepository.existsByEmail(usuarioDto.getEmail())) {
+        if (!EmailValidator.isValidEmail(usuarioDto.getEmail())) {
+                throw new IllegalArgumentException("Este e-mail não é válido");
+        }else if (usuarioRepository.existsByEmail(usuarioDto.getEmail())) {
                 throw new IllegalArgumentException("Este e-mail já existe");
         }
 

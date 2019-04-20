@@ -22,7 +22,54 @@ import java.util.NoSuchElementException;
 public class UsuarioServiceTest {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private IUsuarioService usuarioService;
+
+    @Test(expected = IllegalArgumentException.class)
+    public void salvarUsuarioNaoPodeInformarEmailInvalido() {
+        UsuarioDto usuarioDto = UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email("@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(10))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(LocalDate.now())
+                .build();
+
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7));
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@");
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5));
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + "."+ randomAlphabetic(3));
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + ".");
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(1));
+        usuarioService.salvarUsuario(usuarioDto);
+
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(8));
+        usuarioService.salvarUsuario(usuarioDto);
+    }
+
+    @Test(expected = DataIntegrityViolationException.class)
+    public void salvarUsuarioSenhaNaoPodeTerTamanhoMaiorQue10() {
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(11))
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(LocalDate.now())
+                .build());
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void salvarUsuarioNaoPodeRetornarNuloEnaoDeixarSalvarDoisUsuariosComEmailJaExistente() {
@@ -30,7 +77,7 @@ public class UsuarioServiceTest {
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-                .senha(randomAlphanumeric(8))
+                .senha(randomAlphanumeric(10))
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -91,11 +138,11 @@ public class UsuarioServiceTest {
                 .build());
     }
 
-    @Test(expected = DataIntegrityViolationException.class)
+    @Test(expected = IllegalArgumentException.class)
     public void naoDeixarSalvarUsuarioSemEmail() {
         usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
-                .sobreNome(randomAlphabetic(25))
+                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())

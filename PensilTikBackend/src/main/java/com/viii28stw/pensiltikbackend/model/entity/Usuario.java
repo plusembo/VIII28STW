@@ -3,7 +3,6 @@ package com.viii28stw.pensiltikbackend.model.entity;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
@@ -37,7 +36,7 @@ public class Usuario implements Serializable {
     @Column(name = "EMAIL", length = 25, nullable = false)
     private String email;
 
-    @Column(name = "SENHA", length = 8, nullable = false)
+    @Column(name = "SENHA", length = 10, nullable = false)
     private String senha;
 
     @Enumerated(EnumType.ORDINAL)
@@ -46,6 +45,5 @@ public class Usuario implements Serializable {
 
     @Column(name = "DATA_NASCIMENTO", nullable = false)
     private LocalDate dataNascimento;
-
 
 }

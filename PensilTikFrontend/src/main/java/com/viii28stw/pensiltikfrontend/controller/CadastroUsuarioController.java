@@ -5,7 +5,9 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
+import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
+import com.viii28stw.pensiltikfrontend.util.PasswordValidator;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -16,58 +18,41 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 
 @NoArgsConstructor
 public class CadastroUsuarioController implements Initializable {
-    @Setter
-    private Stage cadastroUsuarioStage;
-    @FXML
-    private JFXTextField jtxNome;
-    @FXML
-    private JFXTextField jtxSobrenome;
-    @FXML
-    private JFXComboBox<SexoEnum> jcbxSexo;
-    @FXML
-    private JFXTextField jtxEmail;
-    @FXML
-    private JFXPasswordField jpwSenha;
-    @FXML
-    private JFXPasswordField jpwConfirmarSenha;
-
-    @FXML
-    private JFXButton jbtnSalvar;
-
-    @FXML
-    private Label lblSexoObrigatorio;
-    @FXML
-    private ImageView imgvwSexoObrigatorio;
-    @FXML
-    private Label lblEmailInvalido;
-    @FXML
-    private ImageView imgvwEmailInvalido;
-
-    @FXML
-    private Label lblConfirmarSenha;
-    @FXML
-    private ImageView imgvwConfirmarSenha;
+    @Getter @Setter private Stage cadastroUsuarioStage;
+    @FXML private JFXTextField jtxNome;
+    @FXML private JFXTextField jtxSobrenome;
+    @FXML private JFXComboBox<SexoEnum> jcbxSexo;
+    @FXML private JFXTextField jtxEmail;
+    @FXML private JFXPasswordField jpwSenha;
+    @FXML private JFXPasswordField jpwConfirmarSenha;
+    @FXML private JFXButton jbtnSalvar;
+    @FXML private Label lblSexoObrigatorio;
+    @FXML private ImageView imgvwSexoObrigatorio;
+    @FXML private Label lblEmailInvalido;
+    @FXML private ImageView imgvwEmailInvalido;
+    @FXML private Label lblSenhaInvalido;
+    @FXML private ImageView imgvwSenhaInvalido;
+    @FXML private Label lblConfirmarSenha;
+    @FXML private ImageView imgvwConfirmarSenha;
     private RequiredFieldValidator confirmarSenhaValidator3 = new RequiredFieldValidator();
-
-    @Setter
-    private boolean modoEdicao;
-    private static CadastroUsuarioController uniqueInstance;
-
+    @Setter private boolean modoEdicao;
     private final ObservableList<SexoEnum> obsListSexo = FXCollections.observableArrayList();
-
-    @Autowired
-    private IUsuarioService usuarioService;
+    private IUsuarioService usuarioService = UsuarioService.getInstance();
+    private static CadastroUsuarioController uniqueInstance;
 
     public static synchronized CadastroUsuarioController getInstance() {
         if (uniqueInstance == null) {
@@ -85,6 +70,10 @@ public class CadastroUsuarioController implements Initializable {
         lblEmailInvalido.setVisible(false);
         imgvwEmailInvalido.setVisible(false);
         lblEmailInvalido.setStyle("-fx-text-fill: #c00d0d;");
+
+        lblSenhaInvalido.setVisible(false);
+        imgvwSenhaInvalido.setVisible(false);
+        lblSenhaInvalido.setStyle("-fx-text-fill: #c00d0d;");
 
         lblConfirmarSenha.setVisible(false);
         imgvwConfirmarSenha.setVisible(false);
@@ -169,7 +158,19 @@ public class CadastroUsuarioController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
                 if (oldValue) {
-                    jpwSenha.validate();
+                    if (jpwSenha.validate()) {
+                        if (PasswordValidator.isValidPassword(jpwSenha.getText())) {
+                            lblSenhaInvalido.setVisible(false);
+                            imgvwSenhaInvalido.setVisible(false);
+                        } else {
+                            lblSenhaInvalido.setText("Senha: Inválido");
+                            lblSenhaInvalido.setVisible(true);
+                            imgvwSenhaInvalido.setVisible(true);
+                        }
+                    } else {
+                        lblSenhaInvalido.setVisible(false);
+                        imgvwSenhaInvalido.setVisible(false);
+                    }
                 }
             }
         });
@@ -196,13 +197,13 @@ public class CadastroUsuarioController implements Initializable {
         if(!validaTodosOsCampos()) {
             return;
         }
-
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(jtxNome.getText())
                 .sobreNome(jtxSobrenome.getText())
                 .sexoEnum(jcbxSexo.getValue())
                 .email(jtxEmail.getText())
                 .senha(jpwSenha.getText())
+                .dataNascimento(LocalDate.now())
                 .build();
 
         UsuarioDto usuarioSalvo = usuarioService.salvarUsuario(usuarioDto);
@@ -214,10 +215,9 @@ public class CadastroUsuarioController implements Initializable {
         content.setHeading(new Text("Salvar Usuário"));
         content.setBody(new Text("Usuário salvo com sucesso"));
 
-        content.setBody(new Text("Usuário salvo com sucesso!\n"
-                .concat(usuarioSalvo.toString())));
+        content.setBody(new Text("Usuário salvo com sucesso!\n".concat(usuarioSalvo.toString())));
 
-        JFXDialog dialog = new JFXDialog(null, content, JFXDialog.DialogTransition.CENTER);
+        JFXDialog dialog = new JFXDialog((StackPane) getCadastroUsuarioStage().getScene().getRoot(), content, JFXDialog.DialogTransition.CENTER);
         JFXButton btnOK = new JFXButton("OK");
         btnOK.setStyle("-fx-background-color: #0091EA;");
         btnOK.setButtonType(JFXButton.ButtonType.RAISED);
@@ -230,7 +230,6 @@ public class CadastroUsuarioController implements Initializable {
         });
         content.setActions(btnOK);
         dialog.show();
-
     }
 
     private boolean validaTodosOsCampos() {
@@ -242,7 +241,16 @@ public class CadastroUsuarioController implements Initializable {
             campoIndex = 6;
         }
 
-        campoIndex = jpwSenha.validate() ? campoIndex : 5;
+        if(jpwSenha.validate()) {
+            if (!PasswordValidator.isValidPassword(jpwSenha.getText())) {
+                lblSenhaInvalido.setText("Senha: Inválido");
+                lblSenhaInvalido.setVisible(true);
+                imgvwSenhaInvalido.setVisible(true);
+                campoIndex = 5;
+            }
+        } else {
+            campoIndex = 5;
+        }
 
         if(jtxEmail.validate()) {
             if (!EmailValidator.isValidEmail(jtxEmail.getText())) {

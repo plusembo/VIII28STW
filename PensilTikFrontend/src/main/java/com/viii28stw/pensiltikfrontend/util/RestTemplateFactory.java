@@ -2,10 +2,6 @@ package com.viii28stw.pensiltikfrontend.util;
 
 import org.springframework.web.client.RestTemplate;
 
-/**
- * @author Plamedi L. Lusembo
- */
-
 public class RestTemplateFactory {
 
     private static final RestTemplate REST_TEMPLATE;

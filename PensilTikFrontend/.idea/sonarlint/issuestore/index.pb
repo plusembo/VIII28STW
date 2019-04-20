@@ -26,8 +26,6 @@ Gsrc/main/java/com/viii28stw/pensiltikfrontend/model/dto/UsuarioDto.java,2\c\2c
 v
 Fsrc/main/java/com/viii28stw/pensiltikfrontend/util/EmailValidator.java,c\a\ca2000bda165e8120c1beca421fd7c70e1a068e4
 {
-Ksrc/main/java/com/viii28stw/pensiltikfrontend/util/RestTemplateFactory.java,8\a\8a0c676d2bbf35eb7cae727faf18c8f7a86ba415
-{
 Ksrc/main/java/com/viii28stw/pensiltikfrontend/controller/MDIController.java,6\5\653a7bc7dd558d5c3f7c91473f19a64f80a480cb
 ƒ
 Ssrc/main/java/com/viii28stw/pensiltikfrontend/controller/ajuda/SobreController.java,a\f\af320dd2475aae44db28ae8715284324ead0c4c8
@@ -39,3 +37,7 @@ z
 Jsrc/main/java/com/viii28stw/pensiltikfrontend/service/IUsuarioService.java,9\e\9e6d5ca88c516eb829fc3c37a1b82306ce0e62ba
 ‡
 Wsrc/main/java/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.java,a\2\a2b30a99c9579eb86cb483dfb92c7a16226926a2
+{
+Ksrc/main/java/com/viii28stw/pensiltikfrontend/util/RestTemplateFactory.java,8\a\8a0c676d2bbf35eb7cae727faf18c8f7a86ba415
+y
+Isrc/main/java/com/viii28stw/pensiltikfrontend/util/PasswordValidator.java,9\e\9e7178e7e822d8d13aae39dbb2c2d7c0e77e2bb4

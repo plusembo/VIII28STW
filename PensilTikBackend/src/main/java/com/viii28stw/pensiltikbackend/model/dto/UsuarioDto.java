@@ -21,23 +21,14 @@ import java.time.LocalDate;
 public class UsuarioDto{
 
     private String id;
-
-    @NotBlank
-    private String nome;
-
-    @NotBlank
-    private String sobreNome;
-
-    @NotBlank
-    @Email
-    private String email;
-
-    @NotBlank
-    private String senha;
-
+    @NotBlank private String nome;
+    @NotBlank private String sobreNome;
+    @NotBlank @Email private String email;
+    @NotBlank private String senha;
     private SexoEnum sexoEnum;
 
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataNascimento;
+
 }

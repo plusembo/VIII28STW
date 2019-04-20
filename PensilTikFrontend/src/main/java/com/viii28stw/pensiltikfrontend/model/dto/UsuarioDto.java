@@ -17,7 +17,6 @@ import java.time.LocalDate;
 @ToString
 @Builder
 public class UsuarioDto{
-
     private String id;
     private String nome;
     private String sobreNome;
@@ -25,4 +24,8 @@ public class UsuarioDto{
     private String senha;
     private SexoEnum sexoEnum;
     private LocalDate dataNascimento;
+    private boolean novoRegistro;
+    private String emailUsuarioSessao;
+    private String senhaUsuarioSessao;
+
 }
