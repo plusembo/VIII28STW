@@ -3,6 +3,7 @@ package com.viii28stw.pensiltikbackend.controller;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.viii28stw.pensiltikbackend.config.BasicAuth;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +54,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -74,6 +76,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -81,7 +84,9 @@ public class UsuarioControllerTest {
         assertNotNull(responseEntityUsuario.getBody());
         then(responseEntityUsuario.getBody() instanceof UsuarioDto);
 
-        ResponseEntity responseEntityUsuario1 = testRestTemplate.exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
+        ResponseEntity responseEntityUsuario1 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
+                .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
         then(responseEntityUsuario1.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -102,6 +107,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -119,6 +125,7 @@ public class UsuarioControllerTest {
         usuarioDto1.setDataNascimento(LocalDate.now());
 
         ResponseEntity responseEntityUsuario1 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + ATUALIZAR_USUARIO, HttpMethod.PUT,
                         new HttpEntity<>(usuarioDto1, httpHeaders), String.class);
 
@@ -127,6 +134,7 @@ public class UsuarioControllerTest {
         then(responseEntityUsuario1.getBody() instanceof UsuarioDto);
 
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.GET,
                         new HttpEntity<>(httpHeaders), String.class);
 
@@ -141,6 +149,7 @@ public class UsuarioControllerTest {
 
         usuarioDto1.setId(null);
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + ATUALIZAR_USUARIO, HttpMethod.PUT,
                         new HttpEntity<>(usuarioDto1, httpHeaders), String.class);
 
@@ -161,6 +170,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -182,6 +192,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -202,6 +213,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -223,6 +235,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -243,6 +256,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -264,6 +278,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -274,6 +289,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7));
         ResponseEntity responseEntityUsuario1 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -283,6 +299,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@");
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -292,6 +309,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5));
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -301,6 +319,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + "."+ randomAlphabetic(3));
         ResponseEntity responseEntityUsuario4 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -310,6 +329,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + ".");
         ResponseEntity responseEntityUsuario5 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -319,6 +339,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(1));
         ResponseEntity responseEntityUsuario6 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -328,6 +349,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(8));
         ResponseEntity responseEntityUsuario7 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -337,6 +359,7 @@ public class UsuarioControllerTest {
 
         usuarioDto.setEmail(randomAlphabetic(7) + randomAlphabetic(5) + "."+ randomAlphabetic(8));
         ResponseEntity responseEntityUsuario8 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -358,6 +381,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -380,6 +404,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -390,6 +415,7 @@ public class UsuarioControllerTest {
         assertNotNull(usuarioDto1);
 
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.GET,
                         request, String.class);
 
@@ -401,12 +427,14 @@ public class UsuarioControllerTest {
         assertEquals(usuarioDto2, usuarioDto1);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
         then(responseEntityUsuario3.getStatusCode()).isEqualTo(HttpStatus.OK);
 
         ResponseEntity responseEntityUsuario4 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.GET,
                         request, String.class);
 
@@ -427,6 +455,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -437,6 +466,7 @@ public class UsuarioControllerTest {
         assertNotNull(usuarioDto1);
 
         ResponseEntity<UsuarioDto[]> responseEntityUsuarios = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_TODOS_OS_USUARIOS, HttpMethod.GET,
                         new HttpEntity<>(httpHeaders), UsuarioDto[].class);
 
@@ -465,6 +495,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -475,12 +506,14 @@ public class UsuarioControllerTest {
         assertNotNull(usuarioDto1);
 
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
         then(responseEntityUsuario2.getStatusCode()).isEqualTo(HttpStatus.OK);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.GET,
                         request, String.class);
 
@@ -503,6 +536,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -513,12 +547,14 @@ public class UsuarioControllerTest {
         assertNotNull(usuarioDto1);
 
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
         then(responseEntityUsuario2.getStatusCode()).isEqualTo(HttpStatus.OK);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
@@ -541,6 +577,7 @@ public class UsuarioControllerTest {
                 .build();
 
         ResponseEntity responseEntityUsuario = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
@@ -551,6 +588,7 @@ public class UsuarioControllerTest {
         assertNotNull(usuarioDto1);
 
         ResponseEntity responseEntityUsuario2 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN + usuarioDto1.getEmail() + "/" + usuarioDto1.getSenha(),
                         HttpMethod.GET, request, String.class);
 
@@ -562,12 +600,14 @@ public class UsuarioControllerTest {
         assertEquals(usuarioDto2, usuarioDto1);
 
         ResponseEntity responseEntityUsuario3 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + DELETAR_USUARIO_POR_ID + usuarioDto1.getId(), HttpMethod.DELETE,
                         request, String.class);
 
         then(responseEntityUsuario3.getStatusCode()).isEqualTo(HttpStatus.OK);
 
         ResponseEntity responseEntityUsuario4 = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN + usuarioDto1.getEmail() + "/" + usuarioDto1.getSenha(),
                         HttpMethod.GET, request, String.class);
 

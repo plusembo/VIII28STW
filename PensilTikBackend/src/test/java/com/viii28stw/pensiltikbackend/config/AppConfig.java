@@ -1,4 +1,4 @@
-package com.viii28stw.pensiltikbackend;
+package com.viii28stw.pensiltikbackend.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
@@ -20,5 +20,7 @@ public class AppConfig {
     public ObjectMapper getMapper() {
         return new ObjectMapper();
     }
+
+
 
 }
