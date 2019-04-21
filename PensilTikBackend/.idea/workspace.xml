@@ -8,25 +8,17 @@
   <component name="ChangeListManager">
     <list default="true" id="61be7ef2-21da-47cc-af7a-f03867c978cb" name="Default Changelist" comment="Fim dos primeiros testes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/4/9/49484a860d21dbba65f86f7376d3cdbc9435b2a4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto$UsuarioDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto$UsuarioDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/6/5/653a7bc7dd558d5c3f7c91473f19a64f80a480cb" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/6/5/653a7bc7dd558d5c3f7c91473f19a64f80a480cb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/7/d/7d68409eff9e451ee1c9b8d2466d137c2c416180" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/7/d/7d68409eff9e451ee1c9b8d2466d137c2c416180" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/8/7/87567aa68d090c6733a078746a591ca0176ff626" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/a/2/a2b30a99c9579eb86cb483dfb92c7a16226926a2" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/a/2/a2b30a99c9579eb86cb483dfb92c7a16226926a2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/a/c/ac4226ad4d69cade2ae82412b5fb2dfc70340603" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/a/c/ac4226ad4d69cade2ae82412b5fb2dfc70340603" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/c/b/cb7446c7524b1928ea039e38433d2a5e1a73acf1" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/c/b/cb7446c7524b1928ea039e38433d2a5e1a73acf1" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/f/8/f893f5dd23b4b61bd2dad0f66f328bf5e9c793b2" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/f/8/f893f5dd23b4b61bd2dad0f66f328bf5e9c793b2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/MDIController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/MDIController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/SplashScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/SplashScreenController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/ajuda/SobreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/ajuda/SobreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/model/domain/Sessao.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/model/domain/Sessao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/service/UsuarioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/view/cadastro_usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/view/cadastro_usuario.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/view/cadastro_usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/view/cadastro_usuario.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -39,10 +31,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/controller/UsuarioControllerTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1806">
-              <caret line="109" column="39" selection-start-line="109" selection-start-column="33" selection-end-line="109" selection-end-column="39" />
+            <state relative-caret-position="133">
+              <caret line="12" column="27" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -51,27 +43,23 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/config/SpringSecurityConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="23" />
+            <state relative-caret-position="79">
+              <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#582#583#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
+                <element signature="e#526#558#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -122,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/Teste.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/repository/UsuarioRepositoryImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/repository/UsuarioRepository.java" />
         <option value="$PROJECT_DIR$/src/main/resources/ValidationMessages.properties" />
@@ -167,12 +154,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/entity/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/service/UsuarioService.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/util/EmailValidator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/service/UsuarioServiceTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/controller/UsuarioControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/config/SpringSecurityConfig.java" />
       </list>
     </option>
   </component>
@@ -199,7 +187,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -237,25 +224,6 @@
               <item name="PensilTikBackend" type="b2602c69:ProjectViewProjectNode" />
               <item name="PensilTikBackend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pensiltikbackend" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PensilTikBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PensilTikBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="pensiltikbackend" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
-              <item name="dto" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PensilTikBackend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PensilTikBackend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -286,6 +254,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -327,11 +296,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UsuarioControllerTest">
-    <configuration name="All in PensilTikBackend (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.MainApp">
+    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.viii28stw.pensiltikbackend.MainApp" />
       <module name="PensilTikBackend" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -374,19 +342,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.All in PensilTikBackend (1)" />
       <item itemvalue="JUnit.All in PensilTikBackend (2)" />
       <item itemvalue="JUnit.UsuarioControllerTest" />
       <item itemvalue="JUnit.UsuarioControllerTest.buscarTodosOsUsuarios" />
       <item itemvalue="JUnit.UsuarioServiceTest.naoDeixarSalvarUsuarioSemEmail" />
+      <item itemvalue="Application.MainApp" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MainApp" />
         <item itemvalue="JUnit.UsuarioControllerTest" />
         <item itemvalue="JUnit.UsuarioControllerTest.buscarTodosOsUsuarios" />
         <item itemvalue="JUnit.All in PensilTikBackend (2)" />
         <item itemvalue="JUnit.UsuarioServiceTest.naoDeixarSalvarUsuarioSemEmail" />
-        <item itemvalue="JUnit.All in PensilTikBackend (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -451,21 +419,21 @@
     <frame x="-6" y="-6" width="1293" height="733" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22753036" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2631579" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.30721965" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.049751244" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.7562189" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.077943616" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.12749615" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.14593698" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50040483" side_tool="true" weight="0.41956884" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.3897181" />
       <window_info anchor="bottom" id="SonarLint" order="11" weight="0.11608624" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -539,7 +507,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/joda-time/joda-time/2.3/joda-time-2.3.jar!/org/joda/time/format/DateTimeFormat.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/model/entity/Versao.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/eighttwentyeightsoftware/pensiltikbackend/util/ConvertorDtoEntity.java" />
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.3.RELEASE/spring-web-5.1.3.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
@@ -678,13 +645,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/service/UsuarioServiceImpl.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/util/UrlPrefixFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -693,23 +653,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/util/RestTemplateFactory.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="15" column="59" lean-forward="true" selection-start-line="15" selection-start-column="59" selection-end-line="15" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="11" column="15" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/entity/Usuario.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="113">
@@ -771,24 +714,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="12" column="37" lean-forward="true" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#582#583#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="23" />
+        <state relative-caret-position="210">
+          <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="12" column="27" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/config/SpringSecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="14" column="81" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#526#558#0" expanded="true" />
           </folding>
         </state>
       </provider>

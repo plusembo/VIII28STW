@@ -1,6 +1,5 @@
 
-Msquid:S1172."1Remove this unused method parameter "usuarioDto".(ýžÅÆùÿÿÿÿ
-Xsquid:UnusedPrivateMethod.".Remove this unused private "persistir" method.(ýžÅÆùÿÿÿÿ
 Bsquid:S1168!"+Return an empty collection instead of null.(¥¹ï
-nsquid:CommentedOutCodeLine>"<This block of commented-out lines of code should be removed.(¶Ôçúÿÿÿÿ8¥‘ÞÛ£-
-€squid:S14889"bImmediately return this expression instead of assigning it to the temporary variable "usuarioDto".(þŸåæ8¥‘ÞÛ£-
+Xsquid:UnusedPrivateMethod.".Remove this unused private "persistir" method.(ýžÅÆùÿÿÿÿ
+gsquid:S2583:"DChange this condition so that it does not always evaluate to "false"(ÒŠ‘âúÿÿÿÿ8Ù«ºì£-
+Msquid:S1172."1Remove this unused method parameter "usuarioDto".(ýžÅÆùÿÿÿÿ

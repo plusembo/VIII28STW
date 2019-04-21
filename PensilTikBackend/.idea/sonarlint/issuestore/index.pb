@@ -47,3 +47,5 @@ y
 Isrc/main/java/com/viii28stw/pensiltikbackend/service/IUsuarioService.java,4\2\424d6035a72fc225095f98f15c13cf38f24be6a6
 u
 Esrc/main/java/com/viii28stw/pensiltikbackend/util/EmailValidator.java,1\0\10ed1054d30f326d1bc158ede5f6c17f6980e63e
+}
+Msrc/main/java/com/viii28stw/pensiltikbackend/config/SpringSecurityConfig.java,1\1\1116b57ec08b35c89b3f57153a8eb6f06a9b3c1d

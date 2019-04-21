@@ -1,18 +1,14 @@
 
-Gsquid:S1604Î"(Make this anonymous inner class a lambda(¾à–8·ìèá£-
-Dsquid:S1604D"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
-hsquid:S4042¥"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ€§Û8«Ëúá£-
-Y
-squid:S899¥";Do something with the "boolean" value returned by "delete".(Œ€§Û8«Ëúá£-
-Gsquid:S1604Ö"(Make this anonymous inner class a lambda(Åì€8·ìèá£-
-„squid:S2273à"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8·ìèá£-
-Gsquid:S1148â"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8·ìèá£-
-Gsquid:S1148¢"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8§’÷á£-
-Isquid:S00108í")Either remove or fill this block of code.(Ãôş•8ŸãÛá£-
-?squid:S1604L"(Make this anonymous inner class a lambda(ÚÁÀ
-Ysquid:S2274à":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8·ìèá£-
-P
-squid:S106"9Replace this use of System.out or System.err by a logger.(ö¬
-esquid:S1871’"MThis branch's code block is the same as the block for the branch on line 143.(Ğ½ö®
-esquid:S2142á"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8·ìèá£-
-osquid:CommentedOutCodeLine«"<This block of commented-out lines of code should be removed.(›ûêÌùÿÿÿÿ8·ìèá£-
+Gsquid:S1604Ş"(Make this anonymous inner class a lambda(Åì€8ÅŒñê£-
+?squid:S1604Y"(Make this anonymous inner class a lambda(ÚÁÀ
+msquid:S4042¹"IUse "java.nio.Files#delete" here for better messages on error conditions.(ìÙõèùÿÿÿÿ8ÅŒñê£-
+Gsquid:S1148ê"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÅŒñê£-
+Dsquid:S1604Q"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
+Ysquid:S2274è":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8ÅŒñê£-
+lsquid:S1192œ"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(¾Á¯»úÿÿÿÿ8¦¶ì£-
+esquid:S2142é"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÅŒñê£-
+„squid:S2273è"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8ÅŒñê£-
+^
+squid:S899¹";Do something with the "boolean" value returned by "delete".(ìÙõèùÿÿÿÿ8ÅŒñê£-
+Gsquid:S1604Ö"(Make this anonymous inner class a lambda(¾à–8ÅŒñê£-
+esquid:S1871¤"MThis branch's code block is the same as the block for the branch on line 161.(Ğ½ö®
