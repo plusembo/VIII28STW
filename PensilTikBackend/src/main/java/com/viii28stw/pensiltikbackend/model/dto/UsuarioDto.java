@@ -30,5 +30,8 @@ public class UsuarioDto{
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataNascimento;
+    private boolean novoRegistro;
+    private String emailUsuarioSessao;
+    private String senhaUsuarioSessao;
 
 }

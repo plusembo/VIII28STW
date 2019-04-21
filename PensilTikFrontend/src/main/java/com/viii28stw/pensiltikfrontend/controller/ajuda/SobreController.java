@@ -16,10 +16,8 @@ import java.util.ResourceBundle;
 @NoArgsConstructor
 public class SobreController implements Initializable {
 
-    @FXML
-    private Label lblVersao;
-    @Setter
-    private Stage formStage;
+    @FXML private Label lblVersao;
+    @Setter private Stage formStage;
     private static SobreController uniqueInstance;
 
     /**

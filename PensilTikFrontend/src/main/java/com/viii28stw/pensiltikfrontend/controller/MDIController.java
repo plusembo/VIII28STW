@@ -23,13 +23,14 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Plamedi L. Lusembo
@@ -286,7 +287,9 @@ public class MDIController implements Initializable {
                 }
             }
 
-        } catch (IOException e) { }
+        } catch (IOException ex) {
+            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
 
     }
 

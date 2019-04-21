@@ -1,11 +1,15 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
+import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
+import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
+import com.viii28stw.pensiltikfrontend.util.Utility;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -25,10 +29,12 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author Plamedi L. Lusembo
@@ -53,6 +59,16 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+
+        try {
+            Usuario usuario = lembraDeMim();
+            jchxLembrarDeMim.setSelected(true);
+            jtxEmail.setText(usuario.getEmail());
+            jpwSenha.setText(usuario.getSenha());
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+
         RequiredFieldValidator emailValidator = new RequiredFieldValidator();
         RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
 
@@ -123,7 +139,7 @@ public class LoginController implements Initializable {
             jtxEmail.requestFocus();
 
         } catch (IOException ex) {
-            System.out.println(ex);
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
@@ -133,6 +149,11 @@ public class LoginController implements Initializable {
         jchxLembrarDeMim.setSelected(false);
         jtxEmail.resetValidation();
         jpwSenha.resetValidation();
+    }
+
+    private Usuario lembraDeMim() throws IOException {
+        return new ObjectMapper()
+                .readValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), Usuario.class);
     }
 
     @FXML
@@ -147,22 +168,26 @@ public class LoginController implements Initializable {
             jpwSenha.requestFocus();
             return;
         }
+        UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
+        if(usuarioDto != null) {
+            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
+                                               .nome(usuarioDto.getNome())
+                                               .sobreNome(usuarioDto.getSobreNome())
+                                               .email(usuarioDto.getEmail())
+                                               .senha(usuarioDto.getSenha())
+                                               .sexoEnum(usuarioDto.getSexoEnum())
+                                               .dataNascimento(usuarioDto.getDataNascimento())
+                                               .build();
 
-        usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
-
-/*
-        if (lembrarDeMim) {
-            Gson gson = new Gson();
-            String json = gson.toJson(usuario);
-
-            try (FileWriter writer = new FileWriter(MainService.getInstance()
-                    .getMacAddress() + ".msst")) {
-                writer.write(json);
+            try { if(jchxLembrarDeMim.isSelected()) {
+                new ObjectMapper().writeValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), usuario);
+           } else {
+                new File(Utility.getInstance().getMacAddress().concat(".texugo")).delete();
+           }
+           } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             }
-        } else {
-            new File(MainService.getInstance().getMacAddress() + ".msst").delete();
-        }*/
-
+        }
 
         try {
             Stage mdiStage = new Stage();
@@ -218,6 +243,7 @@ public class LoginController implements Initializable {
             jtxEmail.requestFocus();
 
         } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 

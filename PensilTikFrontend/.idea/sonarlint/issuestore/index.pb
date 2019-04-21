@@ -1,10 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-r
-Bsrc/test/java/com/viii28stw/pensiltikbackend/util/RandomValue.java,4\9\49484a860d21dbba65f86f7376d3cdbc9435b2a4
-w
-Gsrc/test/java/com/viii28stw/pensiltikbackend/util/UrlPrefixFactory.java,8\7\87567aa68d090c6733a078746a591ca0176ff626
 j
 :src/main/java/com/viii28stw/pensiltikfrontend/MainApp.java,a\8\a8800b85c24dc5e310a34f49bbde23de2725dd98
 „
@@ -41,3 +37,5 @@ Wsrc/main/java/com/viii28stw/pensiltikfrontend/controller/CadastroUsuarioControl
 Ksrc/main/java/com/viii28stw/pensiltikfrontend/util/RestTemplateFactory.java,8\a\8a0c676d2bbf35eb7cae727faf18c8f7a86ba415
 y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/util/PasswordValidator.java,9\e\9e7178e7e822d8d13aae39dbb2c2d7c0e77e2bb4
+o
+?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603

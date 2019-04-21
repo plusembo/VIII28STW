@@ -91,6 +91,19 @@
                   </ImageView>
                </children>
             </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="54.0" layoutY="254.0" prefHeight="20.0" prefWidth="259.0" spacing="147.0">
+               <children>
+                  <Label fx:id="lblSenhaInvalido" prefHeight="20.0" prefWidth="96.0" styleClass="label-notificacao" text="Senha: Inválida" />
+                  <ImageView fx:id="imgvwSenhaInvalido" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/validator-error.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets right="2.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
          </children>
       </AnchorPane>  
    </children>

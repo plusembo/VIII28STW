@@ -55,20 +55,19 @@ public class UsuarioService implements IUsuarioService {
     @Override
     public UsuarioDto fazerLogin(String email, String senha){
         UsuarioDto usuarioDto = null;
+        if (usuarioDto != null) {
+            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
+                    .nome(usuarioDto.getNome())
+                    .sobreNome(usuarioDto.getSobreNome())
+                    .email(usuarioDto.getEmail())
+                    .senha(usuarioDto.getSenha())
+                    .sexoEnum(usuarioDto.getSexoEnum())
+                    .dataNascimento(usuarioDto.getDataNascimento())
+                    .build();
 
-
-  /*
-
-        if (usuario != null) {
-            Sessao.getInstance().setUsuario(usuarioDto);
+            Sessao.getInstance().setUsuario(usuario);
             Sessao.getInstance().setRequerLogout(false);
-
-
-            return true;
         }
-*/
-
-
         return usuarioDto;
     }
 

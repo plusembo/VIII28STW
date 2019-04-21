@@ -16,6 +16,7 @@ com\viii28stw\pensiltikfrontend\controller\SplashScreenController$1$1.class
 com\viii28stw\pensiltikfrontend\model\domain\FormMenu$FormMenuBuilder.class
 com\viii28stw\pensiltikfrontend\controller\CadastroUsuarioController$5.class
 com\viii28stw\pensiltikfrontend\controller\CadastroUsuarioController$2.class
+com\viii28stw\pensiltikfrontend\AppConfig.class
 com\viii28stw\pensiltikfrontend\util\PasswordValidator.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController.class

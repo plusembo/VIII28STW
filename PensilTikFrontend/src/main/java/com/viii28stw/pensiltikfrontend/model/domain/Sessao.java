@@ -19,7 +19,4 @@ public class Sessao {
         }
         return uniqueInstance;
     }
-
-
-
 }
