@@ -1,0 +1,6 @@
+
+’squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ôøÈèûÿÿÿÿ8şÚ¤¹¥-
+rsquid:S1192"ODefine a constant instead of duplicating this literal "user_logged_in" 4 times.(„±™œüÿÿÿÿ8ÏÑĞ¹¥-
+’squid:S13196"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(‰Œ™ôúÿÿÿÿ8ùí§¹¥-
+’squid:S1319-"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ÿ§ç¢şÿÿÿÿ8™¦¹¥-
+squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(·€¼ë8 £¹¥-

@@ -117,6 +117,16 @@ public class UsuarioControllerTest {
 
         assertNotNull(usuarioDto1);
 
+        HttpEntity request = new HttpEntity<>(httpHeaders);
+        ResponseEntity responseEntityLogin = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
+                .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN + usuarioDto1.getEmail() + "/" + usuarioDto1.getSenha(),
+                        HttpMethod.GET, request, String.class);
+
+        then(responseEntityLogin.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        httpHeaders.add("user_logged_in", usuarioDto1.getEmail());
+
         usuarioDto1.setNome(randomAlphabetic(25));
         usuarioDto1.setSobreNome(randomAlphabetic(25));
         usuarioDto1.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
@@ -141,7 +151,6 @@ public class UsuarioControllerTest {
         then(responseEntityUsuario2.getStatusCode()).isEqualTo(HttpStatus.OK);
         assertNotNull(responseEntityUsuario2.getBody());
         then(responseEntityUsuario2.getBody() instanceof UsuarioDto);
-
 
         UsuarioDto usuarioDto3 = mapper.readValue(responseEntityUsuario2.getBody().toString(), UsuarioDto.class);
 
@@ -465,6 +474,15 @@ public class UsuarioControllerTest {
 
         assertNotNull(usuarioDto1);
 
+        HttpEntity request = new HttpEntity<>(httpHeaders);
+        ResponseEntity responseEntityLogin = testRestTemplate
+                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
+                .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN + usuarioDto1.getEmail() + "/" + usuarioDto1.getSenha(),
+                        HttpMethod.GET, request, String.class);
+
+        then(responseEntityLogin.getStatusCode()).isEqualTo(HttpStatus.OK);
+
+        httpHeaders.add("user_logged_in", usuarioDto1.getEmail());
         ResponseEntity<UsuarioDto[]> responseEntityUsuarios = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_TODOS_OS_USUARIOS, HttpMethod.GET,

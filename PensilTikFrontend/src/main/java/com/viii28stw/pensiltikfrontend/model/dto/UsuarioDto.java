@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikfrontend.model.dto;
 
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.UsuarioTipoAcessoEnum;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -24,8 +25,6 @@ public class UsuarioDto{
     private String senha;
     private SexoEnum sexoEnum;
     private LocalDate dataNascimento;
-    private boolean novoRegistro;
-    private String emailUsuarioSessao;
-    private String senhaUsuarioSessao;
+    private UsuarioTipoAcessoEnum usuarioTipoAcessoEnum;
 
 }

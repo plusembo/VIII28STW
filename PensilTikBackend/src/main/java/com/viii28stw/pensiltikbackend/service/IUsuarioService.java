@@ -18,4 +18,6 @@ public interface IUsuarioService {
 
     UsuarioDto fazerLogin(String email, String senha);
 
+    void sair(String email);
+
 }

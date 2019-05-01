@@ -1,14 +1,14 @@
 
-Gsquid:S1604ή"(Make this anonymous inner class a lambda(Εμ€8Ερκ£-
-?squid:S1604Y"(Make this anonymous inner class a lambda(ΪΑΐ
-msquid:S4042Ή"IUse "java.nio.Files#delete" here for better messages on error conditions.(μΩυθωÿÿÿÿ8Ερκ£-
-Gsquid:S1148κ"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Ερκ£-
-Dsquid:S1604Q"(Make this anonymous inner class a lambda(ε­ίΑϊÿÿÿÿ
-Ysquid:S2274θ":Remove this call to "wait" or move it into a "while" loop.(Ό’–ÿ8Ερκ£-
-lsquid:S1192"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(ΎΑ―»ϊÿÿÿÿ8¦¶μ£-
-esquid:S2142ι"FEither re-interrupt this method or rethrow the "InterruptedException".(δ Ή€8Ερκ£-
-„squid:S2273θ"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(Ό’–ÿ8Ερκ£-
+msquid:S4042Α"IUse "java.nio.Files#delete" here for better messages on error conditions.(μΩυθωÿÿÿÿ8Ερκ£-
+lsquid:S1192΅"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(ΎΑ―»ϊÿÿÿÿ8¦¶μ£-
 ^
-squid:S899Ή";Do something with the "boolean" value returned by "delete".(μΩυθωÿÿÿÿ8Ερκ£-
-Gsquid:S1604Φ"(Make this anonymous inner class a lambda(Ύΰ–8Ερκ£-
-esquid:S1871¤"MThis branch's code block is the same as the block for the branch on line 161.(Π½φ®
+squid:S899Α";Do something with the "boolean" value returned by "delete".(μΩυθωÿÿÿÿ8Ερκ£-
+Ysquid:S2274ο":Remove this call to "wait" or move it into a "while" loop.(Ό’–ÿ8Ερκ£-
+Gsquid:S1604ε"(Make this anonymous inner class a lambda(Εμ€8Ερκ£-
+?squid:S1604^"(Make this anonymous inner class a lambda(ΪΑΐ
+„squid:S2273ο"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(Ό’–ÿ8Ερκ£-
+esquid:S2142π"FEither re-interrupt this method or rethrow the "InterruptedException".(δ Ή€8Ερκ£-
+Dsquid:S1604V"(Make this anonymous inner class a lambda(ε­ίΑϊÿÿÿÿ
+Gsquid:S1604έ"(Make this anonymous inner class a lambda(Ύΰ–8Ερκ£-
+Gsquid:S1148ρ"#Use a logger to log this exception.(€ΙΤ…ύÿÿÿÿ8Ερκ£-
+esquid:S1871©"MThis branch's code block is the same as the block for the branch on line 166.(Π½φ®

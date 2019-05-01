@@ -33,8 +33,6 @@ v
 Fsrc/main/java/com/viii28stw/pensiltikbackend/model/dto/UsuarioDto.java,0\b\0be71d18c48a73757f5aecc58b77b61c29466ff5
 r
 Bsrc/main/java/com/viii28stw/pensiltikbackend/util/IdGenerator.java,6\a\6a566a376f17793f22af418d1d7b3b299b6dfbbf
-k
-;src/test/java/com/viii28stw/pensiltikbackend/AppConfig.java,e\3\e3baa15889346a3abc20bc0c468ba7567b148969
 S
 #target/classes/META-INF/MANIFEST.MF,f\7\f76abc2c22b7d3412c31aa4fe8ff12afaab05b80
 U
@@ -49,3 +47,9 @@ u
 Esrc/main/java/com/viii28stw/pensiltikbackend/util/EmailValidator.java,1\0\10ed1054d30f326d1bc158ede5f6c17f6980e63e
 }
 Msrc/main/java/com/viii28stw/pensiltikbackend/config/SpringSecurityConfig.java,1\1\1116b57ec08b35c89b3f57153a8eb6f06a9b3c1d
+r
+Bsrc/test/java/com/viii28stw/pensiltikbackend/config/AppConfig.java,b\b\bbbdd6025a0b72785885468f72ae87d982eda4fc
+r
+Bsrc/test/java/com/viii28stw/pensiltikbackend/config/BasicAuth.java,d\d\ddc008929af0fe4da133cf14faff229e7c4befc6
+ƒ
+Ssrc/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioTipoAcessoEnum.java,f\b\fb5368e7a334dc85bb8c43825a56cd1d6b6cdcc9

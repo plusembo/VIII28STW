@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikbackend.model.entity;
 
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioTipoAcessoEnum;
 import lombok.*;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
@@ -45,5 +46,9 @@ public class Usuario implements Serializable {
 
     @Column(name = "DATA_NASCIMENTO", nullable = false)
     private LocalDate dataNascimento;
+
+    @Enumerated(EnumType.ORDINAL)
+    @Column(name = "TIPO_ACESSO", nullable = false)
+    private UsuarioTipoAcessoEnum usuarioTipoAcessoEnum;
 
 }

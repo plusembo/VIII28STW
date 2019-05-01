@@ -1,5 +1,5 @@
 
-Bsquid:S1168!"+Return an empty collection instead of null.(¥¹ï
-Xsquid:UnusedPrivateMethod.".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ
 gsquid:S2583:"DChange this condition so that it does not always evaluate to "false"(ÒŠ‘âúÿÿÿÿ8Ù«ºì£-
+Bsquid:S1168!"+Return an empty collection instead of null.(¥¹ï
 Msquid:S1172."1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ
+Xsquid:UnusedPrivateMethod.".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ

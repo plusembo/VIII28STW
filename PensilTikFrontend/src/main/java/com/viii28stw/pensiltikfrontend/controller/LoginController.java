@@ -29,6 +29,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -43,10 +44,14 @@ import java.util.logging.Logger;
 @NoArgsConstructor
 public class LoginController implements Initializable {
 
-    @Setter private Stage loginStage;
-    @FXML private JFXTextField jtxEmail;
-    @FXML private JFXPasswordField jpwSenha;
-    @FXML private JFXCheckBox jchxLembrarDeMim;
+    @Setter
+    private Stage loginStage;
+    @FXML
+    private JFXTextField jtxEmail;
+    @FXML
+    private JFXPasswordField jpwSenha;
+    @FXML
+    private JFXCheckBox jchxLembrarDeMim;
     private IUsuarioService usuarioService = UsuarioService.getInstance();
     private static LoginController uniqueInstance;
 
@@ -104,14 +109,14 @@ public class LoginController implements Initializable {
 
     @FXML
     private void jtxEmailOnKeyPressed(KeyEvent evt) {
-        if(evt.getCode() == KeyCode.ENTER) {
+        if (evt.getCode() == KeyCode.ENTER) {
             this.jbtnEntrarOnAction();
         }
     }
 
     @FXML
     private void jpwSenhaOnKeyPressed(KeyEvent evt) {
-        if(evt.getCode() == KeyCode.ENTER) {
+        if (evt.getCode() == KeyCode.ENTER) {
             this.jbtnEntrarOnAction();
         }
     }
@@ -169,26 +174,28 @@ public class LoginController implements Initializable {
             return;
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
-        if(usuarioDto != null) {
-            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
-                                               .nome(usuarioDto.getNome())
-                                               .sobreNome(usuarioDto.getSobreNome())
-                                               .email(usuarioDto.getEmail())
-                                               .senha(usuarioDto.getSenha())
-                                               .sexoEnum(usuarioDto.getSexoEnum())
-                                               .dataNascimento(usuarioDto.getDataNascimento())
-                                               .build();
+        if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
 
-            try { if(jchxLembrarDeMim.isSelected()) {
-                new ObjectMapper().writeValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), usuario);
-           } else {
-                new File(Utility.getInstance().getMacAddress().concat(".texugo")).delete();
-           }
-           } catch (IOException ex) {
+        new Thread(() -> {
+            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
+                    .nome(usuarioDto.getNome())
+                    .sobreNome(usuarioDto.getSobreNome())
+                    .email(usuarioDto.getEmail())
+                    .senha(usuarioDto.getSenha())
+                    .sexoEnum(usuarioDto.getSexoEnum())
+                    .dataNascimento(usuarioDto.getDataNascimento())
+                    .build();
+            try {
+                if (jchxLembrarDeMim.isSelected()) {
+                    new ObjectMapper()
+                            .writeValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), usuario);
+                } else {
+                    new File(Utility.getInstance().getMacAddress().concat(".texugo")).delete();
+                }
+            } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             }
-        }
-
+        }).start();
         try {
             Stage mdiStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
@@ -206,7 +213,7 @@ public class LoginController implements Initializable {
                 content.setBody(new Text("Você está prestes a fechar o sistema\n"
                         .concat("Tem certeza que deseja fechar o Pensil Tik?")));
 
-                    JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
+                JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
                 JFXButton btnFechar = new JFXButton("Fechar");
                 btnFechar.setStyle("-fx-background-color: #0091EA;");
                 btnFechar.setButtonType(JFXButton.ButtonType.RAISED);

@@ -1,0 +1,1 @@
+Não pode exluir um usuário logado

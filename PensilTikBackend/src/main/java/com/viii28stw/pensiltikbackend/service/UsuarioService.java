@@ -4,18 +4,22 @@ import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.model.entity.Usuario;
 import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
 import com.viii28stw.pensiltikbackend.util.EmailValidator;
+import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.NoSuchElementException;
-import java.util.Optional;
+
+import java.util.*;
 
 @Service("usuarioService")
 public class UsuarioService implements IUsuarioService {
 
-    @Autowired
-    private UsuarioRepository usuarioRepository;
+    @Autowired private UsuarioRepository usuarioRepository;
+    private final Set<String> userLoggedIn = new HashSet();
+
+    public boolean isUserLoggedIn(String email) {
+        return userLoggedIn.stream()
+                .filter(us -> us.equals(email)).findFirst().orElse(null) != null;
+    }
 
     @Override
     public UsuarioDto buscarUsuarioPorId(String id) {
@@ -106,8 +110,9 @@ public class UsuarioService implements IUsuarioService {
         if(usuarioRepository.findByEmailAndSenha(email, senha) == null) {
             throw new NoSuchElementException("E-mail ou senha incorreta");
         }
-
         Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+
+        userLoggedIn.add(usuario.getEmail());
 
         return UsuarioDto.builder()
                 .id(usuario.getId())
@@ -118,6 +123,13 @@ public class UsuarioService implements IUsuarioService {
                 .sexoEnum(usuario.getSexoEnum())
                 .dataNascimento(usuario.getDataNascimento())
                 .build();
+    }
+
+    @Override
+    public void sair(String email){
+        if(userLoggedIn.remove(email)) {
+            throw new NoSuchElementException("usuário não está logado");
+        }
     }
 
 }

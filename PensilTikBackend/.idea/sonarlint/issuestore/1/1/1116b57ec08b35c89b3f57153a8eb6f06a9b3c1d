@@ -1,6 +1,4 @@
 
-jsquid:CallToDeprecatedMethod.";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(¦œÏž8ê¤ÿþ£-
-jsquid:CallToDeprecatedMethod.";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(¦œÏž8ê¤ÿþ£-
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Ñ´¼žÿÿÿÿÿ
-osquid:CallToDeprecatedMethod-";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(ñ˜Ñþÿÿÿÿÿ8ê¤ÿþ£-
-nsquid:CommentedOutCodeLine&"<This block of commented-out lines of code should be removed.(•½ñßýÿÿÿÿ8ê¤ÿþ£-
+osquid:CallToDeprecatedMethod"";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(ñ˜Ñþÿÿÿÿÿ8’ñÔ¤-
+jsquid:CallToDeprecatedMethod#";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(¦œÏž8’ñÔ¤-
+jsquid:CallToDeprecatedMethod#";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(¦œÏž8’ñÔ¤-
