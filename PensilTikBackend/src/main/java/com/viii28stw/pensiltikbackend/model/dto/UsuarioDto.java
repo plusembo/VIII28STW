@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.viii28stw.pensiltikbackend.enumeration.UsuarioTipoAcessoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
 import lombok.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -31,6 +31,6 @@ public class UsuarioDto{
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataNascimento;
 
-    private UsuarioTipoAcessoEnum usuarioTipoAcessoEnum;
+    private UsuarioNivelAcessoEnum usuarioNivelAcessoEnum;
 
 }

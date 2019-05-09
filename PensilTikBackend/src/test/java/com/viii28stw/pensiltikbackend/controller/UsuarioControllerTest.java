@@ -1,9 +1,12 @@
 package com.viii28stw.pensiltikbackend.controller;
 
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikbackend.config.BasicAuth;
+import com.viii28stw.pensiltikbackend.service.IUsuarioService;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,11 +18,13 @@ import org.springframework.http.*;
 import org.springframework.test.context.junit4.SpringRunner;
 import com.viii28stw.pensiltikbackend.util.UrlPrefixFactory;
 import org.springframework.web.bind.MethodArgumentNotValidException;
+
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.NoSuchElementException;
+
 import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphabetic;
 import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 import static org.assertj.core.api.BDDAssertions.then;
@@ -30,10 +35,16 @@ import static org.junit.Assert.assertNotNull;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UsuarioControllerTest {
 
-    @Autowired private TestRestTemplate testRestTemplate;
-    @Autowired private HttpHeaders httpHeaders;
-    @Autowired private ObjectMapper mapper;
+    @Autowired
+    private IUsuarioService usuarioService;
+    @Autowired
+    private TestRestTemplate testRestTemplate;
+    @Autowired
+    private HttpHeaders httpHeaders;
+    @Autowired
+    private ObjectMapper mapper;
 
+    private static boolean INITIALIZED = false;
     private static final String BUSCAR_USUARIO_POR_ID = "/buscarusuarioporid/";
     private static final String BUSCAR_TODOS_OS_USUARIOS = "/buscartodososusuarios/";
     private static final String SALVAR_USUARIO = "/salvarusuario/";
@@ -41,13 +52,33 @@ public class UsuarioControllerTest {
     private static final String DELETAR_USUARIO_POR_ID = "/deletarusuarioporid/";
     private static final String FAZER_LOGIN = "/fazerlogin/";
 
+    @Before
+    public void CriarUsuarioAdiministradorEFazerLogin() {
+        if (!INITIALIZED) {
+            UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                    .nome(randomAlphabetic(25))
+                    .sobreNome(randomAlphabetic(25))
+                    .email(randomAlphabetic(6) + "@" + randomAlphabetic(4) + "." + randomAlphabetic(2))
+                    .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.ADMINISTRADOR)
+                    .senha(randomAlphanumeric(8))
+                    .sexoEnum(SexoEnum.MASCULINO)
+                    .dataNascimento(LocalDate.now())
+                    .build());
+
+            UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+            httpHeaders.add("user_logged_in", usuarioDto1.getEmail());
+            INITIALIZED = true;
+        }
+    }
+
     @Test
     public void salvarUsuarioSenhaNaoPodeTerTamanhoMaiorQue10() {
         @SuppressWarnings("rawtypes")
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .senha(randomAlphanumeric(11))
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
@@ -69,8 +100,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(10))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -100,8 +132,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -129,8 +162,9 @@ public class UsuarioControllerTest {
 
         usuarioDto1.setNome(randomAlphabetic(25));
         usuarioDto1.setSobreNome(randomAlphabetic(25));
-        usuarioDto1.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
+        usuarioDto1.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3));
         usuarioDto1.setSenha(randomAlphanumeric(8));
+        usuarioDto1.setUsuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM);
         usuarioDto1.setSexoEnum(SexoEnum.FEMININO);
         usuarioDto1.setDataNascimento(LocalDate.now());
 
@@ -172,8 +206,9 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -194,8 +229,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome("    ")
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -215,8 +251,9 @@ public class UsuarioControllerTest {
         @SuppressWarnings("rawtypes")
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -237,8 +274,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome("    ")
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -260,6 +298,7 @@ public class UsuarioControllerTest {
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -280,8 +319,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email("@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email("@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -326,7 +366,7 @@ public class UsuarioControllerTest {
         assertNotNull(responseEntityUsuario3.getBody());
         then(responseEntityUsuario3.getBody() instanceof IllegalArgumentException);
 
-        usuarioDto.setEmail(randomAlphabetic(7) + "@" + "."+ randomAlphabetic(3));
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + "." + randomAlphabetic(3));
         ResponseEntity responseEntityUsuario4 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
@@ -346,7 +386,7 @@ public class UsuarioControllerTest {
         assertNotNull(responseEntityUsuario5.getBody());
         then(responseEntityUsuario5.getBody() instanceof MethodArgumentNotValidException);
 
-        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(1));
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(1));
         ResponseEntity responseEntityUsuario6 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
@@ -356,7 +396,7 @@ public class UsuarioControllerTest {
         assertNotNull(responseEntityUsuario6.getBody());
         then(responseEntityUsuario6.getBody() instanceof IllegalArgumentException);
 
-        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(8));
+        usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(8));
         ResponseEntity responseEntityUsuario7 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
@@ -366,7 +406,7 @@ public class UsuarioControllerTest {
         assertNotNull(responseEntityUsuario7.getBody());
         then(responseEntityUsuario7.getBody() instanceof IllegalArgumentException);
 
-        usuarioDto.setEmail(randomAlphabetic(7) + randomAlphabetic(5) + "."+ randomAlphabetic(8));
+        usuarioDto.setEmail(randomAlphabetic(7) + randomAlphabetic(5) + "." + randomAlphabetic(8));
         ResponseEntity responseEntityUsuario8 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + SALVAR_USUARIO, HttpMethod.POST,
@@ -384,7 +424,7 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -406,8 +446,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -457,8 +498,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -474,15 +516,6 @@ public class UsuarioControllerTest {
 
         assertNotNull(usuarioDto1);
 
-        HttpEntity request = new HttpEntity<>(httpHeaders);
-        ResponseEntity responseEntityLogin = testRestTemplate
-                .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
-                .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN + usuarioDto1.getEmail() + "/" + usuarioDto1.getSenha(),
-                        HttpMethod.GET, request, String.class);
-
-        then(responseEntityLogin.getStatusCode()).isEqualTo(HttpStatus.OK);
-
-        httpHeaders.add("user_logged_in", usuarioDto1.getEmail());
         ResponseEntity<UsuarioDto[]> responseEntityUsuarios = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + BUSCAR_TODOS_OS_USUARIOS, HttpMethod.GET,
@@ -506,8 +539,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -547,8 +581,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -588,8 +623,9 @@ public class UsuarioControllerTest {
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
-                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "." + randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.ADMINISTRADOR)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();

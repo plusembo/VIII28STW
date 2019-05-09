@@ -1,7 +1,9 @@
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\service\IUsuarioService.java
+C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\Utility.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\model\domain\Usuario.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\MDIController.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\service\UsuarioService.java
+C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enumeration\UsuarioTipoAcessoEnum.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\ajuda\SobreController.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\model\domain\FormMenu.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\SplashScreenController.java
@@ -9,8 +11,10 @@ C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\con
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\model\dto\UsuarioDto.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\CadastroUsuarioController.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\MainApp.java
+C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\RestTemplateFactory.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enumeration\DespesaEnum.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enumeration\MenuEnum.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\EmailValidator.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enumeration\SexoEnum.java
+C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\PasswordValidator.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\model\domain\Sessao.java

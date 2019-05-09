@@ -37,7 +37,11 @@ public class UsuarioController {
     }
 
     @PostMapping("/salvarusuario")
-    public ResponseEntity<UsuarioDto> salvarUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
+    public ResponseEntity<UsuarioDto> salvarUsuario(@RequestHeader HashMap<String, Object> headers,
+                                                    @RequestBody @Valid UsuarioDto usuarioDto) {
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
+        }
         return new ResponseEntity<>(usuarioService.salvarUsuario(usuarioDto), HttpStatus.OK);
     }
 

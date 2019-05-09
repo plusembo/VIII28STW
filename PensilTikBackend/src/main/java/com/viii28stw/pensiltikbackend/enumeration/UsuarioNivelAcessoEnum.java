@@ -9,9 +9,9 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum UsuarioTipoAcessoEnum {
-    MASCULINO(1,"Admin", "Administrador"),
-    FEMININO(2,"Uscm", "Usuário comum");
+public enum UsuarioNivelAcessoEnum {
+    ADMINISTRADOR(1,"Admin", "Administrador"),
+    USUARIO_COMUM(2,"Uscm", "Usuário comum");
 
     private final int id;
     private final String abreviacao;

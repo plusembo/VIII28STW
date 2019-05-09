@@ -1,18 +1,18 @@
 
-Isquid:S1444,"2Make this "public static lstFormsMenu" field final(‚åÄ
+csquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(¡ÑªË
 gsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ÌÖ¸İüÿÿÿÿ
+hsquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ
+Dsquid:S1199"-Extract this nested code block into a method.(ïÄîY
 csquid:S1301Û"KReplace this "switch" statement by "if" statements to increase readability.(¿Šêú
 csquid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(ØëçØ
-csquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(¡ÑªË
-Csquid:S2386W"'Make member "lstFormsMenu" "protected".(¤¿ú§ÿÿÿÿÿ
-gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ˆ¶ûÿÿÿÿÿ
-Dsquid:S1199"-Extract this nested code block into a method.(ïÄîY
 bsquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(Ô¤Ù
 Rsquid:S2696W"6Make the enclosing method "static" or remove this set.(¤¿ú§ÿÿÿÿÿ
-hsquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ
-hsquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ
-Dsquid:S1905»",Remove this unnecessary cast to "StackPane".(®¢ƒ
-†"squid:ClassVariableVisibilityCheck,"XMake lstFormsMenu a static final constant or non-public and provide accessors if needed.(‚åÄ
-csquid:CommentedOutCodeLineÿ"<This block of commented-out lines of code should be removed.(Çû¥¬
 osquid:S3776¬"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(€ ­øÿÿÿÿ
+Csquid:S2386W"'Make member "lstFormsMenu" "protected".(¤¿ú§ÿÿÿÿÿ
+gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ˆ¶ûÿÿÿÿÿ
+Isquid:S1444,"2Make this "public static lstFormsMenu" field final(‚åÄ
 gsquid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(óš¹Šıÿÿÿÿ
+csquid:CommentedOutCodeLineÿ"<This block of commented-out lines of code should be removed.(Çû¥¬
+hsquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck,"XMake lstFormsMenu a static final constant or non-public and provide accessors if needed.(‚åÄ
+Dsquid:S1905»",Remove this unnecessary cast to "StackPane".(®¢ƒ

@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikbackend.service;
 
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
@@ -21,8 +22,7 @@ import java.util.NoSuchElementException;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UsuarioServiceTest {
 
-    @Autowired
-    private IUsuarioService usuarioService;
+    @Autowired private IUsuarioService usuarioService;
 
     @Test(expected = IllegalArgumentException.class)
     public void salvarUsuarioNaoPodeInformarEmailInvalido() {
@@ -31,6 +31,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email("@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(10))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build();
@@ -66,6 +67,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(11))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -78,6 +80,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(10))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -93,6 +96,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -103,6 +107,7 @@ public class UsuarioServiceTest {
         usuarioDto.setSobreNome(randomAlphabetic(25));
         usuarioDto.setEmail(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3));
         usuarioDto.setSenha(randomAlphanumeric(8));
+        usuarioDto.setUsuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM);
         usuarioDto.setSexoEnum(SexoEnum.FEMININO);
         usuarioDto.setDataNascimento(LocalDate.now());
 
@@ -122,6 +127,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -133,6 +139,7 @@ public class UsuarioServiceTest {
                 .nome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -144,6 +151,7 @@ public class UsuarioServiceTest {
                 .nome(randomAlphabetic(25))
                  .sobreNome(randomAlphabetic(25))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -155,6 +163,7 @@ public class UsuarioServiceTest {
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -180,6 +189,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -202,6 +212,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -222,6 +233,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -239,6 +251,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());
@@ -256,6 +269,7 @@ public class UsuarioServiceTest {
                 .sobreNome(randomAlphabetic(25))
                 .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
                 .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
                 .sexoEnum(SexoEnum.MASCULINO)
                 .dataNascimento(LocalDate.now())
                 .build());

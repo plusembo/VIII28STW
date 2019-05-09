@@ -51,5 +51,7 @@ r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/AppConfig.java,b\b\bbbdd6025a0b72785885468f72ae87d982eda4fc
 r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/BasicAuth.java,d\d\ddc008929af0fe4da133cf14faff229e7c4befc6
-ƒ
-Ssrc/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioTipoAcessoEnum.java,f\b\fb5368e7a334dc85bb8c43825a56cd1d6b6cdcc9
+„
+Tsrc/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioNivelAcessoEnum.java,c\0\c0db7b5d12a68a3780687745dc9ed6fbabce5974
+o
+?src/test/java/com/viii28stw/pensiltikbackend/config/Sessao.java,5\5\555de8810d9d4c4bc872986f73b0769066094f3b

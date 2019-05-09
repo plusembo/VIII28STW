@@ -4,7 +4,6 @@ import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.model.entity.Usuario;
 import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
 import com.viii28stw.pensiltikbackend.util.EmailValidator;
-import lombok.Getter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,6 +31,7 @@ public class UsuarioService implements IUsuarioService {
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
+                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
                     .senha(usuario.getSenha())
                     .sexoEnum(usuario.getSexoEnum())
                     .dataNascimento(usuario.getDataNascimento())
@@ -49,6 +49,7 @@ public class UsuarioService implements IUsuarioService {
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
+                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
                     .senha(usuario.getSenha())
                     .sexoEnum(usuario.getSexoEnum())
                     .dataNascimento(usuario.getDataNascimento())
@@ -83,6 +84,7 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuarioDto.getNome())
                 .sobreNome(usuarioDto.getSobreNome())
                 .email(usuarioDto.getEmail())
+                .usuarioNivelAcessoEnum(usuarioDto.getUsuarioNivelAcessoEnum())
                 .senha(usuarioDto.getSenha())
                 .sexoEnum(usuarioDto.getSexoEnum())
                 .dataNascimento(usuarioDto.getDataNascimento())
@@ -93,6 +95,7 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())
+                .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
                 .senha(usuario.getSenha())
                 .sexoEnum(usuario.getSexoEnum())
                 .dataNascimento(usuario.getDataNascimento())
@@ -119,6 +122,7 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())
+                .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
                 .senha(usuario.getSenha())
                 .sexoEnum(usuario.getSexoEnum())
                 .dataNascimento(usuario.getDataNascimento())

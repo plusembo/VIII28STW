@@ -1,14 +1,17 @@
 
-msquid:S4042Á"IUse "java.nio.Files#delete" here for better messages on error conditions.(ìÙõèùÿÿÿÿ8ÅŒñê£-
-lsquid:S1192¡"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(¾Á¯»úÿÿÿÿ8¦¶ì£-
-^
-squid:S899Á";Do something with the "boolean" value returned by "delete".(ìÙõèùÿÿÿÿ8ÅŒñê£-
-Ysquid:S2274ï":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8ÅŒñê£-
-Gsquid:S1604å"(Make this anonymous inner class a lambda(Åì€8ÅŒñê£-
 ?squid:S1604^"(Make this anonymous inner class a lambda(ÚÁÀ
-„squid:S2273ï"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8ÅŒñê£-
-esquid:S2142ğ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÅŒñê£-
+Ysquid:S2209Á"5Change this instance-reference to a static reference.(ìÙõèùÿÿÿÿ8¶œíÀ©-
+Ysquid:S2209¿"5Change this instance-reference to a static reference.(­ÃÂ‡şÿÿÿÿ8¶œíÀ©-
 Dsquid:S1604V"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
+^
+squid:S899Á";Do something with the "boolean" value returned by "delete".(ìÙõèùÿÿÿÿ8¶œíÀ©-
+lsquid:S1192¡"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(¾Á¯»úÿÿÿÿ8¶œíÀ©-
+Gsquid:S1604å"(Make this anonymous inner class a lambda(Åì€8ÅŒñê£-
+msquid:S4042Á"IUse "java.nio.Files#delete" here for better messages on error conditions.(ìÙõèùÿÿÿÿ8¶œíÀ©-
 Gsquid:S1604İ"(Make this anonymous inner class a lambda(¾à–8ÅŒñê£-
+esquid:S2142ğ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÅŒñê£-
 Gsquid:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÅŒñê£-
+Ysquid:S2274ï":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8ÅŒñê£-
+Ysquid:S2209¡"5Change this instance-reference to a static reference.(¾Á¯»úÿÿÿÿ8†ÛÏÀ©-
+„squid:S2273ï"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8ÅŒñê£-
 esquid:S1871©"MThis branch's code block is the same as the block for the branch on line 166.(Ğ½ö®
