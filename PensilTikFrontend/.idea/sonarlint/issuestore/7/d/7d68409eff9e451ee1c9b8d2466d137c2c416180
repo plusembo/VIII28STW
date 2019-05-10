@@ -1,17 +1,19 @@
 
-?squid:S1604^"(Make this anonymous inner class a lambda(ÚÁÀ
-Ysquid:S2209Á"5Change this instance-reference to a static reference.(ìÙõèùÿÿÿÿ8¶œíÀ©-
-Ysquid:S2209¿"5Change this instance-reference to a static reference.(­ÃÂ‡şÿÿÿÿ8¶œíÀ©-
-Dsquid:S1604V"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ
+Fsquid:S1604\"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
+Ysquid:S2274õ":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8€Éû©-
+lsquid:S1871®"MThis branch's code block is the same as the block for the branch on line 171.(Ğ½ö®8²½Èû©-
+msquid:S4042Ç"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ıÿÿÿÿ8€Éû©-
+Jsquid:S1602I",Remove useless curly braces around statement(ÃÉş©8€Éû©-
+gsquid:UselessImportCheck"7Remove this unused import 'javafx.scene.control.Label'.(ö²­ÿÿÿÿÿ8€Éû©-
+tsquid:UselessImportCheck"IRemove this unused import 'com.viii28stw.pensiltikfrontend.util.Utility'.(¹˜ğ8§Šù©-
+jsquid:S1192Ÿ"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
+Ksquid:S1604S"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
+Jsquid:S1612I",Replace this lambda with a method reference.(ÃÉş©8€Éû©-
 ^
-squid:S899Á";Do something with the "boolean" value returned by "delete".(ìÙõèùÿÿÿÿ8¶œíÀ©-
-lsquid:S1192¡"HDefine a constant instead of duplicating this literal ".texugo" 3 times.(¾Á¯»úÿÿÿÿ8¶œíÀ©-
-Gsquid:S1604å"(Make this anonymous inner class a lambda(Åì€8ÅŒñê£-
-msquid:S4042Á"IUse "java.nio.Files#delete" here for better messages on error conditions.(ìÙõèùÿÿÿÿ8¶œíÀ©-
-Gsquid:S1604İ"(Make this anonymous inner class a lambda(¾à–8ÅŒñê£-
-esquid:S2142ğ"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ÅŒñê£-
-Gsquid:S1148ñ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ÅŒñê£-
-Ysquid:S2274ï":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8ÅŒñê£-
-Ysquid:S2209¡"5Change this instance-reference to a static reference.(¾Á¯»úÿÿÿÿ8†ÛÏÀ©-
-„squid:S2273ï"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8ÅŒñê£-
-esquid:S1871©"MThis branch's code block is the same as the block for the branch on line 166.(Ğ½ö®
+squid:S899Ç";Do something with the "boolean" value returned by "delete".(Œ’¯‹ıÿÿÿÿ8€Éû©-
+jsquid:CommentedOutCodeLine¶"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
+Gsquid:S1604ã"(Make this anonymous inner class a lambda(¾à–8€Éû©-
+Gsquid:S1604ë"(Make this anonymous inner class a lambda(Åì€8€Éû©-
+esquid:S2142ö"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8€Éû©-
+„squid:S2273õ"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8€Éû©-
+Gsquid:S1148÷"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€Éû©-

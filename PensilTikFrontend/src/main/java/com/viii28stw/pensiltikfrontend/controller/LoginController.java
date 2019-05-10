@@ -10,6 +10,7 @@ import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.Utility;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -18,6 +19,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -52,6 +54,10 @@ public class LoginController implements Initializable {
     private JFXPasswordField jpwSenha;
     @FXML
     private JFXCheckBox jchxLembrarDeMim;
+
+    private RequiredFieldValidator emailValidator = new RequiredFieldValidator();
+    private RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
+
     private IUsuarioService usuarioService = UsuarioService.getInstance();
     private static LoginController uniqueInstance;
 
@@ -64,18 +70,9 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        try {
-            Usuario usuario = lembraDeMim();
-            jchxLembrarDeMim.setSelected(true);
-            jtxEmail.setText(usuario.getEmail());
-            jpwSenha.setText(usuario.getSenha());
-        } catch (IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
-        }
-
-        RequiredFieldValidator emailValidator = new RequiredFieldValidator();
-        RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
+        Platform.runLater(() -> {
+            lembraDeMim();
+        });
 
         jtxEmail.getValidators().add(emailValidator);
         jpwSenha.getValidators().add(senhaValidator);
@@ -86,15 +83,16 @@ public class LoginController implements Initializable {
         jtxEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
+                if (oldValue) {
                     jtxEmail.validate();
                 }
             }
         });
+
         jpwSenha.focusedProperty().addListener(new ChangeListener<Boolean>() {
             @Override
             public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (!newValue) {
+                if (oldValue) {
                     jpwSenha.validate();
                 }
             }
@@ -104,7 +102,6 @@ public class LoginController implements Initializable {
                 .getResource("/image/validator-error.png").toString());
         emailValidator.setIcon(new ImageView(errorIcon));
         senhaValidator.setIcon(new ImageView(errorIcon));
-
     }
 
     @FXML
@@ -156,9 +153,17 @@ public class LoginController implements Initializable {
         jpwSenha.resetValidation();
     }
 
-    private Usuario lembraDeMim() throws IOException {
-        return new ObjectMapper()
-                .readValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), Usuario.class);
+    private void lembraDeMim() {
+        try {
+            Usuario usuario = new ObjectMapper()
+                    .readValue(new File("texugo.ldm"), Usuario.class);
+            jchxLembrarDeMim.setSelected(true);
+            jtxEmail.setText(usuario.getEmail());
+            jpwSenha.setText(usuario.getSenha());
+
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
     }
 
     @FXML
@@ -174,23 +179,24 @@ public class LoginController implements Initializable {
             return;
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
-        if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
+        //if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
 
         new Thread(() -> {
-            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
-                    .nome(usuarioDto.getNome())
-                    .sobreNome(usuarioDto.getSobreNome())
-                    .email(usuarioDto.getEmail())
-                    .senha(usuarioDto.getSenha())
-                    .sexoEnum(usuarioDto.getSexoEnum())
-                    .dataNascimento(usuarioDto.getDataNascimento())
-                    .build();
             try {
                 if (jchxLembrarDeMim.isSelected()) {
+                    Usuario usuario = Usuario.builder().id(usuarioDto.getId())
+                            .nome(usuarioDto.getNome())
+                            .sobreNome(usuarioDto.getSobreNome())
+                            .email(usuarioDto.getEmail())
+                            .senha(usuarioDto.getSenha())
+                            .sexoEnum(usuarioDto.getSexoEnum())
+                            .dataNascimento(usuarioDto.getDataNascimento())
+                            .build();
+
                     new ObjectMapper()
-                            .writeValue(new File(Utility.getInstance().getMacAddress().concat(".texugo")), usuario);
+                            .writeValue(new File("texugo.ldm"), usuario);
                 } else {
-                    new File(Utility.getInstance().getMacAddress().concat(".texugo")).delete();
+                    new File("texugo.ldm").delete();
                 }
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -246,7 +252,7 @@ public class LoginController implements Initializable {
             limparCampos();
             mdiStage.showAndWait();
             loginStage.show();
-
+            lembraDeMim();
             jtxEmail.requestFocus();
 
         } catch (IOException ex) {

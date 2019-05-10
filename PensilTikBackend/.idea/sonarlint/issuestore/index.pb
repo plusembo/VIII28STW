@@ -53,5 +53,3 @@ r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/BasicAuth.java,d\d\ddc008929af0fe4da133cf14faff229e7c4befc6
 „
 Tsrc/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioNivelAcessoEnum.java,c\0\c0db7b5d12a68a3780687745dc9ed6fbabce5974
-o
-?src/test/java/com/viii28stw/pensiltikbackend/config/Sessao.java,5\5\555de8810d9d4c4bc872986f73b0769066094f3b
