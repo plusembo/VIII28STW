@@ -1,12 +1,12 @@
 
-Fsquid:S1604o"(Make this anonymous inner class a lambda(ˆê¤8€­úÆ£-
-Lsquid:S1604‡"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€­úÆ£-
-usquid:S3776@"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8€­úÆ£-
-Fsquid:S1604f"(Make this anonymous inner class a lambda(½¶½Ş8€­úÆ£-
-Gsquid:S1604œ"(Make this anonymous inner class a lambda(ÚÁÀ8€­úÆ£-
-Jsquid:S1481Ñ"+Remove this unused "salvou" local variable.(™‹°¼8€­úÆ£-
-Gsquid:S1604à"(Make this anonymous inner class a lambda(ô¸‡í8€­úÆ£-
-Ysquid:S1854Ñ":Remove this useless assignment to local variable "salvou".(™‹°¼8€­úÆ£-
 {squid:S1192C"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8€­úÆ£-
-Lsquid:S1604±"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8€­úÆ£-
+Jsquid:S1481Ñ"+Remove this unused "salvou" local variable.(™‹°¼8€­úÆ£-
+Fsquid:S1604f"(Make this anonymous inner class a lambda(½¶½Ş8€­úÆ£-
 Fsquid:S1604x"(Make this anonymous inner class a lambda(ç¿—8€­úÆ£-
+Fsquid:S1604o"(Make this anonymous inner class a lambda(ˆê¤8€­úÆ£-
+usquid:S3776@"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8€­úÆ£-
+Lsquid:S1604‡"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€­úÆ£-
+Gsquid:S1604à"(Make this anonymous inner class a lambda(ô¸‡í8€­úÆ£-
+Lsquid:S1604±"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8€­úÆ£-
+Ysquid:S1854Ñ":Remove this useless assignment to local variable "salvou".(™‹°¼8€­úÆ£-
+Gsquid:S1604œ"(Make this anonymous inner class a lambda(ÚÁÀ8€­úÆ£-

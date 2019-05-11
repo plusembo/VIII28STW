@@ -39,7 +39,5 @@ y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/util/PasswordValidator.java,9\e\9e7178e7e822d8d13aae39dbb2c2d7c0e77e2bb4
 o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
-„
-Tsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/UsuarioTipoAcessoEnum.java,e\6\e6b0c6e5e797edf652ff4897c1ad5a06f0a288a4
 …
 Usrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/UsuarioNivelAcessoEnum.java,7\9\794c71f597f70d4b154c81f10028df6cebcca18b

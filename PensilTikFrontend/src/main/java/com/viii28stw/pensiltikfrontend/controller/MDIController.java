@@ -144,6 +144,12 @@ public class MDIController implements Initializable {
     }
 
     @FXML
+    private void mnuCadastroUsuarioAction() {
+        abreForm(MenuEnum.CADASTRO_USUARIO, "/view/cadastro/cadastro_usuario.fxml",
+                null, calculaX(627), calculaY(289));
+    }
+
+    @FXML
     private void mnuRelatorioRendaAction() {
         abreForm(MenuEnum.RELATORIO_RENDA, "relatorio-renda.fxml",
                 null, calculaX(650), calculaY(600));
@@ -157,7 +163,7 @@ public class MDIController implements Initializable {
 
     @FXML
     private void mnuAjudaSobreAction() {
-        this.abreForm(MenuEnum.AJUDA_SOBRE,
+        abreForm(MenuEnum.AJUDA_SOBRE,
                 "/view/ajuda/sobre.fxml",
                 null,
                 calculaX(670), calculaY(289));
@@ -171,7 +177,6 @@ public class MDIController implements Initializable {
 
     private void abreForm(MenuEnum menum, String arquivofxml, String icone, double x, double y) {
         boolean aberto = false;
-
         try {
             for (FormMenu formMenu : lstFormsMenu) {
                 if (formMenu.getMenum().equals(menum)) {
@@ -189,17 +194,12 @@ public class MDIController implements Initializable {
                 Stage formStage = new Stage();
                 formStage.initOwner((Stage) hlkNomeUsuario.getScene().getWindow());
                 formStage.setResizable(false);
+                formStage.setMaximized(false);
                 formStage.initModality(Modality.NONE);
                 formStage.setTitle(menum.getTitulo());
-                if (icone != null && !icone.equals("")) {
-                    formStage.getIcons().add(new Image(icone));
-                }
-                if (x != 0) {
-                    formStage.setX(x);
-                }
-                if (y != 0) {
-                    formStage.setY(y);
-                }
+                if (icone != null && !icone.equals("")) { formStage.getIcons().add(new Image(icone)); }
+                if (x != 0) { formStage.setX(x); }
+                if (y != 0) { formStage.setY(y); }
 
                 Scene scene = new Scene(parent);
                 formStage.setScene(scene);
@@ -252,11 +252,11 @@ public class MDIController implements Initializable {
 //                        break;
 //                    }
 //
-//                    case CADASTRO_USUARIO: {
-//                        CadastroUsuarioController controller = loader.getController();
-//                        controller.setFormStage(formStage);
-//                        break;
-//                    }
+                    case CADASTRO_USUARIO: {
+                        CadastroUsuarioController controller = loader.getController();
+                        controller.setCadastroUsuarioStage(formStage);
+                        break;
+                    }
 //
 //                    case RELATORIO_PECAS: {
 //                        RelatorioPecaController controller = loader.getController();
@@ -271,7 +271,7 @@ public class MDIController implements Initializable {
 //
                     case AJUDA_SOBRE: {
                         SobreController controller = loader.getController();
-                        controller.setFormStage(formStage);
+                        controller.setSobreStage(formStage);
                         break;
                     }
 //

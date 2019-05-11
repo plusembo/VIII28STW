@@ -9,7 +9,6 @@ import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
-import com.viii28stw.pensiltikfrontend.util.Utility;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -19,7 +18,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -123,7 +121,7 @@ public class LoginController implements Initializable {
         try {
             Stage cadastroUsuarioStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/view/cadastro_usuario.fxml"));
+            loader.setLocation(MainApp.class.getResource("/view/cadastro/cadastro_usuario.fxml"));
             StackPane cadastroUsuarioStackPane = loader.load();
             Scene cadastroUsuarioScene = new Scene(cadastroUsuarioStackPane);
             cadastroUsuarioStage.setResizable(false);

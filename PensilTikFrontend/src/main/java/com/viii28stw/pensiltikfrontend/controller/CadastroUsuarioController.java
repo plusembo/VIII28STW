@@ -43,8 +43,8 @@ public class CadastroUsuarioController implements Initializable {
     @FXML private ImageView imgvwSexoObrigatorio;
     @FXML private Label lblEmailInvalido;
     @FXML private ImageView imgvwEmailInvalido;
-    @FXML private Label lblSenhaInvalido;
-    @FXML private ImageView imgvwSenhaInvalido;
+    @FXML private Label lblSenhaInvalida;
+    @FXML private ImageView imgvwSenhaInvalida;
     @FXML private Label lblConfirmarSenha;
     @FXML private ImageView imgvwConfirmarSenha;
     private RequiredFieldValidator confirmarSenhaValidator3 = new RequiredFieldValidator();
@@ -70,9 +70,9 @@ public class CadastroUsuarioController implements Initializable {
         imgvwEmailInvalido.setVisible(false);
         lblEmailInvalido.setStyle("-fx-text-fill: #c00d0d;");
 
-        lblSenhaInvalido.setVisible(false);
-        imgvwSenhaInvalido.setVisible(false);
-        lblSenhaInvalido.setStyle("-fx-text-fill: #c00d0d;");
+        lblSenhaInvalida.setVisible(false);
+        imgvwSenhaInvalida.setVisible(false);
+        lblSenhaInvalida.setStyle("-fx-text-fill: #c00d0d;");
 
         lblConfirmarSenha.setVisible(false);
         imgvwConfirmarSenha.setVisible(false);
@@ -159,16 +159,16 @@ public class CadastroUsuarioController implements Initializable {
                 if (oldValue) {
                     if (jpwSenha.validate()) {
                         if (PasswordValidator.isValidPassword(jpwSenha.getText())) {
-                            lblSenhaInvalido.setVisible(false);
-                            imgvwSenhaInvalido.setVisible(false);
+                            lblSenhaInvalida.setVisible(false);
+                            imgvwSenhaInvalida.setVisible(false);
                         } else {
-                            lblSenhaInvalido.setText("Senha: Inválido");
-                            lblSenhaInvalido.setVisible(true);
-                            imgvwSenhaInvalido.setVisible(true);
+                            lblSenhaInvalida.setText("Senha: Inválido");
+                            lblSenhaInvalida.setVisible(true);
+                            imgvwSenhaInvalida.setVisible(true);
                         }
                     } else {
-                        lblSenhaInvalido.setVisible(false);
-                        imgvwSenhaInvalido.setVisible(false);
+                        lblSenhaInvalida.setVisible(false);
+                        imgvwSenhaInvalida.setVisible(false);
                     }
                 }
             }
@@ -242,9 +242,9 @@ public class CadastroUsuarioController implements Initializable {
 
         if(jpwSenha.validate()) {
             if (!PasswordValidator.isValidPassword(jpwSenha.getText())) {
-                lblSenhaInvalido.setText("Senha: Inválido");
-                lblSenhaInvalido.setVisible(true);
-                imgvwSenhaInvalido.setVisible(true);
+                lblSenhaInvalida.setText("Senha: Inválido");
+                lblSenhaInvalida.setVisible(true);
+                imgvwSenhaInvalida.setVisible(true);
                 campoIndex = 5;
             }
         } else {
@@ -295,6 +295,8 @@ public class CadastroUsuarioController implements Initializable {
         imgvwEmailInvalido.setVisible(false);
 
         jpwSenha.resetValidation();
+        lblSenhaInvalida.setVisible(false);
+        imgvwSenhaInvalida.setVisible(false);
 
         lblConfirmarSenha.setVisible(false);
         imgvwConfirmarSenha.setVisible(false);

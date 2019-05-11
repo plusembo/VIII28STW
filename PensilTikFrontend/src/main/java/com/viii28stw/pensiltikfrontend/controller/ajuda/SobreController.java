@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class SobreController implements Initializable {
 
     @FXML private Label lblVersao;
-    @Setter private Stage formStage;
+    @Setter private Stage sobreStage;
     private static SobreController uniqueInstance;
 
     /**
@@ -40,7 +40,7 @@ public class SobreController implements Initializable {
 
     @FXML
     private void jbtnFecharAction() {
-        formStage.close();
+        sobreStage.close();
         for (FormMenu fm : MDIController.lstFormsMenu) {
             if (fm.getMenum().equals(MenuEnum.AJUDA_SOBRE)) {
                 MDIController.lstFormsMenu.remove(fm);
