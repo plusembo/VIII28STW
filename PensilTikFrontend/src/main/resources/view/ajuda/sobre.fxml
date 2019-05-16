@@ -15,7 +15,7 @@
          <children>
             <ImageView fitHeight="106.0" fitWidth="153.0" layoutX="17.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../image/cecil-logo.jpg" />
+                  <Image url="@../../image/cecil_logo.jpg" />
                </image>
             </ImageView>
             <Label layoutX="142.0" layoutY="53.0" text="Cecil" textFill="#1c245e">

@@ -1,7 +1,5 @@
 package com.viii28stw.pensiltikfrontend.service;
 
-import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
-import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import lombok.NoArgsConstructor;
 

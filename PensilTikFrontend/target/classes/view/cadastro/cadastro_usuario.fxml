@@ -17,7 +17,7 @@
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="401.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.CadastroUsuarioController">
    <children>
-      <AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="681.0" stylesheets="@../../stylesheet/tema-geral.css">
+      <AnchorPane id="AnchorPane" prefHeight="483.0" prefWidth="681.0" stylesheets="@../../stylesheet/tema_geral.css">
          <children>
             <GridPane layoutX="53.0" layoutY="20.0" prefHeight="256.0" prefWidth="586.0">
                <columnConstraints>
@@ -57,7 +57,7 @@
                   <Label fx:id="lblSexoObrigatorio" prefHeight="20.0" prefWidth="211.0" styleClass="label-notificacao" text="Sexo: Seleção obrigatória" />
                   <ImageView fx:id="imgvwSexoObrigatorio" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/validator-error.png" />
+                        <Image url="@../../image/validator_error.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="2.0" />
@@ -70,7 +70,7 @@
                   <Label fx:id="lblEmailInvalido" prefHeight="20.0" prefWidth="95.0" styleClass="label-notificacao" text="E-mail: Inválido" />
                   <ImageView fx:id="imgvwEmailInvalido" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/validator-error.png" />
+                        <Image url="@../../image/validator_error.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="2.0" />
@@ -83,7 +83,7 @@
                   <Label fx:id="lblConfirmarSenha" prefHeight="20.0" prefWidth="219.0" styleClass="label-notificacao" text="Confirmar Senha: Não corresponde" />
                   <ImageView fx:id="imgvwConfirmarSenha" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/validator-error.png" />
+                        <Image url="@../../image/validator_error.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="2.0" />
@@ -93,10 +93,10 @@
             </HBox>
             <HBox alignment="CENTER_RIGHT" layoutX="54.0" layoutY="254.0" prefHeight="20.0" prefWidth="259.0" spacing="147.0">
                <children>
-                  <Label fx:id="lblSenhaInvalido" prefHeight="20.0" prefWidth="96.0" styleClass="label-notificacao" text="Senha: Inválida" />
-                  <ImageView fx:id="imgvwSenhaInvalido" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                  <Label fx:id="lblSenhaInvalida" prefHeight="20.0" prefWidth="96.0" styleClass="label-notificacao" text="Senha: Inválida" />
+                  <ImageView fx:id="imgvwSenhaInvalida" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../image/validator-error.png" />
+                        <Image url="@../../image/validator_error.png" />
                      </image>
                      <HBox.margin>
                         <Insets right="2.0" />

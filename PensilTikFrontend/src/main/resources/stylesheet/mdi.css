@@ -1,16 +1,16 @@
 .label {
-    -fx-font-size: 11pt;
+    -fx-font-size: 8pt;
     -fx-font-family: "Segoe UI Semibold";
     -fx-text-fill: black;
 }
 
 .hyperlink {
-    -fx-font-size: 11pt;
+    -fx-font-size: 8pt;
     -fx-font-family: "Segoe UI Light";
 }
 
 .labelhyperlink {
-    -fx-font-size: 10pt;
+    -fx-font-size: 8pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: black;
 }
@@ -24,7 +24,7 @@
 }
 
 .menu-bar .label {
-    -fx-font-size: 13pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: black;
 }

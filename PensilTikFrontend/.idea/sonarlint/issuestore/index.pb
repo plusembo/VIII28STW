@@ -41,3 +41,5 @@ o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
 …
 Usrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/UsuarioNivelAcessoEnum.java,7\9\794c71f597f70d4b154c81f10028df6cebcca18b
+w
+Gsrc/main/java/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUD.java,6\4\64a5eb7b2830c97eb69a50d5ddbd541c1f6ec4f2

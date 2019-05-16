@@ -1,1 +1,37 @@
 Não pode exluir um usuário logado
+
+
+
+
+/*JFXDialogLayout content = new JFXDialogLayout();
+                content.setHeading(new Text("Fechar o sistema"));
+                content.setBody(new Text("Você está prestes a fechar o sistema\n"
+                        .concat("Tem certeza que deseja fechar o Pensil Tik?")));
+
+                JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
+                JFXButton btnFechar = new JFXButton("Fechar");
+                btnFechar.setStyle("-fx-background-color: #0091EA;");
+                btnFechar.setButtonType(JFXButton.ButtonType.RAISED);
+                btnFechar.setTextFill(Paint.valueOf("WHITE"));
+                btnFechar.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        System.exit(0);
+                    }
+                });
+
+                JFXButton btnCancelar = new JFXButton("Cancelar");
+                btnCancelar.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        we.consume();
+                        dialog.close();
+                    }
+                });
+                content.setActions(btnFechar, btnCancelar);
+                dialog.show();
+                try {
+                    we.wait();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } */

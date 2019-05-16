@@ -18,6 +18,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonBar;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -33,6 +37,7 @@ import lombok.Setter;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -212,38 +217,30 @@ public class LoginController implements Initializable {
             MDIController mdiController = loader.getController();
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
-                JFXDialogLayout content = new JFXDialogLayout();
-                content.setHeading(new Text("Fechar o sistema"));
-                content.setBody(new Text("Você está prestes a fechar o sistema\n"
-                        .concat("Tem certeza que deseja fechar o Pensil Tik?")));
+                Alert dialogoExe = new Alert(Alert.AlertType.CONFIRMATION);
+                ButtonType btnFechar = new ButtonType("FECHAR", ButtonBar.ButtonData.YES);
+                ButtonType btnCancelar = new ButtonType("CANCELAR", ButtonBar.ButtonData.CANCEL_CLOSE);
 
-                JFXDialog dialog = new JFXDialog(mdiStackPane, content, JFXDialog.DialogTransition.CENTER);
-                JFXButton btnFechar = new JFXButton("Fechar");
-                btnFechar.setStyle("-fx-background-color: #0091EA;");
-                btnFechar.setButtonType(JFXButton.ButtonType.RAISED);
-                btnFechar.setTextFill(Paint.valueOf("WHITE"));
-                btnFechar.setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent actionEvent) {
-                        System.exit(0);
-                    }
-                });
+                dialogoExe.setTitle("Fechar o sistema");
+                dialogoExe.setHeaderText("Você está prestes a fechar o sistema");
+                dialogoExe.setContentText("Tem certeza que deseja fechar o Pensil Tik?\n");
+                dialogoExe.getButtonTypes().setAll(btnFechar, btnCancelar);
 
-                JFXButton btnCancelar = new JFXButton("Cancelar");
-                btnCancelar.setOnAction(new EventHandler<ActionEvent>() {
-                    @Override
-                    public void handle(ActionEvent actionEvent) {
-                        we.consume();
-                        dialog.close();
-                    }
-                });
-                content.setActions(btnFechar, btnCancelar);
-                dialog.show();
-                try {
-                    we.wait();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
+                DialogPane dialogPane = dialogoExe.getDialogPane();
+
+                dialogPane.getStylesheets().add(MainApp.class.getResource("/stylesheet/dialog.css").toExternalForm());
+                dialogPane.getStyleClass().add("myDialog");
+
+                Stage stage = (Stage) dialogPane.getScene().getWindow();
+                stage.getIcons().add(new Image(MainApp.class.getResource("/image/exit.png").toString()));
+
+                Optional<ButtonType> result = dialogoExe.showAndWait();
+                if (!result.isPresent() || result.get() != btnFechar) {
+                    we.consume();
+                } else {
+                    System.exit(0);
                 }
+
             });
 
             loginStage.close();

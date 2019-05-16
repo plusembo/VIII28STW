@@ -1,17 +1,15 @@
 
-msquid:S4042Å"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ıÿÿÿÿ8€Éû©-
-jsquid:CommentedOutCodeLine´"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
-jsquid:S1192"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
-Ksquid:S1604Q"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
-„squid:S2273ó"eMove this call to "wait()" into a synchronized block to be sure the monitor on "WindowEvent" is held.(¼’–ÿ8€Éû©-
-esquid:S2142ô"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8€Éû©-
-Gsquid:S1604é"(Make this anonymous inner class a lambda(Åì€8€Éû©-
-Fsquid:S1604Z"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
-Gsquid:S1148õ"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8€Éû©-
+msquid:S4042Ê"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ıÿÿÿÿ8€Éû©-
 ^
-squid:S899Å";Do something with the "boolean" value returned by "delete".(Œ’¯‹ıÿÿÿÿ8€Éû©-
-Ysquid:S2274ó":Remove this call to "wait" or move it into a "while" loop.(¼’–ÿ8€Éû©-
-Gsquid:S1604á"(Make this anonymous inner class a lambda(¾à–8€Éû©-
-Jsquid:S1612G",Replace this lambda with a method reference.(ÃÉş©8€Éû©-
-Jsquid:S1602G",Remove useless curly braces around statement(ÃÉş©8€Éû©-
-lsquid:S1871¬"MThis branch's code block is the same as the block for the branch on line 169.(Ğ½ö®8²½Èû©-
+squid:S899Ê";Do something with the "boolean" value returned by "delete".(Œ’¯‹ıÿÿÿÿ8€Éû©-
+`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.paint.Paint'.(Ïæ©¼8ò¯›ó«-
+asquid:UselessImportCheck"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ò¯›ó«-
+jsquid:S1192¢"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
+jsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
+Fsquid:S1604_"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
+csquid:UselessImportCheck"3Remove this unused import 'javafx.scene.text.Text'.(˜ÿ‡Üşÿÿÿÿ8ò¯›ó«-
+Jsquid:S1602L",Remove useless curly braces around statement(ÃÉş©8€Éû©-
+Ksquid:S1604V"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
+lsquid:S1871±"MThis branch's code block is the same as the block for the branch on line 174.(Ğ½ö®8²½Èû©-
+esquid:UselessImportCheck"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8ò¯›ó«-
+Jsquid:S1612L",Replace this lambda with a method reference.(ÃÉş©8€Éû©-
