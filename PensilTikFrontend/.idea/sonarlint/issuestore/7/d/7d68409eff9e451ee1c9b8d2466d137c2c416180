@@ -1,15 +1,15 @@
 
-osquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8â™§˜¬-
-lsquid:S1871²"MThis branch's code block is the same as the block for the branch on line 175.(Ð½ö®8²½Èû©-
-asquid:UselessImportCheck"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ò¯›ó«-
-msquid:S4042Ë"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8€Éû©-
-Fsquid:S1604`"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
-`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.paint.Paint'.(Ïæ©¼8ò¯›ó«-
 Jsquid:S1602M",Remove useless curly braces around statement(ÃÉþ©8€Éû©-
-esquid:UselessImportCheck"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ýÿÿÿÿ8ò¯›ó«-
-Jsquid:S1612M",Replace this lambda with a method reference.(ÃÉþ©8€Éû©-
-Ksquid:S1604W"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
-jsquid:CommentedOutCodeLineº"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
 ^
 squid:S899Ë";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8€Éû©-
+esquid:UselessImportCheck"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ýÿÿÿÿ8ò¯›ó«-
+Ksquid:S1604W"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
+`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.paint.Paint'.(Ïæ©¼8ò¯›ó«-
+Fsquid:S1604`"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
+osquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8â™§˜¬-
+msquid:S4042Ë"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8€Éû©-
+jsquid:CommentedOutCodeLineº"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
+asquid:UselessImportCheck"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ò¯›ó«-
+Jsquid:S1612M",Replace this lambda with a method reference.(ÃÉþ©8€Éû©-
+lsquid:S1871²"MThis branch's code block is the same as the block for the branch on line 175.(Ð½ö®8²½Èû©-
 jsquid:S1192£"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-

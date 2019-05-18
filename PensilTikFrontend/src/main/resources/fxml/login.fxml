@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="415.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.LoginController">
+   <children>
+      <ImageView fx:id="imgvwLogoVergo" fitHeight="76.0" fitWidth="103.0" layoutX="146.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/vergo_logo_login.jpg" />
+         </image>
+      </ImageView>
+      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="165.0" onKeyPressed="#jtxEmailOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="E-mail">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="243.0" onKeyPressed="#jpwSenhaOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="Senha">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="320.0" text="Lembrar de mim">
+         <font>
+            <Font name="Segoe UI Light" size="13.0" />
+         </font>
+      </JFXCheckBox>
+      <Hyperlink layoutX="52.0" layoutY="344.0" text="Esqueci minha senha" />
+      <Hyperlink layoutX="268.0" layoutY="320.0" onAction="#hlkAbrirUmaContaAction" text="Abrir uma conta" />
+      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="ENTRAR">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+      </JFXButton>
+
+   </children>
+</AnchorPane>

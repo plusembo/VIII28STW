@@ -14,7 +14,7 @@ public class NotificacaoCRUDFactory {
 
     public void notificaSalvo() {
         imageView.setImage(new Image(MainApp.class
-                .getResource("/image/saved.png").toString()));
+                .getResource("/img/saved.png").toString()));
         label.setText("Salvo com sucesso!");
         label.setStyle("-fx-text-fill: #6AC259;");
         notifica();
@@ -22,7 +22,7 @@ public class NotificacaoCRUDFactory {
 
     public void notificaAtualizado() {
         imageView.setImage(new Image(MainApp.class
-                .getResource("/image/updated.png").toString()));
+                .getResource("/img/updated.png").toString()));
         label.setText("Atualizado com sucesso!");
         label.setStyle("-fx-text-fill: #6AC259;");
         notifica();
@@ -30,7 +30,7 @@ public class NotificacaoCRUDFactory {
 
     public void notificaExcluido() {
         imageView.setImage(new Image(MainApp.class
-                .getResource("/image/trash.png").toString()));
+                .getResource("/img/trash.png").toString()));
         label.setText("Excluido com sucesso!");
         label.setStyle("-fx-text-fill: #bf4646;");
         notifica();
@@ -38,7 +38,7 @@ public class NotificacaoCRUDFactory {
 
     public void notificaImprimindo() {
         imageView.setImage(new Image(MainApp.class
-                .getResource("/image/printer.png").toString()));
+                .getResource("/img/printer.png").toString()));
         label.setText("Imprimindo relatório...");
         label.setStyle("-fx-text-fill: #42064d;");
         notifica();
@@ -46,7 +46,7 @@ public class NotificacaoCRUDFactory {
 
     public void notificaAdvertencia(String text) {
         imageView.setImage(new Image(MainApp.class
-                .getResource("/image/warn.png").toString()));
+                .getResource("/img/warn.png").toString()));
         label.setText(text);
         label.setStyle("-fx-text-fill: #42064d;");
         notifica();

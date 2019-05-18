@@ -1,5 +1,5 @@
 
-\squid:S1854^"9Remove this useless assignment to local variable "stage".(Œƒûåüÿÿÿÿ8¶À˜¬-
-zsquid:S1192+"WDefine a constant instead of duplicating this literal "/stylesheet/dialog.css" 3 times.(ãÄğÁúÿÿÿÿ8Ù‡˜¬-
-esquid:S1192,"GDefine a constant instead of duplicating this literal "dialog" 3 times.(ªÕ‘‚8¿ª˜¬-
 Msquid:S1481^"*Remove this unused "stage" local variable.(Œƒûåüÿÿÿÿ8¶À˜¬-
+esquid:S1192,"GDefine a constant instead of duplicating this literal "dialog" 3 times.(ªÕ‘‚8¿ª˜¬-
+\squid:S1854^"9Remove this useless assignment to local variable "stage".(Œƒûåüÿÿÿÿ8¶À˜¬-
+ssquid:S1192+"PDefine a constant instead of duplicating this literal "/css/dialog.css" 3 times.(€“¾†øÿÿÿÿ8û÷»Æ¬-

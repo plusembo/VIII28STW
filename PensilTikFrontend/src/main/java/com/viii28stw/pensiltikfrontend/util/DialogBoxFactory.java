@@ -40,12 +40,12 @@ public class DialogBoxFactory {
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(MainApp.class
-                .getResource("/stylesheet/dialog.css").toExternalForm());
+                .getResource("/css/dialog.css").toExternalForm());
         dialogPane.getStyleClass().add("dialog");
 
         Stage stage = (Stage) dialogPane.getScene().getWindow();
         stage.getIcons().add(new Image(MainApp.class
-                .getResource("/image/info.png").toString()));
+                .getResource("/img/info.png").toString()));
 
         alert.showAndWait();
     }
@@ -88,7 +88,7 @@ public class DialogBoxFactory {
 
         DialogPane dialogPane = alert.getDialogPane();
         dialogPane.getStylesheets().add(MainApp.class
-                .getResource("/stylesheet/dialog.css").toExternalForm());
+                .getResource("/css/dialog.css").toExternalForm());
         dialogPane.getStyleClass().add("dialog");
 
         Stage stage = (Stage) dialogPane.getScene().getWindow();
@@ -109,7 +109,7 @@ public class DialogBoxFactory {
         DialogPane dialogPane = dialogoExe.getDialogPane();
 
         dialogPane.getStylesheets().add(MainApp.class
-                .getResource("/stylesheet/dialog.css").toExternalForm());
+                .getResource("/css/dialog.css").toExternalForm());
         dialogPane.getStyleClass().add("dialog");
 
         Stage stage = (Stage) dialogPane.getScene().getWindow();

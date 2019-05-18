@@ -1,5 +1,5 @@
 
 Msquid:S1172,"1Remove this unused method parameter "usuarioDto".(ýžÅÆùÿÿÿÿ
+nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(ÃÝÝÀøÿÿÿÿ8ìÉÃù©-
 Bsquid:S1168"+Return an empty collection instead of null.(¥¹ï
 Xsquid:UnusedPrivateMethod,".Remove this unused private "persistir" method.(ýžÅÆùÿÿÿÿ
-nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(ÃÝÝÀøÿÿÿÿ8ìÉÃù©-

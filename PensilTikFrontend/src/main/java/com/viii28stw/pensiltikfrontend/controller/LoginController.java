@@ -103,7 +103,7 @@ public class LoginController implements Initializable {
         });
 
         Image errorIcon = new Image(MainApp.class
-                .getResource("/image/validator-error.png").toString());
+                .getResource("/img/validator_error.png").toString());
         emailValidator.setIcon(new ImageView(errorIcon));
         senhaValidator.setIcon(new ImageView(errorIcon));
     }
@@ -127,7 +127,7 @@ public class LoginController implements Initializable {
         try {
             Stage cadastroUsuarioStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/view/cadastro/cadastro_usuario.fxml"));
+            loader.setLocation(MainApp.class.getResource("/fxml/cadastro/cadastro_usuario.fxml"));
             StackPane cadastroUsuarioStackPane = loader.load();
             Scene cadastroUsuarioScene = new Scene(cadastroUsuarioStackPane);
             cadastroUsuarioStage.setResizable(false);
@@ -209,7 +209,7 @@ public class LoginController implements Initializable {
         try {
             Stage mdiStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/view/mdi.fxml"));
+            loader.setLocation(MainApp.class.getResource("/fxml/mdi.fxml"));
             StackPane mdiStackPane = loader.load();
             Scene mdiScene = new Scene(mdiStackPane);
             mdiStage.setMaximized(true);
@@ -219,7 +219,7 @@ public class LoginController implements Initializable {
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
 
-                if (!DialogBoxFactory.getInstance().questiona("/image/exit.png",
+                if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
                         "Fechar o sistema", "Você está prestes a fechar o sistema Mistersoft",
                         "Tem certeza que deseja fechar o sistema ?", "FECHAR")) {
                     we.consume();

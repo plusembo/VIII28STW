@@ -20,7 +20,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         Stage splashScreenStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(MainApp.class.getResource("/view/splash_screen.fxml"));
+        loader.setLocation(MainApp.class.getResource("/fxml/splash_screen.fxml"));
         StackPane splashScreenStackPane = loader.load();
         Scene splashScreenScene = new Scene(splashScreenStackPane);
         splashScreenStage.setResizable(false);

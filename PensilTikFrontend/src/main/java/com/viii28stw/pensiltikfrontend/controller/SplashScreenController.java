@@ -56,7 +56,7 @@ public class SplashScreenController implements Initializable {
             try {
                 Stage loginStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainApp.class.getResource("/view/login.fxml"));
+                loader.setLocation(MainApp.class.getResource("/fxml/login.fxml"));
                 AnchorPane loginAnchorPane = loader.load();
                 Scene loginScene = new Scene(loginAnchorPane);
                 loginStage.setResizable(false);

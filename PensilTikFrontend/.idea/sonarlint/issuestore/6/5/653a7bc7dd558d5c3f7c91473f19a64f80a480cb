@@ -1,17 +1,17 @@
 
-osquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8œè«¥ª-
-gsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ÌÖ¸Ýüÿÿÿÿ
 isquid:CommentedOutCodeLine…"<This block of commented-out lines of code should be removed.(Ô¤Ù8œè«¥ª-
-Ksquid:S1199"-Extract this nested code block into a method.(ïÄîY8œè«¥ª-
-†"squid:ClassVariableVisibilityCheck,"XMake lstFormsMenu a static final constant or non-public and provide accessors if needed.(‚åÄ
-Rsquid:S2696W"6Make the enclosing method "static" or remove this set.(¤¿ú§ÿÿÿÿÿ
-Qsquid:S1199ÿ"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8œè«¥ª-
-osquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(ÕÆˆëýÿÿÿÿ8œè«¥ª-
-Csquid:S2386W"'Make member "lstFormsMenu" "protected".(¤¿ú§ÿÿÿÿÿ
-gsquid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(óš¹Šýÿÿÿÿ
-jsquid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(ØëçØ8œè«¥ª-
-Isquid:S1444,"2Make this "public static lstFormsMenu" field final(‚åÄ
-Dsquid:S1905À",Remove this unnecessary cast to "StackPane".(®¢ƒ
-osquid:S3776²"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(€ ­øÿÿÿÿ
-gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ˆ¶ûÿÿÿÿÿ
 jsquid:CommentedOutCodeLineÝ"<This block of commented-out lines of code should be removed.(¡ÑªË8œè«¥ª-
+osquid:S3776²"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(€ ­øÿÿÿÿ
+†"squid:ClassVariableVisibilityCheck,"XMake lstFormsMenu a static final constant or non-public and provide accessors if needed.(‚åÄ
+Qsquid:S1199ÿ"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8œè«¥ª-
+Isquid:S1444,"2Make this "public static lstFormsMenu" field final(‚åÄ
+gsquid:CommentedOutCodeLineN"<This block of commented-out lines of code should be removed.(óš¹Šýÿÿÿÿ
+Csquid:S2386W"'Make member "lstFormsMenu" "protected".(¤¿ú§ÿÿÿÿÿ
+gsquid:CommentedOutCodeLineH"<This block of commented-out lines of code should be removed.(ˆ¶ûÿÿÿÿÿ
+osquid:CommentedOutCodeLineó"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8œè«¥ª-
+Dsquid:S1905À",Remove this unnecessary cast to "StackPane".(®¢ƒ
+osquid:CommentedOutCodeLineù"<This block of commented-out lines of code should be removed.(ÕÆˆëýÿÿÿÿ8œè«¥ª-
+gsquid:CommentedOutCodeLineT"<This block of commented-out lines of code should be removed.(ÌÖ¸Ýüÿÿÿÿ
+Ksquid:S1199"-Extract this nested code block into a method.(ïÄîY8œè«¥ª-
+Rsquid:S2696W"6Make the enclosing method "static" or remove this set.(¤¿ú§ÿÿÿÿÿ
+jsquid:CommentedOutCodeLineã"<This block of commented-out lines of code should be removed.(ØëçØ8œè«¥ª-

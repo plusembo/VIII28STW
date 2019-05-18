@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../stylesheet/mdi.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.MDIController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/mdi.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.MDIController">
    <children>
       <BorderPane prefHeight="418.0" prefWidth="624.0">
          <center>
@@ -65,7 +65,7 @@
                            <children>
                               <ImageView fx:id="imgvwLogoVergo" fitHeight="57.0" fitWidth="271.0" layoutX="387.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../image/vergo_logo_mdi.png" />
+                                    <Image url="@../img/vergo_logo_mdi.png" />
                                  </image>
                               </ImageView>
                            </children>

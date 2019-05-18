@@ -145,7 +145,7 @@ public class MDIController implements Initializable {
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuEnum.CADASTRO_USUARIO, "/view/cadastro/cadastro_usuario.fxml",
+        abreForm(MenuEnum.CADASTRO_USUARIO, "/fxml/cadastro/cadastro_usuario.fxml",
                 null, calculaX(627), calculaY(289));
     }
 
@@ -164,7 +164,7 @@ public class MDIController implements Initializable {
     @FXML
     private void mnuAjudaSobreAction() {
         abreForm(MenuEnum.AJUDA_SOBRE,
-                "/view/ajuda/sobre.fxml",
+                "/fxml/ajuda/sobre.fxml",
                 null,
                 calculaX(670), calculaY(289));
     }
