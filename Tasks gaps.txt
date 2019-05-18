@@ -1,5 +1,5 @@
-Não pode exluir um usuário logado
-
+- Não pode exluir um usuário logado
+- Melhorar a class DialogBoxFactory
 
 
 

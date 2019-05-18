@@ -9,6 +9,7 @@ import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
+import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -217,7 +218,15 @@ public class LoginController implements Initializable {
             MDIController mdiController = loader.getController();
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
-                Alert dialogoExe = new Alert(Alert.AlertType.CONFIRMATION);
+
+                if (!DialogBoxFactory.getInstance().questiona("/image/exit.png",
+                        "Fechar o sistema", "Você está prestes a fechar o sistema Mistersoft",
+                        "Tem certeza que deseja fechar o sistema ?", "FECHAR")) {
+                    we.consume();
+                } else System.exit(0);
+
+
+                /*Alert dialogoExe = new Alert(Alert.AlertType.CONFIRMATION);
                 ButtonType btnFechar = new ButtonType("FECHAR", ButtonBar.ButtonData.YES);
                 ButtonType btnCancelar = new ButtonType("CANCELAR", ButtonBar.ButtonData.CANCEL_CLOSE);
 
@@ -240,7 +249,7 @@ public class LoginController implements Initializable {
                 } else {
                     System.exit(0);
                 }
-
+*/
             });
 
             loginStage.close();

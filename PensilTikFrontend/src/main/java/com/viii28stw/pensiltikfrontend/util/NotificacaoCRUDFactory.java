@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 import lombok.AllArgsConstructor;
 
 @AllArgsConstructor
-public class NotificacaoCRUD {
+public class NotificacaoCRUDFactory {
 
     private final ImageView imageView;
     private final Label label;
@@ -60,7 +60,7 @@ public class NotificacaoCRUD {
     }
 
     private void notifica() {
-        Runnable rnbl = () -> {
+        Runnable runnable = () -> {
             label.setVisible(true);
             imageView.setVisible(true);
             try {
@@ -70,7 +70,7 @@ public class NotificacaoCRUD {
             label.setVisible(false);
             imageView.setVisible(false);
         };
-        Thread thrd = new Thread(rnbl);
+        Thread thrd = new Thread(runnable);
         thrd.start();
     }
 

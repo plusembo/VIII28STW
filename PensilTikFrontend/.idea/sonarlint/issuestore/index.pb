@@ -41,5 +41,7 @@ o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
 …
 Usrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/UsuarioNivelAcessoEnum.java,7\9\794c71f597f70d4b154c81f10028df6cebcca18b
-w
-Gsrc/main/java/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUD.java,6\4\64a5eb7b2830c97eb69a50d5ddbd541c1f6ec4f2
+x
+Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/DialogBoxFactory.java,6\2\62001376411dffdb57dea8b878b7abc2bcece9a7
+~
+Nsrc/main/java/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.java,4\9\49d00debec5e6ed5acf1e3a8c3a0a5452a7a6dd1
