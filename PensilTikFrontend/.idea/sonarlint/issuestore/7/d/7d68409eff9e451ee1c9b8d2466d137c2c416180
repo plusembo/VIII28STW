@@ -1,15 +1,12 @@
 
-Fsquid:S1604`"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
-Ksquid:S1604W"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
-Jsquid:S1602M",Remove useless curly braces around statement(ÃÉş©8€Éû©-
-Jsquid:S1612M",Replace this lambda with a method reference.(ÃÉş©8€Éû©-
-`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.paint.Paint'.(Ïæ©¼8ò¯›ó«-
-lsquid:S1871²"MThis branch's code block is the same as the block for the branch on line 175.(Ğ½ö®8²½Èû©-
-jsquid:CommentedOutCodeLineº"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
-esquid:UselessImportCheck"5Remove this unused import 'javafx.event.ActionEvent'.(î•¯¼ıÿÿÿÿ8ò¯›ó«-
-asquid:UselessImportCheck"6Remove this unused import 'javafx.event.EventHandler'.(º»û˜8ò¯›ó«-
-osquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8â™§˜¬-
+jsquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
+msquid:S4042Ä"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ıÿÿÿÿ8€Éû©-
+osquid:CommentedOutCodeLineŞ"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8â™§˜¬-
 ^
-squid:S899Ë";Do something with the "boolean" value returned by "delete".(Œ’¯‹ıÿÿÿÿ8€Éû©-
-jsquid:S1192£"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
-msquid:S4042Ë"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ıÿÿÿÿ8€Éû©-
+squid:S899Ä";Do something with the "boolean" value returned by "delete".(Œ’¯‹ıÿÿÿÿ8€Éû©-
+Jsquid:S1602E",Remove useless curly braces around statement(ÃÉş©8€Éû©-
+Fsquid:S1604X"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
+Jsquid:S1612E",Replace this lambda with a method reference.(ÃÉş©8€Éû©-
+Ksquid:S1604O"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
+jsquid:S1192›"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
+lsquid:S1871«"MThis branch's code block is the same as the block for the branch on line 168.(Ğ½ö®8²½Èû©-

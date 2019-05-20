@@ -1,5 +1,6 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
+import com.viii28stw.pensiltikfrontend.controller.cadastro.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.ajuda.SobreController;
@@ -41,7 +42,7 @@ public class MDIController implements Initializable {
 
     @Setter
     private Stage mdiStage;
-    public static List<FormMenu> lstFormsMenu;
+    private static HashMap<MenuEnum, FormMenu> listFormsMenu;
     @FXML
     private Hyperlink hlkNomeUsuario;
     @FXML
@@ -84,7 +85,7 @@ public class MDIController implements Initializable {
 //        hlkNomeUsuario.setText(String.format("%s (%s)", usuarioLogado.getUsuario().getNome(), usuarioLogado.getUsuario().getEmail()));
 
         lblDataHora.setText("");
-        lstFormsMenu = new ArrayList();
+        listFormsMenu = new HashMap<>();
         KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaDataHora());
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -146,7 +147,7 @@ public class MDIController implements Initializable {
     @FXML
     private void mnuCadastroUsuarioAction() {
         abreForm(MenuEnum.CADASTRO_USUARIO, "/fxml/cadastro/cadastro_usuario.fxml",
-                null, calculaX(627), calculaY(289));
+                null, calculaX(700), calculaY(500));
     }
 
     @FXML
@@ -178,24 +179,21 @@ public class MDIController implements Initializable {
     private void abreForm(MenuEnum menum, String arquivofxml, String icone, double x, double y) {
         boolean aberto = false;
         try {
-            for (FormMenu formMenu : lstFormsMenu) {
-                if (formMenu.getMenum().equals(menum)) {
-                    aberto = true;
-                    formMenu.getStage().toFront();
-                    break;
-                }
+            if(listFormsMenu.containsKey(menum)) {
+                aberto = true;
+                listFormsMenu.get(menum).getStage().toFront();
             }
 
             if (!aberto) {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(MainApp.class.getResource(arquivofxml));
-                StackPane parent = (StackPane) loader.load();
+                StackPane parent = loader.load();
 
                 Stage formStage = new Stage();
-                formStage.initOwner((Stage) hlkNomeUsuario.getScene().getWindow());
+                formStage.initOwner(hlkNomeUsuario.getScene().getWindow());
                 formStage.setResizable(false);
                 formStage.setMaximized(false);
-                formStage.initModality(Modality.NONE);
+                formStage.initModality(menum.equals(MenuEnum.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
                 formStage.setTitle(menum.getTitulo());
                 if (icone != null && !icone.equals("")) { formStage.getIcons().add(new Image(icone)); }
                 if (x != 0) { formStage.setX(x); }
@@ -204,16 +202,9 @@ public class MDIController implements Initializable {
                 Scene scene = new Scene(parent);
                 formStage.setScene(scene);
 
-                formStage.setOnCloseRequest((WindowEvent we) -> {
-                    for (FormMenu frm : lstFormsMenu) {
-                        if (frm.getMenum().equals(menum)) {
-                            lstFormsMenu.remove(frm);
-                            break;
-                        }
-                    }
-                });
+                formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menum));
 
-                lstFormsMenu.add(new FormMenu(menum, formStage));
+                listFormsMenu.put(menum, new FormMenu(menum, formStage));
 
                 //Flexible zone begining
                 switch (menum) {
@@ -289,6 +280,13 @@ public class MDIController implements Initializable {
 
         } catch (IOException ex) {
             Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+
+    }
+
+    public static void fechaJanela(MenuEnum menum) {
+        if(listFormsMenu.containsKey(menum)) {
+            listFormsMenu.remove(menum);
         }
 
     }

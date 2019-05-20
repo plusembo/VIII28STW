@@ -1,8 +1,11 @@
-package com.viii28stw.pensiltikfrontend.controller;
+package com.viii28stw.pensiltikfrontend.controller.cadastro;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
+import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
@@ -315,6 +318,7 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     private void jbtnFecharAction() {
         cadastroUsuarioStage.close();
+        MDIController.fechaJanela(MenuEnum.CADASTRO_USUARIO);
     }
 
 }

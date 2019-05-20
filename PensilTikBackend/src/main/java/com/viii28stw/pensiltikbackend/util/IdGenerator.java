@@ -25,7 +25,7 @@ public class IdGenerator implements IdentifierGenerator {
         SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyHHmmssSSS");
         String output = formatter.format(today);
 
-        String alphabet = "_-@%&";
+        String alphabet = "_-@*&";
         char ins = alphabet.charAt(new Random().nextInt(alphabet.length()));
         int generatedInt = new Random().nextInt(output.length());
 

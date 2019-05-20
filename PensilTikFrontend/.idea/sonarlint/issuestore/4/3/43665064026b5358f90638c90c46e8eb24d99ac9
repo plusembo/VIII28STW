@@ -1,0 +1,13 @@
+
+Ysquid:S1854Ô":Remove this useless assignment to local variable "salvou".(™‹°¼8€­úÆ£-
+Lsquid:S1604´"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8€­úÆ£-
+Gsquid:S1604ã"(Make this anonymous inner class a lambda(ô¸‡í8€­úÆ£-
+Gsquid:S1604Ÿ"(Make this anonymous inner class a lambda(ÚÁÀ8€­úÆ£-
+{squid:S1192F"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8€­úÆ£-
+Fsquid:S1604{"(Make this anonymous inner class a lambda(ç¿—8€­úÆ£-
+Jsquid:S1481Ô"+Remove this unused "salvou" local variable.(™‹°¼8€­úÆ£-
+Lsquid:S1604Š"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€­úÆ£-
+usquid:S3776C"RRefactor this method to reduce its Cognitive Complexity from 38 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8€­úÆ£-
+Fsquid:S1604r"(Make this anonymous inner class a lambda(ˆê¤8€­úÆ£-
+Fsquid:S1604i"(Make this anonymous inner class a lambda(½¶½Ş8€­úÆ£-
+}squid:UselessImportCheck"RRemove this unused import 'com.viii28stw.pensiltikfrontend.model.domain.FormMenu'.(ªÌÏ8¹˜­-

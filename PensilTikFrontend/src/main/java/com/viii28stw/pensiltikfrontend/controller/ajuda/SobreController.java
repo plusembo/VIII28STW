@@ -41,12 +41,7 @@ public class SobreController implements Initializable {
     @FXML
     private void jbtnFecharAction() {
         sobreStage.close();
-        for (FormMenu fm : MDIController.lstFormsMenu) {
-            if (fm.getMenum().equals(MenuEnum.AJUDA_SOBRE)) {
-                MDIController.lstFormsMenu.remove(fm);
-                break;
-            }
-        }
+        MDIController.fechaJanela(MenuEnum.AJUDA_SOBRE);
     }
 
 }

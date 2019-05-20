@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
+import com.viii28stw.pensiltikfrontend.controller.cadastro.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
@@ -13,23 +14,15 @@ import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonBar;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.DialogPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
-import javafx.scene.paint.Paint;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
@@ -38,7 +31,6 @@ import lombok.Setter;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -164,6 +156,7 @@ public class LoginController implements Initializable {
             jchxLembrarDeMim.setSelected(true);
             jtxEmail.setText(usuario.getEmail());
             jpwSenha.setText(usuario.getSenha());
+            jtxEmail.selectAll();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -251,13 +244,12 @@ public class LoginController implements Initializable {
                 }
 */
             });
-
             loginStage.close();
-            limparCampos();
             mdiStage.showAndWait();
             loginStage.show();
-            lembraDeMim();
             jtxEmail.requestFocus();
+            limparCampos();
+            lembraDeMim();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
