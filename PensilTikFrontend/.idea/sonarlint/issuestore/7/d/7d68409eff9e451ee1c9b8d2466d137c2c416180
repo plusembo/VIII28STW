@@ -1,12 +1,12 @@
 
-jsquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(ÔÙ²Î8€Éû©-
-msquid:S4042Ä"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8€Éû©-
-osquid:CommentedOutCodeLineÞ"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8â™§˜¬-
-^
-squid:S899Ä";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8€Éû©-
-Jsquid:S1602E",Remove useless curly braces around statement(ÃÉþ©8€Éû©-
-Fsquid:S1604X"(Make this anonymous inner class a lambda(ÚÁÀ8€Éû©-
-Jsquid:S1612E",Replace this lambda with a method reference.(ÃÉþ©8€Éû©-
-Ksquid:S1604O"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8€Éû©-
-jsquid:S1192›"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8€Éû©-
+Ksquid:S1604O"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8åÚ½®-
 lsquid:S1871«"MThis branch's code block is the same as the block for the branch on line 168.(Ð½ö®8²½Èû©-
+osquid:CommentedOutCodeLineÞ"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8åÚ½®-
+msquid:S4042Ä"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8åÚ½®-
+jsquid:S1192›"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8åÚ½®-
+jsquid:CommentedOutCodeLine³"<This block of commented-out lines of code should be removed.(ÔÙ²Î8åÚ½®-
+Fsquid:S1604X"(Make this anonymous inner class a lambda(ÚÁÀ8åÚ½®-
+^
+squid:S899Ä";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8åÚ½®-
+Jsquid:S1612E",Replace this lambda with a method reference.(ÃÉþ©8åÚ½®-
+Jsquid:S1602E",Remove useless curly braces around statement(ÃÉþ©8åÚ½®-

@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
+import com.viii28stw.pensiltikfrontend.controller.form.LoginController;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -45,7 +46,7 @@ public class SplashScreenController implements Initializable {
                 return new Task<String>() {
                     @Override
                     protected String call() throws Exception {
-                        Thread.sleep(2750);
+                        Thread.sleep(50);//2750
                         return null;
                     }
                 };
@@ -56,7 +57,7 @@ public class SplashScreenController implements Initializable {
             try {
                 Stage loginStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(MainApp.class.getResource("/fxml/login.fxml"));
+                loader.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
                 AnchorPane loginAnchorPane = loader.load();
                 Scene loginScene = new Scene(loginAnchorPane);
                 loginStage.setResizable(false);

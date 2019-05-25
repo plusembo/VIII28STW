@@ -27,7 +27,7 @@ public class UsuarioService implements IUsuarioService {
         if(usuarioOptional.isPresent()){
             Usuario usuario = usuarioOptional.get();
             return UsuarioDto.builder()
-                    .id(usuario.getId())
+                    .codigo(usuario.getCodigo())
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
@@ -45,7 +45,7 @@ public class UsuarioService implements IUsuarioService {
         List<UsuarioDto> usuariosDto = new ArrayList();
         for(Usuario usuario : usuarioRepository.findAll()) {
             usuariosDto.add(UsuarioDto.builder()
-                    .id(usuario.getId())
+                    .codigo(usuario.getCodigo())
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
@@ -71,7 +71,7 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto atualizarUsuario(UsuarioDto usuarioDto) {
-        if (usuarioDto.getId() == null || usuarioDto.getId().trim().isEmpty()) {
+        if (usuarioDto.getCodigo() == null || usuarioDto.getCodigo().trim().isEmpty()) {
                 throw new IllegalArgumentException("O usuário informado não contem ID");
         }
 
@@ -80,7 +80,7 @@ public class UsuarioService implements IUsuarioService {
 
     private UsuarioDto persistir(UsuarioDto usuarioDto) {
         Usuario usuario = usuarioRepository.save(Usuario.builder()
-                .id(usuarioDto.getId())
+                .codigo(usuarioDto.getCodigo())
                 .nome(usuarioDto.getNome())
                 .sobreNome(usuarioDto.getSobreNome())
                 .email(usuarioDto.getEmail())
@@ -91,7 +91,7 @@ public class UsuarioService implements IUsuarioService {
                 .build());
 
         return UsuarioDto.builder()
-                .id(usuario.getId())
+                .codigo(usuario.getCodigo())
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())
@@ -109,16 +109,16 @@ public class UsuarioService implements IUsuarioService {
     }
 
     @Override
-    public UsuarioDto fazerLogin(String email, String senha){
-        if(usuarioRepository.findByEmailAndSenha(email, senha) == null) {
+    public UsuarioDto fazerLogin(UsuarioDto usuarioDto){
+        if(usuarioRepository.findByEmailAndSenha(usuarioDto.getEmail(), usuarioDto.getSenha()) == null) {
             throw new NoSuchElementException("E-mail ou senha incorreta");
         }
-        Usuario usuario = usuarioRepository.findByEmailAndSenha(email, senha);
+        Usuario usuario = usuarioRepository.findByEmailAndSenha(usuarioDto.getEmail(), usuarioDto.getSenha());
 
         userLoggedIn.add(usuario.getEmail());
 
         return UsuarioDto.builder()
-                .id(usuario.getId())
+                .codigo(usuario.getCodigo())
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())

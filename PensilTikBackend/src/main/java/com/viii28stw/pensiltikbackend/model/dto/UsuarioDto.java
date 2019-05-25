@@ -20,7 +20,7 @@ import java.time.LocalDate;
 @Builder
 public class UsuarioDto{
 
-    private String id;
+    private String codigo;
     @NotBlank private String nome;
     @NotBlank private String sobreNome;
     @NotBlank @Email private String email;

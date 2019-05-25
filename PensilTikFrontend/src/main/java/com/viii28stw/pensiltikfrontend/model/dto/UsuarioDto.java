@@ -18,7 +18,7 @@ import java.time.LocalDate;
 @ToString
 @Builder
 public class UsuarioDto{
-    private String id;
+    private String codigo;
     private String nome;
     private String sobreNome;
     private String email;

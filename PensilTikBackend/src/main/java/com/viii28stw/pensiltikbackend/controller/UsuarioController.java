@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikbackend.controller;
 
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
+import com.viii28stw.pensiltikbackend.service.IUsuarioService;
 import com.viii28stw.pensiltikbackend.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,22 +15,24 @@ import java.util.List;
 @RequestMapping("/pensiltik")
 public class UsuarioController {
 
-    @Autowired
-    private UsuarioService usuarioService;
+    private final static String USER_LOGGED_IN = "user_logged_in";
 
-    @GetMapping("/buscarusuarioporid/{id}")
+    @Autowired
+    private IUsuarioService usuarioService;
+
+    @PostMapping("/buscarusuarioporid")
     public ResponseEntity<UsuarioDto> buscarUsuarioPorId(@RequestHeader HashMap<String, Object> headers,
-                                                         @PathVariable("id") String id){
-        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+                                                         @RequestBody @Valid UsuarioDto usuarioIdDto){
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get(USER_LOGGED_IN)))) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
-        UsuarioDto usuarioDto = usuarioService.buscarUsuarioPorId(id);
+        UsuarioDto usuarioDto = usuarioService.buscarUsuarioPorId(usuarioIdDto.getCodigo());
         return new ResponseEntity<>(usuarioDto, HttpStatus.OK);
     }
 
     @GetMapping("/buscartodososusuarios")
     public ResponseEntity<List<UsuarioDto>> buscarTodosOsUsuarios(@RequestHeader HashMap<String, Object> headers) {
-        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get(USER_LOGGED_IN)))) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         List<UsuarioDto> usuariosDto = usuarioService.buscarTodosOsUsuarios();
@@ -39,7 +42,7 @@ public class UsuarioController {
     @PostMapping("/salvarusuario")
     public ResponseEntity<UsuarioDto> salvarUsuario(@RequestHeader HashMap<String, Object> headers,
                                                     @RequestBody @Valid UsuarioDto usuarioDto) {
-        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get(USER_LOGGED_IN)))) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         return new ResponseEntity<>(usuarioService.salvarUsuario(usuarioDto), HttpStatus.OK);
@@ -48,24 +51,24 @@ public class UsuarioController {
     @PutMapping("/atualizarusuario")
     public ResponseEntity<UsuarioDto> atualizarUsuario(@RequestHeader HashMap<String, Object> headers,
                                                        @RequestBody @Valid UsuarioDto usuarioDto) {
-        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get(USER_LOGGED_IN)))) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
         return new ResponseEntity<>(usuarioService.atualizarUsuario(usuarioDto), HttpStatus.OK);
     }
 
-    @DeleteMapping("/deletarusuarioporid/{id}")
+    @DeleteMapping("/deletarusuarioporid")
     public ResponseEntity<Boolean> deletarUsuarioPorId(@RequestHeader HashMap<String, Object> headers,
-                                                       @PathVariable("id") String id) {
-        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get("user_logged_in")))) {
+                                                       @RequestBody @Valid UsuarioDto usuarioDto) {
+        if(!usuarioService.isUserLoggedIn(String.valueOf(headers.get(USER_LOGGED_IN)))) {
             return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<>(usuarioService.deletarUsuarioPorId(id), HttpStatus.OK);
+        return new ResponseEntity<>(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()), HttpStatus.OK);
     }
 
-    @GetMapping("/fazerlogin/{email}/{senha}")
-    public ResponseEntity<UsuarioDto> login(@PathVariable("email") String email, @PathVariable("senha") String senha) {
-        return new ResponseEntity<>(usuarioService.fazerLogin(email, senha), HttpStatus.OK);
+    @PostMapping("/fazerlogin")
+    public ResponseEntity<UsuarioDto> login(@RequestBody @Valid UsuarioDto usuarioDto) {
+        return new ResponseEntity<>(usuarioService.fazerLogin(usuarioDto), HttpStatus.OK);
     }
 
 }

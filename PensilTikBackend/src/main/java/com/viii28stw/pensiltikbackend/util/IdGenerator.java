@@ -22,6 +22,14 @@ public class IdGenerator implements IdentifierGenerator {
     @Override
     public Serializable generate(SharedSessionContractImplementor ssci, Object o) {
         Date today = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyHHmmssSSS");
+        String output = formatter.format(today);
+        return output;
+    }
+
+    @Deprecated
+    private Serializable oldGenerate(SharedSessionContractImplementor ssci, Object o) {
+        Date today = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("ddMMyyyyHHmmssSSS");
         String output = formatter.format(today);
 

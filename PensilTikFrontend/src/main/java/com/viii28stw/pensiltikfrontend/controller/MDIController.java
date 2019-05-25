@@ -1,9 +1,9 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
-import com.viii28stw.pensiltikfrontend.controller.cadastro.CadastroUsuarioController;
+import com.viii28stw.pensiltikfrontend.controller.form.cadastro.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
-import com.viii28stw.pensiltikfrontend.controller.ajuda.SobreController;
+import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import javafx.animation.KeyFrame;
@@ -28,7 +28,6 @@ import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
-import java.util.List;
 import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -146,7 +145,7 @@ public class MDIController implements Initializable {
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuEnum.CADASTRO_USUARIO, "/fxml/cadastro/cadastro_usuario.fxml",
+        abreForm(MenuEnum.CADASTRO_USUARIO, "/fxml/form/cadastro/cadastro_usuario.fxml",
                 null, calculaX(700), calculaY(500));
     }
 
@@ -165,7 +164,7 @@ public class MDIController implements Initializable {
     @FXML
     private void mnuAjudaSobreAction() {
         abreForm(MenuEnum.AJUDA_SOBRE,
-                "/fxml/ajuda/sobre.fxml",
+                "/fxml/form/ajuda/sobre.fxml",
                 null,
                 calculaX(670), calculaY(289));
     }

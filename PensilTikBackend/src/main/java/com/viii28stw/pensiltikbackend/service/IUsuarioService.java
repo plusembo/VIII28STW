@@ -6,6 +6,8 @@ import java.util.List;
 
 public interface IUsuarioService {
 
+    boolean isUserLoggedIn(String email);
+
     UsuarioDto buscarUsuarioPorId(String id);
 
     List<UsuarioDto> buscarTodosOsUsuarios();
@@ -16,7 +18,7 @@ public interface IUsuarioService {
 
     boolean deletarUsuarioPorId(String id);
 
-    UsuarioDto fazerLogin(String email, String senha);
+    UsuarioDto fazerLogin(UsuarioDto usuarioDto);
 
     void sair(String email);
 

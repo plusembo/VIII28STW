@@ -113,11 +113,11 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioService.atualizarUsuario(usuarioDto));
 
-        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getCodigo());
         assertNotNull(usuarioDto1);
         assertEquals(usuarioDto1, usuarioDto);
 
-        usuarioDto.setId(null);
+        usuarioDto.setCodigo(null);
         usuarioService.atualizarUsuario(usuarioDto);
     }
 
@@ -196,13 +196,13 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioDto);
 
-        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioPorId(usuarioDto.getCodigo());
 
         assertNotNull(usuarioDto1);
         assertEquals(usuarioDto, usuarioDto1);
 
-        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
-        usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()));
+        usuarioService.buscarUsuarioPorId(usuarioDto.getCodigo());
     }
 
     @Test
@@ -240,8 +240,8 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioDto);
 
-        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
-        usuarioService.buscarUsuarioPorId(usuarioDto.getId());
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()));
+        usuarioService.buscarUsuarioPorId(usuarioDto.getCodigo());
     }
 
     @Test(expected = EmptyResultDataAccessException.class)
@@ -258,8 +258,8 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioDto);
 
-        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
-        usuarioService.deletarUsuarioPorId(usuarioDto.getId());
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()));
+        usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo());
     }
 
     @Test(expected = NoSuchElementException.class)
@@ -276,13 +276,13 @@ public class UsuarioServiceTest {
 
         assertNotNull(usuarioDto);
 
-        UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+        UsuarioDto usuarioDto1 = usuarioService.fazerLogin(usuarioDto);
 
         assertNotNull(usuarioDto1);
         assertEquals(usuarioDto1, usuarioDto);
 
-        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getId()));
-        usuarioService.fazerLogin(usuarioDto.getEmail(), usuarioDto.getSenha());
+        assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()));
+        usuarioService.fazerLogin(usuarioDto);
     }
 
 }
