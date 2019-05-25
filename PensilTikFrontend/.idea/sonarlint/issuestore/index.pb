@@ -23,10 +23,6 @@ v
 Fsrc/main/java/com/viii28stw/pensiltikfrontend/util/EmailValidator.java,c\a\ca2000bda165e8120c1beca421fd7c70e1a068e4
 {
 Ksrc/main/java/com/viii28stw/pensiltikfrontend/controller/MDIController.java,6\5\653a7bc7dd558d5c3f7c91473f19a64f80a480cb
-É
-Ssrc/main/java/com/viii28stw/pensiltikfrontend/controller/ajuda/SobreController.java,a\f\af320dd2475aae44db28ae8715284324ead0c4c8
-}
-Msrc/main/java/com/viii28stw/pensiltikfrontend/controller/LoginController.java,7\d\7d68409eff9e451ee1c9b8d2466d137c2c416180
 y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/service/UsuarioService.java,f\8\f893f5dd23b4b61bd2dad0f66f328bf5e9c793b2
 z
@@ -43,8 +39,6 @@ x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/DialogBoxFactory.java,6\2\62001376411dffdb57dea8b878b7abc2bcece9a7
 ~
 Nsrc/main/java/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.java,4\9\49d00debec5e6ed5acf1e3a8c3a0a5452a7a6dd1
-ê
-`src/main/java/com/viii28stw/pensiltikfrontend/controller/cadastro/CadastroUsuarioController.java,4\3\43665064026b5358f90638c90c46e8eb24d99ac9
 à
 Xsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/ajuda/SobreController.java,b\9\b9998da018db826538a484a8bdbc335b4a039de6
 ï

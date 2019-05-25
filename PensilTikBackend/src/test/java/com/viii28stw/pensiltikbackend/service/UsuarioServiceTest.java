@@ -182,6 +182,46 @@ public class UsuarioServiceTest {
         usuarioService.salvarUsuario(usuarioDto);
     }
 
+    @Test
+    public void buscarUsuarioMaiorCodigo() {
+//        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+//                .nome(randomAlphabetic(25))
+//                .sobreNome(randomAlphabetic(25))
+//                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+//                .senha(randomAlphanumeric(8))
+//                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
+//                .sexoEnum(SexoEnum.MASCULINO)
+//                .dataNascimento(LocalDate.now())
+//                .build());
+//
+//        assertNotNull(usuarioDto);
+
+        UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioMaiorCodigo();
+
+        assertNotNull(usuarioDto1);
+//        assertEquals(usuarioDto, usuarioDto1);
+    }
+
+    @Test
+    public void buscarMaiorCodigoUsuario() {
+//        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+//                .nome(randomAlphabetic(25))
+//                .sobreNome(randomAlphabetic(25))
+//                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+//                .senha(randomAlphanumeric(8))
+//                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
+//                .sexoEnum(SexoEnum.MASCULINO)
+//                .dataNascimento(LocalDate.now())
+//                .build());
+//
+//        assertNotNull(usuarioDto);
+
+        String usuarioCodigo = usuarioService.buscarMaiorCodigoUsuario();
+
+        assertNotNull(usuarioCodigo);
+//        assertEquals(usuarioDto, usuarioDto1);
+    }
+
     @Test(expected = NoSuchElementException.class)
     public void buscarUsuarioPorIdNaoPodeRetornarNulo() {
         UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()

@@ -2,7 +2,6 @@ package com.viii28stw.pensiltikbackend.controller;
 
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.service.IUsuarioService;
-import com.viii28stw.pensiltikbackend.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

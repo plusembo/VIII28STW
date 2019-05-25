@@ -20,6 +20,26 @@ public class UsuarioService implements IUsuarioService {
                 .filter(us -> us.equals(email)).findFirst().orElse(null) != null;
     }
 
+    public UsuarioDto buscarUsuarioMaiorCodigo() {
+        Usuario usuario = usuarioRepository.findFirstByOrderByCodigoDesc();
+        if(usuario != null){
+            return UsuarioDto.builder()
+                    .codigo(usuario.getCodigo())
+                    .nome(usuario.getNome())
+                    .sobreNome(usuario.getSobreNome())
+                    .email(usuario.getEmail())
+                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                    .senha(usuario.getSenha())
+                    .sexoEnum(usuario.getSexoEnum())
+                    .dataNascimento(usuario.getDataNascimento())
+                    .build();
+        } else return null;
+    }
+
+    public String buscarMaiorCodigoUsuario() {
+        return buscarUsuarioMaiorCodigo() == null ? "" : buscarUsuarioMaiorCodigo().getCodigo();
+    }
+
     @Override
     public UsuarioDto buscarUsuarioPorId(String id) {
         Optional<Usuario> usuarioOptional = usuarioRepository.findById(id);
