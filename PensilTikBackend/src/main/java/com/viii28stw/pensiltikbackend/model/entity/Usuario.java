@@ -21,8 +21,6 @@ public class Usuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @GenericGenerator(name = "IdGenerator", strategy = "com.viii28stw.pensiltikbackend.util.IdGenerator")
-    @GeneratedValue(generator = "IdGenerator")
     @Id
     @Column(name = "CODIGO", length = 25)
     private String codigo;

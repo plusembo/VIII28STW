@@ -3,6 +3,10 @@ package com.viii28stw.pensiltikbackend.service;
 import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -184,42 +188,22 @@ public class UsuarioServiceTest {
 
     @Test
     public void buscarUsuarioMaiorCodigo() {
-//        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-//                .nome(randomAlphabetic(25))
-//                .sobreNome(randomAlphabetic(25))
-//                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-//                .senha(randomAlphanumeric(8))
-//                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
-//                .sexoEnum(SexoEnum.MASCULINO)
-//                .dataNascimento(LocalDate.now())
-//                .build());
-//
-//        assertNotNull(usuarioDto);
+        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
+                .nome(randomAlphabetic(25))
+                .sobreNome(randomAlphabetic(25))
+                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
+                .senha(randomAlphanumeric(8))
+                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
+                .sexoEnum(SexoEnum.MASCULINO)
+                .dataNascimento(LocalDate.now())
+                .build());
+
+        assertNotNull(usuarioDto);
 
         UsuarioDto usuarioDto1 = usuarioService.buscarUsuarioMaiorCodigo();
 
         assertNotNull(usuarioDto1);
-//        assertEquals(usuarioDto, usuarioDto1);
-    }
-
-    @Test
-    public void buscarMaiorCodigoUsuario() {
-//        UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
-//                .nome(randomAlphabetic(25))
-//                .sobreNome(randomAlphabetic(25))
-//                .email(randomAlphabetic(7) + "@" + randomAlphabetic(5) + "."+ randomAlphabetic(3))
-//                .senha(randomAlphanumeric(8))
-//                .usuarioNivelAcessoEnum(UsuarioNivelAcessoEnum.USUARIO_COMUM)
-//                .sexoEnum(SexoEnum.MASCULINO)
-//                .dataNascimento(LocalDate.now())
-//                .build());
-//
-//        assertNotNull(usuarioDto);
-
-        String usuarioCodigo = usuarioService.buscarMaiorCodigoUsuario();
-
-        assertNotNull(usuarioCodigo);
-//        assertEquals(usuarioDto, usuarioDto1);
+        assertEquals(usuarioDto, usuarioDto1);
     }
 
     @Test(expected = NoSuchElementException.class)

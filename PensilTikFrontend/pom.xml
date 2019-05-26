@@ -103,9 +103,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>4.2.2</version>
+            <groupId>com.cecilsystems.cecilfxcomponent</groupId>
+            <artifactId>MaskedJFXTextField</artifactId>
+            <version>1.0</version>
         </dependency>
 
     </dependencies>

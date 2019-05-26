@@ -233,6 +233,80 @@ public class CadastroUsuarioController implements Initializable {
         dialog.show();
     }
 
+    @FXML
+    public void jmskCodigoUsuarioKeyReleased(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.ENTER) {
+            if (jmskCodigoUsuario.validate()) {
+                jtxNomeUsuario.requestFocus();
+            } else {
+                jmskCodigoUsuario.requestFocus();
+            }
+        }
+    }
+
+    @FXML
+    public void jmskCodigoUsuarioKeyPressed(KeyEvent keyEvent) {
+        if (keyEvent.getCode() == KeyCode.F1) {
+            try {
+                Integer csb = UsuarioService.getInstance().selecionaCodigoUsuarioSubsequente();
+                jmskCodigoUsuario.setText(csb.toString());
+                jmskCodigoUsuario.positionCaret(csb.toString().length());
+            } catch (ClassNotFoundException | SQLException ex) {
+                DialogFactory.getInstance().erro(ex.getMessage());
+            }
+        }
+    }
+
+    @FXML
+    private void jbtnConsultarUsuarioAction() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class
+                    .getResource(PathEnum.VIEW_PATH + "ConsultaUsuario.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
+
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Usuarios");
+            dialogStage.setResizable(false);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(formStage);
+            dialogStage.setX(414);
+            dialogStage.setY(85);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            ConsultaUsuarioController controller = loader.getController();
+            dialogStage.showAndWait();
+
+            Usuario usuario = controller.getUsuario();
+
+            if (usuario != null) {
+                usuario = UsuarioService.getInstance()
+                        .selecionaUsuario(usuario.getCdUsuario());
+                jmskCodigoUsuario.setEditable(false);
+                preencheUsuario(usuario);
+            }
+
+            jmskCodigoUsuario.resetValidation();
+            jtxNomeUsuario.resetValidation();
+            jtxEmailUsuario.resetValidation();
+            jpwSenhaUsuario.resetValidation();
+            jpwConfirmarSenhaUsuario.resetValidation();
+
+            lblEmailInvalido.setVisible(false);
+            imgvwEmailInvalido.setVisible(false);
+
+            lblGrupoUsuarioObrig.setVisible(false);
+            imgvwGrupoUsuarioObrig.setVisible(false);
+
+            lblConfirmarSenha.setVisible(false);
+            imgvwConfirmarSenha.setVisible(false);
+
+        } catch (IOException | ClassNotFoundException | SQLException ex) {
+            DialogFactory.getInstance().erro(ex.getMessage());
+        }
+    }
+
     private boolean validaTodosOsCampos() {
         int campoIndex = 0;
 

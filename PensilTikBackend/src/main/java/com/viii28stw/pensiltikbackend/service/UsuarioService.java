@@ -4,6 +4,7 @@ import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.model.entity.Usuario;
 import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
 import com.viii28stw.pensiltikbackend.util.EmailValidator;
+import com.viii28stw.pensiltikbackend.util.IdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -34,10 +35,6 @@ public class UsuarioService implements IUsuarioService {
                     .dataNascimento(usuario.getDataNascimento())
                     .build();
         } else return null;
-    }
-
-    public String buscarMaiorCodigoUsuario() {
-        return buscarUsuarioMaiorCodigo() == null ? "" : buscarUsuarioMaiorCodigo().getCodigo();
     }
 
     @Override
@@ -86,6 +83,10 @@ public class UsuarioService implements IUsuarioService {
                 throw new IllegalArgumentException("Este e-mail já existe");
         }
 
+        usuarioDto.setCodigo(buscarUsuarioMaiorCodigo() == null ?
+                IdGenerator.getInstance().generate() :
+                buscarUsuarioMaiorCodigo().getCodigo());
+
         return persistir(usuarioDto);
     }
 
@@ -94,7 +95,6 @@ public class UsuarioService implements IUsuarioService {
         if (usuarioDto.getCodigo() == null || usuarioDto.getCodigo().trim().isEmpty()) {
                 throw new IllegalArgumentException("O usuário informado não contem ID");
         }
-
         return persistir(usuarioDto);
     }
 

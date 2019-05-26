@@ -19,6 +19,13 @@ public class IdGenerator implements IdentifierGenerator {
         return uniqueInstance;
     }
 
+    public String generate() {
+        Date today = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("ssSSS");
+        String output = "1".concat(formatter.format(today));
+        return output;
+    }
+
     @Override
     public Serializable generate(SharedSessionContractImplementor ssci, Object o) {
         Date today = new Date();

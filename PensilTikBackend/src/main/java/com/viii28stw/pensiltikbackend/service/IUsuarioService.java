@@ -8,8 +8,6 @@ public interface IUsuarioService {
 
     UsuarioDto buscarUsuarioMaiorCodigo();
 
-    String buscarMaiorCodigoUsuario();
-
     boolean isUserLoggedIn(String email);
 
     UsuarioDto buscarUsuarioPorId(String id);

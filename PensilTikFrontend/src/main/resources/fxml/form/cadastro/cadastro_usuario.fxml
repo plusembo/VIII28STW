@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.cecilsystems.cecilfxcomponent.MaskedJFXTextField?>
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import com.jfoenix.controls.JFXPasswordField?>
@@ -30,6 +31,16 @@
                   <RowConstraints maxHeight="85.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="69.0" prefWidth="267.0" spacing="1.0">
+                     <children>
+                        <MaskedJFXTextField fx:id="jmskCodigo" mask="N!" onKeyPressed="#jmskCodigoUsuarioKeyPressed" onKeyReleased="#jmskCodigoUsuarioKeyReleased" prefWidth="213.0" promptText="Código" />
+                        <JFXButton fx:id="jbtnConsultarUsuario" onAction="#jbtnConsultarUsuarioAction" prefHeight="30.0" prefWidth="40.0" styleClass="button-pesquisar" text="...">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                  </HBox>
                   <HBox alignment="CENTER_LEFT" prefHeight="85.0" prefWidth="599.0" spacing="52.0" GridPane.rowIndex="1">
                      <children>
                         <JFXTextField fx:id="jtxNome" prefWidth="259.0" promptText="Nome" />
@@ -48,7 +59,7 @@
                         <JFXPasswordField fx:id="jpwConfirmarSenha" prefWidth="259.0" promptText="Confirmar Senha" />
                      </children>
                   </HBox>
-                  <JFXTextField fx:id="jtxNome1" prefWidth="259.0" promptText="Código" />
+
                </children>
             </GridPane>
             <JFXButton fx:id="jbtnSalvar" layoutX="287.0" layoutY="373.0" onAction="#jbtnSalvarAction" prefHeight="40.0" prefWidth="125.0" styleClass="jfx-button-salvar" text="SALVAR" />
