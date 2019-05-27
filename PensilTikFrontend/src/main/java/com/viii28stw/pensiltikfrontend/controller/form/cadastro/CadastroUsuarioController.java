@@ -2,12 +2,15 @@ package com.viii28stw.pensiltikfrontend.controller.form.cadastro;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
+import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
+import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
 import com.viii28stw.pensiltikfrontend.util.PasswordValidator;
 import javafx.beans.value.ChangeListener;
@@ -17,16 +20,24 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -34,13 +45,18 @@ import java.util.ResourceBundle;
 @NoArgsConstructor
 public class CadastroUsuarioController implements Initializable {
     @Getter @Setter private Stage cadastroUsuarioStage;
+    @FXML private JFXTextField jmskCodigo;
     @FXML private JFXTextField jtxNome;
     @FXML private JFXTextField jtxSobrenome;
     @FXML private JFXComboBox<SexoEnum> jcbxSexo;
     @FXML private JFXTextField jtxEmail;
     @FXML private JFXPasswordField jpwSenha;
     @FXML private JFXPasswordField jpwConfirmarSenha;
+    @FXML private JFXButton jbtnLocalizarUsuario;
     @FXML private JFXButton jbtnSalvar;
+    @FXML private JFXButton jbtnExcluir;
+    @FXML private JFXButton jbtnFechar;
+    @FXML private JFXButton jbtnLimpar;
     @FXML private Label lblSexoObrigatorio;
     @FXML private ImageView imgvwSexoObrigatorio;
     @FXML private Label lblEmailInvalido;
@@ -80,6 +96,7 @@ public class CadastroUsuarioController implements Initializable {
         imgvwConfirmarSenha.setVisible(false);
         lblConfirmarSenha.setStyle("-fx-text-fill: #c00d0d;");
 
+        RequiredFieldValidator codigoValidator = new RequiredFieldValidator();
         RequiredFieldValidator nomeValidator = new RequiredFieldValidator();
         RequiredFieldValidator sobrenomeValidator = new RequiredFieldValidator();
         RequiredFieldValidator emailValidator = new RequiredFieldValidator();
@@ -88,90 +105,109 @@ public class CadastroUsuarioController implements Initializable {
         confirmarSenhaValidator3.setMessage("Confirmar nhase: Campo obrigatório");
         jpwConfirmarSenha.getValidators().add(confirmarSenhaValidator3);
 
+        jmskCodigo.getValidators().add(nomeValidator);
         jtxNome.getValidators().add(nomeValidator);
         jtxSobrenome.getValidators().add(sobrenomeValidator);
         jtxEmail.getValidators().add(emailValidator);
         jpwSenha.getValidators().add(senhaValidator);
 
+        codigoValidator.setMessage("Código: Campo obrigatório");
         nomeValidator.setMessage("Nome: Campo obrigatório");
         sobrenomeValidator.setMessage("Sobrenome: Campo obrigatório");
         emailValidator.setMessage("E-mail: Campo obrigatório");
         senhaValidator.setMessage("Senha: Campo obrigatório");
 
+        jbtnExcluir.setDisable(true);
+
         SexoEnum.getList().forEach(obsListSexo::add);
         jcbxSexo.setItems(obsListSexo);
 
-        jtxNome.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    jtxNome.validate();
-                }
-            }
-        });
-
-        jtxSobrenome.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    jtxSobrenome.validate();
-                }
-            }
-        });
-
-        jcbxSexo.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    if (jcbxSexo.getValue() == null) {
-                        lblSexoObrigatorio.setVisible(true);
-                        imgvwSexoObrigatorio.setVisible(true);
-                    } else {
-                        lblSexoObrigatorio.setVisible(false);
-                        imgvwSexoObrigatorio.setVisible(false);
+        jmskCodigo.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                         Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                if (jmskCodigo.validate()) {
+                    jmskCodigoFocusLost();
+                } else {
+                    if (jbtnLocalizarUsuario.isFocused() || jbtnLimpar.isFocused() || jbtnFechar.isFocused()) {
+                        jmskCodigo.resetValidation();
+                        return;
                     }
+                    jmskCodigo.requestFocus();
                 }
             }
         });
 
-        jtxEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    if (jtxEmail.validate()) {
-                        if (EmailValidator.isValidEmail(jtxEmail.getText())) {
-                            lblEmailInvalido.setVisible(false);
-                            imgvwEmailInvalido.setVisible(false);
-                        } else {
-                            lblEmailInvalido.setText("E-mail: Inválido");
-                            lblEmailInvalido.setVisible(true);
-                            imgvwEmailInvalido.setVisible(true);
-                        }
-                    } else {
+        jbtnLocalizarUsuario.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                            Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                if (!jmskCodigo.validate()) {
+                    jmskCodigo.requestFocus();
+                }
+            }
+        });
+
+
+        jtxNome.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                               Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                jtxNome.validate();
+            }
+        });
+
+        jtxSobrenome.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                    Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                jtxSobrenome.validate();
+            }
+        });
+
+        jcbxSexo.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                if (jcbxSexo.getValue() == null) {
+                    lblSexoObrigatorio.setVisible(true);
+                    imgvwSexoObrigatorio.setVisible(true);
+                } else {
+                    lblSexoObrigatorio.setVisible(false);
+                    imgvwSexoObrigatorio.setVisible(false);
+                }
+            }
+        });
+
+        jtxEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                if (jtxEmail.validate()) {
+                    if (EmailValidator.isValidEmail(jtxEmail.getText())) {
                         lblEmailInvalido.setVisible(false);
                         imgvwEmailInvalido.setVisible(false);
+                    } else {
+                        lblEmailInvalido.setText("E-mail: Inválido");
+                        lblEmailInvalido.setVisible(true);
+                        imgvwEmailInvalido.setVisible(true);
                     }
+                } else {
+                    lblEmailInvalido.setVisible(false);
+                    imgvwEmailInvalido.setVisible(false);
                 }
             }
         });
 
-        jpwSenha.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    if (jpwSenha.validate()) {
-                        if (PasswordValidator.isValidPassword(jpwSenha.getText())) {
-                            lblSenhaInvalida.setVisible(false);
-                            imgvwSenhaInvalida.setVisible(false);
-                        } else {
-                            lblSenhaInvalida.setText("Senha: Inválido");
-                            lblSenhaInvalida.setVisible(true);
-                            imgvwSenhaInvalida.setVisible(true);
-                        }
-                    } else {
+        jpwSenha.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                if (jpwSenha.validate()) {
+                    if (PasswordValidator.isValidPassword(jpwSenha.getText())) {
                         lblSenhaInvalida.setVisible(false);
                         imgvwSenhaInvalida.setVisible(false);
+                    } else {
+                        lblSenhaInvalida.setText("Senha: Inválido");
+                        lblSenhaInvalida.setVisible(true);
+                        imgvwSenhaInvalida.setVisible(true);
                     }
+                } else {
+                    lblSenhaInvalida.setVisible(false);
+                    imgvwSenhaInvalida.setVisible(false);
                 }
             }
         });
@@ -190,6 +226,31 @@ public class CadastroUsuarioController implements Initializable {
                 }
             }
         });
+
+    }
+
+    private void jmskCodigoFocusLost() {
+        if (!jmskCodigo.isEditable()) {
+            return;
+        }
+        UsuarioDto usuarioDto = usuarioService.buscarUsuarioPorId(jmskCodigo.getText());
+        jmskCodigo.setEditable(false);
+        if (usuarioDto == null) {
+            return;
+        }
+
+        Usuario usuario = Usuario.builder()
+                .codigo(usuarioDto.getCodigo())
+                .nome(usuarioDto.getNome())
+                .sobreNome(usuarioDto.getSobreNome())
+                .email(usuarioDto.getEmail())
+                .usuarioNivelAcessoEnum(usuarioDto.getUsuarioNivelAcessoEnum())
+                .senha(usuarioDto.getSenha())
+                .sexoEnum(usuarioDto.getSexoEnum())
+                .dataNascimento(usuarioDto.getDataNascimento())
+                .build();
+
+        preencheUsuario(usuario);
 
     }
 
@@ -234,12 +295,25 @@ public class CadastroUsuarioController implements Initializable {
     }
 
     @FXML
+    private void jbtnExcluirAction() {
+        if (!DialogBoxFactory.getInstance().adverte("trash.png",
+                "Excluir usuário", "Este usuário será excluido permanentemente",
+                "Tem certeza que deseja excluir este usuário ?", "EXCLUIR")) {
+            return;
+        }
+        usuarioService.deletarUsuarioPorId(jmskCodigo.getText());
+        //notificacoes.notificaExcluido();
+        limpaForm();
+        jmskCodigo.requestFocus();
+    }
+
+    @FXML
     public void jmskCodigoUsuarioKeyReleased(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.ENTER) {
-            if (jmskCodigoUsuario.validate()) {
-                jtxNomeUsuario.requestFocus();
+            if (jmskCodigo.validate()) {
+                jtxNome.requestFocus();
             } else {
-                jmskCodigoUsuario.requestFocus();
+                jmskCodigo.requestFocus();
             }
         }
     }
@@ -247,64 +321,71 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     public void jmskCodigoUsuarioKeyPressed(KeyEvent keyEvent) {
         if (keyEvent.getCode() == KeyCode.F1) {
-            try {
-                Integer csb = UsuarioService.getInstance().selecionaCodigoUsuarioSubsequente();
-                jmskCodigoUsuario.setText(csb.toString());
-                jmskCodigoUsuario.positionCaret(csb.toString().length());
-            } catch (ClassNotFoundException | SQLException ex) {
-                DialogFactory.getInstance().erro(ex.getMessage());
-            }
+//            Integer csb = UsuarioService.getInstance().selecionaCodigoUsuarioSubsequente();
+//            jmskCodigo.setText(csb.toString());
+//            jmskCodigo.positionCaret(csb.toString().length());
         }
     }
 
     @FXML
-    private void jbtnConsultarUsuarioAction() {
+    private void jbtnLocalizarUsuarioAction() {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class
-                    .getResource(PathEnum.VIEW_PATH + "ConsultaUsuario.fxml"));
+                    .getResource("LocalizaUsuario.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Usuarios");
             dialogStage.setResizable(false);
             dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(formStage);
+            dialogStage.initOwner(cadastroUsuarioStage);
             dialogStage.setX(414);
             dialogStage.setY(85);
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 
-            ConsultaUsuarioController controller = loader.getController();
+//            LocalizaUsuarioController controller = loader.getController();
             dialogStage.showAndWait();
+//
+//            Usuario usuario = controller.getUsuario();
+//
+//            if (usuario != null) {
+//                usuario = usuarioService.buscarUsuarioPorId(usuario.getCodigo());
+//                jmskCodigoUsuario.setEditable(false);
+//                preencheUsuario(usuario);
+//            }
 
-            Usuario usuario = controller.getUsuario();
-
-            if (usuario != null) {
-                usuario = UsuarioService.getInstance()
-                        .selecionaUsuario(usuario.getCdUsuario());
-                jmskCodigoUsuario.setEditable(false);
-                preencheUsuario(usuario);
-            }
-
-            jmskCodigoUsuario.resetValidation();
-            jtxNomeUsuario.resetValidation();
-            jtxEmailUsuario.resetValidation();
-            jpwSenhaUsuario.resetValidation();
-            jpwConfirmarSenhaUsuario.resetValidation();
+            jmskCodigo.resetValidation();
+            jtxNome.resetValidation();
+            jtxEmail.resetValidation();
+            jpwSenha.resetValidation();
+            jpwConfirmarSenha.resetValidation();
 
             lblEmailInvalido.setVisible(false);
             imgvwEmailInvalido.setVisible(false);
 
-            lblGrupoUsuarioObrig.setVisible(false);
-            imgvwGrupoUsuarioObrig.setVisible(false);
+            lblSexoObrigatorio.setVisible(false);
+            imgvwSexoObrigatorio.setVisible(false);
 
             lblConfirmarSenha.setVisible(false);
             imgvwConfirmarSenha.setVisible(false);
 
-        } catch (IOException | ClassNotFoundException | SQLException ex) {
-            DialogFactory.getInstance().erro(ex.getMessage());
+        } catch (IOException ex) {
         }
+    }
+
+    private void preencheUsuario(Usuario usuario) {
+        jbtnExcluir.setDisable(false);
+        setModoEdicao(true);
+
+        jmskCodigo.setText(usuario.getCodigo());
+        jtxNome.setText(usuario.getNome());
+        jcbxSexo.getSelectionModel().select(usuario.getSexoEnum());
+        jtxEmail.setText(usuario.getEmail());
+        jpwSenha.setText(usuario.getSenha());
+        jpwConfirmarSenha.setText(usuario.getSenha());
+        jbtnSalvar.setText("ATUALIZAR");
     }
 
     private boolean validaTodosOsCampos() {
@@ -360,6 +441,7 @@ public class CadastroUsuarioController implements Initializable {
 
     @FXML
     private void jbtnLimparAction() {
+        jmskCodigo.resetValidation();
         jtxNome.resetValidation();
         jtxSobrenome.resetValidation();
 
@@ -377,6 +459,8 @@ public class CadastroUsuarioController implements Initializable {
         lblConfirmarSenha.setVisible(false);
         imgvwConfirmarSenha.setVisible(false);
 
+        limpaForm();
+
         jtxNome.clear();
         jtxSobrenome.clear();
         jcbxSexo.getSelectionModel().select(null);
@@ -384,8 +468,24 @@ public class CadastroUsuarioController implements Initializable {
         jpwSenha.clear();
         jpwConfirmarSenha.clear();
 
-        jtxNome.requestFocus();
+        jmskCodigo.requestFocus();
 
+    }
+
+    private void limpaForm() {
+        jmskCodigo.setEditable(true);
+        jbtnExcluir.setDisable(true);
+        setModoEdicao(false);
+
+        jmskCodigo.setText("");
+        jtxNome.clear();
+        jtxSobrenome.clear();
+        jcbxSexo.getSelectionModel().select(null);
+        jtxEmail.clear();
+        jpwSenha.clear();
+        jpwConfirmarSenha.clear();
+
+        jbtnSalvar.setText("SALVAR");
     }
 
     @FXML

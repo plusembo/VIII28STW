@@ -16,7 +16,7 @@ import java.time.LocalDate;
 @Builder
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
-    private String id;
+    private String codigo;
     private String nome;
     private String sobreNome;
     private String email;

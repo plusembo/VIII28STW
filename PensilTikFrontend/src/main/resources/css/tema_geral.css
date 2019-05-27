@@ -32,7 +32,7 @@
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
     -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-size: 12pt;
 }
 
 .jfx-text-field-special {
@@ -62,7 +62,7 @@
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
     -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-size: 12pt;
 }
 
 .text-area {
@@ -197,11 +197,4 @@
     -jfx-button-type: "FLAT";
     -fx-border-style: solid;
 }
-
-
-
-
-
-/*Teste*/
-
 

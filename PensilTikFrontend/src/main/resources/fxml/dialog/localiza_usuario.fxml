@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="525.0" stylesheets="@../../css/tema_geral.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.dialog.LocalizaUsuarioController">
+   <children>
+      <JFXTextField fx:id="jtxNomeFiltro" labelFloat="true" layoutX="38.0" layoutY="30.0" onKeyReleased="#jtxNomeFiltroKeyReleased" prefHeight="31.0" prefWidth="450.0" promptText="Nome" />
+      <TableView fx:id="tvwUsuario" layoutX="38.0" layoutY="83.0" onMouseClicked="#tvwUsuarioSelecionarMouseClicked" prefHeight="443.0" prefWidth="450.0" style="-fx-focus-color: #4050a8;">
+         <columns>
+            <TableColumn fx:id="clmCodigo" editable="false" prefWidth="110.0" resizable="false" sortable="false" text="Código" />
+            <TableColumn fx:id="clmNome" editable="false" prefWidth="317.0" resizable="false" sortable="false" text="Nome" />
+         </columns>
+      </TableView>
+      <Label fx:id="lblQtd" layoutX="38.0" layoutY="536.0" styleClass="label-comum" text="Qtd usuários" />
+   </children>
+</AnchorPane>

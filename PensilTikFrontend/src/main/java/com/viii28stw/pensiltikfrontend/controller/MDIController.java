@@ -67,22 +67,6 @@ public class MDIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-//        mnConfiguracoes.getItems().stream().filter((mi) -> (mi.getId().equals("CFG001")))
-//                .forEachOrdered((mi) -> {
-//                    mi.setVisible(false);
-//                });
-//        if (UsuarioLogado.getInstance().getUsuario().getGrupoUsuario().getCdGrupoUsuario() != 1) {
-//
-//            mnCadastro.getItems().stream().filter((mi) -> (mi.getId().equals("SPRT")
-//                    || mi.getId().equals("CAD005") || mi.getId().equals("CAD006")))
-//                    .forEachOrdered((mi) -> {
-//                        mi.setVisible(false);
-//                    });
-//        }
-
-//        hlkNomeUsuario.setText(String.format("%s (%s)", usuarioLogado.getUsuario().getNome(), usuarioLogado.getUsuario().getEmail()));
-
         lblDataHora.setText("");
         listFormsMenu = new HashMap<>();
         KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaDataHora());

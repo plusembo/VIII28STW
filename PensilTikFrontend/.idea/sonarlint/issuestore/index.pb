@@ -45,3 +45,5 @@ Xsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/ajuda/SobreContro
 esrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastro/CadastroUsuarioController.java,f\4\f4c9029e5551cbc62a8bb48e992d6364a6781b65
 ‚
 Rsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java,1\9\19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32
+Ž
+^src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizaUsuarioController.java,d\d\dde63092a6bd99882129e65c7c4239605a29a3a0

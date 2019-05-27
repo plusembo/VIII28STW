@@ -182,7 +182,8 @@ public class LoginController implements Initializable {
         new Thread(() -> {
             try {
                 if (jchxLembrarDeMim.isSelected()) {
-                    Usuario usuario = Usuario.builder().id(usuarioDto.getCodigo())
+                    Usuario usuario = Usuario.builder()
+                            .codigo(usuarioDto.getCodigo())
                             .nome(usuarioDto.getNome())
                             .sobreNome(usuarioDto.getSobreNome())
                             .email(usuarioDto.getEmail())
