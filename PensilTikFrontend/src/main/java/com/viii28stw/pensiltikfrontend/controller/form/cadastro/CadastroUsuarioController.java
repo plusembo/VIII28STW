@@ -10,6 +10,7 @@ import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
+import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
 import com.viii28stw.pensiltikfrontend.util.PasswordValidator;
@@ -332,7 +333,7 @@ public class CadastroUsuarioController implements Initializable {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class
-                    .getResource("LocalizaUsuario.fxml"));
+                    .getResource("/fxml/dialog/localiza_usuario.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
 
             Stage dialogStage = new Stage();
@@ -340,8 +341,8 @@ public class CadastroUsuarioController implements Initializable {
             dialogStage.setResizable(false);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(cadastroUsuarioStage);
-            dialogStage.setX(414);
-            dialogStage.setY(85);
+            dialogStage.setX(CentralizeLocationRelativeToScreen.getX(919));
+            dialogStage.setY(CentralizeLocationRelativeToScreen.getY(567));
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);
 

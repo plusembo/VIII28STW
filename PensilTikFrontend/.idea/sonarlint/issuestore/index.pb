@@ -47,3 +47,5 @@ esrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastro/Cadastro
 Rsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java,1\9\19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32
 Ž
 ^src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizaUsuarioController.java,d\d\dde63092a6bd99882129e65c7c4239605a29a3a0
+Š
+Zsrc/main/java/com/viii28stw/pensiltikfrontend/util/CentralizeLocationRelativeToScreen.java,4\6\4671ed84fc5789fd835dd9dfc14092c2a1b9477d

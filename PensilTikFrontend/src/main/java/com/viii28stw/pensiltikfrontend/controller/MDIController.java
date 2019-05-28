@@ -6,6 +6,7 @@ import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
+import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -85,64 +86,88 @@ public class MDIController implements Initializable {
         lblDataHora.setText(dataHora.substring(0,1).toUpperCase().concat(dataHora.substring(1)));
     }
 
-    private double calculaX(double w) {
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        Dimension dm = tk.getScreenSize();
-        return (dm.width - w) / 2.0;
-    }
-
-    private double calculaY(double h) {
-        Toolkit tk = Toolkit.getDefaultToolkit();
-        Dimension dm = tk.getScreenSize();
-        return (dm.height - h) / 2.0;
-    }
+//    private double calculaX(double w) {
+//        Toolkit tk = Toolkit.getDefaultToolkit();
+//        Dimension dm = tk.getScreenSize();
+//        return (dm.width - w) / 2.0;
+//    }
+//
+//    private double calculaY(double h) {
+//        Toolkit tk = Toolkit.getDefaultToolkit();
+//        Dimension dm = tk.getScreenSize();
+//        return (dm.height - h) / 2.0;
+//    }
 
     @FXML
     private void mnuConfiguracaoContaUsuarioAction() {
-        abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO, "configuracao-conta-usuario.fxml",
-                null, calculaX(627), calculaY(485));
+        abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO,
+                "configuracao-conta-usuario.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(627),
+                CentralizeLocationRelativeToScreen.getY(485));
     }
 
     @FXML
     private void mnuCadastroTipoRendaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_RENDA, "cadastro-tipo-renda.fxml",
-                null, calculaX(627), calculaY(562));
+        abreForm(MenuEnum.CADASTRO_TIPO_RENDA,
+                "cadastro-tipo-renda.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(627),
+                CentralizeLocationRelativeToScreen.getY(562));
     }
 
     @FXML
     private void mnuCadastroRendaAction() {
-        abreForm(MenuEnum.CADASTRO_RENDA, "cadastro-renda.fxml",
-                null, calculaX(1207), calculaY(614));
+        abreForm(MenuEnum.CADASTRO_RENDA,
+                "cadastro-renda.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(1207),
+                CentralizeLocationRelativeToScreen.getY(614));
     }
 
     @FXML
     private void mnuCadastroTipoDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_DESPESA, "cadastro-tipo-despesa.fxml",
-                null, calculaX(627), calculaY(533));
+        abreForm(MenuEnum.CADASTRO_TIPO_DESPESA,
+                "cadastro-tipo-despesa.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(627),
+                CentralizeLocationRelativeToScreen.getY(533));
     }
 
     @FXML
     private void mnuCadastroDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_DESPESA, "cadastro-despesa.fxml",
-                null, calculaX(627), calculaY(439));
+        abreForm(MenuEnum.CADASTRO_DESPESA,
+                "cadastro-despesa.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(627),
+                CentralizeLocationRelativeToScreen.getY(439));
     }
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuEnum.CADASTRO_USUARIO, "/fxml/form/cadastro/cadastro_usuario.fxml",
-                null, calculaX(700), calculaY(500));
+        abreForm(MenuEnum.CADASTRO_USUARIO,
+                "/fxml/form/cadastro/cadastro_usuario.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(700),
+                CentralizeLocationRelativeToScreen.getY(500));
     }
 
     @FXML
     private void mnuRelatorioRendaAction() {
-        abreForm(MenuEnum.RELATORIO_RENDA, "relatorio-renda.fxml",
-                null, calculaX(650), calculaY(600));
+        abreForm(MenuEnum.RELATORIO_RENDA,
+                "relatorio-renda.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(650),
+                CentralizeLocationRelativeToScreen.getY(600));
     }
 
     @FXML
     private void mnuRelatorioDespesasAction() {
-        abreForm(MenuEnum.RELATORIO_DESPESAS, "relatorio-despesas.fxml",
-                null, calculaX(670), calculaY(289));
+        abreForm(MenuEnum.RELATORIO_DESPESAS,
+                "relatorio-despesas.fxml",
+                null,
+                CentralizeLocationRelativeToScreen.getX(670),
+                CentralizeLocationRelativeToScreen.getY(289));
     }
 
     @FXML
@@ -150,7 +175,8 @@ public class MDIController implements Initializable {
         abreForm(MenuEnum.AJUDA_SOBRE,
                 "/fxml/form/ajuda/sobre.fxml",
                 null,
-                calculaX(670), calculaY(289));
+                CentralizeLocationRelativeToScreen.getX(670),
+                CentralizeLocationRelativeToScreen.getY(289));
     }
 
     //--- *** ----- ### ----- *** ---

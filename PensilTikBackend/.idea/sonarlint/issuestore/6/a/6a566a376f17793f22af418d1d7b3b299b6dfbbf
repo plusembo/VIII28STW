@@ -1,6 +1,6 @@
 
+psquid:S3776A"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(ÌÌ·8§›×‹¯-
 squid:S1488"^Immediately return this expression instead of assigning it to the temporary variable "output".(É³‡…øÿÿÿÿ8îñøä®-
 Ssquid:S1133&"5Do not forget to remove this deprecated code someday.(¸»ÿÇ8§›×‹¯-
 Wsquid:MissingDeprecatedCheck&"(Add the missing @deprecated Javadoc tag.(¸»ÿÇ8§›×‹¯-
-psquid:S3776A"RRefactor this method to reduce its Cognitive Complexity from 37 to the 15 allowed.(ÌÌ·8§›×‹¯-
 squid:S1488!"^Immediately return this expression instead of assigning it to the temporary variable "output".(ÔÊÀùÿÿÿÿ8§›×‹¯-

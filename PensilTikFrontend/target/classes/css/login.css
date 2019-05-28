@@ -1,6 +1,6 @@
 .label {
     -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #c00d0d;
 }
 
@@ -8,16 +8,16 @@
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12pt;
 }
 
 .jfx-password-field {
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12pt;
 }
 
 .text-field {

@@ -1,18 +1,18 @@
 .label {
     -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #c00d0d;
 }
 
 .label-comum {
     -fx-font-size: 11pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #42064d;
 }
 
 .label-notificacao {
     -fx-font-size: 10pt;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #4050a8;
 }
 
@@ -31,7 +31,7 @@
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 12pt;
 }
 
@@ -43,8 +43,8 @@
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12pt;
 }
 
 .text-field {
@@ -61,7 +61,7 @@
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
+    -fx-font-family: "Segoe UI";
     -fx-font-size: 12pt;
 }
 
@@ -75,8 +75,8 @@
     -jfx-focus-color: #0f9d58;
     -jfx-unfocus-color: #4050a8;
     -jfx-label-float: true;
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12pt;
 }
 
 .combo-box {
@@ -94,7 +94,7 @@
 }
 
 .table-view .column-header, .table-view .filler {
-    -fx-size: 35;
+    -fx-size: 25;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
     -fx-border-color: transparent transparent derive(#4050a8, 100%) transparent;
@@ -102,21 +102,21 @@
 }
 
 .column-header.left-header > .label {
-    -fx-font-size: 12.5pt;
-    -fx-font-family: "Segoe MDL2 Assets";
+    -fx-font-size: 10pt;
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #4050a8;
     -fx-alignment: center-left;
 }
 
 .column-header.right-header > .label {
-    -fx-font-size: 12.5pt;
-    -fx-font-family: "Segoe MDL2 Assets";
+    -fx-font-size: 11pt;
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #4050a8;
     -fx-alignment: center-right;
 }
 
 .table-row-cell .text {
-    -fx-font-size: 12pt;
+    -fx-font-size: 10pt;
     -fx-font-family: "Segoe UI";
 }
 
@@ -127,12 +127,11 @@
 .titled-pane > .title  {
     -fx-background-radius: 0, 0, 0;
     -fx-font-size: 10pt;
-    -fx-font-family: "Segoe MDL2 Assets";
+    -fx-font-family: "Segoe UI";
     -fx-text-fill: #4050a8;
     -fx-alignment: center-left;
 
 }
-
 
 .jfx.button {
     -fx-font-family: "Segoe UI Semibold";

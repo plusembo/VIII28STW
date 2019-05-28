@@ -13,9 +13,11 @@ com\viii28stw\pensiltikfrontend\util\Utility.class
 com\viii28stw\pensiltikfrontend\util\PasswordValidator.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController.class
+com\viii28stw\pensiltikfrontend\controller\dialog\LocalizaUsuarioController.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController$1.class
 com\viii28stw\pensiltikfrontend\controller\MDIController$1.class
 com\viii28stw\pensiltikfrontend\util\DialogBoxFactory.class
+com\viii28stw\pensiltikfrontend\util\CentralizeLocationRelativeToScreen.class
 com\viii28stw\pensiltikfrontend\MainApp.class
 com\viii28stw\pensiltikfrontend\enumeration\MenuEnum.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario$UsuarioBuilder.class

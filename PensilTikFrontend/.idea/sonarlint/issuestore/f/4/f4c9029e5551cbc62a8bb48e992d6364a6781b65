@@ -1,15 +1,15 @@
 
-Gsquid:S1604Ÿ"(Make this anonymous inner class a lambda(ô¸‡í8ßò…¸¯-
-Lsquid:S1905Ğ"-Remove this unnecessary cast to "AnchorPane".(‡ƒˆ8»î„¹¯-
-Ysquid:S1854":Remove this useless assignment to local variable "salvou".(™‹°¼8ßò…¸¯-
-usquid:S3776R"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8ßò…¸¯-
-Ssquid:S1066"/Merge this if statement with the enclosing one.(Ãä–şÿÿÿÿ8ßò…¸¯-
-Isquid:S00108ö")Either remove or fill this block of code.(Ãôş•8¦ß¹¯-
-Lsquid:S1604×"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8ßò…¸¯-
-jsquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(ĞÉ§Œ8ö‘¹¯-
-osquid:CommentedOutCodeLineá"<This block of commented-out lines of code should be removed.(èÄáøÿÿÿÿ8ö‘¹¯-
-{squid:S1192U"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8ßò…¸¯-
-Jsquid:S1481"+Remove this unused "salvou" local variable.(™‹°¼8ßò…¸¯-
-osquid:CommentedOutCodeLine±"<This block of commented-out lines of code should be removed.(á»ã¨şÿÿÿÿ8‚¢è¸¯-
-jsquid:CommentedOutCodeLineÜ"<This block of commented-out lines of code should be removed.(¢šì8ö‘¹¯-
-osquid:CommentedOutCodeLineÄ"<This block of commented-out lines of code should be removed.(™ºŞÀúÿÿÿÿ8Â½û¸¯-
+jsquid:CommentedOutCodeLineà"<This block of commented-out lines of code should be removed.(ĞÉ§Œ8ö‘¹¯-
+osquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(èÄáøÿÿÿÿ8ö‘¹¯-
+Jsquid:S1481‘"+Remove this unused "salvou" local variable.(™‹°¼8ßò…¸¯-
+Ssquid:S1066"/Merge this if statement with the enclosing one.(Ãä–şÿÿÿÿ8ßò…¸¯-
+Isquid:S00108÷")Either remove or fill this block of code.(Ãôş•8¦ß¹¯-
+osquid:CommentedOutCodeLine²"<This block of commented-out lines of code should be removed.(á»ã¨şÿÿÿÿ8‚¢è¸¯-
+osquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(™ºŞÀúÿÿÿÿ8Â½û¸¯-
+Lsquid:S1905Ñ"-Remove this unnecessary cast to "AnchorPane".(‡ƒˆ8»î„¹¯-
+Gsquid:S1604 "(Make this anonymous inner class a lambda(ô¸‡í8ßò…¸¯-
+Ysquid:S1854‘":Remove this useless assignment to local variable "salvou".(™‹°¼8ßò…¸¯-
+jsquid:CommentedOutCodeLineİ"<This block of commented-out lines of code should be removed.(¢šì8ö‘¹¯-
+Lsquid:S1604Ø"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8ßò…¸¯-
+usquid:S3776S"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ8ßò…¸¯-
+{squid:S1192V"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8ßò…¸¯-
