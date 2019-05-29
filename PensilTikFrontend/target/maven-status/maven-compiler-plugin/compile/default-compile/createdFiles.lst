@@ -18,6 +18,7 @@ com\viii28stw\pensiltikfrontend\controller\SplashScreenController$1.class
 com\viii28stw\pensiltikfrontend\controller\MDIController$1.class
 com\viii28stw\pensiltikfrontend\util\DialogBoxFactory.class
 com\viii28stw\pensiltikfrontend\util\CentralizeLocationRelativeToScreen.class
+com\viii28stw\pensiltikfrontend\util\I18n.class
 com\viii28stw\pensiltikfrontend\MainApp.class
 com\viii28stw\pensiltikfrontend\enumeration\MenuEnum.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario$UsuarioBuilder.class
