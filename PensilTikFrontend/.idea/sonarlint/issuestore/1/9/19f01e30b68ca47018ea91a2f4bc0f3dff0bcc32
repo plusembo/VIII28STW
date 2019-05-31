@@ -1,12 +1,14 @@
 
+osquid:CommentedOutCodeLineœ"<This block of commented-out lines of code should be removed.(ÞÀÊ®ÿÿÿÿÿ8•Ð½ß°-
+msquid:S4042Ø"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8•Ð½ß°-
+jsquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(ÔÙ²Î8•Ð½ß°-
 ^
-squid:S899Æ";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8åÚ½®-
-jsquid:S1192œ"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8åÚ½®-
-Ksquid:S1604P"(Make this anonymous inner class a lambda(å­ßÁúÿÿÿÿ8åÚ½®-
-msquid:S4042Æ"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8åÚ½®-
-Jsquid:S1602F",Remove useless curly braces around statement(ÃÉþ©8åÚ½®-
-Fsquid:S1604Y"(Make this anonymous inner class a lambda(ÚÁÀ8åÚ½®-
-Jsquid:S1612F",Replace this lambda with a method reference.(ÃÉþ©8åÚ½®-
-lsquid:S1871¬"MThis branch's code block is the same as the block for the branch on line 169.(Ð½ö®8²½Èû©-
-jsquid:CommentedOutCodeLine´"<This block of commented-out lines of code should be removed.(ÔÙ²Î8åÚ½®-
-osquid:CommentedOutCodeLineà"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8åÚ½®-
+squid:S899Ø";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8•Ð½ß°-
+osquid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(Öþïõüÿÿÿÿ8•Ð½ß°-
+Osquid:S1612G",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8åÚ½®-
+osquid:CommentedOutCodeLine‹"<This block of commented-out lines of code should be removed.(•ˆšÿÿÿÿÿ8•Ð½ß°-
+jsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(¢šì8•Ð½ß°-
+lsquid:S1871¾"MThis branch's code block is the same as the block for the branch on line 187.(Ð½ö®8²½Èû©-
+Ksquid:S1905x"-Remove this unnecessary cast to "AnchorPane".(‡ƒˆ8•Ð½ß°-
+jsquid:S1192®"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8•Ð½ß°-
+osquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8•Ð½ß°-

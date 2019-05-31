@@ -49,5 +49,9 @@ Rsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.j
 ^src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizaUsuarioController.java,d\d\dde63092a6bd99882129e65c7c4239605a29a3a0
 Š
 Zsrc/main/java/com/viii28stw/pensiltikfrontend/util/CentralizeLocationRelativeToScreen.java,4\6\4671ed84fc5789fd835dd9dfc14092c2a1b9477d
-l
-<src/main/java/com/viii28stw/pensiltikfrontend/util/I18n.java,2\1\21ccfc40ad55ea5da033334426a16ab8d7b11e8a
+t
+Dsrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/I18n.java,d\3\d3870049b132a82527d94d61639544e7ce2fc647
+s
+Csrc/main/java/com/viii28stw/pensiltikfrontend/util/I18nFactory.java,8\e\8ef6dc7363a5d4e073ba8ec2fc782bcddd9538c2
+‹
+[src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizaI18nController.java,5\b\5b61f5419e63d1ed18b726b554b8ab6b1618bfea

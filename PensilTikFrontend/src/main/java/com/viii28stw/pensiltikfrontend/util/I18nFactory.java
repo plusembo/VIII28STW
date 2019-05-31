@@ -8,17 +8,17 @@ import java.util.ResourceBundle;
 
 @NoArgsConstructor
 @Getter
-public class I18n {
+public class I18nFactory {
 
     private Locale locale;
     private ResourceBundle resourceBundle;
     private final static String RESOURCE_BUNDLE_BASE_NAME = "strings";
 
-    private static I18n uniqueInstance;
+    private static I18nFactory uniqueInstance;
 
-    public static synchronized I18n getInstance() {
+    public static synchronized I18nFactory getInstance() {
         if (uniqueInstance == null) {
-            uniqueInstance = new I18n();
+            uniqueInstance = new I18nFactory();
         }
         return uniqueInstance;
     }

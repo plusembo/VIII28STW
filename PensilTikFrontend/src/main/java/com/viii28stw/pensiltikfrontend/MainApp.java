@@ -1,7 +1,7 @@
 package com.viii28stw.pensiltikfrontend;
 
 import com.viii28stw.pensiltikfrontend.controller.SplashScreenController;
-import com.viii28stw.pensiltikfrontend.util.I18n;
+import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,7 +19,7 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        I18n.getInstance().setLocale("en", "UK");
+        I18nFactory.getInstance().setLocale("en", "UK");
         Stage splashScreenStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/fxml/splash_screen.fxml"));

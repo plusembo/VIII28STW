@@ -25,7 +25,6 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -85,18 +84,6 @@ public class MDIController implements Initializable {
         String dataHora = sdf.format(Calendar.getInstance().getTime());
         lblDataHora.setText(dataHora.substring(0,1).toUpperCase().concat(dataHora.substring(1)));
     }
-
-//    private double calculaX(double w) {
-//        Toolkit tk = Toolkit.getDefaultToolkit();
-//        Dimension dm = tk.getScreenSize();
-//        return (dm.width - w) / 2.0;
-//    }
-//
-//    private double calculaY(double h) {
-//        Toolkit tk = Toolkit.getDefaultToolkit();
-//        Dimension dm = tk.getScreenSize();
-//        return (dm.height - h) / 2.0;
-//    }
 
     @FXML
     private void mnuConfiguracaoContaUsuarioAction() {

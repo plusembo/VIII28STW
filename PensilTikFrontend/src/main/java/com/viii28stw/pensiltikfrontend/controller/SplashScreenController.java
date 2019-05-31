@@ -2,7 +2,7 @@ package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.LoginController;
-import com.viii28stw.pensiltikfrontend.util.I18n;
+import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 import javafx.concurrent.WorkerStateEvent;
@@ -59,7 +59,7 @@ public class SplashScreenController implements Initializable {
 
                 Stage loginStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
-                loader.setResources(I18n.getInstance().getResourceBundle());
+                loader.setResources(I18nFactory.getInstance().getResourceBundle());
                 loader.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
                 AnchorPane loginAnchorPane = loader.load();
                 Scene loginScene = new Scene(loginAnchorPane);

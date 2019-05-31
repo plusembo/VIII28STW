@@ -6,14 +6,13 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
-import com.viii28stw.pensiltikfrontend.controller.form.cadastro.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
+import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,7 +22,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
@@ -67,9 +68,7 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        Platform.runLater(() -> {
-            lembraDeMim();
-        });
+        Platform.runLater(() -> lembraDeMim());
 
         jtxEmail.getValidators().add(emailValidator);
         jpwSenha.getValidators().add(senhaValidator);
@@ -77,21 +76,17 @@ public class LoginController implements Initializable {
         emailValidator.setMessage("Email: Campo obrigatório");
         senhaValidator.setMessage("Senha: Campo obrigatório");
 
-        jtxEmail.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    jtxEmail.validate();
-                }
+        jtxEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                jtxEmail.validate();
             }
         });
 
-        jpwSenha.focusedProperty().addListener(new ChangeListener<Boolean>() {
-            @Override
-            public void changed(ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) {
-                if (oldValue) {
-                    jpwSenha.validate();
-                }
+        jpwSenha.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
+                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+            if (oldPropertyValue) {
+                jpwSenha.validate();
             }
         });
 
@@ -118,24 +113,47 @@ public class LoginController implements Initializable {
     @FXML
     private void hlkAbrirUmaContaAction() {
         try {
-            Stage cadastroUsuarioStage = new Stage();
+
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("/fxml/form/cadastro/cadastro_usuario.fxml"));
-            StackPane cadastroUsuarioStackPane = loader.load();
-            Scene cadastroUsuarioScene = new Scene(cadastroUsuarioStackPane);
-            cadastroUsuarioStage.setResizable(false);
-            cadastroUsuarioStage.setMaximized(false);
-            cadastroUsuarioStage.setTitle("Cadastro de usuário");
-            cadastroUsuarioStage.setScene(cadastroUsuarioScene);
-            CadastroUsuarioController cadastroUsuarioController = loader.getController();
-            cadastroUsuarioController.setCadastroUsuarioStage(cadastroUsuarioStage);
+            loader.setLocation(MainApp.class
+                    .getResource("/fxml/dialog/localiza_i18n.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
 
-            loginStage.close();
-            limparCampos();
-            cadastroUsuarioStage.showAndWait();
-            loginStage.show();
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Usuarios");
+            dialogStage.setResizable(false);
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(loginStage);
+            dialogStage.setX(CentralizeLocationRelativeToScreen.getX(919));
+            dialogStage.setY(CentralizeLocationRelativeToScreen.getY(567));
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
 
-            jtxEmail.requestFocus();
+//            LocalizaUsuarioController controller = loader.getController();
+            dialogStage.showAndWait();
+
+
+
+
+
+//            Stage cadastroUsuarioStage = new Stage();
+//            FXMLLoader loader = new FXMLLoader();
+//            loader.setLocation(MainApp.class.getResource("/fxml/form/cadastro/cadastro_usuario.fxml"));
+//            StackPane cadastroUsuarioStackPane = loader.load();
+//            Scene cadastroUsuarioScene = new Scene(cadastroUsuarioStackPane);
+//            cadastroUsuarioStage.setResizable(false);
+//            cadastroUsuarioStage.setMaximized(false);
+//            cadastroUsuarioStage.setTitle("Cadastro de usuário");
+//            cadastroUsuarioStage.setScene(cadastroUsuarioScene);
+//            CadastroUsuarioController cadastroUsuarioController = loader.getController();
+//            cadastroUsuarioController.setCadastroUsuarioStage(cadastroUsuarioStage);
+//
+//            loginStage.close();
+//            limparCampos();
+//            cadastroUsuarioStage.showAndWait();
+//            loginStage.show();
+//
+//            jtxEmail.requestFocus();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
