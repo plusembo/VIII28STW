@@ -1,6 +1,6 @@
 
-Msquid:S1905X"*Remove this unnecessary cast to "Usuario".(‘‰´³øÿÿÿÿ8¶ŸÁÞ¯-
-isquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(‰•ÝÇ8«§¥Ý¯-
+bsquid:CommentedOutCodeLine3"<This block of commented-out lines of code should be removed.(‰•ÝÇ
+Fsquid:S1905X"*Remove this unnecessary cast to "Usuario".(‘‰´³øÿÿÿÿ
 Csquid:S1602h",Remove useless curly braces around statement(ð¿›…
 Rsquid:S1611f"6Remove the parentheses around the "usuario1" parameter(‘üžñúÿÿÿÿ
 Msquid:S1611h"6Remove the parentheses around the "usuario1" parameter(ð¿›…

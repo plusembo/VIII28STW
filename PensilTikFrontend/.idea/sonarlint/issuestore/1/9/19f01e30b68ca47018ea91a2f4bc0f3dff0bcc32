@@ -1,14 +1,8 @@
 
-osquid:CommentedOutCodeLineœ"<This block of commented-out lines of code should be removed.(ÞÀÊ®ÿÿÿÿÿ8•Ð½ß°-
-msquid:S4042Ø"IUse "java.nio.Files#delete" here for better messages on error conditions.(Œ’¯‹ýÿÿÿÿ8•Ð½ß°-
-jsquid:CommentedOutCodeLineÆ"<This block of commented-out lines of code should be removed.(ÔÙ²Î8•Ð½ß°-
-^
-squid:S899Ø";Do something with the "boolean" value returned by "delete".(Œ’¯‹ýÿÿÿÿ8•Ð½ß°-
-osquid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(Öþïõüÿÿÿÿ8•Ð½ß°-
-Osquid:S1612G",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8åÚ½®-
-osquid:CommentedOutCodeLine‹"<This block of commented-out lines of code should be removed.(•ˆšÿÿÿÿÿ8•Ð½ß°-
-jsquid:CommentedOutCodeLine„"<This block of commented-out lines of code should be removed.(¢šì8•Ð½ß°-
-lsquid:S1871¾"MThis branch's code block is the same as the block for the branch on line 187.(Ð½ö®8²½Èû©-
-Ksquid:S1905x"-Remove this unnecessary cast to "AnchorPane".(‡ƒˆ8•Ð½ß°-
-jsquid:S1192®"KDefine a constant instead of duplicating this literal "texugo.ldm" 3 times.(Õƒà»8•Ð½ß°-
-osquid:CommentedOutCodeLineò"<This block of commented-out lines of code should be removed.(ÙÎèùÿÿÿÿ8•Ð½ß°-
+lsquid:S1871¦"MThis branch's code block is the same as the block for the branch on line 163.(Ð½ö®8ÕÝîÆ±-
+|squid:S1192–"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8ÕÝîÆ±-
+hsquid:S4042À"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8ÕÝîÆ±-
+jsquid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(ÔÙ²Î8ÕÝîÆ±-
+Osquid:S1612G",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
+Y
+squid:S899À";Do something with the "boolean" value returned by "delete".(ôÙÜ×8ÕÝîÆ±-

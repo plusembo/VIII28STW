@@ -6,6 +6,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorI18nController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
@@ -29,7 +30,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -111,67 +111,43 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void hlkAbrirUmaContaAction() {
+    private void hlkSetUpSystemLanguage() {
         try {
-
+            Stage localizadorI18nStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class
-                    .getResource("/fxml/dialog/localiza_i18n.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            loader.setLocation(MainApp.class.getResource("/fxml/dialog/localizador_i18n.fxml"));
+            AnchorPane localizadorI18nAnchorPane = loader.load();
+            Scene localizadorI18nScene = new Scene(localizadorI18nAnchorPane);
+            localizadorI18nStage.setResizable(false);
+            localizadorI18nStage.setMaximized(false);
+            localizadorI18nStage.setTitle("Idioma");
+            localizadorI18nStage.initModality(Modality.WINDOW_MODAL);
+            localizadorI18nStage.initOwner(loginStage);
+            localizadorI18nStage.setX(CentralizeLocationRelativeToScreen.getX(919));
+            localizadorI18nStage.setY(CentralizeLocationRelativeToScreen.getY(567));
+            localizadorI18nStage.setScene(localizadorI18nScene);
+            LocalizadorI18nController localizadorI18nController = loader.getController();
+            localizadorI18nController.setLocalizadorI18nStage(localizadorI18nStage);
 
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Usuarios");
-            dialogStage.setResizable(false);
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(loginStage);
-            dialogStage.setX(CentralizeLocationRelativeToScreen.getX(919));
-            dialogStage.setY(CentralizeLocationRelativeToScreen.getY(567));
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
+            loginStage.close();
 
-//            LocalizaUsuarioController controller = loader.getController();
-            dialogStage.showAndWait();
+            jtxEmail.resetValidation();
+            jpwSenha.resetValidation();
 
+            localizadorI18nStage.showAndWait();
+            loginStage.show();
 
-
-
-
-//            Stage cadastroUsuarioStage = new Stage();
-//            FXMLLoader loader = new FXMLLoader();
-//            loader.setLocation(MainApp.class.getResource("/fxml/form/cadastro/cadastro_usuario.fxml"));
-//            StackPane cadastroUsuarioStackPane = loader.load();
-//            Scene cadastroUsuarioScene = new Scene(cadastroUsuarioStackPane);
-//            cadastroUsuarioStage.setResizable(false);
-//            cadastroUsuarioStage.setMaximized(false);
-//            cadastroUsuarioStage.setTitle("Cadastro de usuário");
-//            cadastroUsuarioStage.setScene(cadastroUsuarioScene);
-//            CadastroUsuarioController cadastroUsuarioController = loader.getController();
-//            cadastroUsuarioController.setCadastroUsuarioStage(cadastroUsuarioStage);
-//
-//            loginStage.close();
-//            limparCampos();
-//            cadastroUsuarioStage.showAndWait();
-//            loginStage.show();
-//
-//            jtxEmail.requestFocus();
+            jtxEmail.requestFocus();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
-    private void limparCampos() {
-        jtxEmail.clear();
-        jpwSenha.clear();
-        jchxLembrarDeMim.setSelected(false);
-        jtxEmail.resetValidation();
-        jpwSenha.resetValidation();
-    }
-
     private void lembraDeMim() {
         try {
             Usuario usuario = new ObjectMapper()
-                    .readValue(new File("texugo.ldm"), Usuario.class);
+                    .readValue(new File("include/caca_trufas.txg"), Usuario.class);
             jchxLembrarDeMim.setSelected(true);
             jtxEmail.setText(usuario.getEmail());
             jpwSenha.setText(usuario.getSenha());
@@ -211,9 +187,9 @@ public class LoginController implements Initializable {
                             .build();
 
                     new ObjectMapper()
-                            .writeValue(new File("texugo.ldm"), usuario);
+                            .writeValue(new File("include/caca_trufas.txg"), usuario);
                 } else {
-                    new File("texugo.ldm").delete();
+                    new File("include/caca_trufas.txg").delete();
                 }
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -231,45 +207,19 @@ public class LoginController implements Initializable {
             MDIController mdiController = loader.getController();
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
-
                 if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
                         "Fechar o sistema", "Você está prestes a fechar o sistema Mistersoft",
                         "Tem certeza que deseja fechar o sistema ?", "FECHAR")) {
                     we.consume();
                 } else System.exit(0);
-
-
-                /*Alert dialogoExe = new Alert(Alert.AlertType.CONFIRMATION);
-                ButtonType btnFechar = new ButtonType("FECHAR", ButtonBar.ButtonData.YES);
-                ButtonType btnCancelar = new ButtonType("CANCELAR", ButtonBar.ButtonData.CANCEL_CLOSE);
-
-                dialogoExe.setTitle("Fechar o sistema");
-                dialogoExe.setHeaderText("Você está prestes a fechar o sistema");
-                dialogoExe.setContentText("Tem certeza que deseja fechar o Pensil Tik?\n");
-                dialogoExe.getButtonTypes().setAll(btnFechar, btnCancelar);
-
-                DialogPane dialogPane = dialogoExe.getDialogPane();
-
-                dialogPane.getStylesheets().add(MainApp.class.getResource("/stylesheet/dialog.css").toExternalForm());
-                dialogPane.getStyleClass().add("myDialog");
-
-                Stage stage = (Stage) dialogPane.getScene().getWindow();
-                stage.getIcons().add(new Image(MainApp.class.getResource("/image/exit.png").toString()));
-
-                Optional<ButtonType> result = dialogoExe.showAndWait();
-                if (!result.isPresent() || result.get() != btnFechar) {
-                    we.consume();
-                } else {
-                    System.exit(0);
-                }
-*/
             });
             loginStage.close();
             mdiStage.showAndWait();
+
             loginStage.show();
             jtxEmail.requestFocus();
-            limparCampos();
-            lembraDeMim();
+            jtxEmail.resetValidation();
+            jpwSenha.resetValidation();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);

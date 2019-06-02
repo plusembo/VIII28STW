@@ -23,7 +23,7 @@ import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-public class LocalizaUsuarioController implements Initializable {
+public class LocalizadorUsuarioController implements Initializable {
 
     @FXML private TableView<Usuario> tvwUsuario;
     @FXML private TableColumn clmCodigo;
@@ -33,12 +33,12 @@ public class LocalizaUsuarioController implements Initializable {
     @FXML private JFXTextField jtxNomeFiltro;
     @FXML private Label lblQtd;
     private final ObservableList<Usuario> obsUsuario = FXCollections.observableArrayList();
-    private static LocalizaUsuarioController uniqueInstance;
+    private static LocalizadorUsuarioController uniqueInstance;
     private IUsuarioService usuarioService = UsuarioService.getInstance();
 
-    public static synchronized LocalizaUsuarioController getInstance() {
+    public static synchronized LocalizadorUsuarioController getInstance() {
         if (uniqueInstance == null) {
-            uniqueInstance = new LocalizaUsuarioController();
+            uniqueInstance = new LocalizadorUsuarioController();
         }
         return uniqueInstance;
     }

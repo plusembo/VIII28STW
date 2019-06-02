@@ -16,7 +16,6 @@ com\viii28stw\pensiltikfrontend\util\PasswordValidator.class
 com\viii28stw\pensiltikfrontend\controller\form\LoginController.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController.class
-com\viii28stw\pensiltikfrontend\controller\dialog\LocalizaUsuarioController.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController$1.class
 com\viii28stw\pensiltikfrontend\controller\MDIController$1.class
 com\viii28stw\pensiltikfrontend\controller\form\cadastro\CadastroUsuarioController$2.class
@@ -28,7 +27,6 @@ com\viii28stw\pensiltikfrontend\model\domain\I18n.class
 com\viii28stw\pensiltikfrontend\MainApp.class
 com\viii28stw\pensiltikfrontend\enumeration\MenuEnum.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario$UsuarioBuilder.class
-com\viii28stw\pensiltikfrontend\controller\dialog\LocalizaI18nController.class
 com\viii28stw\pensiltikfrontend\controller\form\ajuda\SobreController.class
 com\viii28stw\pensiltikfrontend\model\domain\FormMenu.class
 com\viii28stw\pensiltikfrontend\model\dto\UsuarioDto$UsuarioDtoBuilder.class

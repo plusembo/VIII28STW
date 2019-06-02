@@ -1,6 +1,11 @@
 - Não pode exluir um usuário logado
 - Melhorar a class DialogBoxFactory
 
+- Terminar o i18n
+- colocar fontawasome
+- criptografar senha
+- Mudar o cadastro de usuario para Makservice
+
 
 
 C:\Users\Plamedi L. Lusembo>mvn install:install-file -Dfile=C:\VIII28STW\lib\cecilfxcomponent.jar -DgroupId=com.cecilsystems.cecilfxcomponent -DartifactId=MaskedJFXTextField -Dversion=1.0 -Dpackaging=jar
