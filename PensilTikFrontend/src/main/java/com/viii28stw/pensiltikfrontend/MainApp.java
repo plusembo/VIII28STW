@@ -19,7 +19,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        I18nFactory.getInstance().setLocale("en", "UK");
+        I18nFactory.getInstance().setSystemLanguage(null);
+
+
         Stage splashScreenStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(MainApp.class.getResource("/fxml/splash_screen.fxml"));

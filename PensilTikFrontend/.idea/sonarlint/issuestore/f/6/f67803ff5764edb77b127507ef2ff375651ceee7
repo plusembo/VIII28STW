@@ -1,8 +1,9 @@
 
-zsquid:S1192="\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8ÇØëÇ±-
-gsquid:CommentedOutCodeLined"<This block of commented-out lines of code should be removed.(¿¡ã¼úÿÿÿÿ
-gsquid:CommentedOutCodeLinea"<This block of commented-out lines of code should be removed.(—À¾½úÿÿÿÿ
-jsquid:S1192>"LDefine a constant instead of duplicating this literal "left-header" 3 times.(ŒÂÆû8ÇØëÇ±-
-bsquid:CommentedOutCodeLineh"<This block of commented-out lines of code should be removed.(ç¤ì½
-asquid:CommentedOutCodeLine_"<This block of commented-out lines of code should be removed.(İ×àB
-_squid:S1905U"<Remove this unnecessary cast to "NominatimCountryCodesEnum".(ô‹¿¢ıÿÿÿÿ8è»çÇ±-
+zsquid:S1192A"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8ùùØ±-
+isquid:CommentedOutCodeLines"<This block of commented-out lines of code should be removed.(ç¤ì½8ùùØ±-
+nsquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(—À¾½úÿÿÿÿ8ùùØ±-
+hsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(İ×àB8ùùØ±-
+_squid:S1905Y"<Remove this unnecessary cast to "NominatimCountryCodesEnum".(ô‹¿¢ıÿÿÿÿ8ùùØ±-
+Hsquid:S00108`")Either remove or fill this block of code.(Ãôş•8Ä–ˆÙ±-
+nsquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(¿¡ã¼úÿÿÿÿ8ùùØ±-
+jsquid:S1192B"LDefine a constant instead of duplicating this literal "left-header" 3 times.(ŒÂÆû8ùùØ±-

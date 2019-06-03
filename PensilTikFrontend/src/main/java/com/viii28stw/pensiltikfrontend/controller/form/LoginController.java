@@ -120,7 +120,7 @@ public class LoginController implements Initializable {
             Scene localizadorI18nScene = new Scene(localizadorI18nAnchorPane);
             localizadorI18nStage.setResizable(false);
             localizadorI18nStage.setMaximized(false);
-            localizadorI18nStage.setTitle("Idioma");
+            localizadorI18nStage.setTitle("Language setup");
             localizadorI18nStage.initModality(Modality.WINDOW_MODAL);
             localizadorI18nStage.initOwner(loginStage);
             localizadorI18nStage.setX(CentralizeLocationRelativeToScreen.getX(919));

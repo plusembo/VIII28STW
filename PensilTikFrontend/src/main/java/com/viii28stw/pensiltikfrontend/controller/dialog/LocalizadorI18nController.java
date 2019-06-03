@@ -1,7 +1,9 @@
 package com.viii28stw.pensiltikfrontend.controller.dialog;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -16,6 +18,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -80,12 +84,19 @@ public class LocalizadorI18nController implements Initializable {
     }
 
     @FXML
-    private void tvwI18nSelecionarMouseClicked(MouseEvent mouseEvent) {
+    private void tvwI18nSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
             NominatimCountryCodesEnum nominatimCountryCodesEnum = (NominatimCountryCodesEnum) tvwI18n.getSelectionModel().getSelectedItem();
             if (nominatimCountryCodesEnum == null) {
                 return;
             }
+            try {
+                new ObjectMapper()
+                        .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodesEnum);
+            } catch (IOException ex) {
+            }
+            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodesEnum);
+
             localizadorI18nStage.close();
         }
     }
