@@ -1,11 +1,11 @@
 
-Jsquid:S1199ò"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ
-hsquid:CommentedOutCodeLineì"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ
-csquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(ØëçØ
-bsquid:CommentedOutCodeLineø"<This block of commented-out lines of code should be removed.(Ô¤Ù
-osquid:S3776¯"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(€ ­øÿÿÿÿ
-Dsquid:S1199ƒ"-Extract this nested code block into a method.(ïÄîY
-hsquid:CommentedOutCodeLineæ"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ
-csquid:CommentedOutCodeLineĞ"<This block of commented-out lines of code should be removed.(¡ÑªË
-Msquid:S2696G"6Make the enclosing method "static" or remove this set.( ÄÊ”
-=squid:S1640G"Convert this Map to an EnumMap.( ÄÊ”8ğ¦Œ¿±-
+hsquid:CommentedOutCodeLineî"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ
+csquid:CommentedOutCodeLineÒ"<This block of commented-out lines of code should be removed.(¡ÑªË
+Dsquid:S1199…"-Extract this nested code block into a method.(ïÄîY
+hsquid:CommentedOutCodeLineè"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ
+osquid:S3776°"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(€ ­øÿÿÿÿ
+csquid:CommentedOutCodeLineØ"<This block of commented-out lines of code should be removed.(ØëçØ
+bsquid:CommentedOutCodeLineú"<This block of commented-out lines of code should be removed.(Ô¤Ù
+=squid:S1640H"Convert this Map to an EnumMap.( ÄÊ”8ğ¦Œ¿±-
+Msquid:S2696H"6Make the enclosing method "static" or remove this set.( ÄÊ”
+Jsquid:S1199ô"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ

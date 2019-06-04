@@ -1,9 +1,12 @@
 
-zsquid:S1192A"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8ùùØ±-
-isquid:CommentedOutCodeLines"<This block of commented-out lines of code should be removed.(ç¤ì½8ùùØ±-
-nsquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(—À¾½úÿÿÿÿ8ùùØ±-
-hsquid:CommentedOutCodeLinej"<This block of commented-out lines of code should be removed.(İ×àB8ùùØ±-
-_squid:S1905Y"<Remove this unnecessary cast to "NominatimCountryCodesEnum".(ô‹¿¢ıÿÿÿÿ8ùùØ±-
-Hsquid:S00108`")Either remove or fill this block of code.(Ãôş•8Ä–ˆÙ±-
-nsquid:CommentedOutCodeLineo"<This block of commented-out lines of code should be removed.(¿¡ã¼úÿÿÿÿ8ùùØ±-
-jsquid:S1192B"LDefine a constant instead of duplicating this literal "left-header" 3 times.(ŒÂÆû8ùùØ±-
+zsquid:S1192I"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8ùùØ±-
+Hsquid:S00108o")Either remove or fill this block of code.(Ãôş•8¼©……²-
+jsquid:CommentedOutCodeLine€"<This block of commented-out lines of code should be removed.(ç¤ì½8ùùØ±-
+squid:UselessImportCheck"QRemove this unused import 'com.viii28stw.pensiltikfrontend.model.domain.Usuario'.(¥‡îãûÿÿÿÿ8±Ğ…²-
+V
+squid:S106n"9Replace this use of System.out or System.err by a logger.(×Á¿×8ÁÇÂ…²-
+nsquid:CommentedOutCodeLine|"<This block of commented-out lines of code should be removed.(¿¡ã¼úÿÿÿÿ8ùùØ±-
+hsquid:CommentedOutCodeLinew"<This block of commented-out lines of code should be removed.(İ×àB8ùùØ±-
+jsquid:S1192J"LDefine a constant instead of duplicating this literal "left-header" 3 times.(ŒÂÆû8ùùØ±-
+nsquid:CommentedOutCodeLiney"<This block of commented-out lines of code should be removed.(—À¾½úÿÿÿÿ8ùùØ±-
+Hsquid:S00108h")Either remove or fill this block of code.(Ãôş•8Ä–ˆÙ±-

@@ -1,8 +1,8 @@
 
+|squid:S1192—"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8ÕÝîÆ±-
+jsquid:CommentedOutCodeLine¯"<This block of commented-out lines of code should be removed.(ÔÙ²Î8ÕÝîÆ±-
+lsquid:S1871§"MThis branch's code block is the same as the block for the branch on line 164.(Ð½ö®8ÕÝîÆ±-
+Osquid:S1612H",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
 Y
-squid:S899À";Do something with the "boolean" value returned by "delete".(ôÙÜ×8ÕÝîÆ±-
-lsquid:S1871¦"MThis branch's code block is the same as the block for the branch on line 163.(Ð½ö®8ÕÝîÆ±-
-hsquid:S4042À"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8ÕÝîÆ±-
-Osquid:S1612G",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
-|squid:S1192–"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8ÕÝîÆ±-
-jsquid:CommentedOutCodeLine®"<This block of commented-out lines of code should be removed.(ÔÙ²Î8ÕÝîÆ±-
+squid:S899Á";Do something with the "boolean" value returned by "delete".(ôÙÜ×8ÕÝîÆ±-
+hsquid:S4042Á"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8ÕÝîÆ±-

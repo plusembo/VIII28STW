@@ -7,6 +7,7 @@ import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
+import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.fxml.FXML;
@@ -182,6 +183,7 @@ public class MDIController implements Initializable {
 
             if (!aberto) {
                 FXMLLoader loader = new FXMLLoader();
+                loader.setResources(I18nFactory.getInstance().getResourceBundle());
                 loader.setLocation(MainApp.class.getResource(arquivofxml));
                 StackPane parent = loader.load();
 

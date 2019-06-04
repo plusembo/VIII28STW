@@ -13,6 +13,7 @@ import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
+import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -198,6 +199,7 @@ public class LoginController implements Initializable {
         try {
             Stage mdiStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
+            loader.setResources(I18nFactory.getInstance().getResourceBundle());
             loader.setLocation(MainApp.class.getResource("/fxml/mdi.fxml"));
             StackPane mdiStackPane = loader.load();
             Scene mdiScene = new Scene(mdiStackPane);

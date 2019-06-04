@@ -3,6 +3,7 @@ package com.viii28stw.pensiltikfrontend.controller.dialog;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -29,13 +30,20 @@ public class LocalizadorI18nController implements Initializable {
     @Getter
     @Setter
     private Stage localizadorI18nStage;
-    @FXML private TableView<NominatimCountryCodesEnum> tvwI18n;
-    @FXML private TableColumn clmLanguageNameEnglish;
-    @FXML private TableColumn clmLanguageNameLocal;
-    @FXML private TableColumn clmCountryNameEnglish;
-    @FXML private TableColumn clmCountryNameLocal;
-    @FXML private JFXTextField jtxLanguage;
-    @FXML private Label lblQtd;
+    @FXML
+    private TableView<NominatimCountryCodesEnum> tvwI18n;
+    @FXML
+    private TableColumn clmLanguageNameEnglish;
+    @FXML
+    private TableColumn clmLanguageNameLocal;
+    @FXML
+    private TableColumn clmCountryNameEnglish;
+    @FXML
+    private TableColumn clmCountryNameLocal;
+    @FXML
+    private JFXTextField jtxLanguage;
+    @FXML
+    private Label lblQtd;
     private final ObservableList<NominatimCountryCodesEnum> obsI18n = FXCollections.observableArrayList();
     private static LocalizadorI18nController uniqueInstance;
 
@@ -86,7 +94,7 @@ public class LocalizadorI18nController implements Initializable {
     @FXML
     private void tvwI18nSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
-            NominatimCountryCodesEnum nominatimCountryCodesEnum = (NominatimCountryCodesEnum) tvwI18n.getSelectionModel().getSelectedItem();
+            NominatimCountryCodesEnum nominatimCountryCodesEnum = tvwI18n.getSelectionModel().getSelectedItem();
             if (nominatimCountryCodesEnum == null) {
                 return;
             }
@@ -96,7 +104,12 @@ public class LocalizadorI18nController implements Initializable {
             } catch (IOException ex) {
             }
             I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodesEnum);
-
+            try {
+                NominatimCountryCodesEnum nominatimCountryCodesEnum2 = new ObjectMapper()
+                        .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
+                System.out.println(nominatimCountryCodesEnum2);
+            } catch (IOException ex) {
+            }
             localizadorI18nStage.close();
         }
     }

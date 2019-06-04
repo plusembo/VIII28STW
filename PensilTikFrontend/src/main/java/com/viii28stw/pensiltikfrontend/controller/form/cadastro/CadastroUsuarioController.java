@@ -10,10 +10,7 @@ import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
-import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
-import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
-import com.viii28stw.pensiltikfrontend.util.EmailValidator;
-import com.viii28stw.pensiltikfrontend.util.PasswordValidator;
+import com.viii28stw.pensiltikfrontend.util.*;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -332,6 +329,7 @@ public class CadastroUsuarioController implements Initializable {
     private void jbtnLocalizarUsuarioAction() {
         try {
             FXMLLoader loader = new FXMLLoader();
+            loader.setResources(I18nFactory.getInstance().getResourceBundle());
             loader.setLocation(MainApp.class
                     .getResource("/fxml/dialog/localiza_usuario.fxml"));
             AnchorPane page = (AnchorPane) loader.load();
