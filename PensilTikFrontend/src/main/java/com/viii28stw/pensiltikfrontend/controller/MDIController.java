@@ -26,6 +26,7 @@ import javafx.stage.WindowEvent;
 import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -83,88 +84,52 @@ public class MDIController implements Initializable {
         Locale.setDefault(new Locale("pt", "BR"));
         SimpleDateFormat sdf = new SimpleDateFormat("EEEEEE',' dd/MM/yyyy HH:mm:ss");
         String dataHora = sdf.format(Calendar.getInstance().getTime());
-        lblDataHora.setText(dataHora.substring(0,1).toUpperCase().concat(dataHora.substring(1)));
+        lblDataHora.setText(dataHora.substring(0, 1).toUpperCase().concat(dataHora.substring(1)));
     }
 
     @FXML
     private void mnuConfiguracaoContaUsuarioAction() {
-        abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO,
-                "configuracao-conta-usuario.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(627),
-                CentralizeLocationRelativeToScreen.getY(485));
+        abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO);
     }
 
     @FXML
     private void mnuCadastroTipoRendaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_RENDA,
-                "cadastro-tipo-renda.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(627),
-                CentralizeLocationRelativeToScreen.getY(562));
+        abreForm(MenuEnum.CADASTRO_TIPO_RENDA);
     }
 
     @FXML
     private void mnuCadastroRendaAction() {
-        abreForm(MenuEnum.CADASTRO_RENDA,
-                "cadastro-renda.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(1207),
-                CentralizeLocationRelativeToScreen.getY(614));
+        abreForm(MenuEnum.CADASTRO_RENDA);
     }
 
     @FXML
     private void mnuCadastroTipoDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_DESPESA,
-                "cadastro-tipo-despesa.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(627),
-                CentralizeLocationRelativeToScreen.getY(533));
+        abreForm(MenuEnum.CADASTRO_TIPO_DESPESA);
     }
 
     @FXML
     private void mnuCadastroDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_DESPESA,
-                "cadastro-despesa.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(627),
-                CentralizeLocationRelativeToScreen.getY(439));
+        abreForm(MenuEnum.CADASTRO_DESPESA);
     }
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuEnum.CADASTRO_USUARIO,
-                "/fxml/form/cadastro/cadastro_usuario.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(700),
-                CentralizeLocationRelativeToScreen.getY(500));
+        abreForm(MenuEnum.CADASTRO_USUARIO);
     }
 
     @FXML
     private void mnuRelatorioRendaAction() {
-        abreForm(MenuEnum.RELATORIO_RENDA,
-                "relatorio-renda.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(650),
-                CentralizeLocationRelativeToScreen.getY(600));
+        abreForm(MenuEnum.RELATORIO_RENDA);
     }
 
     @FXML
     private void mnuRelatorioDespesasAction() {
-        abreForm(MenuEnum.RELATORIO_DESPESAS,
-                "relatorio-despesas.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(670),
-                CentralizeLocationRelativeToScreen.getY(289));
+        abreForm(MenuEnum.RELATORIO_DESPESAS);
     }
 
     @FXML
     private void mnuAjudaSobreAction() {
-        abreForm(MenuEnum.AJUDA_SOBRE,
-                "/fxml/form/ajuda/sobre.fxml",
-                null,
-                CentralizeLocationRelativeToScreen.getX(670),
-                CentralizeLocationRelativeToScreen.getY(289));
+        abreForm(MenuEnum.AJUDA_SOBRE);
     }
 
     //--- *** ----- ### ----- *** ---
@@ -173,39 +138,41 @@ public class MDIController implements Initializable {
         mdiStage.close();
     }
 
-    private void abreForm(MenuEnum menum, String arquivofxml, String icone, double x, double y) {
+    private void abreForm(MenuEnum menuEnum) {
         boolean aberto = false;
         try {
-            if(listFormsMenu.containsKey(menum)) {
+            if (listFormsMenu.containsKey(menuEnum)) {
                 aberto = true;
-                listFormsMenu.get(menum).getStage().toFront();
+                listFormsMenu.get(menuEnum).getStage().toFront();
             }
 
             if (!aberto) {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setResources(I18nFactory.getInstance().getResourceBundle());
-                loader.setLocation(MainApp.class.getResource(arquivofxml));
+                loader.setLocation(MainApp.class.getResource(menuEnum.getFxmlPath()));
                 StackPane parent = loader.load();
 
                 Stage formStage = new Stage();
                 formStage.initOwner(hlkNomeUsuario.getScene().getWindow());
                 formStage.setResizable(false);
                 formStage.setMaximized(false);
-                formStage.initModality(menum.equals(MenuEnum.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
-                formStage.setTitle(menum.getTitulo());
-                if (icone != null && !icone.equals("")) { formStage.getIcons().add(new Image(icone)); }
-                if (x != 0) { formStage.setX(x); }
-                if (y != 0) { formStage.setY(y); }
+                formStage.initModality(menuEnum.equals(MenuEnum.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
+                formStage.setTitle(menuEnum.getTitle());
+                if (null != menuEnum.getIcon() && !menuEnum.getIcon().isEmpty()) {
+                    formStage.getIcons().add(new Image(menuEnum.getIcon()));
+                }
+                formStage.setX(CentralizeLocationRelativeToScreen.getX(parent.getPrefWidth()));
+                formStage.setY(CentralizeLocationRelativeToScreen.getY(parent.getPrefHeight()));
 
                 Scene scene = new Scene(parent);
                 formStage.setScene(scene);
 
-                formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menum));
+                formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menuEnum));
 
-                listFormsMenu.put(menum, new FormMenu(menum, formStage));
+                listFormsMenu.put(menuEnum, new FormMenu(menuEnum, formStage));
 
                 //Flexible zone begining
-                switch (menum) {
+                switch (menuEnum) {
 //
 //                    case CONFIGURACOES_CONTA_USUARIO: {
 //                        ConfiguracaoContaUsuarioController controller = loader.getController();
@@ -282,9 +249,9 @@ public class MDIController implements Initializable {
 
     }
 
-    public static void fechaJanela(MenuEnum menum) {
-        if(listFormsMenu.containsKey(menum)) {
-            listFormsMenu.remove(menum);
+    public static void fechaJanela(MenuEnum menuEnum) {
+        if (listFormsMenu.containsKey(menuEnum)) {
+            listFormsMenu.remove(menuEnum);
         }
 
     }

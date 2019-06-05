@@ -31,6 +31,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -116,6 +117,7 @@ public class LoginController implements Initializable {
         try {
             Stage localizadorI18nStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
+            loader.setResources(I18nFactory.getInstance().getResourceBundle());
             loader.setLocation(MainApp.class.getResource("/fxml/dialog/localizador_i18n.fxml"));
             AnchorPane localizadorI18nAnchorPane = loader.load();
             Scene localizadorI18nScene = new Scene(localizadorI18nAnchorPane);
@@ -136,7 +138,9 @@ public class LoginController implements Initializable {
             jpwSenha.resetValidation();
 
             localizadorI18nStage.showAndWait();
-            loginStage.show();
+
+            //reload the fxml file to apply resource bundle
+            reloadLogin();
 
             jtxEmail.requestFocus();
 
@@ -218,11 +222,29 @@ public class LoginController implements Initializable {
             loginStage.close();
             mdiStage.showAndWait();
 
-            loginStage.show();
+            //reload the fxml file to apply resource bundle
+            reloadLogin();
+
             jtxEmail.requestFocus();
             jtxEmail.resetValidation();
             jpwSenha.resetValidation();
 
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+
+
+    private void reloadLogin() {
+        try {
+            FXMLLoader loaderLogin = new FXMLLoader();
+            loaderLogin.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
+            loaderLogin.setResources(I18nFactory.getInstance().getResourceBundle());
+            AnchorPane loginAnchorPane = loaderLogin.load();
+            loginStage.getScene().setRoot(loginAnchorPane);
+            LoginController loginController = loaderLogin.getController();
+            loginController.setLoginStage(loginStage);
+            loginStage.show();
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }

@@ -107,7 +107,6 @@ public class LocalizadorI18nController implements Initializable {
             try {
                 NominatimCountryCodesEnum nominatimCountryCodesEnum2 = new ObjectMapper()
                         .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
-                System.out.println(nominatimCountryCodesEnum2);
             } catch (IOException ex) {
             }
             localizadorI18nStage.close();
