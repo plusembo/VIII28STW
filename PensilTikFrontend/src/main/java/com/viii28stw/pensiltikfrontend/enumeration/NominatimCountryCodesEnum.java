@@ -14,16 +14,28 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 public enum NominatimCountryCodesEnum {
-    UNITED_STATES_OF_AMERICA("US", "United States of America", "United States of America", "en","", ""),
-    GERMANY("DE", "Germany", "Deutschland", "de", "",""),
-    FRANCE("FR", "France", "France", "fr", "",""),
-    SPAIN("ES", "Spain", "España", "es", "",""),
-    CHINA("CN", "China", "中国", "zh", "",""),
-    THE_NETHERLANDS("NL", "The Netherlands", "Nederland", "nl", "",""),
-    BRAZIL("BR", "Brazil", "Brasil", "pt", "",""),
-    ITALY("IT", "Italy", "Italia", "it", "",""),
-    RUSSIA("RU", "Russia", "Россия", "ru", "",""),
-    JAPAN("JA", "Japan", "日本", "ja", "","");
+    UNITED_STATES_OF_AMERICA("US", "United States of America",
+            "United States of America",
+            "en","English", "English", true),
+    GERMANY("DE", "Germany", "Deutschland",
+            "de", "German",
+            "Deutsch", false),
+    FRANCE("FR", "France", "France",
+            "fr", "French","Français", false),
+    SPAIN("ES", "Spain", "España",
+            "es", "Spanish","Español", false),
+    CHINA("CN", "China", "Zhōngguó",
+            "zh", "Chinese","Zhōngguó", false),
+    THE_NETHERLANDS("NL", "The Netherlands", "Nederland",
+            "nl", "Dutch","Nederlands", false),
+    BRAZIL("BR", "Brazil", "Brasil",
+            "pt", "Portuguese","Português", true),
+    ITALY("IT", "Italy", "Italia",
+            "it", "Italian","Italiano", false),
+    RUSSIA("RU", "Russia", "Россия",
+            "ru", "Russian\n","Russkiy", false),
+    JAPAN("JA", "Japan", "Nihongo", "ja",
+            "Japanese","Nihongo", false);
 
     private final String countryCode;
     private final String countryNameEnglish;
@@ -31,6 +43,7 @@ public enum NominatimCountryCodesEnum {
     private final String languageCode;
     private final String languageNameEnglish;
     private final String languageNameLocal;
+    private final boolean available;
 
     public static List<NominatimCountryCodesEnum> getList() {
         List<NominatimCountryCodesEnum> listNominatimCountryCodesEnum = new ArrayList<NominatimCountryCodesEnum>

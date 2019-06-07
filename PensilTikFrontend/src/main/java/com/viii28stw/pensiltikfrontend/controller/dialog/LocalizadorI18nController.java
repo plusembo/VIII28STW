@@ -5,16 +5,17 @@ import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -56,7 +57,7 @@ public class LocalizadorI18nController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setColumnStyleProperty();
+        setTvwI18nColumnStyleProperty();
 
         NominatimCountryCodesEnum.getList().forEach(obsI18n::add);
         tvwI18n.setItems(obsI18n);
@@ -64,22 +65,79 @@ public class LocalizadorI18nController implements Initializable {
         atualizaQtd();
     }
 
-    private void setColumnStyleProperty() {
+    private void setTvwI18nColumnStyleProperty() {
         clmLanguageNameEnglish.setCellValueFactory(new PropertyValueFactory<>("languageNameEnglish"));
         clmLanguageNameEnglish.setStyle("-fx-alignment: CENTER-LEFT; -fx-padding: 0 10 0 0;");
         clmLanguageNameEnglish.getStyleClass().add("right-header");
+        clmLanguageNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    return;
+                } else {
+                    if (!getTableRow().getItem().isAvailable()) {
+                        setTextFill(Color.SILVER);
+                    }
+                    setText(item);
+                }
+            }
+        });
 
         clmLanguageNameLocal.setCellValueFactory(new PropertyValueFactory<>("languageNameLocal"));
         clmLanguageNameLocal.setStyle("-fx-alignment: CENTER-LEFT;");
         clmLanguageNameLocal.getStyleClass().add("left-header");
+        clmLanguageNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    return;
+                } else {
+                    if (!getTableRow().getItem().isAvailable()) {
+                        setTextFill(Color.SILVER);
+                    }
+                    setText(item);
+                }
+            }
+        });
 
         clmCountryNameEnglish.setCellValueFactory(new PropertyValueFactory<>("countryNameEnglish"));
         clmCountryNameEnglish.setStyle("-fx-alignment: CENTER-LEFT;");
         clmCountryNameEnglish.getStyleClass().add("left-header");
+        clmCountryNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    return;
+                } else {
+                    if (!getTableRow().getItem().isAvailable()) {
+                        setTextFill(Color.SILVER);
+                    }
+                    setText(item);
+                }
+            }
+        });
 
         clmCountryNameLocal.setCellValueFactory(new PropertyValueFactory<>("contryNameLocal"));
         clmCountryNameLocal.setStyle("-fx-alignment: CENTER-LEFT;");
         clmCountryNameLocal.getStyleClass().add("left-header");
+        clmCountryNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+            @Override
+            protected void updateItem(String item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    return;
+                } else {
+                    if (!getTableRow().getItem().isAvailable()) {
+                        setTextFill(Color.SILVER);
+                    }
+                    setText(item);
+                }
+            }
+        });
+
     }
 
     private void atualizaQtd() {

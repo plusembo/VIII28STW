@@ -1,6 +1,8 @@
 com\viii28stw\pensiltikfrontend\enumeration\UsuarioNivelAcessoEnum.class
+com\viii28stw\pensiltikfrontend\controller\dialog\LocalizadorI18nController$1.class
 com\viii28stw\pensiltikfrontend\util\RestTemplateFactory.class
 com\viii28stw\pensiltikfrontend\util\EmailValidator.class
+com\viii28stw\pensiltikfrontend\controller\dialog\LocalizadorI18nController$4.class
 com\viii28stw\pensiltikfrontend\model\dto\UsuarioDto.class
 com\viii28stw\pensiltikfrontend\service\IUsuarioService.class
 com\viii28stw\pensiltikfrontend\enumeration\SexoEnum.class
@@ -18,6 +20,7 @@ com\viii28stw\pensiltikfrontend\model\domain\Usuario.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController.class
 com\viii28stw\pensiltikfrontend\controller\SplashScreenController$1.class
 com\viii28stw\pensiltikfrontend\controller\MDIController$1.class
+com\viii28stw\pensiltikfrontend\controller\dialog\LocalizadorI18nController$2.class
 com\viii28stw\pensiltikfrontend\controller\form\cadastro\CadastroUsuarioController$2.class
 com\viii28stw\pensiltikfrontend\util\DialogBoxFactory.class
 com\viii28stw\pensiltikfrontend\util\CentralizeLocationRelativeToScreen.class
@@ -29,4 +32,5 @@ com\viii28stw\pensiltikfrontend\enumeration\MenuEnum.class
 com\viii28stw\pensiltikfrontend\model\domain\Usuario$UsuarioBuilder.class
 com\viii28stw\pensiltikfrontend\controller\form\ajuda\SobreController.class
 com\viii28stw\pensiltikfrontend\model\domain\FormMenu.class
+com\viii28stw\pensiltikfrontend\controller\dialog\LocalizadorI18nController$3.class
 com\viii28stw\pensiltikfrontend\model\dto\UsuarioDto$UsuarioDtoBuilder.class

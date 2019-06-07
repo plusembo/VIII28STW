@@ -102,7 +102,7 @@
 }
 
 .column-header.left-header > .label {
-    -fx-font-size: 10pt;
+    -fx-font-size: 11pt;
     -fx-font-family: "Segoe UI";
     -fx-text-fill: #4050a8;
     -fx-alignment: center-left;
