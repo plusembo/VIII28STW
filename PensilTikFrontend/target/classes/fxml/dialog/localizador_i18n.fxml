@@ -6,17 +6,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="847.0" stylesheets="@../../css/tema_geral.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorI18nController">
+<AnchorPane id="AnchorPane" prefHeight="523.0" prefWidth="836.0" stylesheets="@../../css/tema_geral.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorI18nController">
    <children>
-      <JFXTextField fx:id="jtxLanguage" labelFloat="true" layoutX="38.0" layoutY="30.0" onKeyReleased="#jtxNomeFiltroKeyReleased" prefHeight="31.0" prefWidth="460.0" promptText="Idioma" />
-      <TableView fx:id="tvwI18n" layoutX="38.0" layoutY="83.0" onMouseClicked="#tvwI18nSelecionaLinhaMouseClicked" prefHeight="443.0" prefWidth="769.0" style="-fx-focus-color: #4050a8;">
+      <JFXTextField fx:id="jtxLanguageFilter" labelFloat="true" layoutX="38.0" layoutY="30.0" onKeyReleased="#jtxLanguageFiltroKeyReleased" prefHeight="31.0" prefWidth="460.0" promptText="Idioma" />
+      <TableView fx:id="tvwI18n" layoutX="38.0" layoutY="83.0" onMouseClicked="#tvwI18nSelecionaLinhaMouseClicked" prefHeight="395.0" prefWidth="760.0" style="-fx-focus-color: #4050a8;">
          <columns>
-            <TableColumn fx:id="clmLanguageNameEnglish" editable="false" prefWidth="152.5" resizable="false" sortable="false" text="Language (English)" />
-            <TableColumn fx:id="clmLanguageNameLocal" editable="false" prefWidth="200.0" resizable="false" sortable="false" text="Language (Local)" />
-            <TableColumn fx:id="clmCountryNameEnglish" editable="false" prefWidth="238.0" sortable="false" text="Country (English)" />
-            <TableColumn fx:id="clmCountryNameLocal" prefWidth="228.0" text="Country (Local)" />
+            <TableColumn fx:id="clmLanguageNameEnglish" editable="false" prefWidth="175.0" resizable="false" sortable="false" text="Language (English)" />
+            <TableColumn fx:id="clmLanguageNameLocal" editable="false" prefWidth="175.0" resizable="false" sortable="false" text="Language (Local)" />
+            <TableColumn fx:id="clmCountryNameEnglish" editable="false" prefWidth="200.0" sortable="false" text="Country (English)" />
+            <TableColumn fx:id="clmCountryNameLocal" prefWidth="200.0" text="Country (Local)" />
          </columns>
       </TableView>
-      <Label fx:id="lblQtd" layoutX="38.0" layoutY="536.0" styleClass="label-comum" text="Qtd:" />
+      <Label fx:id="lblQtd" layoutX="38.0" layoutY="486.0" styleClass="label-comum" text="Qtd:" />
    </children>
 </AnchorPane>

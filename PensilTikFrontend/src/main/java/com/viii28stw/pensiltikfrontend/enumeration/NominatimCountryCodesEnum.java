@@ -39,7 +39,7 @@ public enum NominatimCountryCodesEnum {
 
     private final String countryCode;
     private final String countryNameEnglish;
-    private final String contryNameLocal;
+    private final String countryNameLocal;
     private final String languageCode;
     private final String languageNameEnglish;
     private final String languageNameLocal;

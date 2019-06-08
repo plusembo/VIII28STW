@@ -3,9 +3,7 @@ package com.viii28stw.pensiltikfrontend.controller.dialog;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
-import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -15,7 +13,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -42,7 +39,7 @@ public class LocalizadorI18nController implements Initializable {
     @FXML
     private TableColumn clmCountryNameLocal;
     @FXML
-    private JFXTextField jtxLanguage;
+    private JFXTextField jtxLanguageFilter;
     @FXML
     private Label lblQtd;
     private final ObservableList<NominatimCountryCodesEnum> obsI18n = FXCollections.observableArrayList();
@@ -62,13 +59,13 @@ public class LocalizadorI18nController implements Initializable {
         NominatimCountryCodesEnum.getList().forEach(obsI18n::add);
         tvwI18n.setItems(obsI18n);
 
-        atualizaQtd();
+        atualizaLblQtdIdiomasDisponiveis();
     }
 
     private void setTvwI18nColumnStyleProperty() {
         clmLanguageNameEnglish.setCellValueFactory(new PropertyValueFactory<>("languageNameEnglish"));
         clmLanguageNameEnglish.setStyle("-fx-alignment: CENTER-LEFT; -fx-padding: 0 10 0 0;");
-        clmLanguageNameEnglish.getStyleClass().add("right-header");
+        clmLanguageNameEnglish.getStyleClass().add("left-header");
         clmLanguageNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
@@ -76,10 +73,18 @@ public class LocalizadorI18nController implements Initializable {
                 if (item == null || empty) {
                     return;
                 } else {
-                    if (!getTableRow().getItem().isAvailable()) {
-                        setTextFill(Color.SILVER);
+                    try {
+                        if (!getTableRow().getItem().isAvailable()) {
+                            setTextFill(Color.SILVER);
+                        }
+                        if (getTableRow().getItem().getLanguageCode().concat("_").concat(getTableRow().getItem().getCountryCode())
+                                .equals(I18nFactory.getInstance().getLocale().toString())) {
+                            setTextFill(Color.BLUEVIOLET);
+                        }
+
+                        setText(item);
+                    } catch (NullPointerException e) {
                     }
-                    setText(item);
                 }
             }
         });
@@ -94,10 +99,17 @@ public class LocalizadorI18nController implements Initializable {
                 if (item == null || empty) {
                     return;
                 } else {
-                    if (!getTableRow().getItem().isAvailable()) {
-                        setTextFill(Color.SILVER);
+                    try {
+                        if (!getTableRow().getItem().isAvailable()) {
+                            setTextFill(Color.SILVER);
+                        }
+                        if (getTableRow().getItem().getLanguageCode().concat("_").concat(getTableRow().getItem().getCountryCode())
+                                .equals(I18nFactory.getInstance().getLocale().toString())) {
+                            setTextFill(Color.BLUEVIOLET);
+                        }
+                        setText(item);
+                    } catch (NullPointerException e) {
                     }
-                    setText(item);
                 }
             }
         });
@@ -112,15 +124,22 @@ public class LocalizadorI18nController implements Initializable {
                 if (item == null || empty) {
                     return;
                 } else {
-                    if (!getTableRow().getItem().isAvailable()) {
-                        setTextFill(Color.SILVER);
+                    try {
+                        if (!getTableRow().getItem().isAvailable()) {
+                            setTextFill(Color.SILVER);
+                        }
+                        if (getTableRow().getItem().getLanguageCode().concat("_").concat(getTableRow().getItem().getCountryCode())
+                                .equals(I18nFactory.getInstance().getLocale().toString())) {
+                            setTextFill(Color.BLUEVIOLET);
+                        }
+                        setText(item);
+                    } catch (NullPointerException e) {
                     }
-                    setText(item);
                 }
             }
         });
 
-        clmCountryNameLocal.setCellValueFactory(new PropertyValueFactory<>("contryNameLocal"));
+        clmCountryNameLocal.setCellValueFactory(new PropertyValueFactory<>("countryNameLocal"));
         clmCountryNameLocal.setStyle("-fx-alignment: CENTER-LEFT;");
         clmCountryNameLocal.getStyleClass().add("left-header");
         clmCountryNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
@@ -130,22 +149,38 @@ public class LocalizadorI18nController implements Initializable {
                 if (item == null || empty) {
                     return;
                 } else {
-                    if (!getTableRow().getItem().isAvailable()) {
-                        setTextFill(Color.SILVER);
+                    try {
+                        if (!getTableRow().getItem().isAvailable()) {
+                            setTextFill(Color.SILVER);
+                        }
+                        if (getTableRow().getItem().getLanguageCode().concat("_").concat(getTableRow().getItem().getCountryCode())
+                                .equals(I18nFactory.getInstance().getLocale().toString())) {
+                            setTextFill(Color.BLUEVIOLET);
+                        }
+                        setText(item);
+                    } catch (NullPointerException e) {
                     }
-                    setText(item);
                 }
             }
         });
 
     }
 
-    private void atualizaQtd() {
+    private void atualizaLblQtdIdiomasDisponiveis() {
         if (!obsI18n.isEmpty()) {
-            lblQtd.setText(obsI18n.size() > 1 ? obsI18n.size()
-                    + " usuários encontrados" : obsI18n.size() + " usuário encontrado");
+            int qtdIdiomasDisponiveis = 0;
+            for (NominatimCountryCodesEnum nominatimCountryCodesEnum : obsI18n) {
+                if (nominatimCountryCodesEnum.isAvailable()) {
+                    qtdIdiomasDisponiveis++;
+                }
+            }
+            lblQtd.setText(qtdIdiomasDisponiveis == 0 ?
+                    "Nenhuma lingua disponível" :
+                    qtdIdiomasDisponiveis > 1 ?
+                            qtdIdiomasDisponiveis + " linguas disponíveis" :
+                            qtdIdiomasDisponiveis + " lingua disponível");
         } else {
-            lblQtd.setText("");
+            lblQtd.setText("Nenhuma lingua disponível");
         }
     }
 
@@ -153,7 +188,7 @@ public class LocalizadorI18nController implements Initializable {
     private void tvwI18nSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
             NominatimCountryCodesEnum nominatimCountryCodesEnum = tvwI18n.getSelectionModel().getSelectedItem();
-            if (nominatimCountryCodesEnum == null) {
+            if (nominatimCountryCodesEnum == null || !nominatimCountryCodesEnum.isAvailable()) {
                 return;
             }
             try {
@@ -163,7 +198,7 @@ public class LocalizadorI18nController implements Initializable {
             }
             I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodesEnum);
             try {
-                NominatimCountryCodesEnum nominatimCountryCodesEnum2 = new ObjectMapper()
+                new ObjectMapper()
                         .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
             } catch (IOException ex) {
             }
@@ -172,20 +207,21 @@ public class LocalizadorI18nController implements Initializable {
     }
 
     @FXML
-    private void jtxNomeFiltroKeyReleased() {
-//        List<I18nDto> lstI18ns = usuarioService.buscarTodosOsI18ns();
-//
-//        obsI18n.clear();
-//        lstI18ns.stream().filter((usuario1) -> (usuario1.getNome().toUpperCase()
-//                .startsWith(jtxNomeFiltro.getText().toUpperCase())))
-//                .forEachOrdered((usuario1) -> {
-//                    obsI18n.add(null);
-//                });
-//
-//        tvwI18n.setItems(obsI18n);
+    private void jtxLanguageFiltroKeyReleased() {
+        obsI18n.clear();
 
-        atualizaQtd();
+        for (NominatimCountryCodesEnum ncce : NominatimCountryCodesEnum.getList()) {
+            if (ncce.getLanguageNameLocal().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||
+                    ncce.getLanguageNameEnglish().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||
+                    ncce.getCountryNameLocal().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||
+                    ncce.getCountryNameEnglish().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase())) {
+                obsI18n.add(ncce);
+            }
+        }
 
+        tvwI18n.setItems(obsI18n);
+        setTvwI18nColumnStyleProperty();
+        atualizaLblQtdIdiomasDisponiveis();
     }
 
 }
