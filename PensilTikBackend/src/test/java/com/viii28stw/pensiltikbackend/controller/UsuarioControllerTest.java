@@ -35,14 +35,10 @@ import static org.junit.Assert.assertNotNull;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
 public class UsuarioControllerTest {
 
-    @Autowired
-    private IUsuarioService usuarioService;
-    @Autowired
-    private TestRestTemplate testRestTemplate;
-    @Autowired
-    private HttpHeaders httpHeaders;
-    @Autowired
-    private ObjectMapper mapper;
+    @Autowired private IUsuarioService usuarioService;
+    @Autowired private TestRestTemplate testRestTemplate;
+    @Autowired private HttpHeaders httpHeaders;
+    @Autowired private ObjectMapper mapper;
 
     private static boolean INITIALIZED = false;
     private static final String BUSCAR_USUARIO_POR_ID = "/buscarusuarioporid";
@@ -442,7 +438,6 @@ public class UsuarioControllerTest {
     @Test
     public void buscarUsuarioPorIdNaoPodeRetornarNulo() throws IOException {
         @SuppressWarnings("rawtypes")
-        HttpEntity request = new HttpEntity<>(httpHeaders);
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
@@ -534,8 +529,6 @@ public class UsuarioControllerTest {
     @Test
     public void deletarUsuarioPorId() throws IOException {
         @SuppressWarnings("rawtypes")
-        HttpEntity request = new HttpEntity<>(httpHeaders);
-
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
                 .sobreNome(randomAlphabetic(25))
@@ -618,7 +611,6 @@ public class UsuarioControllerTest {
     @Test
     public void fazerLogin() throws IOException {
         @SuppressWarnings("rawtypes")
-        HttpEntity request = new HttpEntity<>(httpHeaders);
 
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -641,10 +633,15 @@ public class UsuarioControllerTest {
 
         assertNotNull(usuarioDto1);
 
+        UsuarioDto usDto = UsuarioDto.builder()
+                .email(usuarioDto1.getEmail())
+                .senha(usuarioDto.getSenha())
+                .build();
+
         ResponseEntity responseEntityUsuario2 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN, HttpMethod.POST,
-                        new HttpEntity<>(usuarioDto1, httpHeaders), String.class);
+                        new HttpEntity<>(usDto, httpHeaders), String.class);
 
         then(responseEntityUsuario2.getStatusCode()).isEqualTo(HttpStatus.OK);
 
@@ -663,7 +660,7 @@ public class UsuarioControllerTest {
         ResponseEntity responseEntityUsuario4 = testRestTemplate
                 .withBasicAuth(BasicAuth.getUser(), BasicAuth.getPassword())
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN, HttpMethod.POST,
-                        new HttpEntity<>(usuarioDto1, httpHeaders), String.class);
+                        new HttpEntity<>(usDto, httpHeaders), String.class);
 
         then(responseEntityUsuario4.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
         then(responseEntityUsuario4.getBody() instanceof EmptyResultDataAccessException);

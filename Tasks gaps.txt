@@ -1,10 +1,12 @@
 - Não pode exluir um usuário logado
 - Melhorar a class DialogBoxFactory
 
-- Terminar o i18n
+- Terminar o i18n - Colocar as expressões com as traduções
 - colocar fontawasome
 - criptografar senha
-- Mudar o cadastro de usuario para Makservice
+- Mudar o cadastro de usuario para Makservice*
+- Tira o sobrenome do cadastro de usuário
+ 
 
 
 

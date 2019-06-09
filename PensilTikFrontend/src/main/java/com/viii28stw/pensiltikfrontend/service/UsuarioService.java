@@ -1,8 +1,15 @@
 package com.viii28stw.pensiltikfrontend.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
+import com.viii28stw.pensiltikfrontend.util.BasicAuth;
+import com.viii28stw.pensiltikfrontend.util.UrlPrefixFactory;
 import lombok.NoArgsConstructor;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.http.*;
+import org.springframework.web.client.RestTemplate;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -12,6 +19,7 @@ import java.util.List;
 @NoArgsConstructor
 public class UsuarioService implements IUsuarioService {
 
+    private static final String FAZER_LOGIN = "/fazerlogin/";
     private static UsuarioService uniqueInstance;
 
     public static synchronized UsuarioService getInstance() {
@@ -52,7 +60,34 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto fazerLogin(String email, String senha){
-        UsuarioDto usuarioDto = null;
+        HttpHeaders httpHeaders = new HttpHeaders();
+        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        UsuarioDto usuarioDto = UsuarioDto.builder()
+                .email(email)
+                .senha(senha)
+                .build();
+        RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+        RestTemplate restTemplate = restTemplateBuilder.basicAuthentication(BasicAuth.getUser(), BasicAuth.getPassword()).build();
+
+
+        ResponseEntity responseEntityUsuario = restTemplate
+                .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN, HttpMethod.POST,
+                        new HttpEntity<>(usuarioDto, httpHeaders), String.class);
+
+        try {
+            UsuarioDto usuarioDto1 = mapper.readValue(responseEntityUsuario.getBody().toString(), UsuarioDto.class);
+
+            System.out.println(usuarioDto1);
+        } catch (IOException e) {
+        }
+
+
+
+
+
         /*if (usuarioDto != null) {
             Usuario usuario = Usuario.builder().id(usuarioDto.getId())
                     .nome(usuarioDto.getNome())

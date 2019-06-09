@@ -66,7 +66,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/fazerlogin")
-    public ResponseEntity<UsuarioDto> login(@RequestBody @Valid UsuarioDto usuarioDto) {
+    public ResponseEntity<UsuarioDto> login(@RequestBody UsuarioDto usuarioDto) {
         return new ResponseEntity<>(usuarioService.fazerLogin(usuarioDto), HttpStatus.OK);
     }
 

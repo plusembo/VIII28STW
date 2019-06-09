@@ -1,5 +1,8 @@
 
-Bsquid:S1168"+Return an empty collection instead of null.(¥¹ï
-Xsquid:UnusedPrivateMethod,".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ
-nsquid:CommentedOutCodeLine8"<This block of commented-out lines of code should be removed.(ÃİİÀøÿÿÿÿ8ìÉÃù©-
-Msquid:S1172,"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ
+Bsquid:S1168'"+Return an empty collection instead of null.(¥¹ï
+Hsquid:S00108T")Either remove or fill this block of code.(ï­£Ä8„Èšä³-
+V
+squid:S106S"9Replace this use of System.out or System.err by a logger.(î»º8÷»›ä³-
+Msquid:S11724"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ
+nsquid:CommentedOutCodeLine["<This block of commented-out lines of code should be removed.(ÃİİÀøÿÿÿÿ8ìÉÃù©-
+Xsquid:UnusedPrivateMethod4".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ

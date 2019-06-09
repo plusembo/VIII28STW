@@ -101,14 +101,14 @@ public class LoginController implements Initializable {
     @FXML
     private void jtxEmailOnKeyPressed(KeyEvent evt) {
         if (evt.getCode() == KeyCode.ENTER) {
-            this.jbtnEntrarOnAction();
+            this.jbtnLoginOnAction();
         }
     }
 
     @FXML
     private void jpwSenhaOnKeyPressed(KeyEvent evt) {
         if (evt.getCode() == KeyCode.ENTER) {
-            this.jbtnEntrarOnAction();
+            this.jbtnLoginOnAction();
         }
     }
 
@@ -164,7 +164,7 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void jbtnEntrarOnAction() {
+    private void jbtnLoginOnAction() {
         if (!jtxEmail.validate() && !jpwSenha.validate()) {
             jtxEmail.requestFocus();
             return;

@@ -57,3 +57,7 @@ asrc/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorUsua
 Xsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/NominatimCountryCodesEnum.java,b\0\b0e637fe75d3a1237cf6c4fc3b789986199b6c34
 Ž
 ^src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.java,f\6\f67803ff5764edb77b127507ef2ff375651ceee7
+x
+Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
+q
+Asrc/main/java/com/viii28stw/pensiltikfrontend/util/BasicAuth.java,9\4\941a41a5c1afc990f473693a743833a5358bd8c3

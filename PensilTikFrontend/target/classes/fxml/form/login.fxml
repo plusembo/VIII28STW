@@ -34,7 +34,7 @@
       </JFXCheckBox>
       <Hyperlink layoutX="52.0" layoutY="344.0" text="%hyperlink.login.text" />
       <Hyperlink layoutX="268.0" layoutY="320.0" onAction="#hlkSetUpSystemLanguage" text="Abrir uma conta" />
-      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnEntrarOnAction" prefHeight="50.0" prefWidth="115.0" text="%button.entrar.text">
+      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnLoginOnAction" prefHeight="50.0" prefWidth="115.0" text="%button.entrar.text">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
