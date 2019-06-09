@@ -39,7 +39,7 @@ public class MainApp extends Application {
         Scene splashScreenScene = new Scene(splashScreenStackPane);
         splashScreenStage.setResizable(false);
         splashScreenStage.setMaximized(false);
-        splashScreenStage.setTitle("Loading...");
+        splashScreenStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.loading"));
         splashScreenStage.setScene(splashScreenScene);
         SplashScreenController splashScreenController = loader.getController();
         splashScreenController.setSplashScreenStage(splashScreenStage);

@@ -75,8 +75,8 @@ public class LoginController implements Initializable {
         jtxEmail.getValidators().add(emailValidator);
         jpwSenha.getValidators().add(senhaValidator);
 
-        emailValidator.setMessage("Email: Campo obrigatório");
-        senhaValidator.setMessage("Senha: Campo obrigatório");
+        emailValidator.setMessage(I18nFactory.getInstance().getResourceBundle().getString("notification.email.required.field"));
+        senhaValidator.setMessage(I18nFactory.getInstance().getResourceBundle().getString("notification.password.required.field"));
 
         jtxEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
                                                 Boolean oldPropertyValue, Boolean newPropertyValue) -> {
@@ -123,7 +123,7 @@ public class LoginController implements Initializable {
             Scene localizadorI18nScene = new Scene(localizadorI18nAnchorPane);
             localizadorI18nStage.setResizable(false);
             localizadorI18nStage.setMaximized(false);
-            localizadorI18nStage.setTitle("Language setup");
+            localizadorI18nStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.language.setup"));
             localizadorI18nStage.initModality(Modality.WINDOW_MODAL);
             localizadorI18nStage.initOwner(loginStage);
             localizadorI18nStage.setX(CentralizeLocationRelativeToScreen.getX(919));
@@ -176,7 +176,7 @@ public class LoginController implements Initializable {
             return;
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
-        //if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
+        if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
 
         new Thread(() -> {
             try {
@@ -214,8 +214,10 @@ public class LoginController implements Initializable {
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
                 if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
-                        "Fechar o sistema", "Você está prestes a fechar o sistema Mistersoft",
-                        "Tem certeza que deseja fechar o sistema ?", "FECHAR")) {
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contentText.are.you.sure.you.want.to.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
                     we.consume();
                 } else System.exit(0);
             });
@@ -233,7 +235,6 @@ public class LoginController implements Initializable {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
-
 
     private void reloadLogin() {
         try {

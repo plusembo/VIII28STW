@@ -17,24 +17,24 @@
             <Image url="@../../img/vergo_logo_login.jpg" />
          </image>
       </ImageView>
-      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="165.0" onKeyPressed="#jtxEmailOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="E-mail">
+      <JFXTextField fx:id="jtxEmail" layoutX="57.0" layoutY="165.0" onKeyPressed="#jtxEmailOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="%textfield.prompttext.email">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
       </JFXTextField>
-      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="243.0" onKeyPressed="#jpwSenhaOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="Senha">
+      <JFXPasswordField fx:id="jpwSenha" layoutX="57.0" layoutY="243.0" onKeyPressed="#jpwSenhaOnKeyPressed" prefHeight="31.0" prefWidth="300.0" promptText="%textfield.prompttext.password">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
       </JFXPasswordField>
-      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="320.0" text="Lembrar de mim">
+      <JFXCheckBox fx:id="jchxLembrarDeMim" layoutX="57.0" layoutY="320.0" text="%hyperlink.remember.me">
          <font>
             <Font name="Segoe UI Light" size="13.0" />
          </font>
       </JFXCheckBox>
-      <Hyperlink layoutX="52.0" layoutY="344.0" text="%hyperlink.login.text" />
-      <Hyperlink layoutX="268.0" layoutY="320.0" onAction="#hlkSetUpSystemLanguage" text="Abrir uma conta" />
-      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnLoginOnAction" prefHeight="50.0" prefWidth="115.0" text="%button.entrar.text">
+      <Hyperlink layoutX="52.0" layoutY="344.0" text="%hyperlink.login.i.forgot.my.password" />
+      <Hyperlink layoutX="268.0" layoutY="320.0" onAction="#hlkSetUpSystemLanguage" text="%hyperlink.setup.language" />
+      <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnLoginOnAction" prefHeight="50.0" prefWidth="115.0" text="%button.login">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>

@@ -1,6 +1,8 @@
 package com.viii28stw.pensiltikfrontend.service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
+import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.util.BasicAuth;
 import com.viii28stw.pensiltikfrontend.util.UrlPrefixFactory;
@@ -31,11 +33,11 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto buscarUsuarioPorId(String id) {
-    return null;
+        return null;
     }
 
     @Override
-    public List<UsuarioDto> buscarTodosOsUsuarios(){
+    public List<UsuarioDto> buscarTodosOsUsuarios() {
         return null;
     }
 
@@ -54,12 +56,12 @@ public class UsuarioService implements IUsuarioService {
     }
 
     @Override
-    public boolean deletarUsuarioPorId(String id){
+    public boolean deletarUsuarioPorId(String id) {
         return false;
     }
 
     @Override
-    public UsuarioDto fazerLogin(String email, String senha){
+    public UsuarioDto fazerLogin(String email, String senha) {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
 
@@ -72,7 +74,6 @@ public class UsuarioService implements IUsuarioService {
         RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
         RestTemplate restTemplate = restTemplateBuilder.basicAuthentication(BasicAuth.getUser(), BasicAuth.getPassword()).build();
 
-
         ResponseEntity responseEntityUsuario = restTemplate
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN, HttpMethod.POST,
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
@@ -80,35 +81,25 @@ public class UsuarioService implements IUsuarioService {
         try {
             UsuarioDto usuarioDto1 = mapper.readValue(responseEntityUsuario.getBody().toString(), UsuarioDto.class);
 
-            System.out.println(usuarioDto1);
+            if (usuarioDto1 != null) {
+                Usuario usuario = Usuario.builder()
+                        .codigo(usuarioDto1.getCodigo())
+                        .nome(usuarioDto1.getNome())
+                        .sobreNome(usuarioDto1.getSobreNome())
+                        .email(usuarioDto1.getEmail())
+                        .senha(usuarioDto1.getSenha())
+                        .sexoEnum(usuarioDto1.getSexoEnum())
+                        .dataNascimento(usuarioDto1.getDataNascimento())
+                        .build();
+
+                Sessao.getInstance().setUsuario(usuario);
+                Sessao.getInstance().setLogoutRequest(false);
+
+                return usuarioDto;
+            }
         } catch (IOException e) {
         }
-
-
-
-
-
-        /*if (usuarioDto != null) {
-            Usuario usuario = Usuario.builder().id(usuarioDto.getId())
-                    .nome(usuarioDto.getNome())
-                    .sobreNome(usuarioDto.getSobreNome())
-                    .email(usuarioDto.getEmail())
-                    .senha(usuarioDto.getSenha())
-                    .sexoEnum(usuarioDto.getSexoEnum())
-                    .dataNascimento(usuarioDto.getDataNascimento())
-                    .build();
-
-            Sessao.getInstance().setUsuario(usuario);
-            Sessao.getInstance().setRequerLogout(false);
-        }
-        */
-        usuarioDto = UsuarioDto.builder()
-                .email("plam.l@live.fr")
-                .senha("kjhdfnkl")
-                .build();
-
-
-        return usuarioDto;
+        return null;
     }
 
 }

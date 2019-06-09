@@ -65,7 +65,7 @@ public class SplashScreenController implements Initializable {
                 Scene loginScene = new Scene(loginAnchorPane);
                 loginStage.setResizable(false);
                 loginStage.setMaximized(false);
-                loginStage.setTitle("Login");
+                loginStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("stage.title.login"));
                 loginStage.setScene(loginScene);
 
                 LoginController loginController = loader.getController();

@@ -62,7 +62,7 @@
 
                </children>
             </GridPane>
-            <JFXButton fx:id="jbtnSalvar" layoutX="173.0" layoutY="373.0" onAction="#jbtnSalvarAction" prefHeight="40.0" prefWidth="125.0" styleClass="jfx-button-salvar" text="%button.salvar.text" />
+            <JFXButton fx:id="jbtnSalvar" layoutX="173.0" layoutY="373.0" onAction="#jbtnSalvarAction" prefHeight="40.0" prefWidth="125.0" styleClass="jfx-button-salvar" text="%button.save" />
             <JFXButton fx:id="jbtnExcluir" layoutX="303.0" layoutY="373.0" onAction="#jbtnExcluirAction" prefHeight="40.0" prefWidth="110.0" styleClass="jfx-button-excluir" text="EXCLUIR" />
             <JFXButton layoutX="418.0" layoutY="373.0" onAction="#jbtnLimparAction" prefHeight="40.0" prefWidth="100.0" styleClass="jfx-button-limpar" text="LIMPAR" />
             <JFXButton layoutX="523.0" layoutY="373.0" onAction="#jbtnFecharAction" prefHeight="40.0" prefWidth="100.0" styleClass="jfx-button-fechar" text="FECHAR" />

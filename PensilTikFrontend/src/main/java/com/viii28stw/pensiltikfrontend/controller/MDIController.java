@@ -56,8 +56,6 @@ public class MDIController implements Initializable {
     @FXML
     private Menu mnCadastro;
 
-    private Sessao usuarioLogado;
-
     private static MDIController uniqueInstance;
 
     public static synchronized MDIController getInstance() {
@@ -75,6 +73,10 @@ public class MDIController implements Initializable {
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
+
+
+        hlkNomeUsuario.setText(Sessao.getInstance().getUsuario().getNome()
+                + " (" + Sessao.getInstance().getUsuario().getEmail() + ")");
 
         imgvwLogoVergo.setX(180);
         imgvwLogoVergo.setY(50);
@@ -238,7 +240,7 @@ public class MDIController implements Initializable {
 
                 formStage.showAndWait();
 
-                if (usuarioLogado.isRequerLogout()) {
+                if (Sessao.getInstance().isLogoutRequest()) {
                     hlkSairOnAction();
                 }
             }

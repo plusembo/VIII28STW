@@ -10,7 +10,7 @@ import lombok.*;
 @ToString
 public class Sessao {
     @Getter @Setter private Usuario usuario;
-    @Getter @Setter private boolean requerLogout;
+    @Getter @Setter private boolean logoutRequest;
     private static Sessao uniqueInstance;
 
     public static synchronized Sessao getInstance() {

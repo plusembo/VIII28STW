@@ -1,5 +1,9 @@
 package com.viii28stw.pensiltikfrontend.model.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikfrontend.enumeration.UsuarioNivelAcessoEnum;
 import lombok.*;
@@ -24,7 +28,11 @@ public class UsuarioDto{
     private String email;
     private String senha;
     private SexoEnum sexoEnum;
+
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataNascimento;
+
     private UsuarioNivelAcessoEnum usuarioNivelAcessoEnum;
 
 }
