@@ -243,6 +243,7 @@ public class LoginController implements Initializable {
             loaderLogin.setResources(I18nFactory.getInstance().getResourceBundle());
             AnchorPane loginAnchorPane = loaderLogin.load();
             loginStage.getScene().setRoot(loginAnchorPane);
+            loginStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("stage.title.login"));
             LoginController loginController = loaderLogin.getController();
             loginController.setLoginStage(loginStage);
             loginStage.show();
