@@ -1,0 +1,34 @@
+
+usquid:S00117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óŒ¿­úÿÿÿÿ8É¡Óž´-
+[squid:S3066’"<Lower the visibility of this setter or remove it altogether.(úÒºÝ8É¡Óž´-
+qsquid:S00117Š"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(«´Ð8É¡Óž´-
+jsquid:S00117§"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(»Ü”ê
+`squid:S3066Ê"<Lower the visibility of this setter or remove it altogether.(ñÀ¾·ûÿÿÿÿ8É¡Óž´-
+[squid:S3066µ"<Lower the visibility of this setter or remove it altogether.(Ó¦«Ü8É¡Óž´-
+qsquid:S00117ì"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘ê¨‚8É¡Óž´-
+`squid:S3066°"<Lower the visibility of this setter or remove it altogether.(øÆÌÿÿÿÿÿÿ8É¡Óž´-
+[squid:S3066¨"<Lower the visibility of this setter or remove it altogether.(Ø’ƒú8É¡Óž´-
+vsquid:S00117ø"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(“°Ì¬ùÿÿÿÿ8É¡Óž´-
+vsquid:S00117Ê"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ñÀ¾·ûÿÿÿÿ8É¡Óž´-
+`squid:S3066’"<Lower the visibility of this setter or remove it altogether.(ˆ¾îúýÿÿÿÿ8É¡Óž´-
+psquid:S001172"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Î¿•‡8É¡Óž´-
+tsquid:S00116)"PRename this field "TITLE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(–âªãüÿÿÿÿ8É¡Óž´-
+qsquid:S00117ß"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â¤‘£8É¡Óž´-
+`squid:S3066ã"<Lower the visibility of this setter or remove it altogether.(óÆàþûÿÿÿÿ8É¡Óž´-
+qsquid:S00117¦"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ëê„ß8Ûó¿ž´-
+[squid:S3066ä"<Lower the visibility of this setter or remove it altogether.(å¼Ë¬8É¡Óž´-
+ksquid:S1192%"NDefine a constant instead of duplicating this literal "/img/info.png" 4 times.(¢£ïN8ø‰ãž´-
+[squid:S3066¡"<Lower the visibility of this setter or remove it altogether.(’ÁŠÊ8É¡Óž´-
+[squid:S3066ß"<Lower the visibility of this setter or remove it altogether.(Â¤‘£8É¡Óž´-
+osquid:S001176"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÚçÕ`8É¡Óž´-
+qsquid:S00117ð"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‘™“ì8É¡Óž´-
+isquid:CommentedOutCodeLinel"<This block of commented-out lines of code should be removed.(Ãé¨8É¡Óž´-
+[squid:S3066š"<Lower the visibility of this setter or remove it altogether.(ñæÐö8É¡Óž´-
+`squid:S3066û"<Lower the visibility of this setter or remove it altogether.(õã‡øÿÿÿÿ8É¡Óž´-
+msquid:S00116+"PRename this field "IMAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃŒêðýÿÿÿÿ
+usquid:S00117z"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(óŒ¿­úÿÿÿÿ8É¡Óž´-
+vsquid:S00116*"RRename this field "MESSAGE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(÷Ò“èüÿÿÿÿ8Ûó¿ž´-
+qsquid:S00117…"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÄÊ÷Ã8É¡Óž´-
+[squid:S3066Š"<Lower the visibility of this setter or remove it altogether.(«´Ð8É¡Óž´-
+qsquid:S00117¥"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(º‘²ý8É¡Óž´-
+~squid:S00120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(›¨é”þÿÿÿÿ8›Í¤ ´-

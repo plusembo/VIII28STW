@@ -1,7 +1,8 @@
 
-hsquid:S4042Å"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8ÕİîÆ±-
-lsquid:S1871«"MThis branch's code block is the same as the block for the branch on line 168.(Ğ½ö®8ÕİîÆ±-
-|squid:S1192›"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8ÕİîÆ±-
+hsquid:S4042Ë"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8¤œË´-
 Y
-squid:S899Å";Do something with the "boolean" value returned by "delete".(ôÙÜ×8ÕİîÆ±-
-Osquid:S1612I",Replace this lambda with a method reference.(·“İéûÿÿÿÿ8ÕİîÆ±-
+squid:S899Ë";Do something with the "boolean" value returned by "delete".(ôÙÜ×8¤œË´-
+lsquid:S1871±"MThis branch's code block is the same as the block for the branch on line 174.(Ğ½ö®8¤œË´-
+Osquid:S1612J",Replace this lambda with a method reference.(·“İéûÿÿÿÿ8ÕİîÆ±-
+|squid:S1192œ"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8¨’Í´-
+gsquid:UnusedPrivateMethod­"5Remove this unused private "jbtnLginOnAction" method.(©İşÿÿÿÿ8ßèÎ´-

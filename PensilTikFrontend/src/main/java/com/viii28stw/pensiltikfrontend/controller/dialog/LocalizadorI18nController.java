@@ -175,12 +175,14 @@ public class LocalizadorI18nController implements Initializable {
                 }
             }
             lblQtd.setText(qtdIdiomasDisponiveis == 0 ?
-                    "Nenhuma lingua disponível" :
+                    I18nFactory.getInstance().getResourceBundle().getString("label.no.language.available") :
                     qtdIdiomasDisponiveis > 1 ?
-                            qtdIdiomasDisponiveis + " linguas disponíveis" :
-                            qtdIdiomasDisponiveis + " lingua disponível");
+                            qtdIdiomasDisponiveis + " ".concat(I18nFactory.getInstance()
+                                    .getResourceBundle().getString("label.available.languages")) :
+                            qtdIdiomasDisponiveis + " ".concat(I18nFactory.getInstance()
+                                    .getResourceBundle().getString("label.available.language")));
         } else {
-            lblQtd.setText("Nenhuma lingua disponível");
+            lblQtd.setText(I18nFactory.getInstance().getResourceBundle().getString("label.no.language.available"));
         }
     }
 

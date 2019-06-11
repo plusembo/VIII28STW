@@ -59,3 +59,13 @@ x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
 q
 Asrc/main/java/com/viii28stw/pensiltikfrontend/util/BasicAuth.java,9\4\941a41a5c1afc990f473693a743833a5358bd8c3
+Ü
+Vsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotificationEvent.java,e\f\ef68665ff659dd65cd8ba7c9974f9a6451fabe6f
+ã
+[src/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotificacaoCRUDFactory.java,3\6\3607f61c223dc2e76ceedf64e15155755f0029f1
+à
+Xsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotificationBuilder.java,b\0\b01fdc584b22e6bae26f9670803a8e4ca84c81ac
+Å
+Qsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/Notification.java,9\2\921767e1ed03c0e10132bc8495071630aeea9d7a
+Ñ
+Tsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotifierBuilder.java,b\2\b22f04a97a853cf05b77b2fbaf8aa6389a6ee795

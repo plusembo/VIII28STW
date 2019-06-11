@@ -14,6 +14,7 @@ import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
+import com.viii28stw.pensiltikfrontend.util.Notification.NotificacaoCRUDFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -165,6 +166,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private void jbtnLoginOnAction() {
+        jtxEmail.requestFocus();
+        NotificacaoCRUDFactory.getInstance().notificaSucesso("Atualização bem sucedida!");
+    }
+
+    private void jbtnLginOnAction() {
         if (!jtxEmail.validate() && !jpwSenha.validate()) {
             jtxEmail.requestFocus();
             return;
