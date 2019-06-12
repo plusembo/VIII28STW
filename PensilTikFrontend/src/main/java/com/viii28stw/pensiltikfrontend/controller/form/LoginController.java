@@ -14,7 +14,6 @@ import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
-import com.viii28stw.pensiltikfrontend.util.Notification.NotificacaoCRUDFactory;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -26,6 +25,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -55,6 +55,8 @@ public class LoginController implements Initializable {
     private JFXPasswordField jpwSenha;
     @FXML
     private JFXCheckBox jchxLembrarDeMim;
+    @FXML
+    private HBox hbxNotification;
 
     private RequiredFieldValidator emailValidator = new RequiredFieldValidator();
     private RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
@@ -71,6 +73,8 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        hbxNotification.setVisible(false);
+
         Platform.runLater(() -> lembraDeMim());
 
         jtxEmail.getValidators().add(emailValidator);
@@ -166,11 +170,11 @@ public class LoginController implements Initializable {
 
     @FXML
     private void jbtnLoginOnAction() {
-        jtxEmail.requestFocus();
+        /*jtxEmail.requestFocus();
         NotificacaoCRUDFactory.getInstance().notificaSucesso("Atualização bem sucedida!");
     }
 
-    private void jbtnLginOnAction() {
+    private void jbtnLginOnAction() {*/
         if (!jtxEmail.validate() && !jpwSenha.validate()) {
             jtxEmail.requestFocus();
             return;
@@ -182,7 +186,10 @@ public class LoginController implements Initializable {
             return;
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
-        if (usuarioDto == null) return; // Exibir mensagem de que não foi possível realizar o login
+        if (usuarioDto == null) {
+            hbxNotification.setVisible(true);
+            return;
+        } // Exibir mensagem de que não foi possível realizar o login
 
         new Thread(() -> {
             try {
@@ -233,6 +240,7 @@ public class LoginController implements Initializable {
             //reload the fxml file to apply resource bundle
             reloadLogin();
 
+            hbxNotification.setVisible(false);
             jtxEmail.requestFocus();
             jtxEmail.resetValidation();
             jpwSenha.resetValidation();

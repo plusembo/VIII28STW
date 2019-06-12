@@ -24,10 +24,10 @@
       <Hyperlink layoutX="52.0" layoutY="344.0" text="%hyperlink.login.i.forgot.my.password" />
       <Hyperlink alignment="CENTER_RIGHT" layoutX="244.0" layoutY="320.0" onAction="#hlkSetUpSystemLanguage" prefHeight="23.0" prefWidth="115.0" text="%hyperlink.setup.language" />
       <JFXButton buttonType="RAISED" layoutX="242.0" layoutY="380.0" onAction="#jbtnLoginOnAction" prefHeight="50.0" prefWidth="115.0" text="%button.login" />
-      <HBox alignment="CENTER_LEFT" layoutX="52.0" layoutY="442.0" prefHeight="20.0" prefWidth="307.0" spacing="7.0">
+      <HBox fx:id="hbxNotification" alignment="CENTER_LEFT" layoutX="52.0" layoutY="442.0" prefHeight="20.0" prefWidth="307.0" spacing="7.0">
          <children>
-            <ImageView fx:id="imgvwNotificacao" fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="lblNotificacao" prefHeight="18.0" prefWidth="282.0" text="%label.login.credentials.dont.match" />
+            <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true" />
+            <Label prefHeight="18.0" prefWidth="282.0" text="%label.login.credentials.dont.match" />
          </children>
       </HBox>
    </children>

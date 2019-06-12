@@ -7,31 +7,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61be7ef2-21da-47cc-af7a-f03867c978cb" name="Default Changelist" comment="Fim dos primeiros testes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/1/9/19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/1/9/19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/6/5/653a7bc7dd558d5c3f7c91473f19a64f80a480cb" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/6/5/653a7bc7dd558d5c3f7c91473f19a64f80a480cb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/f/6/f67803ff5764edb77b127507ef2ff375651ceee7" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/f/6/f67803ff5764edb77b127507ef2ff375651ceee7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/4/9/49d00debec5e6ed5acf1e3a8c3a0a5452a7a6dd1" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/include/nominatim.i18n" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/include/nominatim.i18n" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/java/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/dialog/localizador_i18n.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/dialog/localizador_i18n.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/form/cadastro/cadastro_usuario.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/form/cadastro/cadastro_usuario.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/form/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/fxml/form/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/strings_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/strings_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/strings_pt_BR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/src/main/resources/strings_pt_BR.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/form/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/controller/form/LoginController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/fxml/dialog/localizador_i18n.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/fxml/dialog/localizador_i18n.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/com/viii28stw/pensiltikfrontend/util/NotificacaoCRUDFactory.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/fxml/form/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/fxml/form/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/strings_en_US.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/strings_en_US.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/strings_pt_BR.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/classes/strings_pt_BR.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/../PensilTikFrontend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
@@ -48,7 +33,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1260">
+            <state relative-caret-position="171">
               <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -69,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/controller/UsuarioControllerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13083">
-              <caret line="652" column="52" selection-start-line="652" selection-start-column="52" selection-end-line="652" selection-end-column="52" />
+            <state relative-caret-position="310">
+              <caret line="664" column="95" lean-forward="true" selection-start-line="664" selection-start-column="63" selection-end-line="664" selection-end-column="95" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -93,7 +78,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioNivelAcessoEnum.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="378">
@@ -236,8 +221,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,6 +334,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -496,8 +481,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="-6" width="1293" height="733" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2874494" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2923077" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -829,30 +815,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1260">
-          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/service/UsuarioService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2583">
           <caret line="131" column="22" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/controller/UsuarioControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13083">
-          <caret line="652" column="52" selection-start-line="652" selection-start-column="52" selection-end-line="652" selection-end-column="52" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -873,6 +839,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="68" column="56" selection-start-line="68" selection-start-column="56" selection-end-line="68" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/viii28stw/pensiltikbackend/controller/UsuarioControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="664" column="95" lean-forward="true" selection-start-line="664" selection-start-column="63" selection-end-line="664" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
