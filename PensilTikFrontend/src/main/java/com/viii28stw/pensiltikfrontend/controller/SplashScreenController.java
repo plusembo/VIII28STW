@@ -13,6 +13,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -79,4 +81,5 @@ public class SplashScreenController implements Initializable {
             }
         });
     }
+
 }

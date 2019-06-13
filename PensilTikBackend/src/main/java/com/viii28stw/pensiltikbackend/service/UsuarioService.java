@@ -130,11 +130,8 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto fazerLogin(UsuarioDto usuarioDto){
-        if(usuarioRepository.findByEmailAndSenha(usuarioDto.getEmail(), usuarioDto.getSenha()) == null) {
-            throw new NoSuchElementException("E-mail ou senha incorreta");
-        }
         Usuario usuario = usuarioRepository.findByEmailAndSenha(usuarioDto.getEmail(), usuarioDto.getSenha());
-
+        if (usuario == null) return null;
         userLoggedIn.add(usuario.getEmail());
 
         return UsuarioDto.builder()

@@ -28,8 +28,7 @@ import java.util.NoSuchElementException;
 import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphabetic;
 import static com.viii28stw.pensiltikbackend.util.RandomValue.randomAlphanumeric;
 import static org.assertj.core.api.BDDAssertions.then;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
@@ -662,7 +661,7 @@ public class UsuarioControllerTest {
                 .exchange(UrlPrefixFactory.getUrlPrefix() + FAZER_LOGIN, HttpMethod.POST,
                         new HttpEntity<>(usDto, httpHeaders), String.class);
 
-        then(responseEntityUsuario4.getStatusCode()).isEqualTo(HttpStatus.INTERNAL_SERVER_ERROR);
+        assertNull(responseEntityUsuario4.getBody());
         then(responseEntityUsuario4.getBody() instanceof EmptyResultDataAccessException);
     }
 

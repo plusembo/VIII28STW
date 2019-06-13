@@ -55,8 +55,6 @@ public class LoginController implements Initializable {
     private JFXPasswordField jpwSenha;
     @FXML
     private JFXCheckBox jchxLembrarDeMim;
-    @FXML
-    private HBox hbxNotification;
 
     private RequiredFieldValidator emailValidator = new RequiredFieldValidator();
     private RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
@@ -73,7 +71,6 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        hbxNotification.setVisible(false);
 
         Platform.runLater(() -> lembraDeMim());
 
@@ -187,9 +184,10 @@ public class LoginController implements Initializable {
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
         if (usuarioDto == null) {
-            hbxNotification.setVisible(true);
+            DialogBoxFactory.getInstance().informa1(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.login.failure"),
+                    I18nFactory.getInstance().getResourceBundle().getString("dialog.login.failure.contenttext"));
             return;
-        } // Exibir mensagem de que não foi possível realizar o login
+        }
 
         new Thread(() -> {
             try {
@@ -229,7 +227,7 @@ public class LoginController implements Initializable {
                 if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
                         I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
                         I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contentText.are.you.sure.you.want.to.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
                         I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
                     we.consume();
                 } else System.exit(0);
@@ -240,7 +238,6 @@ public class LoginController implements Initializable {
             //reload the fxml file to apply resource bundle
             reloadLogin();
 
-            hbxNotification.setVisible(false);
             jtxEmail.requestFocus();
             jtxEmail.resetValidation();
             jpwSenha.resetValidation();

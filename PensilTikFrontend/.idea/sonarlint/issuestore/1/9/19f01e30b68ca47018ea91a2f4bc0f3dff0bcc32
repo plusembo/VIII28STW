@@ -1,8 +1,9 @@
 
-lsquid:S1871µ"MThis branch's code block is the same as the block for the branch on line 178.(Ð½ö®8¤œËž´-
+osquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(Ï¦ãþÿÿÿÿ8·ÕãÌ´-
+Osquid:S1612K",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
+lsquid:S1871²"MThis branch's code block is the same as the block for the branch on line 175.(Ð½ö®8¤œËž´-
+`squid:UselessImportCheck"5Remove this unused import 'javafx.scene.layout.HBox'.(äê…ž8®”ò´-
+|squid:S1192"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8¨’Íž´-
+hsquid:S4042Ð"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8÷â›Í´-
 Y
-squid:S899Ò";Do something with the "boolean" value returned by "delete".(ôÙÜ×8÷â›Í´-
-Osquid:S1612N",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
-hsquid:S4042Ò"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8÷â›Í´-
-osquid:CommentedOutCodeLine­"<This block of commented-out lines of code should be removed.(Ï¦ãþÿÿÿÿ8·ÕãÌ´-
-|squid:S1192 "XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8¨’Íž´-
+squid:S899Ð";Do something with the "boolean" value returned by "delete".(ôÙÜ×8÷â›Í´-

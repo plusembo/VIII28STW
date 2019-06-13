@@ -79,9 +79,8 @@ public class UsuarioService implements IUsuarioService {
                         new HttpEntity<>(usuarioDto, httpHeaders), String.class);
 
         try {
-            UsuarioDto usuarioDto1 = mapper.readValue(responseEntityUsuario.getBody().toString(), UsuarioDto.class);
-
-            if (usuarioDto1 != null) {
+            if (responseEntityUsuario.getBody() != null) {
+                UsuarioDto usuarioDto1 = mapper.readValue(responseEntityUsuario.getBody().toString(), UsuarioDto.class);
                 Usuario usuario = Usuario.builder()
                         .codigo(usuarioDto1.getCodigo())
                         .nome(usuarioDto1.getNome())

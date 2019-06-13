@@ -286,7 +286,6 @@ public class UsuarioServiceTest {
         usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo());
     }
 
-    @Test(expected = NoSuchElementException.class)
     public void fazerLogin() {
         UsuarioDto usuarioDto = usuarioService.salvarUsuario(UsuarioDto.builder()
                 .nome(randomAlphabetic(25))
@@ -306,7 +305,7 @@ public class UsuarioServiceTest {
         assertEquals(usuarioDto1, usuarioDto);
 
         assertTrue(usuarioService.deletarUsuarioPorId(usuarioDto.getCodigo()));
-        usuarioService.fazerLogin(usuarioDto);
+        assertNull(usuarioService.fazerLogin(usuarioDto));
     }
 
 }
