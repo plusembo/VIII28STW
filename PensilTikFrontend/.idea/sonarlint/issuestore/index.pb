@@ -51,8 +51,6 @@ Csrc/main/java/com/viii28stw/pensiltikfrontend/util/I18nFactory.java,8\e\8ef6dc
 asrc/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorUsuarioController.java,2\4\247dbb7d50e27a8fb6985431d0125933ac4a96d9
 ˆ
 Xsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/NominatimCountryCodesEnum.java,b\0\b0e637fe75d3a1237cf6c4fc3b789986199b6c34
-Ž
-^src/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorI18nController.java,f\6\f67803ff5764edb77b127507ef2ff375651ceee7
 x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
 q

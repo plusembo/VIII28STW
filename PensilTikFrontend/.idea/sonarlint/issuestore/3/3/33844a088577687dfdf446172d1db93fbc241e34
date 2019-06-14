@@ -1,21 +1,20 @@
 
-2squid:S3626f"Remove this redundant jump.(ûÁÝ…
-2squid:S3626"Remove this redundant jump.(ûÁÝ…
-isquid:S3776C"RRefactor this method to reduce its Cognitive Complexity from 68 to the 15 allowed.(€þâ§
-fsquid:MaximumInheritanceDepth“"<This class has 9 parents which is greater than 5 authorized.(·Æ¡ª
-Asquid:S00108q")Either remove or fill this block of code.(ßÈ´
-Bsquid:S00108£")Either remove or fill this block of code.(ßÈ´
-Bsquid:S00108Š")Either remove or fill this block of code.(ßÈ´
-Bsquid:S00108Ï")Either remove or fill this block of code.(Ãôþ•
-3squid:S3626˜"Remove this redundant jump.(ûÁÝ…
-jsquid:MaximumInheritanceDepthG"<This class has 9 parents which is greater than 5 authorized.(äÚµ“ýÿÿÿÿ
-ssquid:S1192_"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£
-asquid:S3358µ"DExtract this nested ternary operation into an independent statement.(¸é…áþÿÿÿÿ
-Bsquid:S00108É")Either remove or fill this block of code.(Ãôþ•
-esquid:MaximumInheritanceDeptha"<This class has 9 parents which is greater than 5 authorized.(ð¯çÓ
-2squid:S3626L"Remove this redundant jump.(ûÁÝ…
-jsquid:MaximumInheritanceDepthz"<This class has 9 parents which is greater than 5 authorized.(õÓ÷¬ûÿÿÿÿ
-hsquid:S1192F"LDefine a constant instead of duplicating this literal "left-header" 4 times.(œ®óóüÿÿÿÿ
-Asquid:S00108X")Either remove or fill this block of code.(ßÈ´
-jsquid:CommentedOutCodeLineÒ"<This block of commented-out lines of code should be removed.(±ë…Ù8çÂ×œµ-
-isquid:CommentedOutCodeLine×"<This block of commented-out lines of code should be removed.(äñõ$8çÂ×œµ-
+jsquid:MaximumInheritanceDepth|"<This class has 9 parents which is greater than 5 authorized.(õÓ÷¬ûÿÿÿÿ
+jsquid:MaximumInheritanceDepthI"<This class has 9 parents which is greater than 5 authorized.(äÚµ“ýÿÿÿÿ
+3squid:S3626š"Remove this redundant jump.(ûÁÝ…
+Bsquid:S00108Œ")Either remove or fill this block of code.(ßÈ´
+3squid:S3626"Remove this redundant jump.(ûÁÝ…
+2squid:S3626N"Remove this redundant jump.(ûÁÝ…
+Bsquid:S00108¥")Either remove or fill this block of code.(ßÈ´
+Bsquid:S00108Ë")Either remove or fill this block of code.(Ãôþ•
+esquid:MaximumInheritanceDepthc"<This class has 9 parents which is greater than 5 authorized.(ð¯çÓ
+2squid:S3626h"Remove this redundant jump.(ûÁÝ…
+asquid:S3358·"DExtract this nested ternary operation into an independent statement.(¸é…áþÿÿÿÿ
+ssquid:S1192a"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£
+hsquid:S1192H"LDefine a constant instead of duplicating this literal "left-header" 4 times.(œ®óóüÿÿÿÿ
+Bsquid:S00108Ñ")Either remove or fill this block of code.(Ãôþ•
+Asquid:S00108Z")Either remove or fill this block of code.(ßÈ´
+Ssquid:S1066Ö"/Merge this if statement with the enclosing one.(ÚÆµ·øÿÿÿÿ8Éˆßµ-
+isquid:S3776E"RRefactor this method to reduce its Cognitive Complexity from 68 to the 15 allowed.(€þâ§
+Asquid:S00108s")Either remove or fill this block of code.(ßÈ´
+fsquid:MaximumInheritanceDepth•"<This class has 9 parents which is greater than 5 authorized.(·Æ¡ª

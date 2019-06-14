@@ -2,6 +2,8 @@ package com.viii28stw.pensiltikfrontend.controller.form.configuracoes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
+import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
@@ -207,15 +209,16 @@ public class ConfiguracaoIdiomaController implements Initializable {
             } catch (IOException ex) {
             }
             configuracaoIdiomaStage.close();
-//            if (Sessao.getInstance().isLogoutRequest()) {
-//                if (DialogBoxFactory.getInstance().questiona("/img/exit.png",
-//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
-//                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
-//                    System.exit(0);
-//                }
-//            }
+            MDIController.fechaJanela(MenuEnum.SETUP_SYSTEM_LANGUAGE);
+            if (Sessao.getInstance().isLogoutRequest()) {
+                if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
+                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
+                    Sessao.getInstance().setLogoutRequest(false);
+                }
+            }
         }
     }
 
@@ -235,10 +238,6 @@ public class ConfiguracaoIdiomaController implements Initializable {
         tvwLanguages.setItems(obsI18n);
         setTvwLanguagesColumnStyleProperty();
         atualizaLblQtdIdiomasDisponiveis();
-    }
-
-    public void setLogoutRequest(boolean isLogoutRequest) {
-        Sessao.getInstance().setLogoutRequest(isLogoutRequest);
     }
 
 }

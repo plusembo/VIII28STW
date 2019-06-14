@@ -190,7 +190,7 @@ public class MDIController implements Initializable {
                     case SETUP_SYSTEM_LANGUAGE: {
                         ConfiguracaoIdiomaController controller = loader.getController();
                         controller.setConfiguracaoIdiomaStage(formStage);
-                        controller.setLogoutRequest(true);
+                        Sessao.getInstance().setLogoutRequest(true);
                         break;
                     }
 //
