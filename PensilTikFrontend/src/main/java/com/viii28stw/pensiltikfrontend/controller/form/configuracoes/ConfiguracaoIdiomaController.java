@@ -1,8 +1,10 @@
-package com.viii28stw.pensiltikfrontend.controller.dialog;
+package com.viii28stw.pensiltikfrontend.controller.form.configuracoes;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
+import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,13 +25,13 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 @NoArgsConstructor
-public class LocalizadorI18nController implements Initializable {
+public class ConfiguracaoIdiomaController implements Initializable {
 
     @Getter
     @Setter
-    private Stage localizadorI18nStage;
+    private Stage configuracaoIdiomaStage;
     @FXML
-    private TableView<NominatimCountryCodesEnum> tvwI18n;
+    private TableView<NominatimCountryCodesEnum> tvwLanguages;
     @FXML
     private TableColumn clmLanguageNameEnglish;
     @FXML
@@ -43,26 +45,26 @@ public class LocalizadorI18nController implements Initializable {
     @FXML
     private Label lblQtd;
     private final ObservableList<NominatimCountryCodesEnum> obsI18n = FXCollections.observableArrayList();
-    private static LocalizadorI18nController uniqueInstance;
+    private static ConfiguracaoIdiomaController uniqueInstance;
 
-    public static synchronized LocalizadorI18nController getInstance() {
+    public static synchronized ConfiguracaoIdiomaController getInstance() {
         if (uniqueInstance == null) {
-            uniqueInstance = new LocalizadorI18nController();
+            uniqueInstance = new ConfiguracaoIdiomaController();
         }
         return uniqueInstance;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        setTvwI18nColumnStyleProperty();
+        setTvwLanguagesColumnStyleProperty();
 
         NominatimCountryCodesEnum.getList().forEach(obsI18n::add);
-        tvwI18n.setItems(obsI18n);
+        tvwLanguages.setItems(obsI18n);
 
         atualizaLblQtdIdiomasDisponiveis();
     }
 
-    private void setTvwI18nColumnStyleProperty() {
+    private void setTvwLanguagesColumnStyleProperty() {
         clmLanguageNameEnglish.setCellValueFactory(new PropertyValueFactory<>("languageNameEnglish"));
         clmLanguageNameEnglish.setStyle("-fx-alignment: CENTER-LEFT; -fx-padding: 0 10 0 0;");
         clmLanguageNameEnglish.getStyleClass().add("left-header");
@@ -187,9 +189,9 @@ public class LocalizadorI18nController implements Initializable {
     }
 
     @FXML
-    private void tvwI18nSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
+    private void tvwLanguagesSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
-            NominatimCountryCodesEnum nominatimCountryCodesEnum = tvwI18n.getSelectionModel().getSelectedItem();
+            NominatimCountryCodesEnum nominatimCountryCodesEnum = tvwLanguages.getSelectionModel().getSelectedItem();
             if (nominatimCountryCodesEnum == null || !nominatimCountryCodesEnum.isAvailable()) {
                 return;
             }
@@ -204,7 +206,16 @@ public class LocalizadorI18nController implements Initializable {
                         .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
             } catch (IOException ex) {
             }
-            localizadorI18nStage.close();
+            configuracaoIdiomaStage.close();
+//            if (Sessao.getInstance().isLogoutRequest()) {
+//                if (DialogBoxFactory.getInstance().questiona("/img/exit.png",
+//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+//                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
+//                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
+//                    System.exit(0);
+//                }
+//            }
         }
     }
 
@@ -221,9 +232,13 @@ public class LocalizadorI18nController implements Initializable {
             }
         }
 
-        tvwI18n.setItems(obsI18n);
-        setTvwI18nColumnStyleProperty();
+        tvwLanguages.setItems(obsI18n);
+        setTvwLanguagesColumnStyleProperty();
         atualizaLblQtdIdiomasDisponiveis();
+    }
+
+    public void setLogoutRequest(boolean isLogoutRequest) {
+        Sessao.getInstance().setLogoutRequest(isLogoutRequest);
     }
 
 }

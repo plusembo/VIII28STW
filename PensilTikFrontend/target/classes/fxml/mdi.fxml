@@ -27,6 +27,7 @@
                      <menus>
                         <Menu fx:id="mnConfiguracoes" mnemonicParsing="false" text="CONFIGURAÇÕES">
                            <items>
+                              <MenuItem mnemonicParsing="false" onAction="#mnuSetUpSystemLanguageAction" text="Idioma" />
                               <MenuItem id="CFG001" mnemonicParsing="false" onAction="#mnuConfiguracaoContaUsuarioAction" text="Minha conta" />
                            </items>
                         </Menu>

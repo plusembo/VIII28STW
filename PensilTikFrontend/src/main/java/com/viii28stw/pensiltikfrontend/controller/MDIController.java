@@ -1,6 +1,7 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.controller.form.cadastro.CadastroUsuarioController;
+import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
@@ -29,6 +30,7 @@ import lombok.Setter;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.logging.Level;
@@ -74,7 +76,6 @@ public class MDIController implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
-
         hlkNomeUsuario.setText(Sessao.getInstance().getUsuario().getNome()
                 + " (" + Sessao.getInstance().getUsuario().getEmail() + ")");
 
@@ -83,15 +84,20 @@ public class MDIController implements Initializable {
     }
 
     private void atualizaDataHora() {
-        Locale.setDefault(new Locale("pt", "BR"));
-        SimpleDateFormat sdf = new SimpleDateFormat("EEEEEE',' dd/MM/yyyy HH:mm:ss");
-        String dataHora = sdf.format(Calendar.getInstance().getTime());
-        lblDataHora.setText(dataHora.substring(0, 1).toUpperCase().concat(dataHora.substring(1)));
+        DateFormat df = DateFormat.getDateInstance(DateFormat.FULL, I18nFactory.getInstance().getLocale());
+        String data = df.format(Calendar.getInstance().getTime());
+        String hora = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
+        lblDataHora.setText(data.substring(0, 1).toUpperCase().concat(data.substring(1)).concat(" ").concat(hora));
     }
 
     @FXML
     private void mnuConfiguracaoContaUsuarioAction() {
         abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO);
+    }
+
+    @FXML
+    private void mnuSetUpSystemLanguageAction() {
+        abreForm(MenuEnum.SETUP_SYSTEM_LANGUAGE);
     }
 
     @FXML
@@ -181,6 +187,12 @@ public class MDIController implements Initializable {
 //                        controller.setFormStage(formStage);
 //                        break;
 //                    }
+                    case SETUP_SYSTEM_LANGUAGE: {
+                        ConfiguracaoIdiomaController controller = loader.getController();
+                        controller.setConfiguracaoIdiomaStage(formStage);
+                        controller.setLogoutRequest(true);
+                        break;
+                    }
 //
 //                    case CADASTRO_PECA: {
 //                        CadastroPecaSimplesController controller = loader.getController();

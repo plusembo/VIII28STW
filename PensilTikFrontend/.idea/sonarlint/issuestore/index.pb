@@ -67,3 +67,5 @@ Xsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotificationBui
 Qsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/Notification.java,9\2\921767e1ed03c0e10132bc8495071630aeea9d7a
 Ñ
 Tsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotifierBuilder.java,b\2\b22f04a97a853cf05b77b2fbaf8aa6389a6ee795
+ù
+msrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/configuracoes/ConfiguracaoIdiomaController.java,3\3\33844a088577687dfdf446172d1db93fbc241e34

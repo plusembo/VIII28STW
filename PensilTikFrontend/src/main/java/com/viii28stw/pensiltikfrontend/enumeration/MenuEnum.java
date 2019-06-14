@@ -12,6 +12,7 @@ import lombok.Getter;
 public enum MenuEnum {
     //0.Configurações
     CONFIGURACOES_CONTA_USUARIO("CFG001", "MINHA CONTA", "", ""),
+    SETUP_SYSTEM_LANGUAGE("CFG002", "CONFIGURAÇÃO DO IDIOMA", "/fxml/form/cofiguracoes/configuracao_idioma.fxml", ""),
     //1.Cadastros
     CADASTRO_TIPO_RENDA("CAD001", "CADASTRO TIPO RENDA", "", ""),
     CADASTRO_RENDA("CAD002", "CADASTRO RENDA", "", ""),

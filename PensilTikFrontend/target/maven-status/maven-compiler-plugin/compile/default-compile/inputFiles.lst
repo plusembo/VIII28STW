@@ -21,6 +21,7 @@ C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\con
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\Notification\NotificacaoCRUDFactory.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\CentralizeLocationRelativeToScreen.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\Notification\Notification.java
+C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\form\configuracoes\ConfiguracaoIdiomaController.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\MainApp.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\Notification\NotifierBuilder.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\RestTemplateFactory.java
@@ -29,5 +30,4 @@ C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enu
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\EmailValidator.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\util\I18nFactory.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\enumeration\SexoEnum.java
-C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\dialog\LocalizadorI18nController.java
 C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\model\domain\Sessao.java

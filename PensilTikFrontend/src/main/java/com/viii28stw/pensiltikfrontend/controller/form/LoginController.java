@@ -6,7 +6,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
-import com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorI18nController;
+import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
@@ -25,7 +25,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -117,33 +116,32 @@ public class LoginController implements Initializable {
     @FXML
     private void hlkSetUpSystemLanguage() {
         try {
-            Stage localizadorI18nStage = new Stage();
+            Stage configuracaoIdiomaStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(I18nFactory.getInstance().getResourceBundle());
-            loader.setLocation(MainApp.class.getResource("/fxml/dialog/localizador_i18n.fxml"));
-            AnchorPane localizadorI18nAnchorPane = loader.load();
-            Scene localizadorI18nScene = new Scene(localizadorI18nAnchorPane);
-            localizadorI18nStage.setResizable(false);
-            localizadorI18nStage.setMaximized(false);
-            localizadorI18nStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.language.setup"));
-            localizadorI18nStage.initModality(Modality.WINDOW_MODAL);
-            localizadorI18nStage.initOwner(loginStage);
-            localizadorI18nStage.setX(CentralizeLocationRelativeToScreen.getX(919));
-            localizadorI18nStage.setY(CentralizeLocationRelativeToScreen.getY(567));
-            localizadorI18nStage.setScene(localizadorI18nScene);
-            LocalizadorI18nController localizadorI18nController = loader.getController();
-            localizadorI18nController.setLocalizadorI18nStage(localizadorI18nStage);
+            loader.setLocation(MainApp.class.getResource("/fxml/form/cofiguracoes/configuracao_idioma.fxml"));
+            StackPane configuracaoIdiomaStackPane = loader.load();
+            Scene localizadorI18nScene = new Scene(configuracaoIdiomaStackPane);
+            configuracaoIdiomaStage.setResizable(false);
+            configuracaoIdiomaStage.setMaximized(false);
+            configuracaoIdiomaStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.language.setup"));
+            configuracaoIdiomaStage.initModality(Modality.WINDOW_MODAL);
+            configuracaoIdiomaStage.initOwner(loginStage);
+            configuracaoIdiomaStage.setX(CentralizeLocationRelativeToScreen.getX(919));
+            configuracaoIdiomaStage.setY(CentralizeLocationRelativeToScreen.getY(567));
+            configuracaoIdiomaStage.setScene(localizadorI18nScene);
+            ConfiguracaoIdiomaController configuracaoIdiomaController = loader.getController();
+            configuracaoIdiomaController.setConfiguracaoIdiomaStage(configuracaoIdiomaStage);
 
             loginStage.close();
 
             jtxEmail.resetValidation();
             jpwSenha.resetValidation();
 
-            localizadorI18nStage.showAndWait();
+            configuracaoIdiomaStage.showAndWait();
 
             //reload the fxml file to apply resource bundle
             reloadLogin();
-
             jtxEmail.requestFocus();
 
         } catch (IOException ex) {
