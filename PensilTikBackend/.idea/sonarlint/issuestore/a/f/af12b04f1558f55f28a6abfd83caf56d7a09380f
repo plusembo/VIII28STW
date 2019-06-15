@@ -1,7 +1,7 @@
 
-squid:S1319!"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(·€¼ë8 £¹¥-
-’squid:S13193"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ÿ§ç¢şÿÿÿÿ8ƒáä®-
-’squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ôøÈèûÿÿÿÿ8şÚ¤¹¥-
-vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¡µ°¸üÿÿÿÿ8½æêâ®-
 ’squid:S1319*"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(¢¢ìæşÿÿÿÿ8ƒáä®-
+’squid:S13193"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ÿ§ç¢şÿÿÿÿ8ƒáä®-
+squid:S1319!"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(·€¼ë8 £¹¥-
+’squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ôøÈèûÿÿÿÿ8şÚ¤¹¥-
 ’squid:S1319<"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(‰Œ™ôúÿÿÿÿ8ƒáä®-
+vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¡µ°¸üÿÿÿÿ8½æêâ®-

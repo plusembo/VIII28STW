@@ -2,7 +2,6 @@ package com.viii28stw.pensiltikfrontend.enumeration;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public enum NominatimCountryCodesEnum {
+public enum NominatimCountryCodes {
     UNITED_STATES_OF_AMERICA("US", "United States of America",
             "United States of America",
             "en","English", "English", true),
@@ -45,10 +44,10 @@ public enum NominatimCountryCodesEnum {
     private final String languageNameLocal;
     private final boolean available;
 
-    public static List<NominatimCountryCodesEnum> getList() {
-        List<NominatimCountryCodesEnum> listNominatimCountryCodesEnum = new ArrayList<NominatimCountryCodesEnum>
-                (Arrays.asList(NominatimCountryCodesEnum.values()));
-        return listNominatimCountryCodesEnum;
+    public static List<NominatimCountryCodes> getList() {
+        List<NominatimCountryCodes> listNominatimCountryCodes = new ArrayList<NominatimCountryCodes>
+                (Arrays.asList(NominatimCountryCodes.values()));
+        return listNominatimCountryCodes;
     }
 
 }

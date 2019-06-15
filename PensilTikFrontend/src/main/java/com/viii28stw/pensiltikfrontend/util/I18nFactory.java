@@ -1,6 +1,6 @@
 package com.viii28stw.pensiltikfrontend.util;
 
-import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodes;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -24,8 +24,8 @@ public class I18nFactory {
         return uniqueInstance;
     }
 
-    public void setSystemLanguage(NominatimCountryCodesEnum nominatimCountryCodesEnum) {
-        setLocale(nominatimCountryCodesEnum.getLanguageCode(), nominatimCountryCodesEnum.getCountryCode());
+    public void setSystemLanguage(NominatimCountryCodes nominatimCountryCodes) {
+        setLocale(nominatimCountryCodes.getLanguageCode(), nominatimCountryCodes.getCountryCode());
         setResourceBundle();
     }
 

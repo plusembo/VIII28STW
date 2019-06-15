@@ -1,9 +1,8 @@
 package com.viii28stw.pensiltikbackend.model.entity;
 
-import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
-import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.Sexo;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcesso;
 import lombok.*;
-import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import java.io.Serializable;
@@ -40,13 +39,13 @@ public class Usuario implements Serializable {
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "SEXO", nullable = false)
-    private SexoEnum sexoEnum;
+    private Sexo sexo;
 
     @Column(name = "DATA_NASCIMENTO", nullable = false)
     private LocalDate dataNascimento;
 
     @Enumerated(EnumType.ORDINAL)
     @Column(name = "NIVEL_ACESSO", nullable = false)
-    private UsuarioNivelAcessoEnum usuarioNivelAcessoEnum;
+    private UsuarioNivelAcesso usuarioNivelAcesso;
 
 }

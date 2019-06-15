@@ -3,10 +3,10 @@ package com.viii28stw.pensiltikfrontend.controller.form.configuracoes;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jfoenix.controls.JFXTextField;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
-import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
-import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
+import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodes;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
-import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
+import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,6 +24,8 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @NoArgsConstructor
 public class ConfiguracaoIdiomaController implements Initializable {
@@ -31,7 +33,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
     @Setter
     private Stage configuracaoIdiomaStage;
     @FXML
-    private TableView<NominatimCountryCodesEnum> tvwLanguages;
+    private TableView<NominatimCountryCodes> tvwLanguages;
     @FXML
     private TableColumn clmLanguageNameEnglish;
     @FXML
@@ -44,7 +46,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
     private JFXTextField jtxLanguageFilter;
     @FXML
     private Label lblQtd;
-    private final ObservableList<NominatimCountryCodesEnum> obsI18n = FXCollections.observableArrayList();
+    private final ObservableList<NominatimCountryCodes> obsI18n = FXCollections.observableArrayList();
     private static ConfiguracaoIdiomaController uniqueInstance;
 
     public static synchronized ConfiguracaoIdiomaController getInstance() {
@@ -58,7 +60,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         setTvwLanguagesColumnStyleProperty();
 
-        NominatimCountryCodesEnum.getList().forEach(obsI18n::add);
+        NominatimCountryCodes.getList().forEach(obsI18n::add);
         tvwLanguages.setItems(obsI18n);
 
         atualizaLblQtdIdiomasDisponiveis();
@@ -68,7 +70,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
         clmLanguageNameEnglish.setCellValueFactory(new PropertyValueFactory<>("languageNameEnglish"));
         clmLanguageNameEnglish.setStyle("-fx-alignment: CENTER-LEFT; -fx-padding: 0 10 0 0;");
         clmLanguageNameEnglish.getStyleClass().add("left-header");
-        clmLanguageNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+        clmLanguageNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodes, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
@@ -94,7 +96,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
         clmLanguageNameLocal.setCellValueFactory(new PropertyValueFactory<>("languageNameLocal"));
         clmLanguageNameLocal.setStyle("-fx-alignment: CENTER-LEFT;");
         clmLanguageNameLocal.getStyleClass().add("left-header");
-        clmLanguageNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+        clmLanguageNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodes, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
@@ -119,7 +121,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
         clmCountryNameEnglish.setCellValueFactory(new PropertyValueFactory<>("countryNameEnglish"));
         clmCountryNameEnglish.setStyle("-fx-alignment: CENTER-LEFT;");
         clmCountryNameEnglish.getStyleClass().add("left-header");
-        clmCountryNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+        clmCountryNameEnglish.setCellFactory(column -> new TableCell<NominatimCountryCodes, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
@@ -144,7 +146,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
         clmCountryNameLocal.setCellValueFactory(new PropertyValueFactory<>("countryNameLocal"));
         clmCountryNameLocal.setStyle("-fx-alignment: CENTER-LEFT;");
         clmCountryNameLocal.getStyleClass().add("left-header");
-        clmCountryNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodesEnum, String>() {
+        clmCountryNameLocal.setCellFactory(column -> new TableCell<NominatimCountryCodes, String>() {
             @Override
             protected void updateItem(String item, boolean empty) {
                 super.updateItem(item, empty);
@@ -171,8 +173,8 @@ public class ConfiguracaoIdiomaController implements Initializable {
     private void atualizaLblQtdIdiomasDisponiveis() {
         if (!obsI18n.isEmpty()) {
             int qtdIdiomasDisponiveis = 0;
-            for (NominatimCountryCodesEnum nominatimCountryCodesEnum : obsI18n) {
-                if (nominatimCountryCodesEnum.isAvailable()) {
+            for (NominatimCountryCodes nominatimCountryCodes : obsI18n) {
+                if (nominatimCountryCodes.isAvailable()) {
                     qtdIdiomasDisponiveis++;
                 }
             }
@@ -191,30 +193,39 @@ public class ConfiguracaoIdiomaController implements Initializable {
     @FXML
     private void tvwLanguagesSelecionaLinhaMouseClicked(MouseEvent mouseEvent) {
         if (mouseEvent.getClickCount() == 2) {
-            NominatimCountryCodesEnum nominatimCountryCodesEnum = tvwLanguages.getSelectionModel().getSelectedItem();
-            if (nominatimCountryCodesEnum == null || !nominatimCountryCodesEnum.isAvailable()) {
+            NominatimCountryCodes nominatimCountryCodes = tvwLanguages.getSelectionModel().getSelectedItem();
+            if (nominatimCountryCodes == null || !nominatimCountryCodes.isAvailable()) {
+                return;
+            }
+            if(nominatimCountryCodes.getLanguageCode().concat("_").concat(nominatimCountryCodes.getCountryCode())
+                    .equals(I18nFactory.getInstance().getLocale().toString())) {
+                Sessao.getInstance().setLogoutRequest(false);
+                MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
+                configuracaoIdiomaStage.close();
                 return;
             }
             try {
                 new ObjectMapper()
-                        .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodesEnum);
+                        .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodes);
             } catch (IOException ex) {
             }
-            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodesEnum);
+            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
             try {
                 new ObjectMapper()
-                        .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
+                        .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
             } catch (IOException ex) {
             }
             configuracaoIdiomaStage.close();
-            MDIController.fechaJanela(MenuEnum.SETUP_SYSTEM_LANGUAGE);
+            MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
             if (Sessao.getInstance().isLogoutRequest()) {
-                if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
-                    Sessao.getInstance().setLogoutRequest(false);
+                try {
+                    if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
+                        Sessao.getInstance().setLogoutRequest(false);
+                    }
+                } catch (IOException ex) {
+                    Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                 }
             }
         }
@@ -224,7 +235,7 @@ public class ConfiguracaoIdiomaController implements Initializable {
     private void jtxLanguageFiltroKeyReleased() {
         obsI18n.clear();
 
-        for (NominatimCountryCodesEnum ncce : NominatimCountryCodesEnum.getList()) {
+        for (NominatimCountryCodes ncce : NominatimCountryCodes.getList()) {
             if (ncce.getLanguageNameLocal().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||
                     ncce.getLanguageNameEnglish().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||
                     ncce.getCountryNameLocal().toUpperCase().startsWith(jtxLanguageFilter.getText().toUpperCase()) ||

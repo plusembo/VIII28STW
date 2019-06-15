@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="163.0" prefWidth="364.0" stylesheets="@../../../css/dialog_box.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxController">
+   <children>
+      <Pane prefHeight="448.0" prefWidth="501.0" style="-fx-background-color: white;">
+         <children>
+            <Label fx:id="lblHeaderText" layoutX="20.0" layoutY="11.0" styleClass="label-header" text="Desculpe!" />
+            <Separator layoutX="10.0" layoutY="38.0" prefHeight="9.0" prefWidth="340.0" />
+            <Label fx:id="lblContentText" layoutX="20.0" layoutY="57.0" prefHeight="17.0" prefWidth="321.0" styleClass="label-content" text="Não reconhecemos os seus dados de conexão.\n ">
+               <font>
+                  <Font size="10.0" />
+               </font></Label>
+            <JFXButton fx:id="jbtnOkay" layoutX="172.0" layoutY="114.0" onAction="#jbtnOkayAction" prefHeight="37.0" prefWidth="87.0" styleClass="jfx-button-okay" text="Okay" />
+            <JFXButton fx:id="jbtnCancel" layoutX="265.0" layoutY="114.0" onAction="#jbtnCancelAction" prefHeight="37.0" prefWidth="85.0" styleClass="jfx-button-cancel" text="Cancel" />
+         </children>
+      </Pane>
+   </children>
+</StackPane>

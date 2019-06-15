@@ -29,9 +29,9 @@ public class UsuarioService implements IUsuarioService {
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
-                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                    .usuarioNivelAcesso(usuario.getUsuarioNivelAcesso())
                     .senha(usuario.getSenha())
-                    .sexoEnum(usuario.getSexoEnum())
+                    .sexo(usuario.getSexo())
                     .dataNascimento(usuario.getDataNascimento())
                     .build();
         } else return null;
@@ -48,9 +48,9 @@ public class UsuarioService implements IUsuarioService {
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
-                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                    .usuarioNivelAcesso(usuario.getUsuarioNivelAcesso())
                     .senha(usuario.getSenha())
-                    .sexoEnum(usuario.getSexoEnum())
+                    .sexo(usuario.getSexo())
                     .dataNascimento(usuario.getDataNascimento())
                     .build();
 
@@ -66,9 +66,9 @@ public class UsuarioService implements IUsuarioService {
                     .nome(usuario.getNome())
                     .sobreNome(usuario.getSobreNome())
                     .email(usuario.getEmail())
-                    .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                    .usuarioNivelAcesso(usuario.getUsuarioNivelAcesso())
                     .senha(usuario.getSenha())
-                    .sexoEnum(usuario.getSexoEnum())
+                    .sexo(usuario.getSexo())
                     .dataNascimento(usuario.getDataNascimento())
                     .build());
         }
@@ -104,9 +104,9 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuarioDto.getNome())
                 .sobreNome(usuarioDto.getSobreNome())
                 .email(usuarioDto.getEmail())
-                .usuarioNivelAcessoEnum(usuarioDto.getUsuarioNivelAcessoEnum())
+                .usuarioNivelAcesso(usuarioDto.getUsuarioNivelAcesso())
                 .senha(usuarioDto.getSenha())
-                .sexoEnum(usuarioDto.getSexoEnum())
+                .sexo(usuarioDto.getSexo())
                 .dataNascimento(usuarioDto.getDataNascimento())
                 .build());
 
@@ -115,9 +115,9 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())
-                .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                .usuarioNivelAcesso(usuario.getUsuarioNivelAcesso())
                 .senha(usuario.getSenha())
-                .sexoEnum(usuario.getSexoEnum())
+                .sexo(usuario.getSexo())
                 .dataNascimento(usuario.getDataNascimento())
                 .build();
     }
@@ -139,9 +139,9 @@ public class UsuarioService implements IUsuarioService {
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())
                 .email(usuario.getEmail())
-                .usuarioNivelAcessoEnum(usuario.getUsuarioNivelAcessoEnum())
+                .usuarioNivelAcesso(usuario.getUsuarioNivelAcesso())
                 .senha(usuario.getSenha())
-                .sexoEnum(usuario.getSexoEnum())
+                .sexo(usuario.getSexo())
                 .dataNascimento(usuario.getDataNascimento())
                 .build();
     }

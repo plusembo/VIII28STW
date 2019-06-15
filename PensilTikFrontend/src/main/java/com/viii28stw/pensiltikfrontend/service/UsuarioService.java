@@ -87,7 +87,7 @@ public class UsuarioService implements IUsuarioService {
                         .sobreNome(usuarioDto1.getSobreNome())
                         .email(usuarioDto1.getEmail())
                         .senha(usuarioDto1.getSenha())
-                        .sexoEnum(usuarioDto1.getSexoEnum())
+                        .sexo(usuarioDto1.getSexo())
                         .dataNascimento(usuarioDto1.getDataNascimento())
                         .build();
 

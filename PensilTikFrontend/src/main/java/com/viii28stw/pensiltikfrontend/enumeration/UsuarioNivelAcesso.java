@@ -1,4 +1,4 @@
-package com.viii28stw.pensiltikbackend.enumeration;
+package com.viii28stw.pensiltikfrontend.enumeration;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum UsuarioNivelAcessoEnum {
+public enum UsuarioNivelAcesso {
     ADMINISTRADOR(1,"Admin", "Administrador"),
     USUARIO_COMUM(2,"Uscm", "Usuário comum");
 

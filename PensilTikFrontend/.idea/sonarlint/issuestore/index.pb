@@ -8,10 +8,6 @@ Tsrc/main/java/com/viii28stw/pensiltikfrontend/controller/SplashScreenController
 z
 Jsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/DespesaEnum.java,2\e\2e97cab2441ad81d619f5ab1b99b4b1f360f5745
 w
-Gsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/MenuEnum.java,d\d\dd48eabc8f940fca4b4bf2c4470a4944402c40d8
-w
-Gsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/SexoEnum.java,6\2\62373b1f3aa0d595d56e687c83f30e18f346c165
-w
 Gsrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/Usuario.java,1\0\102fa737af09ff978b0357b3432bde314deda3f4
 x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/FormMenu.java,d\1\d194279000e66f0b1dc1e36d2324744a60298a56
@@ -33,10 +29,6 @@ y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/util/PasswordValidator.java,9\e\9e7178e7e822d8d13aae39dbb2c2d7c0e77e2bb4
 o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
-Ö
-Usrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/UsuarioNivelAcessoEnum.java,7\9\794c71f597f70d4b154c81f10028df6cebcca18b
-x
-Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/DialogBoxFactory.java,6\2\62001376411dffdb57dea8b878b7abc2bcece9a7
 à
 Xsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/ajuda/SobreController.java,b\9\b9998da018db826538a484a8bdbc335b4a039de6
 ï
@@ -49,8 +41,6 @@ s
 Csrc/main/java/com/viii28stw/pensiltikfrontend/util/I18nFactory.java,8\e\8ef6dc7363a5d4e073ba8ec2fc782bcddd9538c2
 ë
 asrc/main/java/com/viii28stw/pensiltikfrontend/controller/dialog/LocalizadorUsuarioController.java,2\4\247dbb7d50e27a8fb6985431d0125933ac4a96d9
-à
-Xsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/NominatimCountryCodesEnum.java,b\0\b0e637fe75d3a1237cf6c4fc3b789986199b6c34
 x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
 q
@@ -67,5 +57,13 @@ Qsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/Notification.ja
 Tsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/NotifierBuilder.java,b\2\b22f04a97a853cf05b77b2fbaf8aa6389a6ee795
 ù
 msrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/configuracoes/ConfiguracaoIdiomaController.java,3\3\33844a088577687dfdf446172d1db93fbc241e34
-à
-Xsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/DialogBoxController.java,f\f\ff6bbe4b9fa4400b840e0c639b2c2b82a593cc1f
+Ñ
+Tsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/NominatimCountryCodes.java,e\d\ed8db4f07f1e6121fa384f719719baf62313c5c6
+s
+Csrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/Sexo.java,a\1\a193952d9e929aece92e0b0893ef0fbec80464fd
+y
+Isrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/DialogType.java,9\9\9994a8db9c6d2a9c503b298402e0037bf53e0ccc
+Ç
+Rsrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxFactory.java,4\3\43b664014d520012d0cbace5526d9afccfbfa57b
+Ö
+Usrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxController.java,a\9\a9ae75b37b845fe56fde610f832314c82efb0831

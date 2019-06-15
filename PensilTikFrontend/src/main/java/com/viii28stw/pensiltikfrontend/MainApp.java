@@ -2,7 +2,7 @@ package com.viii28stw.pensiltikfrontend;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikfrontend.controller.SplashScreenController;
-import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodesEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodes;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -25,9 +25,9 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
-            NominatimCountryCodesEnum nominatimCountryCodesEnum = new ObjectMapper()
-                    .readValue(new File("include/nominatim.i18n"), NominatimCountryCodesEnum.class);
-            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodesEnum);
+            NominatimCountryCodes nominatimCountryCodes = new ObjectMapper()
+                    .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
+            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
         } catch (IOException ex) {
         }
 

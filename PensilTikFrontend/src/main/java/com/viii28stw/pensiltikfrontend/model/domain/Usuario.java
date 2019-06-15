@@ -1,7 +1,7 @@
 package com.viii28stw.pensiltikfrontend.model.domain;
 
-import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
-import com.viii28stw.pensiltikfrontend.enumeration.UsuarioNivelAcessoEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
+import com.viii28stw.pensiltikfrontend.enumeration.UsuarioNivelAcesso;
 import lombok.*;
 
 import java.io.Serializable;
@@ -21,7 +21,7 @@ public class Usuario implements Serializable {
     private String sobreNome;
     private String email;
     private String senha;
-    private SexoEnum sexoEnum;
+    private Sexo sexo;
     private LocalDate dataNascimento;
-    private UsuarioNivelAcessoEnum usuarioNivelAcessoEnum;
+    private UsuarioNivelAcesso usuarioNivelAcesso;
 }

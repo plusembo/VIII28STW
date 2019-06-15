@@ -6,16 +6,15 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
-import com.viii28stw.pensiltikfrontend.controller.SplashScreenController;
 import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
-import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
+import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
-import com.viii28stw.pensiltikfrontend.util.Notification.DialogBoxController;
+import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxController;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -26,10 +25,10 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -188,7 +187,7 @@ public class LoginController implements Initializable {
                 Stage dialogBoxStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
                 loader.setResources(I18nFactory.getInstance().getResourceBundle());
-                loader.setLocation(MainApp.class.getResource("/fxml/util/notification/dialog_box.fxml"));
+                loader.setLocation(MainApp.class.getResource("/fxml/util/dialogbox/dialog_box.fxml"));
                 StackPane dialogBoxStackPane = loader.load();
                 Scene dialogBoxScene = new Scene(dialogBoxStackPane);
                 dialogBoxStage.setResizable(false);
@@ -202,7 +201,10 @@ public class LoginController implements Initializable {
 
                 DialogBoxController dialogBoxController = loader.getController();
                 dialogBoxController.setDialogBoxStage(dialogBoxStage);
-                dialogBoxStage.show();
+                dialogBoxController.getLblHeaderText().setText("Teste");
+                dialogBoxController.getLblContentText().setText("Testando...");
+                dialogBoxStage.showAndWait();
+                System.out.println(dialogBoxController.getLblContentText().getText());
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             }
@@ -222,7 +224,7 @@ public class LoginController implements Initializable {
                             .sobreNome(usuarioDto.getSobreNome())
                             .email(usuarioDto.getEmail())
                             .senha(usuarioDto.getSenha())
-                            .sexoEnum(usuarioDto.getSexoEnum())
+                            .sexo(usuarioDto.getSexo())
                             .dataNascimento(usuarioDto.getDataNascimento())
                             .build();
 
@@ -248,13 +250,15 @@ public class LoginController implements Initializable {
             MDIController mdiController = loader.getController();
             mdiController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
-                if (!DialogBoxFactory.getInstance().questiona("/img/exit.png",
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"),
-                        I18nFactory.getInstance().getResourceBundle().getString("button.close"))) {
-                    we.consume();
-                } else System.exit(0);
+                try {
+                    if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
+                        we.consume();
+                    } else System.exit(0);
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                }
             });
             loginStage.close();
             mdiStage.showAndWait();

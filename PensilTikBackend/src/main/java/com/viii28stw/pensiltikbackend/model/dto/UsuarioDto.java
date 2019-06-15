@@ -1,11 +1,11 @@
 package com.viii28stw.pensiltikbackend.model.dto;
 
-import com.viii28stw.pensiltikbackend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.Sexo;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcessoEnum;
+import com.viii28stw.pensiltikbackend.enumeration.UsuarioNivelAcesso;
 import lombok.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
@@ -25,12 +25,12 @@ public class UsuarioDto{
     @NotBlank private String sobreNome;
     @NotBlank @Email private String email;
     @NotBlank private String senha;
-    private SexoEnum sexoEnum;
+    private Sexo sexo;
 
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonDeserialize(using = LocalDateDeserializer.class)
     private LocalDate dataNascimento;
 
-    private UsuarioNivelAcessoEnum usuarioNivelAcessoEnum;
+    private UsuarioNivelAcesso usuarioNivelAcesso;
 
 }

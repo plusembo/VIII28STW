@@ -13,17 +13,17 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public enum SexoEnum {
+public enum Sexo {
     MASCULINO('M', "Masculino"),
     FEMININO('F', "Feminino");
 
     private final char id;
     private final String descricao;
 
-    public static List<SexoEnum> getList() {
-        List<SexoEnum> listSexoEnum = new ArrayList<SexoEnum>
-                (Arrays.asList(SexoEnum.values()));
-        return listSexoEnum;
+    public static List<Sexo> getList() {
+        List<Sexo> listSexo = new ArrayList<Sexo>
+                (Arrays.asList(Sexo.values()));
+        return listSexo;
     }
 
     @Override

@@ -5,7 +5,7 @@ import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.Configuraca
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
-import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
@@ -45,7 +45,7 @@ public class MDIController implements Initializable {
 
     @Setter
     private Stage mdiStage;
-    private static HashMap<MenuEnum, FormMenu> listFormsMenu;
+    private static HashMap<MenuMatch, FormMenu> listFormsMenu;
     @FXML
     private Hyperlink hlkNomeUsuario;
     @FXML
@@ -92,52 +92,52 @@ public class MDIController implements Initializable {
 
     @FXML
     private void mnuConfiguracaoContaUsuarioAction() {
-        abreForm(MenuEnum.CONFIGURACOES_CONTA_USUARIO);
+        abreForm(MenuMatch.CONFIGURACOES_CONTA_USUARIO);
     }
 
     @FXML
     private void mnuSetUpSystemLanguageAction() {
-        abreForm(MenuEnum.SETUP_SYSTEM_LANGUAGE);
+        abreForm(MenuMatch.SETUP_SYSTEM_LANGUAGE);
     }
 
     @FXML
     private void mnuCadastroTipoRendaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_RENDA);
+        abreForm(MenuMatch.CADASTRO_TIPO_RENDA);
     }
 
     @FXML
     private void mnuCadastroRendaAction() {
-        abreForm(MenuEnum.CADASTRO_RENDA);
+        abreForm(MenuMatch.CADASTRO_RENDA);
     }
 
     @FXML
     private void mnuCadastroTipoDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_TIPO_DESPESA);
+        abreForm(MenuMatch.CADASTRO_TIPO_DESPESA);
     }
 
     @FXML
     private void mnuCadastroDespesaAction() {
-        abreForm(MenuEnum.CADASTRO_DESPESA);
+        abreForm(MenuMatch.CADASTRO_DESPESA);
     }
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuEnum.CADASTRO_USUARIO);
+        abreForm(MenuMatch.CADASTRO_USUARIO);
     }
 
     @FXML
     private void mnuRelatorioRendaAction() {
-        abreForm(MenuEnum.RELATORIO_RENDA);
+        abreForm(MenuMatch.RELATORIO_RENDA);
     }
 
     @FXML
     private void mnuRelatorioDespesasAction() {
-        abreForm(MenuEnum.RELATORIO_DESPESAS);
+        abreForm(MenuMatch.RELATORIO_DESPESAS);
     }
 
     @FXML
     private void mnuAjudaSobreAction() {
-        abreForm(MenuEnum.AJUDA_SOBRE);
+        abreForm(MenuMatch.AJUDA_SOBRE);
     }
 
     //--- *** ----- ### ----- *** ---
@@ -146,28 +146,28 @@ public class MDIController implements Initializable {
         mdiStage.close();
     }
 
-    private void abreForm(MenuEnum menuEnum) {
+    private void abreForm(MenuMatch menuMatch) {
         boolean aberto = false;
         try {
-            if (listFormsMenu.containsKey(menuEnum)) {
+            if (listFormsMenu.containsKey(menuMatch)) {
                 aberto = true;
-                listFormsMenu.get(menuEnum).getStage().toFront();
+                listFormsMenu.get(menuMatch).getStage().toFront();
             }
 
             if (!aberto) {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setResources(I18nFactory.getInstance().getResourceBundle());
-                loader.setLocation(MainApp.class.getResource(menuEnum.getFxmlPath()));
+                loader.setLocation(MainApp.class.getResource(menuMatch.getFxmlPath()));
                 StackPane parent = loader.load();
 
                 Stage formStage = new Stage();
                 formStage.initOwner(hlkNomeUsuario.getScene().getWindow());
                 formStage.setResizable(false);
                 formStage.setMaximized(false);
-                formStage.initModality(menuEnum.equals(MenuEnum.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
-                formStage.setTitle(menuEnum.getTitle());
-                if (null != menuEnum.getIcon() && !menuEnum.getIcon().isEmpty()) {
-                    formStage.getIcons().add(new Image(menuEnum.getIcon()));
+                formStage.initModality(menuMatch.equals(MenuMatch.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
+                formStage.setTitle(menuMatch.getTitle());
+                if (null != menuMatch.getIcon() && !menuMatch.getIcon().isEmpty()) {
+                    formStage.getIcons().add(new Image(menuMatch.getIcon()));
                 }
                 formStage.setX(CentralizeLocationRelativeToScreen.getX(parent.getPrefWidth()));
                 formStage.setY(CentralizeLocationRelativeToScreen.getY(parent.getPrefHeight()));
@@ -175,12 +175,12 @@ public class MDIController implements Initializable {
                 Scene scene = new Scene(parent);
                 formStage.setScene(scene);
 
-                formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menuEnum));
+                formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menuMatch));
 
-                listFormsMenu.put(menuEnum, new FormMenu(menuEnum, formStage));
+                listFormsMenu.put(menuMatch, new FormMenu(menuMatch, formStage));
 
                 //Flexible zone begining
-                switch (menuEnum) {
+                switch (menuMatch) {
 //
 //                    case CONFIGURACOES_CONTA_USUARIO: {
 //                        ConfiguracaoContaUsuarioController controller = loader.getController();
@@ -263,9 +263,9 @@ public class MDIController implements Initializable {
 
     }
 
-    public static void fechaJanela(MenuEnum menuEnum) {
-        if (listFormsMenu.containsKey(menuEnum)) {
-            listFormsMenu.remove(menuEnum);
+    public static void fechaJanela(MenuMatch menuMatch) {
+        if (listFormsMenu.containsKey(menuMatch)) {
+            listFormsMenu.remove(menuMatch);
         }
 
     }

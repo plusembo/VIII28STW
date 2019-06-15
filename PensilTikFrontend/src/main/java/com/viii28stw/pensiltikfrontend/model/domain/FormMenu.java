@@ -1,6 +1,6 @@
 package com.viii28stw.pensiltikfrontend.model.domain;
 
-import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import javafx.stage.Stage;
 import lombok.*;
 
@@ -16,6 +16,6 @@ import lombok.*;
 @ToString
 @Builder
 public class FormMenu {
-    private MenuEnum menum;
+    private MenuMatch menuMatch;
     private Stage stage;
 }

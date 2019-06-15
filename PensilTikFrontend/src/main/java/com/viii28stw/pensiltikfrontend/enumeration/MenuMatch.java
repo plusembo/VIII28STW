@@ -9,7 +9,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum MenuEnum {
+public enum MenuMatch {
     //0.Configurações
     CONFIGURACOES_CONTA_USUARIO("CFG001", "MINHA CONTA", "", ""),
     SETUP_SYSTEM_LANGUAGE("CFG002", "CONFIGURAÇÃO DO IDIOMA", "/fxml/form/cofiguracoes/configuracao_idioma.fxml", ""),

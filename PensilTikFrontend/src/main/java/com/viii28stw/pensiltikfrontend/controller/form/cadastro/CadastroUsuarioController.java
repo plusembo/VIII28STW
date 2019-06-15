@@ -5,13 +5,14 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
 import com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorUsuarioController;
-import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
-import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
+import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.*;
+import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -26,7 +27,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.Text;
@@ -40,33 +40,58 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @NoArgsConstructor
 public class CadastroUsuarioController implements Initializable {
-    @Getter @Setter private Stage cadastroUsuarioStage;
-    @FXML private JFXTextField jmskCodigo;
-    @FXML private JFXTextField jtxNome;
-    @FXML private JFXTextField jtxSobrenome;
-    @FXML private JFXComboBox<SexoEnum> jcbxSexo;
-    @FXML private JFXTextField jtxEmail;
-    @FXML private JFXPasswordField jpwSenha;
-    @FXML private JFXPasswordField jpwConfirmarSenha;
-    @FXML private JFXButton jbtnLocalizarUsuario;
-    @FXML private JFXButton jbtnSalvar;
-    @FXML private JFXButton jbtnExcluir;
-    @FXML private JFXButton jbtnFechar;
-    @FXML private JFXButton jbtnLimpar;
-    @FXML private Label lblSexoObrigatorio;
-    @FXML private ImageView imgvwSexoObrigatorio;
-    @FXML private Label lblEmailInvalido;
-    @FXML private ImageView imgvwEmailInvalido;
-    @FXML private Label lblSenhaInvalida;
-    @FXML private ImageView imgvwSenhaInvalida;
-    @FXML private Label lblConfirmarSenha;
-    @FXML private ImageView imgvwConfirmarSenha;
+    @Getter
+    @Setter
+    private Stage cadastroUsuarioStage;
+    @FXML
+    private JFXTextField jmskCodigo;
+    @FXML
+    private JFXTextField jtxNome;
+    @FXML
+    private JFXTextField jtxSobrenome;
+    @FXML
+    private JFXComboBox<Sexo> jcbxSexo;
+    @FXML
+    private JFXTextField jtxEmail;
+    @FXML
+    private JFXPasswordField jpwSenha;
+    @FXML
+    private JFXPasswordField jpwConfirmarSenha;
+    @FXML
+    private JFXButton jbtnLocalizarUsuario;
+    @FXML
+    private JFXButton jbtnSalvar;
+    @FXML
+    private JFXButton jbtnExcluir;
+    @FXML
+    private JFXButton jbtnFechar;
+    @FXML
+    private JFXButton jbtnLimpar;
+    @FXML
+    private Label lblSexoObrigatorio;
+    @FXML
+    private ImageView imgvwSexoObrigatorio;
+    @FXML
+    private Label lblEmailInvalido;
+    @FXML
+    private ImageView imgvwEmailInvalido;
+    @FXML
+    private Label lblSenhaInvalida;
+    @FXML
+    private ImageView imgvwSenhaInvalida;
+    @FXML
+    private Label lblConfirmarSenha;
+    @FXML
+    private ImageView imgvwConfirmarSenha;
     private RequiredFieldValidator confirmarSenhaValidator3 = new RequiredFieldValidator();
-    @Setter private boolean modoEdicao;
-    private final ObservableList<SexoEnum> obsListSexo = FXCollections.observableArrayList();
+    @Setter
+    private boolean modoEdicao;
+    private final ObservableList<Sexo> obsListSexo = FXCollections.observableArrayList();
     private IUsuarioService usuarioService = UsuarioService.getInstance();
     private static CadastroUsuarioController uniqueInstance;
 
@@ -118,11 +143,11 @@ public class CadastroUsuarioController implements Initializable {
 
         jbtnExcluir.setDisable(true);
 
-        SexoEnum.getList().forEach(obsListSexo::add);
+        Sexo.getList().forEach(obsListSexo::add);
         jcbxSexo.setItems(obsListSexo);
 
         jmskCodigo.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
-                                                         Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+                                                  Boolean oldPropertyValue, Boolean newPropertyValue) -> {
             if (oldPropertyValue) {
                 if (jmskCodigo.validate()) {
                     jmskCodigoFocusLost();
@@ -243,9 +268,9 @@ public class CadastroUsuarioController implements Initializable {
                 .nome(usuarioDto.getNome())
                 .sobreNome(usuarioDto.getSobreNome())
                 .email(usuarioDto.getEmail())
-                .usuarioNivelAcessoEnum(usuarioDto.getUsuarioNivelAcessoEnum())
+                .usuarioNivelAcesso(usuarioDto.getUsuarioNivelAcesso())
                 .senha(usuarioDto.getSenha())
-                .sexoEnum(usuarioDto.getSexoEnum())
+                .sexo(usuarioDto.getSexo())
                 .dataNascimento(usuarioDto.getDataNascimento())
                 .build();
 
@@ -255,13 +280,13 @@ public class CadastroUsuarioController implements Initializable {
 
     @FXML
     private void jbtnSalvarAction() {
-        if(!validaTodosOsCampos()) {
+        if (!validaTodosOsCampos()) {
             return;
         }
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .nome(jtxNome.getText())
                 .sobreNome(jtxSobrenome.getText())
-                .sexoEnum(jcbxSexo.getValue())
+                .sexo(jcbxSexo.getValue())
                 .email(jtxEmail.getText())
                 .senha(jpwSenha.getText())
                 .dataNascimento(LocalDate.now())
@@ -295,15 +320,18 @@ public class CadastroUsuarioController implements Initializable {
 
     @FXML
     private void jbtnExcluirAction() {
-        if (!DialogBoxFactory.getInstance().adverte("trash.png",
-                "Excluir usuário", "Este usuário será excluido permanentemente",
-                "Tem certeza que deseja excluir este usuário ?", "EXCLUIR")) {
-            return;
+        try {
+            if (!DialogBoxFactory.getInstance().confirm("Excluir usuário", "Este usuário será excluido permanentemente",
+                    "Tem certeza que deseja excluir este usuário ?")) {
+                return;
+            }
+            usuarioService.deletarUsuarioPorId(jmskCodigo.getText());
+            //notificacoes.notificaExcluido();
+            limpaForm();
+            jmskCodigo.requestFocus();
+        } catch (IOException ex) {
+            Logger.getLogger(CadastroUsuarioController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-        usuarioService.deletarUsuarioPorId(jmskCodigo.getText());
-        //notificacoes.notificaExcluido();
-        limpaForm();
-        jmskCodigo.requestFocus();
     }
 
     @FXML
@@ -382,7 +410,7 @@ public class CadastroUsuarioController implements Initializable {
 
         jmskCodigo.setText(usuario.getCodigo());
         jtxNome.setText(usuario.getNome());
-        jcbxSexo.getSelectionModel().select(usuario.getSexoEnum());
+        jcbxSexo.getSelectionModel().select(usuario.getSexo());
         jtxEmail.setText(usuario.getEmail());
         jpwSenha.setText(usuario.getSenha());
         jpwConfirmarSenha.setText(usuario.getSenha());
@@ -398,7 +426,7 @@ public class CadastroUsuarioController implements Initializable {
             campoIndex = 6;
         }
 
-        if(jpwSenha.validate()) {
+        if (jpwSenha.validate()) {
             if (!PasswordValidator.isValidPassword(jpwSenha.getText())) {
                 lblSenhaInvalida.setText("Senha: Inválido");
                 lblSenhaInvalida.setVisible(true);
@@ -409,7 +437,7 @@ public class CadastroUsuarioController implements Initializable {
             campoIndex = 5;
         }
 
-        if(jtxEmail.validate()) {
+        if (jtxEmail.validate()) {
             if (!EmailValidator.isValidEmail(jtxEmail.getText())) {
                 lblEmailInvalido.setText("E-mail: Inválido");
                 lblEmailInvalido.setVisible(true);
@@ -430,13 +458,26 @@ public class CadastroUsuarioController implements Initializable {
         campoIndex = jtxNome.validate() ? campoIndex : 1;
 
         switch (campoIndex) {
-            case 1: jtxNome.requestFocus(); return false;
-            case 2: jtxSobrenome.requestFocus(); return false;
-            case 3: jcbxSexo.requestFocus(); return false;
-            case 4: jtxEmail.requestFocus(); return false;
-            case 5: jpwSenha.requestFocus(); return false;
-            case 6: jpwConfirmarSenha.requestFocus(); return false;
-            default: return true;
+            case 1:
+                jtxNome.requestFocus();
+                return false;
+            case 2:
+                jtxSobrenome.requestFocus();
+                return false;
+            case 3:
+                jcbxSexo.requestFocus();
+                return false;
+            case 4:
+                jtxEmail.requestFocus();
+                return false;
+            case 5:
+                jpwSenha.requestFocus();
+                return false;
+            case 6:
+                jpwConfirmarSenha.requestFocus();
+                return false;
+            default:
+                return true;
         }
     }
 
@@ -492,7 +533,7 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     private void jbtnFecharAction() {
         cadastroUsuarioStage.close();
-        MDIController.fechaJanela(MenuEnum.CADASTRO_USUARIO);
+        MDIController.fechaJanela(MenuMatch.CADASTRO_USUARIO);
     }
 
 }
