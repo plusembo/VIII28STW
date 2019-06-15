@@ -1,13 +1,13 @@
 
-osquid:CommentedOutCodeLineþ"<This block of commented-out lines of code should be removed.(èÄáŽøÿÿÿÿ8ö‘¹¯-
-Ssquid:S1066§"/Merge this if statement with the enclosing one.(Ãä–þÿÿÿÿ8ßò…¸¯-
-usquid:S3776j"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ýÿÿÿÿ8ßò…¸¯-
-Lsquid:S1604ï"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8ßò…¸¯-
 Isquid:S00108“")Either remove or fill this block of code.(Ãôþ•8¦ß¹¯-
-osquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(™ºÞÀúÿÿÿÿ8Â½û¸¯-
-Gsquid:S1604·"(Make this anonymous inner class a lambda(ô¸‡í8ßò…¸¯-
-Ysquid:S1854¨":Remove this useless assignment to local variable "salvou".(™‹°¼8ßò…¸¯-
+usquid:S3776j"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ýÿÿÿÿ8ßò…¸¯-
+osquid:CommentedOutCodeLineþ"<This block of commented-out lines of code should be removed.(èÄáŽøÿÿÿÿ8ö‘¹¯-
 osquid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(á»ã¨þÿÿÿÿ8‚¢è¸¯-
+osquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(™ºÞÀúÿÿÿÿ8Â½û¸¯-
 Jsquid:S1481¨"+Remove this unused "salvou" local variable.(™‹°¼8ßò…¸¯-
-jsquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(ÐÉ§Œ8ö‘¹¯-
 {squid:S1192m"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8ßò…¸¯-
+jsquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(ÐÉ§Œ8ö‘¹¯-
+Ysquid:S1854¨":Remove this useless assignment to local variable "salvou".(™‹°¼8ßò…¸¯-
+Gsquid:S1604·"(Make this anonymous inner class a lambda(ô¸‡í8ßò…¸¯-
+Ssquid:S1066§"/Merge this if statement with the enclosing one.(Ãä–þÿÿÿÿ8ßò…¸¯-
+Lsquid:S1604ï"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8ßò…¸¯-

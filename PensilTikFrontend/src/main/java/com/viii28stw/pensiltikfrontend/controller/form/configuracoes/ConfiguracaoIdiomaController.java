@@ -19,7 +19,6 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -197,37 +196,36 @@ public class ConfiguracaoIdiomaController implements Initializable {
             if (nominatimCountryCodes == null || !nominatimCountryCodes.isAvailable()) {
                 return;
             }
-            if(nominatimCountryCodes.getLanguageCode().concat("_").concat(nominatimCountryCodes.getCountryCode())
+            if (nominatimCountryCodes.getLanguageCode().concat("_").concat(nominatimCountryCodes.getCountryCode())
                     .equals(I18nFactory.getInstance().getLocale().toString())) {
                 Sessao.getInstance().setLogoutRequest(false);
-                MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
-                configuracaoIdiomaStage.close();
-                return;
-            }
-            try {
-                new ObjectMapper()
-                        .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodes);
-            } catch (IOException ex) {
-            }
-            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
-            try {
-                new ObjectMapper()
-                        .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
-            } catch (IOException ex) {
-            }
-            configuracaoIdiomaStage.close();
-            MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
-            if (Sessao.getInstance().isLogoutRequest()) {
+            } else {
                 try {
-                    if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-                            I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                            I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
-                        Sessao.getInstance().setLogoutRequest(false);
-                    }
+                    new ObjectMapper()
+                            .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodes);
                 } catch (IOException ex) {
-                    Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                }
+                I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
+                try {
+                    new ObjectMapper()
+                            .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
+                } catch (IOException ex) {
+                }
+
+                if (Sessao.getInstance().isLogoutRequest()) {
+                    try {
+                        if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                                I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                                I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
+                            Sessao.getInstance().setLogoutRequest(false);
+                        }
+                    } catch (IOException ex) {
+                        Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                    }
                 }
             }
+            MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
+            configuracaoIdiomaStage.close();
         }
     }
 
