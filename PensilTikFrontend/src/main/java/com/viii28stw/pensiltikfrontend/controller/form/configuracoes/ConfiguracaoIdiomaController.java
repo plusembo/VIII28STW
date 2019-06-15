@@ -17,7 +17,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
@@ -29,7 +28,6 @@ import java.util.ResourceBundle;
 @NoArgsConstructor
 public class ConfiguracaoIdiomaController implements Initializable {
 
-    @Getter
     @Setter
     private Stage configuracaoIdiomaStage;
     @FXML

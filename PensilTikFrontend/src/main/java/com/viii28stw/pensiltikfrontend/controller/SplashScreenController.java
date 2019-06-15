@@ -2,6 +2,7 @@ package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.LoginController;
+import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.concurrent.Service;
 import javafx.concurrent.Task;
@@ -10,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -63,11 +65,14 @@ public class SplashScreenController implements Initializable {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setResources(I18nFactory.getInstance().getResourceBundle());
                 loader.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
-                AnchorPane loginAnchorPane = loader.load();
-                Scene loginScene = new Scene(loginAnchorPane);
+                StackPane loginStackPane = loader.load();
+                Scene loginScene = new Scene(loginStackPane);
                 loginStage.setResizable(false);
                 loginStage.setMaximized(false);
                 loginStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("stage.title.login"));
+                loginStage.setX(CentralizeLocationRelativeToScreen.getX(loginStackPane.getPrefWidth()));
+                loginStage.setY(CentralizeLocationRelativeToScreen.getY(loginStackPane.getPrefHeight()));
+
                 loginStage.setScene(loginScene);
 
                 LoginController loginController = loader.getController();

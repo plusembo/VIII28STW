@@ -6,6 +6,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.SplashScreenController;
 import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
@@ -14,6 +15,7 @@ import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
+import com.viii28stw.pensiltikfrontend.util.Notification.DialogBoxController;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -127,8 +129,8 @@ public class LoginController implements Initializable {
             configuracaoIdiomaStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.language.setup"));
             configuracaoIdiomaStage.initModality(Modality.WINDOW_MODAL);
             configuracaoIdiomaStage.initOwner(loginStage);
-            configuracaoIdiomaStage.setX(CentralizeLocationRelativeToScreen.getX(919));
-            configuracaoIdiomaStage.setY(CentralizeLocationRelativeToScreen.getY(567));
+            configuracaoIdiomaStage.setX(CentralizeLocationRelativeToScreen.getX(configuracaoIdiomaStackPane.getPrefWidth()));
+            configuracaoIdiomaStage.setY(CentralizeLocationRelativeToScreen.getY(configuracaoIdiomaStackPane.getPrefHeight()));
             configuracaoIdiomaStage.setScene(localizadorI18nScene);
             ConfiguracaoIdiomaController configuracaoIdiomaController = loader.getController();
             configuracaoIdiomaController.setConfiguracaoIdiomaStage(configuracaoIdiomaStage);
@@ -182,8 +184,32 @@ public class LoginController implements Initializable {
         }
         UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
         if (usuarioDto == null) {
-            DialogBoxFactory.getInstance().informa1(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.login.failure"),
-                    I18nFactory.getInstance().getResourceBundle().getString("dialog.login.failure.contenttext"));
+            try {
+                Stage dialogBoxStage = new Stage();
+                FXMLLoader loader = new FXMLLoader();
+                loader.setResources(I18nFactory.getInstance().getResourceBundle());
+                loader.setLocation(MainApp.class.getResource("/fxml/util/notification/dialog_box.fxml"));
+                StackPane dialogBoxStackPane = loader.load();
+                Scene dialogBoxScene = new Scene(dialogBoxStackPane);
+                dialogBoxStage.setResizable(false);
+                dialogBoxStage.setMaximized(false);
+                dialogBoxStage.initModality(Modality.APPLICATION_MODAL);
+                dialogBoxStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("stage.title.login"));
+                dialogBoxStage.setX(CentralizeLocationRelativeToScreen.getX(dialogBoxStackPane.getPrefWidth()));
+                dialogBoxStage.setY(CentralizeLocationRelativeToScreen.getY(dialogBoxStackPane.getPrefHeight()));
+
+                dialogBoxStage.setScene(dialogBoxScene);
+
+                DialogBoxController dialogBoxController = loader.getController();
+                dialogBoxController.setDialogBoxStage(dialogBoxStage);
+                dialogBoxStage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            }
+
+
+//            DialogBoxFactory.getInstance().informa1(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.login.failure"),
+//                    I18nFactory.getInstance().getResourceBundle().getString("dialog.login.failure.contenttext"));
             return;
         }
 
@@ -250,8 +276,8 @@ public class LoginController implements Initializable {
             FXMLLoader loaderLogin = new FXMLLoader();
             loaderLogin.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
             loaderLogin.setResources(I18nFactory.getInstance().getResourceBundle());
-            AnchorPane loginAnchorPane = loaderLogin.load();
-            loginStage.getScene().setRoot(loginAnchorPane);
+            StackPane loginStackPane = loaderLogin.load();
+            loginStage.getScene().setRoot(loginStackPane);
             loginStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("stage.title.login"));
             LoginController loginController = loaderLogin.getController();
             loginController.setLoginStage(loginStage);

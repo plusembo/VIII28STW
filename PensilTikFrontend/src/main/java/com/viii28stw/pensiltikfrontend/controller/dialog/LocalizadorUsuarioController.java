@@ -21,10 +21,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @NoArgsConstructor
 public class LocalizadorUsuarioController implements Initializable {
 
+    @Setter
+    private Stage localizadorUsuarioStage;
+    private Stage configuracaoIdiomaStage;
     @FXML private TableView<Usuario> tvwUsuario;
     @FXML private TableColumn clmCodigo;
     @FXML private TableColumn clmNome;

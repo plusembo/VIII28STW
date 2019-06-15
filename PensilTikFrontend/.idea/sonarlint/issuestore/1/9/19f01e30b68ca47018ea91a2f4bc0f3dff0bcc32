@@ -1,8 +1,12 @@
 
-hsquid:S4042Î"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8÷â›Í´-
+lsquid:S1871²"MThis branch's code block is the same as the block for the branch on line 175.(Ð½ö®8¤œËž´-
+osquid:CommentedOutCodeLineª"<This block of commented-out lines of code should be removed.(Ï¦ãþÿÿÿÿ8·ÕãÌ´-
 Y
-squid:S899Î";Do something with the "boolean" value returned by "delete".(ôÙÜ×8÷â›Í´-
-lsquid:S1871°"MThis branch's code block is the same as the block for the branch on line 173.(Ð½ö®8¤œËž´-
-osquid:CommentedOutCodeLine¨"<This block of commented-out lines of code should be removed.(Ï¦ãþÿÿÿÿ8·ÕãÌ´-
-Osquid:S1612J",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
-|squid:S1192›"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8¨’Íž´-
+squid:S899è";Do something with the "boolean" value returned by "delete".(ôÙÜ×8÷â›Í´-
+osquid:CommentedOutCodeLineÔ"<This block of commented-out lines of code should be removed.(óÆ™»øÿÿÿÿ8±ÁýÆµ-
+|squid:S1192"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8¨’Íž´-
+hsquid:S4042è"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8÷â›Í´-
+qsquid:S3776©"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(“ðöÅ8±ŒøÆµ-
+Osquid:S1612L",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8ÕÝîÆ±-
+Žsquid:UselessImportCheck	"^Remove this unused import 'com.viii28stw.pensiltikfrontend.controller.SplashScreenController'.(µó–ÿÿÿÿÿ8æÐøÆµ-
+fsquid:UselessImportCheck";Remove this unused import 'javafx.scene.layout.AnchorPane'.(Ø µ8îŽÁÇµ-

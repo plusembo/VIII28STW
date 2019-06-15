@@ -5,18 +5,24 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="919.0" stylesheets="@../../css/tema_geral.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.dialog.LocalizaUsuarioController">
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="567.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.dialog.LocalizaUsuarioController">
    <children>
-      <JFXTextField fx:id="jtxNomeFiltro" labelFloat="true" layoutX="38.0" layoutY="30.0" onKeyReleased="#jtxNomeFiltroKeyReleased" prefHeight="31.0" prefWidth="460.0" promptText="Nome" />
-      <TableView fx:id="tvwUsuario" layoutX="38.0" layoutY="83.0" onMouseClicked="#tvwUsuarioSelecionarMouseClicked" prefHeight="443.0" prefWidth="832.0" style="-fx-focus-color: #4050a8;">
-         <columns>
-            <TableColumn fx:id="clmCodigo" editable="false" prefWidth="110.0" resizable="false" sortable="false" text="Código" />
-            <TableColumn fx:id="clmNome" editable="false" prefWidth="353.5" resizable="false" sortable="false" text="Nome" />
-            <TableColumn fx:id="clmEmail" editable="false" prefWidth="280.0" sortable="false" text="E-mail" />
-            <TableColumn fx:id="clmSexo" editable="false" minWidth="3.0" prefWidth="60.5" sortable="false" text="Sexo" />
-         </columns>
-      </TableView>
-      <Label fx:id="lblQtd" layoutX="38.0" layoutY="536.0" styleClass="label-comum" text="Qtd usuários" />
+      <AnchorPane id="AnchorPane" prefHeight="567.0" prefWidth="919.0" stylesheets="@../../css/tema_geral.css">
+         <children>
+            <JFXTextField fx:id="jtxNomeFiltro" labelFloat="true" layoutX="38.0" layoutY="30.0" onKeyReleased="#jtxNomeFiltroKeyReleased" prefHeight="31.0" prefWidth="460.0" promptText="Nome" />
+            <TableView fx:id="tvwUsuario" layoutX="38.0" layoutY="83.0" onMouseClicked="#tvwUsuarioSelecionarMouseClicked" prefHeight="443.0" prefWidth="832.0" style="-fx-focus-color: #4050a8;">
+               <columns>
+                  <TableColumn fx:id="clmCodigo" editable="false" prefWidth="110.0" resizable="false" sortable="false" text="Código" />
+                  <TableColumn fx:id="clmNome" editable="false" prefWidth="353.5" resizable="false" sortable="false" text="Nome" />
+                  <TableColumn fx:id="clmEmail" editable="false" prefWidth="280.0" sortable="false" text="E-mail" />
+                  <TableColumn fx:id="clmSexo" editable="false" minWidth="3.0" prefWidth="60.5" sortable="false" text="Sexo" />
+               </columns>
+            </TableView>
+            <Label fx:id="lblQtd" layoutX="38.0" layoutY="536.0" styleClass="label-comum" text="Qtd usuários" />
+         </children>
+      </AnchorPane>
    </children>
-</AnchorPane>
+</StackPane>

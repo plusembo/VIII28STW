@@ -4,6 +4,7 @@ import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorUsuarioController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuEnum;
 import com.viii28stw.pensiltikfrontend.enumeration.SexoEnum;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
@@ -332,20 +333,21 @@ public class CadastroUsuarioController implements Initializable {
             loader.setResources(I18nFactory.getInstance().getResourceBundle());
             loader.setLocation(MainApp.class
                     .getResource("/fxml/dialog/localiza_usuario.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            StackPane localizadorUsuarioStackPane = loader.load();
 
-            Stage dialogStage = new Stage();
-            dialogStage.setTitle("Usuarios");
-            dialogStage.setResizable(false);
-            dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(cadastroUsuarioStage);
-            dialogStage.setX(CentralizeLocationRelativeToScreen.getX(919));
-            dialogStage.setY(CentralizeLocationRelativeToScreen.getY(567));
-            Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
+            Stage localizadorUsuarioStage = new Stage();
+            localizadorUsuarioStage.setTitle("Usuarios");
+            localizadorUsuarioStage.setResizable(false);
+            localizadorUsuarioStage.initModality(Modality.WINDOW_MODAL);
+            localizadorUsuarioStage.initOwner(cadastroUsuarioStage);
+            localizadorUsuarioStage.setX(CentralizeLocationRelativeToScreen.getX(localizadorUsuarioStackPane.getPrefWidth()));
+            localizadorUsuarioStage.setY(CentralizeLocationRelativeToScreen.getY(localizadorUsuarioStackPane.getPrefHeight()));
+            Scene localizadorScene = new Scene(localizadorUsuarioStackPane);
+            localizadorUsuarioStage.setScene(localizadorScene);
+            LocalizadorUsuarioController localizadorUsuarioController = loader.getController();
+            localizadorUsuarioController.setLocalizadorUsuarioStage(localizadorUsuarioStage);
 
-//            LocalizaUsuarioController controller = loader.getController();
-            dialogStage.showAndWait();
+            localizadorUsuarioStage.showAndWait();
 //
 //            Usuario usuario = controller.getUsuario();
 //

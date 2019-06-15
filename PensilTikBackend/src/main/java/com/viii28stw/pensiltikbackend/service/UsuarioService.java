@@ -134,7 +134,7 @@ public class UsuarioService implements IUsuarioService {
         if (usuario == null) return null;
         userLoggedIn.add(usuario.getEmail());
 
-        return UsuarioDto.builder()
+            return UsuarioDto.builder()
                 .codigo(usuario.getCodigo())
                 .nome(usuario.getNome())
                 .sobreNome(usuario.getSobreNome())

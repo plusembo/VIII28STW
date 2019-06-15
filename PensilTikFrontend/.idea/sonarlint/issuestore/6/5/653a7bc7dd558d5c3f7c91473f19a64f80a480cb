@@ -1,11 +1,11 @@
 
-Msquid:S2696I"6Make the enclosing method "static" or remove this set.( ÄÊ”
-=squid:S1640I"Convert this Map to an EnumMap.( ÄÊ”8£ø›µ-
-Lsquid:S1199¾"-Extract this nested code block into a method.(À´Œë8äÜì›µ-
-jsquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(ØëçØ8Êù «²-
-Qsquid:S1199á"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8Êù «²-
-isquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(Ô¤Ù8Êù «²-
 jsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(¡ÑªË8Êù «²-
-Ksquid:S1199ò"-Extract this nested code block into a method.(ïÄîY8Êù «²-
+Lsquid:S1199¾"-Extract this nested code block into a method.(À´Œë8äÜì›µ-
+Msquid:S2696I"6Make the enclosing method "static" or remove this set.( ÄÊ”
+isquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(Ô¤Ù8Êù «²-
+=squid:S1640I"Convert this Map to an EnumMap.( ÄÊ”8£ø›µ-
+Qsquid:S1199á"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8Êù «²-
 osquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8Êù «²-
+jsquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(ØëçØ8Êù «²-
+Ksquid:S1199ò"-Extract this nested code block into a method.(ïÄîY8Êù «²-
 osquid:CommentedOutCodeLineÛ"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ8Êù «²-
