@@ -12,8 +12,6 @@ Nsrc/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java
 y
 Isrc/main/java/com/viii28stw/pensiltikbackend/enumeration/DespesaEnum.java,5\2\524cd4c54a380fee9cc83d8003623abccd8d4973
 v
-Fsrc/main/java/com/viii28stw/pensiltikbackend/enumeration/SexoEnum.java,c\6\c6ee809e27f026c8209b2a3310a000cfcec3ea6d
-v
 Fsrc/main/java/com/viii28stw/pensiltikbackend/model/entity/Usuario.java,3\c\3c9bbae17a6a5d3e9fc6250c9ee1d391fa45db72
 ~
 Nsrc/main/java/com/viii28stw/pensiltikbackend/repository/UsuarioRepository.java,7\7\77151c84a8d3642bc69a0399e4d278987fd4334f
@@ -51,5 +49,3 @@ r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/AppConfig.java,b\b\bbbdd6025a0b72785885468f72ae87d982eda4fc
 r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/BasicAuth.java,d\d\ddc008929af0fe4da133cf14faff229e7c4befc6
-„
-Tsrc/main/java/com/viii28stw/pensiltikbackend/enumeration/UsuarioNivelAcessoEnum.java,c\0\c0db7b5d12a68a3780687745dc9ed6fbabce5974

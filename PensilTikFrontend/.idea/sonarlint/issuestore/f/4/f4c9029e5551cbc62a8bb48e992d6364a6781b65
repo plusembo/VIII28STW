@@ -1,13 +1,0 @@
-
-Isquid:S00108“")Either remove or fill this block of code.(Γτώ•8¦ίΉ―-
-usquid:S3776j"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(Ϋ¦…ύÿÿÿÿ8ίς…Έ―-
-osquid:CommentedOutCodeLineώ"<This block of commented-out lines of code should be removed.(θΔαψÿÿÿÿ8φ‘Ή―-
-osquid:CommentedOutCodeLineΙ"<This block of commented-out lines of code should be removed.(α»γ¨ώÿÿÿÿ8‚ΆθΈ―-
-osquid:CommentedOutCodeLineί"<This block of commented-out lines of code should be removed.(™Ίήΐϊÿÿÿÿ8Β½ϋΈ―-
-Jsquid:S1481¨"+Remove this unused "salvou" local variable.(™‹°Ό8ίς…Έ―-
-{squid:S1192m"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ΙΜ¤Ωωÿÿÿÿ8ίς…Έ―-
-jsquid:CommentedOutCodeLineό"<This block of commented-out lines of code should be removed.(ΠΙ§8φ‘Ή―-
-Ysquid:S1854¨":Remove this useless assignment to local variable "salvou".(™‹°Ό8ίς…Έ―-
-Gsquid:S1604·"(Make this anonymous inner class a lambda(τΈ‡ν8ίς…Έ―-
-Ssquid:S1066§"/Merge this if statement with the enclosing one.(Γδ–ώÿÿÿÿ8ίς…Έ―-
-Lsquid:S1604ο"(Make this anonymous inner class a lambda(©­αÿÿÿÿÿÿ8ίς…Έ―-

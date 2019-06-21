@@ -2,7 +2,7 @@ package com.viii28stw.pensiltikbackend.service;
 
 import com.viii28stw.pensiltikbackend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikbackend.model.entity.Usuario;
-import com.viii28stw.pensiltikbackend.repository.UsuarioRepository;
+import com.viii28stw.pensiltikbackend.repository.IUsuarioRepository;
 import com.viii28stw.pensiltikbackend.util.EmailValidator;
 import com.viii28stw.pensiltikbackend.util.IdGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import java.util.*;
 @Service("usuarioService")
 public class UsuarioService implements IUsuarioService {
 
-    @Autowired private UsuarioRepository usuarioRepository;
+    @Autowired private IUsuarioRepository usuarioRepository;
     private final Set<String> userLoggedIn = new HashSet();
 
     public boolean isUserLoggedIn(String email) {

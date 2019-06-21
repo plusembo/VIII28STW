@@ -1,4 +1,4 @@
-package com.viii28stw.pensiltikfrontend.controller.form.cadastro;
+package com.viii28stw.pensiltikfrontend.controller.form.cadastros;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;

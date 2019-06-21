@@ -31,8 +31,6 @@ o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
 ˆ
 Xsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/ajuda/SobreController.java,b\9\b9998da018db826538a484a8bdbc335b4a039de6
-•
-esrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastro/CadastroUsuarioController.java,f\4\f4c9029e5551cbc62a8bb48e992d6364a6781b65
 ‚
 Rsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java,1\9\19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32
 Š
@@ -67,3 +65,7 @@ Isrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/DialogType.java,9\9\
 Rsrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxFactory.java,4\3\43b664014d520012d0cbace5526d9afccfbfa57b
 …
 Usrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxController.java,a\9\a9ae75b37b845fe56fde610f832314c82efb0831
+x
+Hsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/MenuMatch.java,d\4\d47029df69a7ba661e3fabc31b367ed396356821
+–
+fsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastros/CadastroUsuarioController.java,f\c\fcfd74e7629126548e5457142aae0013baf5ee4e

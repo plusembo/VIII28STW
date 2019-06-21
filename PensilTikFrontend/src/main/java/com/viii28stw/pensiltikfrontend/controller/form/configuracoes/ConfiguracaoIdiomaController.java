@@ -19,6 +19,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -212,17 +213,16 @@ public class ConfiguracaoIdiomaController implements Initializable {
                 } catch (IOException ex) {
                 }
 
-                if (Sessao.getInstance().isLogoutRequest()) {
-                    try {
-                        if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-                                I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                                I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
-                            Sessao.getInstance().setLogoutRequest(false);
-                        }
-                    } catch (IOException ex) {
-                        Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                try {
+                    if (DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                            I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
+                        Sessao.getInstance().setLogoutRequest(true);
                     }
+                } catch (IOException ex) {
+                    Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                 }
+
             }
             MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
             configuracaoIdiomaStage.close();

@@ -1,6 +1,6 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
-import com.viii28stw.pensiltikfrontend.controller.form.cadastro.CadastroUsuarioController;
+import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
@@ -190,7 +190,7 @@ public class MDIController implements Initializable {
                     case SETUP_SYSTEM_LANGUAGE: {
                         ConfiguracaoIdiomaController controller = loader.getController();
                         controller.setConfiguracaoIdiomaStage(formStage);
-                        Sessao.getInstance().setLogoutRequest(true);
+                        Sessao.getInstance().setLogoutRequest(false);
                         break;
                     }
 //

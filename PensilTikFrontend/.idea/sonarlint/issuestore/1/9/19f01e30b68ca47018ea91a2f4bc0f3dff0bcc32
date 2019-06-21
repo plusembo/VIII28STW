@@ -1,13 +1,13 @@
 
-hsquid:S4042ê"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8‹å³ßµ-
-osquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(óÆ™»øÿÿÿÿ8‹å³ßµ-
-Osquid:S1612K",Replace this lambda with a method reference.(·“İéûÿÿÿÿ8‹å³ßµ-
-|squid:S1192œ"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8‹å³ßµ-
 lsquid:S1871±"MThis branch's code block is the same as the block for the branch on line 174.(Ğ½ö®8¤œË´-
-osquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(Ï¦ãşÿÿÿÿ8‹å³ßµ-
 \
 squid:S106Ï"9Replace this use of System.out or System.err by a logger.(¾‚²Ìÿÿÿÿÿ8¸ ¨äµ-
+qsquid:S3776¨"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“ğöÅ8‹å³ßµ-
+|squid:S1192œ"XDefine a constant instead of duplicating this literal "include/caca_trufas.txg" 3 times.(Í­Û­üÿÿÿÿ8‹å³ßµ-
+hsquid:S4042ê"IUse "java.nio.Files#delete" here for better messages on error conditions.(ôÙÜ×8‹å³ßµ-
 ^squid:UselessImportCheck"4Remove this unused import 'javafx.stage.StageStyle'.(¶©28üØ½ßµ-
+osquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(Ï¦ãşÿÿÿÿ8‹å³ßµ-
 Y
 squid:S899ê";Do something with the "boolean" value returned by "delete".(ôÙÜ×8‹å³ßµ-
-qsquid:S3776¨"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“ğöÅ8‹å³ßµ-
+osquid:CommentedOutCodeLineÖ"<This block of commented-out lines of code should be removed.(óÆ™»øÿÿÿÿ8‹å³ßµ-
+Osquid:S1612K",Replace this lambda with a method reference.(·“İéûÿÿÿÿ8‹å³ßµ-
