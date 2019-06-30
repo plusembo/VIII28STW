@@ -7,6 +7,7 @@ import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
 import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
+import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodes;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
@@ -28,7 +29,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -153,7 +153,7 @@ public class LoginController implements Initializable {
     private void lembraDeMim() {
         try {
             Usuario usuario = new ObjectMapper()
-                    .readValue(new File("include/caca_trufas.txg"), Usuario.class);
+                    .readValue(new File("caca_trufas.txg"), Usuario.class);
             jchxLembrarDeMim.setSelected(true);
             jtxEmail.setText(usuario.getEmail());
             jpwSenha.setText(usuario.getSenha());
@@ -204,7 +204,6 @@ public class LoginController implements Initializable {
                 dialogBoxController.getLblHeaderText().setText("Teste");
                 dialogBoxController.getLblContentText().setText("Testando...");
                 dialogBoxStage.showAndWait();
-                System.out.println(dialogBoxController.getLblContentText().getText());
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             }
@@ -229,9 +228,9 @@ public class LoginController implements Initializable {
                             .build();
 
                     new ObjectMapper()
-                            .writeValue(new File("include/caca_trufas.txg"), usuario);
+                            .writeValue(new File("caca_trufas.txg"), usuario);
                 } else {
-                    new File("include/caca_trufas.txg").delete();
+                    new File("caca_trufas.txg").delete();
                 }
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -277,6 +276,10 @@ public class LoginController implements Initializable {
 
     private void reloadLogin() {
         try {
+            NominatimCountryCodes nominatimCountryCodes = new ObjectMapper()
+                    .readValue(new File("nominatim.i18n"), NominatimCountryCodes.class);
+            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
+
             FXMLLoader loaderLogin = new FXMLLoader();
             loaderLogin.setLocation(MainApp.class.getResource("/fxml/form/login.fxml"));
             loaderLogin.setResources(I18nFactory.getInstance().getResourceBundle());

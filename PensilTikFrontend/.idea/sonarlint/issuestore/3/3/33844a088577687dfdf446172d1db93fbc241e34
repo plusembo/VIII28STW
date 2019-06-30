@@ -1,20 +1,19 @@
 
-9squid:S3626N"Remove this redundant jump.(ûÁİ…8³ë®áµ-
-Isquid:S00108¥")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
-qsquid:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(—Ñ’8”üäµ-
-Isquid:S00108Õ")Either remove or fill this block of code.(Ãôş•8³ë®áµ-
-Hsquid:S00108s")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
-lsquid:MaximumInheritanceDepth|"<This class has 9 parents which is greater than 5 authorized.(€Ñ·ä8³ë®áµ-
-hsquid:S3358·"DExtract this nested ternary operation into an independent statement.(¸é…áşÿÿÿÿ8³ë®áµ-
 :squid:S3626š"Remove this redundant jump.(ûÁİ…8³ë®áµ-
-osquid:S1192H"LDefine a constant instead of duplicating this literal "left-header" 4 times.(œ®óóüÿÿÿÿ8³ë®áµ-
-zsquid:S1192a"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8³ë®áµ-
-Isquid:S00108Ï")Either remove or fill this block of code.(Ãôş•8³ë®áµ-
-:squid:S3626"Remove this redundant jump.(ûÁİ…8³ë®áµ-
-Isquid:S00108Œ")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
-psquid:S3776E"RRefactor this method to reduce its Cognitive Complexity from 68 to the 15 allowed.(€şâ§8³ë®áµ-
 qsquid:MaximumInheritanceDepthI"<This class has 9 parents which is greater than 5 authorized.(áÌ¡Ôûÿÿÿÿ8³ë®áµ-
+zsquid:S1192a"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(÷®œ£8³ë®áµ-
+Hsquid:S00108s")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
+Isquid:S00108¥")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
+hsquid:S3358·"DExtract this nested ternary operation into an independent statement.(¸é…áşÿÿÿÿ8³ë®áµ-
+Isquid:S00108Ï")Either remove or fill this block of code.(Ãôş•8³ë®áµ-
 lsquid:MaximumInheritanceDepthc"<This class has 9 parents which is greater than 5 authorized.(˜Ó¦8³ë®áµ-
-msquid:MaximumInheritanceDepth•"<This class has 9 parents which is greater than 5 authorized.(ç¹É½8³ë®áµ-
-9squid:S3626h"Remove this redundant jump.(ûÁİ…8³ë®áµ-
 Hsquid:S00108Z")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
+lsquid:MaximumInheritanceDepth|"<This class has 9 parents which is greater than 5 authorized.(€Ñ·ä8³ë®áµ-
+Isquid:S00108Œ")Either remove or fill this block of code.(ßÈ´8³ë®áµ-
+9squid:S3626h"Remove this redundant jump.(ûÁİ…8³ë®áµ-
+psquid:S3776E"RRefactor this method to reduce its Cognitive Complexity from 68 to the 15 allowed.(€şâ§8³ë®áµ-
+:squid:S3626"Remove this redundant jump.(ûÁİ…8³ë®áµ-
+qsquid:S3776Â"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(—Ñ’8”üäµ-
+msquid:MaximumInheritanceDepth•"<This class has 9 parents which is greater than 5 authorized.(ç¹É½8³ë®áµ-
+osquid:S1192H"LDefine a constant instead of duplicating this literal "left-header" 4 times.(œ®óóüÿÿÿÿ8³ë®áµ-
+9squid:S3626N"Remove this redundant jump.(ûÁİ…8³ë®áµ-

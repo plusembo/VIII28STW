@@ -54,7 +54,7 @@ public class DialogBoxFactory {
         dialogBoxStage.setResizable(false);
         dialogBoxStage.setMaximized(false);
         dialogBoxStage.initModality(Modality.APPLICATION_MODAL);
-        dialogBoxStage.setTitle(title.trim().isBlank() ?
+        dialogBoxStage.setTitle(title.trim().isEmpty() ?
                 dialogType.getDescricao() :
                 dialogType.getDescricao().concat(" - ").concat(title));
         dialogBoxStage.setX(CentralizeLocationRelativeToScreen.getX(dialogBoxStackPane.getPrefWidth()));

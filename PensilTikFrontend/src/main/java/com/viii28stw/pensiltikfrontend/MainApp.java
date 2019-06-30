@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 
 import java.io.File;
 import java.io.IOException;
@@ -16,6 +17,7 @@ import java.io.IOException;
 /**
  * @author Plamedi L. Lusembo
  */
+@ConditionalOnBean(ObjectMapper.class)
 public class MainApp extends Application {
 
     public static void main(String[] args) {
@@ -26,7 +28,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
         try {
             NominatimCountryCodes nominatimCountryCodes = new ObjectMapper()
-                    .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
+                    .readValue(new File("nominatim.i18n"), NominatimCountryCodes.class);
             I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
         } catch (IOException ex) {
         }

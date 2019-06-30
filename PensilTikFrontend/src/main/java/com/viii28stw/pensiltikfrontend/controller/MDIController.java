@@ -190,7 +190,7 @@ public class MDIController implements Initializable {
                     case SETUP_SYSTEM_LANGUAGE: {
                         ConfiguracaoIdiomaController controller = loader.getController();
                         controller.setConfiguracaoIdiomaStage(formStage);
-                        Sessao.getInstance().setLogoutRequest(false);
+                        Sessao.getInstance().setLogoutRequest(true);
                         break;
                     }
 //
@@ -264,10 +264,13 @@ public class MDIController implements Initializable {
     }
 
     public static void fechaJanela(MenuMatch menuMatch) {
-        if (listFormsMenu.containsKey(menuMatch)) {
-            listFormsMenu.remove(menuMatch);
+        try {
+            if (listFormsMenu.containsKey(menuMatch)) {
+                listFormsMenu.remove(menuMatch);
+            }
+        }catch (NullPointerException ex) {
+            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
-
     }
 
 }

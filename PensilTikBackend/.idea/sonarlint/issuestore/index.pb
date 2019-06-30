@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-X
-(.idea/artifacts/PensilTikBackend_jar.xml,5\2\52d93b2eb2f025d102e5bc0ca57c3a610cc9735f
 W
 'src/main/resources/META-INF/MANIFEST.MF,9\6\96110cc0699cb7724cc180967f0867a05c447c49
 Y
@@ -13,8 +11,6 @@ y
 Isrc/main/java/com/viii28stw/pensiltikbackend/enumeration/DespesaEnum.java,5\2\524cd4c54a380fee9cc83d8003623abccd8d4973
 v
 Fsrc/main/java/com/viii28stw/pensiltikbackend/model/entity/Usuario.java,3\c\3c9bbae17a6a5d3e9fc6250c9ee1d391fa45db72
-~
-Nsrc/main/java/com/viii28stw/pensiltikbackend/repository/UsuarioRepository.java,7\7\77151c84a8d3642bc69a0399e4d278987fd4334f
 x
 Hsrc/main/java/com/viii28stw/pensiltikbackend/service/UsuarioService.java,6\9\69fb0cc0e592b5480c5e4f7238ac7c1e5e10fd21
 r
@@ -49,3 +45,5 @@ r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/AppConfig.java,b\b\bbbdd6025a0b72785885468f72ae87d982eda4fc
 r
 Bsrc/test/java/com/viii28stw/pensiltikbackend/config/BasicAuth.java,d\d\ddc008929af0fe4da133cf14faff229e7c4befc6
+
+Osrc/main/java/com/viii28stw/pensiltikbackend/repository/IUsuarioRepository.java,3\d\3dcbc0416cb2a8868f23e04f5a8aa7a955901c66

@@ -203,26 +203,21 @@ public class ConfiguracaoIdiomaController implements Initializable {
             } else {
                 try {
                     new ObjectMapper()
-                            .writeValue(new File("include/nominatim.i18n"), nominatimCountryCodes);
-                } catch (IOException ex) {
-                }
-                I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
-                try {
-                    new ObjectMapper()
-                            .readValue(new File("include/nominatim.i18n"), NominatimCountryCodes.class);
+                            .writeValue(new File("nominatim.i18n"), nominatimCountryCodes);
                 } catch (IOException ex) {
                 }
 
-                try {
-                    if (DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
-                            I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
-                            I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
-                        Sessao.getInstance().setLogoutRequest(true);
+                if (Sessao.getInstance().isLogoutRequest()) {
+                    try {
+                        if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),
+                                I18nFactory.getInstance().getResourceBundle().getString("dialog.you.are.about.to.close.the.system"),
+                                I18nFactory.getInstance().getResourceBundle().getString("dialog.contenttext.are.you.sure.you.want.to.close.the.system"))) {
+                            Sessao.getInstance().setLogoutRequest(false);
+                        }
+                    } catch (IOException ex) {
+                        Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                     }
-                } catch (IOException ex) {
-                    Logger.getLogger(ConfiguracaoIdiomaController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                 }
-
             }
             MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
             configuracaoIdiomaStage.close();
