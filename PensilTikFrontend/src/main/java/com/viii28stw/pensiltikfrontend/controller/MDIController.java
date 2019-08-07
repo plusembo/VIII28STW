@@ -1,26 +1,31 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
-import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroUsuarioController;
-import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
-import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
+import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroDespesaController;
+import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroUsuarioController;
+import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
+import com.viii28stw.pensiltikfrontend.enumeration.MenuMDI;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
+import com.viii28stw.pensiltikfrontend.model.domain.FormMDI;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
+import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
+import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -28,11 +33,14 @@ import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -43,22 +51,23 @@ import java.util.logging.Logger;
 @NoArgsConstructor
 public class MDIController implements Initializable {
 
+    private static HashMap<MenuMatch, FormMenu> listFormsMenu;
+    private static  HashMap<MenuMDI, FormMDI> listFormsMDI;
+    private static MDIController uniqueInstance;
     @Setter
     private Stage mdiStage;
-    private static HashMap<MenuMatch, FormMenu> listFormsMenu;
+    @FXML
+    private TabPane tbpMDI;
     @FXML
     private Hyperlink hlkNomeUsuario;
     @FXML
-    private ImageView imgvwLogoVergo;
-    @FXML
     private Label lblDataHora;
-
     @FXML
     private Menu mnConfiguracoes;
     @FXML
+    private VBox vbxTest;
+    @FXML
     private Menu mnCadastro;
-
-    private static MDIController uniqueInstance;
 
     public static synchronized MDIController getInstance() {
         if (uniqueInstance == null) {
@@ -69,18 +78,39 @@ public class MDIController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        responsiveTbpMDI();
+
         lblDataHora.setText("");
         listFormsMenu = new HashMap<>();
+        listFormsMDI = new HashMap<>();
         KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaDataHora());
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
 
         hlkNomeUsuario.setText(Sessao.getInstance().getUsuario().getNome()
-                + " (" + Sessao.getInstance().getUsuario().getEmail() + ")");
+                .concat(" (")
+                .concat(Sessao.getInstance().getUsuario().getEmail())
+                .concat(")"));
+    }
 
-        imgvwLogoVergo.setX(180);
-        imgvwLogoVergo.setY(50);
+    private void responsiveTbpMDI() {
+        double swtHeight = 0;
+        double defaultScreenHeight = 1440;
+        double defaultSwtHeight = 621;
+
+        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
+        double screenHeight = gd.getDisplayMode().getHeight();
+
+        if(screenHeight == defaultScreenHeight) {
+            swtHeight = defaultSwtHeight;
+            tbpMDI.setPrefHeight(swtHeight);
+        } else {
+            double percentage = (screenHeight * 100)/defaultScreenHeight;
+            double swtHeightDiff = (defaultSwtHeight * percentage)/100;
+            swtHeight = screenHeight < defaultScreenHeight ? defaultSwtHeight - swtHeightDiff : defaultSwtHeight + swtHeightDiff;
+            tbpMDI.setPrefHeight(swtHeight);
+        }
     }
 
     private void atualizaDataHora() {
@@ -88,6 +118,26 @@ public class MDIController implements Initializable {
         String data = df.format(Calendar.getInstance().getTime());
         String hora = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
         lblDataHora.setText(data.substring(0, 1).toUpperCase().concat(data.substring(1)).concat(" ").concat(hora));
+    }
+
+    public static void fechaJanela(MenuMatch menuMatch) {
+        try {
+            if (listFormsMenu.containsKey(menuMatch)) {
+                listFormsMenu.remove(menuMatch);
+            }
+        } catch (NullPointerException ex) {
+            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+    }
+
+    public static void closeMDI(MenuMDI menumenuMDI) {
+        try {
+            if (listFormsMDI.containsKey(menumenuMDI)) {
+                listFormsMDI.remove(menumenuMDI);
+            }
+        } catch (NullPointerException ex) {
+            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
     }
 
     @FXML
@@ -117,12 +167,12 @@ public class MDIController implements Initializable {
 
     @FXML
     private void mnuCadastroDespesaAction() {
-        abreForm(MenuMatch.CADASTRO_DESPESA);
+        openWindowForm();
     }
 
     @FXML
     private void mnuCadastroUsuarioAction() {
-        abreForm(MenuMatch.CADASTRO_USUARIO);
+        openMDI(MenuMDI.CADASTRO_USUARIO);
     }
 
     @FXML
@@ -144,6 +194,52 @@ public class MDIController implements Initializable {
     @FXML
     private void hlkSairOnAction() {
         mdiStage.close();
+    }
+
+    private void openWindowForm() {
+        try {
+            Tab tab = new Tab();
+            Label label = new Label("Nova tab");
+            tab.setGraphic(label);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setResources(I18nFactory.getInstance().getResourceBundle());
+            loader.setLocation(MainApp.class.getResource("/fxml/form/cadastros/cadastro_teste.fxml"));
+            BorderPane borderPane = loader.load();
+            tab.setContent(borderPane);
+            tbpMDI.getTabs().add(tab);
+            tbpMDI.getSelectionModel().select(tab);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void openMDI(MenuMDI menuMDI) {
+        try {
+            if (listFormsMDI.containsKey(menuMDI)) {
+                tbpMDI.getSelectionModel().select(listFormsMDI.get(menuMDI).getTab());
+            } else {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setResources(I18nFactory.getInstance().getResourceBundle());
+                loader.setLocation(MainApp.class.getResource(menuMDI.getFxmlPath()));
+                StackPane parent = loader.load();
+
+//                formStage.initModality(menuMDI.equals(MenuMatch.AJUDA_SOBRE) ? Modality.APPLICATION_MODAL : Modality.NONE);
+//                formStage.setTitle(menuMDI.getTitle());
+                if (null != menuMDI.getIcon() && !menuMDI.getIcon().isEmpty()) {
+//                    formStage.getIcons().add(new Image(menuMDI.getIcon()));
+                }
+                Tab tab = new Tab();
+                tab.setContent(parent);
+                tbpMDI.getTabs().add(tab);
+                tbpMDI.getSelectionModel().select(tab);
+                tab.setOnCloseRequest((Event we) -> closeMDI(menuMDI));
+                listFormsMDI.put(menuMDI, new FormMDI(menuMDI, tab));
+            }
+
+        } catch (IOException ex) {
+            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+        }
+
     }
 
     private void abreForm(MenuMatch menuMatch) {
@@ -227,6 +323,12 @@ public class MDIController implements Initializable {
                         controller.setCadastroUsuarioStage(formStage);
                         break;
                     }
+
+                    case CADASTRO_DESPESA: {
+                        CadastroDespesaController controller = loader.getController();
+                        controller.setCadastroDespesaStage(formStage);
+                        break;
+                    }
 //
 //                    case RELATORIO_PECAS: {
 //                        RelatorioPecaController controller = loader.getController();
@@ -261,16 +363,6 @@ public class MDIController implements Initializable {
             Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
 
-    }
-
-    public static void fechaJanela(MenuMatch menuMatch) {
-        try {
-            if (listFormsMenu.containsKey(menuMatch)) {
-                listFormsMenu.remove(menuMatch);
-            }
-        }catch (NullPointerException ex) {
-            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
-        }
     }
 
 }

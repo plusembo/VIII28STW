@@ -1,45 +1,183 @@
+/*
+    Created on : Apr 9, 2015, 6:21:30 PM
+    Author     : Herudi
+*/
+
+ /*******************************************************************************
+ *                                                                             *
+ * Label                                                   *
+ *                                                                             *
+ ******************************************************************************/
 .label {
-    -fx-font-size: 9pt;
+    -fx-font-size: 12px;
     -fx-font-family: "Segoe UI";
-    -fx-text-fill: #c00d0d;
+    -fx-text-fill: black;
 }
 
-.jfx-text-field {
-    -jfx-focus-color: #0f9d58;
-    -jfx-unfocus-color: #4050a8;
-    -jfx-label-float: true;
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 12pt;
-}
-
-.jfx-password-field {
-    -jfx-focus-color: #0f9d58;
-    -jfx-unfocus-color: #4050a8;
-    -jfx-label-float: true;
-    -fx-font-family: "Segoe UI";
-    -fx-font-size: 12pt;
-}
+ /*******************************************************************************
+ *                                                                             *
+ * TextBox (and PasswordBox)                                                   *
+ *                                                                             *
+ ******************************************************************************/
 
 .text-field {
-    -fx-prompt-text-fill: #4050a8;
-    -fx-text-fill: #42064d;
-    -fx-highlight-fill: #4050a8;
+    -fx-skin: "com.viii28stw.pensiltikfrontend.util.style.MetroTextFieldSkin";
 }
 
-.jfx-check-box {
-    -jfx-checked-color: #0f9d58;
-    -jfx-unchecked-color: #5a5a5a;
-    -fx-font-family: "Segoe UI Light";
-    -fx-font-size: 10pt;
+.text-input {
+    -fx-background-radius: 0, 0;
+    -fx-border-color: #A9A9A9;
+    -fx-prompt-text-fill: #818181;
+    -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
+    -fx-highlight-text-fill: white;
+    -fx-text-fill: black;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 14px;
 }
 
-.jfx-button {
-    -fx-font-family: "Segoe UI Semibold";
-    -fx-font-size: 11pt;
-    -fx-background-color: #0f9d58;
-    -fx-text-fill: #FFFFFF;
-    -jfx-button-type: "FLAT";
+.text-input:hover {
+    -fx-background-color: #F8F8F8;
+}
+
+.text-input > .right-button {
+    -fx-cursor: default;
+    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+}
+
+.text-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
+    -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:hover {
+    -fx-background-color: #dedede;
+}
+
+.text-input > .right-button:pressed {
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:pressed > .right-button-graphic {
+    -fx-background-color: white;
+}
+
+.text-input:disabled {
+    -fx-opacity: 1;
+    -fx-background-insets: 0, 2;
+    -fx-background-color: #e7e6e6;
+    -fx-text-fill: #999999;
+}
+
+.item-title.disabled {
+    -fx-text-fill: #939393;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * PasswordBox                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.password-field {
+    -fx-skin: "com.viii28stw.pensiltikfrontend.util.style.MetroPasswordFieldSkin";
+}
+
+.password-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M307.688,399.564c0,1.484-1.203,2.688-2.688,2.688c-1.484,0-2.688-1.203-2.688-2.688s1.203-2.688,2.688-2.688C306.484,396.876,307.688,398.08,307.688,399.564z M297.5,399h2.5c0,0,1.063-4,5-4c3.688,0,5,4,5,4h2.5c0,0-2.063-6.5-7.5-6.5C299,392.5,297.5,399,297.5,399z";
+    -fx-scale-shape: false;
+    -fx-background-color: black;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Check Box                                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.check-box {
+    -fx-text-fill: black;
+}
+
+.check-box .box {
+    -fx-background-color: white;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-color: #bababa;
+    -fx-border-width: 1.5px;
     -fx-border-style: solid;
-    -fx-border-color: #0f9d58;
+    -fx-padding: 1;
 }
 
+.check-box .mark {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding:7px;
+    -fx-shape: "M1,10L3,8L7,12L14,5L16,7L7,16Z"
+}
+
+.check-box:focused .box {
+    -fx-border-color: #00b8e6;
+    -fx-border-style: segments(1, 1), solid;
+    -fx-border-insets: -2, 0;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: black;
+}
+
+
+
+.check-box:disabled {
+    -fx-opacity: 0.4;
+}
+
+.check-box:disabled .box {
+    -fx-background-color: #cdcdcd;
+    -fx-border-color: #aaa;
+}
+
+.check-box:armed .box {
+    -fx-background-color: white, black;
+    -fx-background-insets: -1, 2;
+    -fx-background-radius: 0, 0;
+}
+
+.check-box:armed .box .mark {
+  -fx-background-color: white;
+}
+
+/*******************************************************************************
+ *                                                                             *
+ * Push Button                                                                 *
+ *                                                                             *
+ ******************************************************************************/
+
+.button {
+    -fx-padding: 5 22 5 22;
+    -fx-border-style: none;
+    -fx-background-color: #299bb4;
+    -fx-background-radius: 0;
+    -fx-border-insets: 0;
+    -fx-text-fill: white;
+}
+
+.button:pressed, .button:default:hover:pressed {
+    -fx-background-color: #1e758a;
+}
+
+.button:focused {
+    -fx-border-color: #1d6f82;
+    -fx-border-style: segments(1, 1), solid;
+}
+
+.button:disabled, .button:default:disabled {
+    -fx-opacity: 0.4;
+        -fx-background-color: #cccccc;
+        -fx-text-fill: #212121;
+}
+
+.button:default {
+    -fx-background-color: #5585be;
+        -fx-text-fill: #ffffff;
+}

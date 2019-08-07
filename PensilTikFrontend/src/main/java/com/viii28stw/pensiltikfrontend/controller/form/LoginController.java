@@ -1,9 +1,6 @@
 package com.viii28stw.pensiltikfrontend.controller.form;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jfoenix.controls.*;
-import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.MDIController;
 import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
@@ -13,20 +10,23 @@ import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
-import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
+import com.viii28stw.pensiltikfrontend.util.animations.FadeInLeftTransition;
+import com.viii28stw.pensiltikfrontend.util.animations.FadeInLeftTransition1;
+import com.viii28stw.pensiltikfrontend.util.animations.FadeInRightTransition;
 import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxController;
+import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
 import javafx.application.Platform;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -36,31 +36,46 @@ import lombok.Setter;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
+ * Controller class of the FXML file for login screen.
+ * <p>
+ * Handle all of the login implementation.
+ *
+ * @version 1.0.0
+ * @since August 06, 2019
  * @author Plamedi L. Lusembo
  */
-
 @NoArgsConstructor
 public class LoginController implements Initializable {
 
+    private static LoginController uniqueInstance;
     @Setter
     private Stage loginStage;
     @FXML
-    private JFXTextField jtxEmail;
+    private Text txtWelcome;
     @FXML
-    private JFXPasswordField jpwSenha;
+    private Text txtUserLogin;
     @FXML
-    private JFXCheckBox jchxLembrarDeMim;
+    private Label lblEmail;
+    @FXML
+    private TextField tfdEmail;
+    @FXML
+    private Label lblPassword;
+    @FXML
+    private PasswordField pwfPassword;
+    @FXML
+    private CheckBox ckbRememberMe;
+    @FXML
+    private Button btnLogin;
 
-    private RequiredFieldValidator emailValidator = new RequiredFieldValidator();
-    private RequiredFieldValidator senhaValidator = new RequiredFieldValidator();
-
+    private static final String REMEMBER_MIM_FILE_PATH = "remember_me.txg";
     private IUsuarioService usuarioService = UsuarioService.getInstance();
-    private static LoginController uniqueInstance;
 
     public static synchronized LoginController getInstance() {
         if (uniqueInstance == null) {
@@ -71,51 +86,80 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
-        Platform.runLater(() -> lembraDeMim());
-
-        jtxEmail.getValidators().add(emailValidator);
-        jpwSenha.getValidators().add(senhaValidator);
-
-        emailValidator.setMessage(I18nFactory.getInstance().getResourceBundle().getString("notification.email.required.field"));
-        senhaValidator.setMessage(I18nFactory.getInstance().getResourceBundle().getString("notification.password.required.field"));
-
-        jtxEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
-                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
-            if (oldPropertyValue) {
-                jtxEmail.validate();
-            }
+        Platform.runLater(() -> {
+            new FadeInRightTransition(txtUserLogin).play();
+            new FadeInLeftTransition(txtWelcome).play();
+            new FadeInLeftTransition1(lblPassword).play();
+            new FadeInLeftTransition1(lblEmail).play();
+            new FadeInLeftTransition1(tfdEmail).play();
+            new FadeInLeftTransition1(pwfPassword).play();
+            new FadeInRightTransition(btnLogin).play();
+            rememberMe();
         });
-
-        jpwSenha.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
-                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
-            if (oldPropertyValue) {
-                jpwSenha.validate();
-            }
-        });
-
-        Image errorIcon = new Image(MainApp.class
-                .getResource("/img/validator_error.png").toString());
-        emailValidator.setIcon(new ImageView(errorIcon));
-        senhaValidator.setIcon(new ImageView(errorIcon));
     }
 
-    @FXML
-    private void jtxEmailOnKeyPressed(KeyEvent evt) {
-        if (evt.getCode() == KeyCode.ENTER) {
-            this.jbtnLoginOnAction();
+    /**
+     * Check saved user (email and password) to be load from a .txg extension file.
+     * In case of existing saved user, his email and password will be loaded to fill login fields.
+     *
+     * @return      none
+     * @version 1.0.0
+     * @since August 06, 2019
+     */
+    private void rememberMe() {
+        try {
+            Usuario usuario = new ObjectMapper()
+                    .readValue(new File(REMEMBER_MIM_FILE_PATH), Usuario.class);
+            ckbRememberMe.setSelected(true);
+            tfdEmail.setText(usuario.getEmail());
+            pwfPassword.setText(usuario.getSenha());
+            tfdEmail.selectAll();
+        } catch (IOException ex) {
+            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
+    /**
+     * Handle the on action key pressed of the email login field.
+     * <p>
+     * Perform action such as Enter key pressed and execute btnLoginOnAction() method.
+     *
+     * @return      none
+     * @version 1.0.0
+     * @since August 06, 2019
+     */
     @FXML
-    private void jpwSenhaOnKeyPressed(KeyEvent evt) {
+    private void tfdEmailOnKeyPressed(KeyEvent evt) {
         if (evt.getCode() == KeyCode.ENTER) {
-            this.jbtnLoginOnAction();
+            this.btnLoginOnAction();
         }
     }
 
+    /**
+     * Handle the on action key pressed of the email password field.
+     * <p>
+     * Perform action such as Enter key pressed and execute btnLoginOnAction() method.
+     *
+     * @return      none
+     * @version 1.0.0
+     * @since August 06, 2019
+     */
     @FXML
-    private void hlkSetUpSystemLanguage() {
+    private void pwfSPasswordOnKeyPressed(KeyEvent evt) {
+        if (evt.getCode() == KeyCode.ENTER) {
+            this.btnLoginOnAction();
+        }
+    }
+
+    /**
+     * Launch the system language set up screen.
+     *
+     * @return      none
+     * @version 1.0.0
+     * @since August 06, 2019
+     */
+    @FXML
+    private void hlkSetUpSystemLanguageOnAction() {
         try {
             Stage configuracaoIdiomaStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
@@ -136,52 +180,30 @@ public class LoginController implements Initializable {
 
             loginStage.close();
 
-            jtxEmail.resetValidation();
-            jpwSenha.resetValidation();
-
             configuracaoIdiomaStage.showAndWait();
 
-            //reload the fxml file to apply resource bundle
             reloadLogin();
-            jtxEmail.requestFocus();
+            tfdEmail.requestFocus();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
-    private void lembraDeMim() {
-        try {
-            Usuario usuario = new ObjectMapper()
-                    .readValue(new File("caca_trufas.txg"), Usuario.class);
-            jchxLembrarDeMim.setSelected(true);
-            jtxEmail.setText(usuario.getEmail());
-            jpwSenha.setText(usuario.getSenha());
-            jtxEmail.selectAll();
-
-        } catch (IOException ex) {
-            Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
-        }
-    }
-
+    /**
+     * Check authenticity of user credentials to the database.
+     * <p>
+     * If it's all Okay, the system will be launched
+     * and synchronously the user will be saved in a .txg extension file
+     * if 'Remember me' checkbox is checked.
+     *
+     * @return      none
+     * @version 1.0.0
+     * @since August 06, 2019
+     */
     @FXML
-    private void jbtnLoginOnAction() {
-        /*jtxEmail.requestFocus();
-        NotificacaoCRUDFactory.getInstance().notificaSucesso("Atualização bem sucedida!");
-    }
-
-    private void jbtnLginOnAction() {*/
-        if (!jtxEmail.validate() && !jpwSenha.validate()) {
-            jtxEmail.requestFocus();
-            return;
-        } else if (!jtxEmail.validate()) {
-            jtxEmail.requestFocus();
-            return;
-        } else if (!jpwSenha.validate()) {
-            jpwSenha.requestFocus();
-            return;
-        }
-        UsuarioDto usuarioDto = usuarioService.fazerLogin(jtxEmail.getText(), jpwSenha.getText());
+    private void btnLoginOnAction() {
+        UsuarioDto usuarioDto = usuarioService.fazerLogin(tfdEmail.getText(), pwfPassword.getText());
         if (usuarioDto == null) {
             try {
                 Stage dialogBoxStage = new Stage();
@@ -207,8 +229,6 @@ public class LoginController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             }
-
-
 //            DialogBoxFactory.getInstance().informa1(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.login.failure"),
 //                    I18nFactory.getInstance().getResourceBundle().getString("dialog.login.failure.contenttext"));
             return;
@@ -216,7 +236,7 @@ public class LoginController implements Initializable {
 
         new Thread(() -> {
             try {
-                if (jchxLembrarDeMim.isSelected()) {
+                if (ckbRememberMe.isSelected()) {
                     Usuario usuario = Usuario.builder()
                             .codigo(usuarioDto.getCodigo())
                             .nome(usuarioDto.getNome())
@@ -228,9 +248,9 @@ public class LoginController implements Initializable {
                             .build();
 
                     new ObjectMapper()
-                            .writeValue(new File("caca_trufas.txg"), usuario);
+                            .writeValue(new File(REMEMBER_MIM_FILE_PATH), usuario);
                 } else {
-                    new File("caca_trufas.txg").delete();
+                    Files.deleteIfExists(Paths.get(REMEMBER_MIM_FILE_PATH));
                 }
             } catch (IOException ex) {
                 Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
@@ -241,8 +261,8 @@ public class LoginController implements Initializable {
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(I18nFactory.getInstance().getResourceBundle());
             loader.setLocation(MainApp.class.getResource("/fxml/mdi.fxml"));
-            StackPane mdiStackPane = loader.load();
-            Scene mdiScene = new Scene(mdiStackPane);
+            BorderPane bdpMDI = loader.load();
+            Scene mdiScene = new Scene(bdpMDI);
             mdiStage.setMaximized(true);
             mdiStage.setTitle("PENSIL TIK");
             mdiStage.setScene(mdiScene);
@@ -262,18 +282,24 @@ public class LoginController implements Initializable {
             loginStage.close();
             mdiStage.showAndWait();
 
-            //reload the fxml file to apply resource bundle
             reloadLogin();
 
-            jtxEmail.requestFocus();
-            jtxEmail.resetValidation();
-            jpwSenha.resetValidation();
+            tfdEmail.requestFocus();
 
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
+    /**
+     * Reload the login stage in order to apply eventual modification, such as language setting.
+     * The FXML file is reloaded to apply resource bundle properties.
+     * <p>
+     * This method must be called after displaying login screen.
+     * @return      none
+     * @version 1.0
+     * @since August 06, 2019
+     */
     private void reloadLogin() {
         try {
             NominatimCountryCodes nominatimCountryCodes = new ObjectMapper()
@@ -293,5 +319,6 @@ public class LoginController implements Initializable {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
+
 
 }

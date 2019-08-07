@@ -1,11 +1,17 @@
 
-Ksquid:S1199ò"-Extract this nested code block into a method.(ïÄîY8Êù «²-
-jsquid:CommentedOutCodeLineÅ"<This block of commented-out lines of code should be removed.(ØëçØ8Êù «²-
-osquid:CommentedOutCodeLineÛ"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ8Êù «²-
-Msquid:S2696I"6Make the enclosing method "static" or remove this set.( ÄÊ”
-osquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8Êù «²-
-Qsquid:S1199á"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8Êù «²-
-=squid:S1640I"Convert this Map to an EnumMap.( ÄÊ”8¼ï¦³¹-
-jsquid:CommentedOutCodeLine¹"<This block of commented-out lines of code should be removed.(¡ÑªË8Êù «²-
-Lsquid:S1199¾"-Extract this nested code block into a method.(À´Œë8äÜì›µ-
-isquid:CommentedOutCodeLineç"<This block of commented-out lines of code should be removed.(Ô¤Ù8Êù «²-
+Lsquid:S1199Ç"-Extract this nested code block into a method.(åº¨ú8«‰Û Ã-
+Lsquid:S1199"-Extract this nested code block into a method.(À´Œë8«‰Û Ã-
+Msquid:S2696T"6Make the enclosing method "static" or remove this set.( ÄÊ”
+Ksquid:S1199Ø"-Extract this nested code block into a method.(ïÄîY8«‰Û Ã-
+Tsquid:S2696U"6Make the enclosing method "static" or remove this set.(Âôÿµ8æÇø˜Ã-
+jsquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(ß´µ8«‰Û Ã-
+osquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ü‡Ûùÿÿÿÿ8«‰Û Ã-
+Gsquid:S1148Ô"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8«‰Û Ã-
+osquid:CommentedOutCodeLine»"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ8«‰Û Ã-
+osquid:CommentedOutCodeLineµ"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8«‰Û Ã-
+=squid:S1640T"Convert this Map to an EnumMap.( ÄÊ”8¤‘ÀÅ-
+=squid:S1640U"Convert this Map to an EnumMap.(Âôÿµ8¤‘ÀÅ-
+jsquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(¡ÑªË8«‰Û Ã-
+jsquid:CommentedOutCodeLine¥"<This block of commented-out lines of code should be removed.(ØëçØ8«‰Û Ã-
+isquid:CommentedOutCodeLineÍ"<This block of commented-out lines of code should be removed.(Ô¤Ù8«‰Û Ã-
+Qsquid:S1199Á"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8«‰Û Ã-

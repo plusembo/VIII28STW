@@ -15,6 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="PensilTikFrontend" options="-parameters" />
       <module name="pensiltikfrontend" options="-parameters" />
     </option>
   </component>

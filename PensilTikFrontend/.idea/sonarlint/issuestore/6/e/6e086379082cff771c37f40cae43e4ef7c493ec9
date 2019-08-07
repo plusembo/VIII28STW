@@ -1,0 +1,9 @@
+
+Ÿsquid:S1186q"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‚Ï™8¦à›ÒÅ-
+Fsquid:S16044"(Make this anonymous inner class a lambda(ú›…ó8¦à›ÒÅ-
+Ksquid:S1604A"(Make this anonymous inner class a lambda(Ê…Ñúÿÿÿÿÿ8¦à›ÒÅ-
+Ksquid:S1604G"(Make this anonymous inner class a lambda(Ëô—ñıÿÿÿÿ8¦à›ÒÅ-
+_squid:CallToDeprecatedMethode"0Remove this use of "snapSize"; it is deprecated.(šøæÉ8¦à›ÒÅ-
+fsquid:HiddenFieldCheck3"=Rename "textField" which hides the field declared at line 22.(Ã¶˜Ç8¦à›ÒÅ-
+Fsquid:S1604:"(Make this anonymous inner class a lambda(§Ÿ‡8¦à›ÒÅ-
+¤squid:S1186n"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(×ì¨Áøÿÿÿÿ8¦à›ÒÅ-

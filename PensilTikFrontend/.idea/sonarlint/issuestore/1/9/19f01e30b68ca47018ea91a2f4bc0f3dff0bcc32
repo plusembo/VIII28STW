@@ -1,10 +1,2 @@
 
-lsquid:S1871±"MThis branch's code block is the same as the block for the branch on line 174.(Ð½ö®8¤œËž´-
-osquid:CommentedOutCodeLine©"<This block of commented-out lines of code should be removed.(Ï¦ãþÿÿÿÿ8‹å³ßµ-
-Osquid:S1612K",Replace this lambda with a method reference.(·“Ýéûÿÿÿÿ8‹å³ßµ-
-osquid:CommentedOutCodeLineÕ"<This block of commented-out lines of code should be removed.(óÆ™»øÿÿÿÿ8‹å³ßµ-
-^
-squid:S899é";Do something with the "boolean" value returned by "delete".(úÏÙÃúÿÿÿÿ8‹å³ßµ-
-msquid:S4042é"IUse "java.nio.Files#delete" here for better messages on error conditions.(úÏÙÃúÿÿÿÿ8‹å³ßµ-
-tsquid:S1192œ"PDefine a constant instead of duplicating this literal "caca_trufas.txg" 3 times.(ÉÙä¯ýÿÿÿÿ8³°Ë³¹-
-qsquid:S3776¨"RRefactor this method to reduce its Cognitive Complexity from 18 to the 15 allowed.(“ðöÅ8‹å³ßµ-
+osquid:CommentedOutCodeLineé"<This block of commented-out lines of code should be removed.(óÆ™»øÿÿÿÿ8”ÇôÅ-

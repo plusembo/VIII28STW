@@ -35,7 +35,7 @@ public class MainApp extends Application {
 
         Stage splashScreenStage = new Stage();
         FXMLLoader loader = new FXMLLoader();
-        loader.setResources(I18nFactory.getInstance().getResourceBundle());
+            loader.setResources(I18nFactory.getInstance().getResourceBundle());
         loader.setLocation(MainApp.class.getResource("/fxml/splash_screen.fxml"));
         StackPane splashScreenStackPane = loader.load();
         Scene splashScreenScene = new Scene(splashScreenStackPane);

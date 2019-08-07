@@ -17,7 +17,7 @@ public enum MenuMatch {
     CADASTRO_TIPO_RENDA("CAD001", "CADASTRO TIPO RENDA", "", ""),
     CADASTRO_RENDA("CAD002", "CADASTRO RENDA", "", ""),
     CADASTRO_TIPO_DESPESA("CAD003", "CADASTRO TIPO DESPESA", "", ""),
-    CADASTRO_DESPESA("CAD004", "CADASTRO DESPESA", "", ""),
+    CADASTRO_DESPESA("CAD005", "CADASTRO DESPESA", "/fxml/form/cadastros/cadastro_despesa.fxml", ""),
     CADASTRO_USUARIO("CAD005", "CADASTRO USUÁRIO", "/fxml/form/cadastros/cadastro_usuario.fxml", ""),
     //3.Relatórios
     RELATORIO_RENDA("REL001", "RELATÓRIO RENDA", "", ""),
