@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="385.0" prefWidth="493.0" stylesheets="@../css/login.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.LoginController">
+
+   <center>
+      <AnchorPane prefHeight="277.0" prefWidth="493.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="83.0" prefWidth="493.0">
+               <children>
+                  <Text fx:id="txtWelcome" layoutX="49.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome On" />
+                  <Text fx:id="txtUserLogin" layoutX="94.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login Applications" />
+               </children></AnchorPane>
+            <AnchorPane layoutY="92.0" prefHeight="172.0" prefWidth="493.0">
+               <children>
+                  <Label fx:id="lblEmail" layoutX="132.0" layoutY="13.0" text="%label.email" />
+                  <TextField fx:id="tfdEmail" layoutX="132.0" layoutY="32.0" onKeyPressed="#tfdEmailOnKeyPressed" prefHeight="33.0" prefWidth="305.0" />
+                  <Label fx:id="lblPassword" layoutX="132.0" layoutY="78.0" text="%label.password" />
+                  <PasswordField fx:id="pwfPassword" layoutX="132.0" layoutY="97.0" onKeyPressed="#pwfSPasswordOnKeyPressed" prefHeight="33.0" prefWidth="305.0" />
+                  <CheckBox fx:id="ckbRememberMe" layoutX="132.0" layoutY="142.0" mnemonicParsing="false" text="%hyperlink.remember.me" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <ButtonBar prefHeight="84.0" prefWidth="493.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="41.0" prefWidth="123.0" text="%button.login" />
+        </buttons>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets bottom="30.0" right="57.0" />
+         </padding>
+      </ButtonBar>
+   </bottom>
+   <top>
+      <AnchorPane prefHeight="33.0" prefWidth="493.0" BorderPane.alignment="CENTER_RIGHT">
+         <children>
+            <Hyperlink alignment="CENTER_RIGHT" layoutX="128.0" layoutY="5.0" onAction="#hlkSetUpSystemLanguageOnAction" text="%hyperlink.setup.language" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

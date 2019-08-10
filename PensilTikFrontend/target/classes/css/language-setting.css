@@ -1,0 +1,107 @@
+/*
+    Created on : Apr 9, 2015, 6:21:30 PM
+    Author     : Herudi
+*/
+
+ /*******************************************************************************
+ *                                                                             *
+ * Label                                                   *
+ *                                                                             *
+ ******************************************************************************/
+.label {
+    -fx-font-size: 10px;
+    -fx-font-family: "Segoe UI";
+    -fx-text-fill: black;
+}
+
+ /*******************************************************************************
+ *                                                                             *
+ * TextField                                                  *
+ *                                                                             *
+ ******************************************************************************/
+
+.text-field {
+    -fx-skin: "com.viii28stw.pensiltikfrontend.util.style.MetroTextFieldSkin";
+}
+
+.text-input {
+    -fx-background-radius: 0, 0;
+    -fx-border-color: #A9A9A9;
+    -fx-prompt-text-fill: #818181;
+    -fx-highlight-fill: #008287; /* TODO: this probably is the "active" color" */
+    -fx-highlight-text-fill: white;
+    -fx-text-fill: black;
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 12px;
+}
+
+.text-input:hover {
+    -fx-background-color: #F8F8F8;
+}
+
+.text-input:focused{
+    -fx-background-color: #F8F8F8;
+    -fx-border-style: segments(1, 1), solid;
+    -fx-border-insets: -2, 0;
+}
+
+.text-input > .right-button {
+    -fx-cursor: default;
+    -fx-background-insets: -0.1666665em -0.45em -0.1666665em -0.45em; /* 4 7 4 7 -> this values are subtracted by 2px in em because of the border of the textfield */
+}
+
+.text-field > .right-button > .right-button-graphic {
+    -fx-shape            : "M221.738,305.873l6.135,6.16l-2.875,2.863l-6.135-6.159l-6.263,6.237l-2.864-2.875l6.263-6.238l-6.177-6.202l2.875-2.863l6.177,6.201l6.244-6.22l2.864,2.876L221.738,305.873z";
+    -fx-padding: 0.5em 0.5em; /* TODO: put the real number here 18 18 */
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:hover {
+    -fx-background-color: #dedede;
+}
+
+.text-input > .right-button:pressed {
+    -fx-background-color: black;
+}
+
+.text-input > .right-button:pressed > .right-button-graphic {
+    -fx-background-color: white;
+}
+
+.text-input:disabled {
+    -fx-opacity: 1;
+    -fx-background-insets: 0, 2;
+    -fx-background-color: #e7e6e6;
+    -fx-text-fill: #999999;
+}
+
+.item-title.disabled {
+    -fx-text-fill: #939393;
+}
+
+
+ /*******************************************************************************
+ *                                                                             *
+ * TableView                                                   *
+ *                                                                             *
+ ******************************************************************************/
+
+.table-view .column-header .label {
+    -fx-font-size: 9pt;
+    -fx-alignment: center-left;
+}
+
+.table-view:focused {
+    -fx-background-color: #F8F8F8;
+    -fx-border-style: segments(1, 1), solid;
+    -fx-border-insets: -2, 0;
+}
+
+.table-view:focused .table-row-cell:filled:selected, .table-view:row-selection .table-row-cell:filled:hover:selected {
+    -fx-background-color: #d7f2f7;
+}
+
+
+
+
+

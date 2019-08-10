@@ -1,10 +1,10 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
-import com.viii28stw.pensiltikfrontend.controller.form.ajuda.SobreController;
+import com.viii28stw.pensiltikfrontend.controller.form.help.AboutController;
 import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroDespesaController;
 import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroUsuarioController;
-import com.viii28stw.pensiltikfrontend.controller.form.configuracoes.ConfiguracaoIdiomaController;
+import com.viii28stw.pensiltikfrontend.controller.form.settings.LanguageSettingController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMDI;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMDI;
@@ -284,8 +284,8 @@ public class MDIController implements Initializable {
 //                        break;
 //                    }
                     case SETUP_SYSTEM_LANGUAGE: {
-                        ConfiguracaoIdiomaController controller = loader.getController();
-                        controller.setConfiguracaoIdiomaStage(formStage);
+                        LanguageSettingController controller = loader.getController();
+                        controller.setLanguageSettingStage(formStage);
                         Sessao.getInstance().setLogoutRequest(true);
                         break;
                     }
@@ -342,8 +342,8 @@ public class MDIController implements Initializable {
 //                    }
 //
                     case AJUDA_SOBRE: {
-                        SobreController controller = loader.getController();
-                        controller.setSobreStage(formStage);
+                        AboutController controller = loader.getController();
+                        controller.setAboutStage(formStage);
                         break;
                     }
 //
