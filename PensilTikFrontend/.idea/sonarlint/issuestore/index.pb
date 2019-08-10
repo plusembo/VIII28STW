@@ -29,10 +29,6 @@ y
 Isrc/main/java/com/viii28stw/pensiltikfrontend/util/PasswordValidator.java,9\e\9e7178e7e822d8d13aae39dbb2c2d7c0e77e2bb4
 o
 ?src/main/java/com/viii28stw/pensiltikfrontend/util/Utility.java,a\c\ac4226ad4d69cade2ae82412b5fb2dfc70340603
-à
-Xsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/ajuda/SobreController.java,b\9\b9998da018db826538a484a8bdbc335b4a039de6
-Ç
-Rsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/LoginController.java,1\9\19f01e30b68ca47018ea91a2f4bc0f3dff0bcc32
 ä
 Zsrc/main/java/com/viii28stw/pensiltikfrontend/util/CentralizeLocationRelativeToScreen.java,4\6\4671ed84fc5789fd835dd9dfc14092c2a1b9477d
 s
@@ -45,10 +41,6 @@ q
 Asrc/main/java/com/viii28stw/pensiltikfrontend/util/BasicAuth.java,9\4\941a41a5c1afc990f473693a743833a5358bd8c3
 Å
 Qsrc/main/java/com/viii28stw/pensiltikfrontend/util/Notification/Notification.java,9\2\921767e1ed03c0e10132bc8495071630aeea9d7a
-ù
-msrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/configuracoes/ConfiguracaoIdiomaController.java,3\3\33844a088577687dfdf446172d1db93fbc241e34
-Ñ
-Tsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/NominatimCountryCodes.java,e\d\ed8db4f07f1e6121fa384f719719baf62313c5c6
 s
 Csrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/Sexo.java,a\1\a193952d9e929aece92e0b0893ef0fbec80464fd
 y
@@ -59,16 +51,10 @@ Rsrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxFactory.j
 Usrc/main/java/com/viii28stw/pensiltikfrontend/util/dialogbox/DialogBoxController.java,a\9\a9ae75b37b845fe56fde610f832314c82efb0831
 x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/MenuMatch.java,d\4\d47029df69a7ba661e3fabc31b367ed396356821
-ñ
-fsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastros/CadastroUsuarioController.java,f\c\fcfd74e7629126548e5457142aae0013baf5ee4e
-ñ
-fsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/cadastros/CadastroDespesaController.java,9\1\9143fb003e855fe5b605671163fb510124038f80
 v
 Fsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/MenuMDI.java,0\b\0b926f58449334a21039827b32b616a2f80929fc
 w
 Gsrc/main/java/com/viii28stw/pensiltikfrontend/model/domain/FormMDI.java,6\c\6cee61cbf9a9edbea0aa8a865f5d6a9e4fb5798f
-j
-:src/main/resources/fxml/form/cadastros/cadastro_teste.fxml,6\8\68cda4a7c7ff9c7ba54873d89561704b80aa81e1
 u
 Esrc/main/java/com/viii28stw/pensiltikfrontend/util/config/Config.java,7\6\7643db3a92dce683f4ca9dfcdccf5b44e7877e78
 Ö
@@ -121,3 +107,5 @@ Wsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/help/AboutControl
 Msrc/main/java/com/viii28stw/pensiltikfrontend/controller/LoginController.java,7\d\7d68409eff9e451ee1c9b8d2466d137c2c416180
 ï
 esrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/settings/LanguageSettingController.java,4\3\43ca4f83ef4ca5a8fa588036df6740209de91c42
+
+Osrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/LanguagesSetting.java,b\9\b9461e63975f6e789dca671d8772ae1b6280f2f0

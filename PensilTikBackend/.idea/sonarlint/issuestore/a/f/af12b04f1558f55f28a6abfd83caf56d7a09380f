@@ -1,12 +1,12 @@
 
-vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¡µ°¸üÿÿÿÿ8É£Ï¿Å-
 ’squid:S1319<"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(‰Œ™ôúÿÿÿÿ8É£Ï¿Å-
-’squid:S1319*"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(¢¢ìæþÿÿÿÿ8É£Ï¿Å-
-§squid:S4449"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
-’squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ôøÈèûÿÿÿÿ8É£Ï¿Å-
-§squid:S4449-"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
-§squid:S4449#"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
 §squid:S4449?"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
 ’squid:S13193"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ÿ§ç¢þÿÿÿÿ8É£Ï¿Å-
+§squid:S4449"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
+§squid:S4449-"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
+’squid:S1319"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(ôøÈèûÿÿÿÿ8É£Ï¿Å-
 squid:S1319!"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(·€¼ë8É£Ï¿Å-
+’squid:S1319*"oThe type of the "headers" object should be an interface such as "Map" rather than the implementation "HashMap".(¢¢ìæþÿÿÿÿ8É£Ï¿Å-
 §squid:S44496"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-
+vsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(¡µ°¸üÿÿÿÿ8É£Ï¿Å-
+§squid:S4449#"ˆAnnotate the parameter with @javax.annotation.Nullable in constructor declaration, or make sure that null can not be passed as argument.(€âªÏ8„øªËÇ-

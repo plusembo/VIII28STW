@@ -13,7 +13,7 @@ public class MetroTextFieldSkin extends TextFieldWithButtonSkin{
     @Override
     protected void rightButtonPressed()
     {
-        getSkinnable().setText("");
+        getSkinnable().clear();
     }
 
 }

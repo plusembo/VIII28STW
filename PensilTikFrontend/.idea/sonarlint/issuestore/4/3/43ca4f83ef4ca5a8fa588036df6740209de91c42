@@ -1,19 +1,10 @@
 
-Asquid:S00108u")Either remove or fill this block of code.(ﬂù»¥
-jsquid:MaximumInheritanceDepthI"<This class has 9 parents which is greater than 5 authorized.(·Ã°‘˚ˇˇˇˇ
-2squid:S3626N"Remove this redundant jump.(˚¡›Ö
-Bsquid:S00108è")Either remove or fill this block of code.(ﬂù»¥
-fsquid:MaximumInheritanceDepthò"<This class has 9 parents which is greater than 5 authorized.(Áπ…Ω
-3squid:S3626É"Remove this redundant jump.(˚¡›Ö
-Asquid:S00108[")Either remove or fill this block of code.(ﬂù»¥
-asquid:S3358ª"DExtract this nested ternary operation into an independent statement.(∏ÈÖ·˛ˇˇˇˇ
-jsquid:S3776∆"RRefactor this method to reduce its Cognitive Complexity from 21 to the 15 allowed.(óè—í
-esquid:MaximumInheritanceDepthd"<This class has 9 parents which is greater than 5 authorized.(ò”¶Å
-Bsquid:S00108”")Either remove or fill this block of code.(√Ù˛ï
-ssquid:S1192b"\Define a constant instead of duplicating this literal "-fx-alignment: CENTER-LEFT;" 3 times.(˜Æú£
-isquid:S3776E"RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(Ä˛‚ß
-3squid:S3626ù"Remove this redundant jump.(˚¡›Ö
-Bsquid:S00108©")Either remove or fill this block of code.(ﬂù»¥
-hsquid:S1192H"LDefine a constant instead of duplicating this literal "left-header" 4 times.(úÆÛÛ¸ˇˇˇˇ
-2squid:S3626i"Remove this redundant jump.(˚¡›Ö
-esquid:MaximumInheritanceDepth~"<This class has 9 parents which is greater than 5 authorized.(Ä—∑‰
+qsquid:MaximumInheritanceDepthi"<This class has 9 parents which is greater than 5 authorized.(˜…¬µ¯ˇˇˇˇ8‡›¬Ï«-
+msquid:MaximumInheritanceDepthÉ"<This class has 9 parents which is greater than 5 authorized.(úô¿∂8‡›¬Ï«-
+psquid:S3776e"RRefactor this method to reduce its Cognitive Complexity from 60 to the 15 allowed.(Ä˛‚ß8‡›¬Ï«-
+rsquid:MaximumInheritanceDepth∑"<This class has 9 parents which is greater than 5 authorized.(ò∑ı”˛ˇˇˇˇ8‡›¬Ï«-
+Msquid:S00108m")Either remove or fill this block of code.( ÷˚¬˘ˇˇˇˇ8‡›¬Ï«-
+Nsquid:S00108á")Either remove or fill this block of code.( ÷˚¬˘ˇˇˇˇ8‡›¬Ï«-
+Nsquid:S00108ª")Either remove or fill this block of code.( ÷˚¬˘ˇˇˇˇ8‡›¬Ï«-
+rsquid:MaximumInheritanceDepthù"<This class has 9 parents which is greater than 5 authorized.(âˇ∆ª˛ˇˇˇˇ8‡›¬Ï«-
+Nsquid:S00108°")Either remove or fill this block of code.( ÷˚¬˘ˇˇˇˇ8‡›¬Ï«-

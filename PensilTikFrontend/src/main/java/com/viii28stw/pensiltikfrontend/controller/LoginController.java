@@ -3,7 +3,7 @@ package com.viii28stw.pensiltikfrontend.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.settings.LanguageSettingController;
-import com.viii28stw.pensiltikfrontend.enumeration.NominatimCountryCodes;
+import com.viii28stw.pensiltikfrontend.enumeration.LanguagesSetting;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
@@ -34,7 +34,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -48,6 +47,7 @@ import java.util.logging.Logger;
  * Controller class of the FXML file for login screen.
  * <p>
  * Handle all of the login implementation.
+ * </p>
  *
  * @version 1.0.0
  * @since August 06, 2019
@@ -75,7 +75,7 @@ public class LoginController implements Initializable {
     private CheckBox ckbRememberMe;
     @FXML
     private Button btnLogin;
-
+    private static final String FX_BORDER_COLOR = "-fx-border-color: ";
     private static final String REMEMBER_MIM_FILE_PATH = "remember_me.txg";
     private IUsuarioService usuarioService = UsuarioService.getInstance();
 
@@ -86,6 +86,16 @@ public class LoginController implements Initializable {
         return uniqueInstance;
     }
 
+    /**
+     * Initializes the controller class.
+     *
+     * @param location
+     * @param resources
+     *
+     *  @version 1.0.0
+     *  @since August 06, 2019
+     *  @author Plamedi L. Lusembo
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Platform.runLater(() -> {
@@ -101,19 +111,19 @@ public class LoginController implements Initializable {
 
         tfdEmail.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
                                                 Boolean oldPropertyValue, Boolean newPropertyValue) -> {
-            if (oldPropertyValue) {
+            if (Boolean.TRUE.equals(oldPropertyValue)) {
                 tfdEmail.setStyle(tfdEmail.getText().isEmpty() ?
-                        "-fx-border-color: ".concat(Notifications.ERROR.getPaintHex()).concat(";") :
-                        "-fx-border-color: #A9A9A9;");
+                        FX_BORDER_COLOR.concat(Notifications.ERROR.getPaintHex()).concat(";") :
+                        FX_BORDER_COLOR.concat("#A9A9A9;"));
             }
         });
 
         pwfPassword.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
                                                 Boolean oldPropertyValue, Boolean newPropertyValue) -> {
-            if (oldPropertyValue) {
+            if (Boolean.TRUE.equals(oldPropertyValue)) {
                 pwfPassword.setStyle(pwfPassword.getText().isEmpty() ?
-                        "-fx-border-color: ".concat(Notifications.ERROR.getPaintHex()).concat(";") :
-                        "-fx-border-color: #A9A9A9;");
+                        FX_BORDER_COLOR.concat(Notifications.ERROR.getPaintHex()).concat(";") :
+                        FX_BORDER_COLOR.concat("#A9A9A9;"));
             }
         });
     }
@@ -140,9 +150,10 @@ public class LoginController implements Initializable {
     }
 
     /**
-     * Handle the on action key pressed of the email login field.
+     * Handle the On Key Pressed action of the email login field.
      * <p>
      * Perform action such as Enter key pressed and execute btnLoginOnAction() method.
+     * </p>
      *
      * @return      none
      * @version 1.0.0
@@ -156,9 +167,12 @@ public class LoginController implements Initializable {
     }
 
     /**
-     * Handle the on action key pressed of the email password field.
+     * Handle the On Key Pressed action of the email password field.
      * <p>
      * Perform action such as Enter key pressed and execute btnLoginOnAction() method.
+     * </p>
+     *
+     * @param evt
      *
      * @return      none
      * @version 1.0.0
@@ -167,7 +181,7 @@ public class LoginController implements Initializable {
     @FXML
     private void pwfSPasswordOnKeyPressed(KeyEvent evt) {
         if (evt.getCode() == KeyCode.ENTER) {
-            this.btnLoginOnAction();
+            btnLoginOnAction();
         }
     }
 
@@ -199,12 +213,10 @@ public class LoginController implements Initializable {
             configuracaoIdiomaController.setLanguageSettingStage(configuracaoIdiomaStage);
 
             loginStage.close();
-
             configuracaoIdiomaStage.showAndWait();
 
             reloadLogin();
             tfdEmail.requestFocus();
-
         } catch (IOException ex) {
             Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
@@ -216,6 +228,7 @@ public class LoginController implements Initializable {
      * If it's all Okay, the system will be launched
      * and synchronously the user will be saved in a .txg extension file
      * if 'Remember me' checkbox is checked.
+     * </p>
      *
      * @return      none
      * @version 1.0.0
@@ -234,8 +247,8 @@ public class LoginController implements Initializable {
 //                Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
 //            }
 
-            tfdEmail.setStyle("-fx-border-color: ".concat(Notifications.ERROR.getPaintHex()).concat(";"));
-            pwfPassword.setStyle("-fx-border-color: ".concat(Notifications.ERROR.getPaintHex()).concat(";"));
+            tfdEmail.setStyle(FX_BORDER_COLOR.concat(Notifications.ERROR.getPaintHex()).concat(";"));
+            pwfPassword.setStyle(FX_BORDER_COLOR.concat(Notifications.ERROR.getPaintHex()).concat(";"));
 
             String title = I18nFactory.getInstance().getResourceBundle().getString("dialog.title.login.failure");
             String message = I18nFactory.getInstance().getResourceBundle().getString("dialog.login.failure.contenttext");
@@ -245,11 +258,6 @@ public class LoginController implements Initializable {
             tray.setNotification(Notifications.ERROR);
             tray.setAnimation(Animations.POPUP);
             tray.showAndWait();
-
-
-
-
-
 
             return;
         }
@@ -316,15 +324,17 @@ public class LoginController implements Initializable {
      * The FXML file is reloaded to apply resource bundle properties.
      * <p>
      * This method must be called after displaying login screen.
+     * </p>
+     *
      * @return      none
      * @version 1.0
      * @since August 06, 2019
      */
     private void reloadLogin() {
         try {
-            NominatimCountryCodes nominatimCountryCodes = new ObjectMapper()
-                    .readValue(new File("nominatim.i18n"), NominatimCountryCodes.class);
-            I18nFactory.getInstance().setSystemLanguage(nominatimCountryCodes);
+            LanguagesSetting languagesSetting = new ObjectMapper()
+                    .readValue(new File("language-setting.i18n"), LanguagesSetting.class);
+            I18nFactory.getInstance().setSystemLanguage(languagesSetting);
 
             FXMLLoader loaderLogin = new FXMLLoader();
             loaderLogin.setLocation(MainApp.class.getResource("/fxml/login.fxml"));

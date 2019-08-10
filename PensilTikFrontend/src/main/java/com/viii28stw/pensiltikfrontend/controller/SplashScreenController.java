@@ -32,6 +32,7 @@ import java.util.logging.Logger;
  * Controller class of the FXML file for splash screen.
  * <p>
  * Handle all of the splash screen implementation.
+ * </p>
  *
  * @version 1.0.0
  * @since August 06, 2019
@@ -55,6 +56,10 @@ public class SplashScreenController implements Initializable {
      *
      * @param url
      * @param rb
+     *
+     *  @version 1.0.0
+     *  @since August 06, 2019
+     *  @author Plamedi L. Lusembo
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -66,6 +71,7 @@ public class SplashScreenController implements Initializable {
      * Check the database successful connection.
      * <p>
      * And launch the login screen.
+     * </p>
      *
      * @return      none
      * @version 1.0

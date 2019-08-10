@@ -12,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public enum NominatimCountryCodes {
+public enum LanguagesSetting {
     UNITED_STATES_OF_AMERICA("US", "United States of America",
             "United States of America",
             "en","English", "English", true),
@@ -44,10 +44,9 @@ public enum NominatimCountryCodes {
     private final String languageNameLocal;
     private final boolean available;
 
-    public static List<NominatimCountryCodes> getList() {
-        List<NominatimCountryCodes> listNominatimCountryCodes = new ArrayList<NominatimCountryCodes>
-                (Arrays.asList(NominatimCountryCodes.values()));
-        return listNominatimCountryCodes;
+    public static List<LanguagesSetting> getList() {
+        List<LanguagesSetting> listLanguagesSetting = new ArrayList<>(Arrays.asList(LanguagesSetting.values()));
+        return listLanguagesSetting;
     }
 
 }

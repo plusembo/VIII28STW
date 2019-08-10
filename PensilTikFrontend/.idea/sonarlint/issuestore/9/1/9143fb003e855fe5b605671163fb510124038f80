@@ -1,16 +1,0 @@
-
-Lsquid:S1604Ž"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ8š¢ëÞÂ-
-osquid:CommentedOutCodeLineè"<This block of commented-out lines of code should be removed.(á»ã¨þÿÿÿÿ8š¢ëÞÂ-
-Ssquid:S1066Æ"/Merge this if statement with the enclosing one.(Ãä–þÿÿÿÿ8š¢ëÞÂ-
-osquid:CommentedOutCodeLineþ"<This block of commented-out lines of code should be removed.(™ºÞÀúÿÿÿÿ8š¢ëÞÂ-
-[
-squid:S106s"9Replace this use of System.out or System.err by a logger.(òÙ£µþÿÿÿÿ8×ò«ÞÂ-
-|squid:S1192Œ"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ8š¢ëÞÂ-
-Ysquid:S1854Ç":Remove this useless assignment to local variable "salvou".(™‹°¼8š¢ëÞÂ-
-jsquid:CommentedOutCodeLine›"<This block of commented-out lines of code should be removed.(ÐÉ§Œ8š¢ëÞÂ-
-osquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(èÄáŽøÿÿÿÿ8š¢ëÞÂ-
-nsquid:S3776r"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ÛŒ¦…ýÿÿÿÿ
-Gsquid:S1604Ö"(Make this anonymous inner class a lambda(ô¸‡í8š¢ëÞÂ-
-Isquid:S00108²")Either remove or fill this block of code.(Ãôþ•8š¢ëÞÂ-
-Gsquid:S1148†"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8š¢ëÞÂ-
-Jsquid:S1481Ç"+Remove this unused "salvou" local variable.(™‹°¼8š¢ëÞÂ-

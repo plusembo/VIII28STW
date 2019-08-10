@@ -1,22 +1,22 @@
 
-tsquid:S1192m"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ
+Gsquid:S5411°"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 Lsquid:S1066§"/Merge this if statement with the enclosing one.(Ãä–şÿÿÿÿ
+hsquid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(á»ã¨şÿÿÿÿ
 ’squid:S1598"úThis file "CadastroUsuarioController.java" should be located in "com\viii28stw\pensiltikfrontend\controller\form\cadastros" directory, not in "C:\VIII28STW\PensilTikFrontend\src\main\java\com\viii28stw\pensiltikfrontend\controller\form\registration".(ù¼âê
 Esquid:S1604ï"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ
-@squid:S1604·"(Make this anonymous inner class a lambda(ô¸‡í
-Gsquid:S5411—"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
-Gsquid:S5411¦"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
-Gsquid:S5411°"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
-Gsquid:S5411·"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 Gsquid:S5411¾"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 Gsquid:S5411Ë"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
-Gsquid:S5411Ş"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 Bsquid:S5411ò"*Use the primitive boolean expression here.(ÂÇ²
-nsquid:S3776j"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ
+Gsquid:S5411·"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Gsquid:S5411Ş"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 Rsquid:S1854¨":Remove this useless assignment to local variable "salvou".(™‹°¼
-Bsquid:S00108“")Either remove or fill this block of code.(Ãôş•
-Csquid:S1481¨"+Remove this unused "salvou" local variable.(™‹°¼
-hsquid:CommentedOutCodeLineÉ"<This block of commented-out lines of code should be removed.(á»ã¨şÿÿÿÿ
+tsquid:S1192m"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ
+nsquid:S3776j"RRefactor this method to reduce its Cognitive Complexity from 54 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ
+Gsquid:S5411—"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Gsquid:S5411¦"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
 hsquid:CommentedOutCodeLineß"<This block of commented-out lines of code should be removed.(™ºŞÀúÿÿÿÿ
-csquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(ĞÉ§Œ
 hsquid:CommentedOutCodeLineş"<This block of commented-out lines of code should be removed.(èÄáøÿÿÿÿ
+csquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(ĞÉ§Œ
+Bsquid:S00108“")Either remove or fill this block of code.(Ãôş•
+@squid:S1604·"(Make this anonymous inner class a lambda(ô¸‡í
+Csquid:S1481¨"+Remove this unused "salvou" local variable.(™‹°¼
