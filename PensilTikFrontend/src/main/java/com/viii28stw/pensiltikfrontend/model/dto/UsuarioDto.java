@@ -7,12 +7,9 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
 import com.viii28stw.pensiltikfrontend.enumeration.UsuarioNivelAcesso;
 import lombok.*;
-
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
-
-/**
- * @author Plamedi L. Lusembo
- */
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -22,11 +19,12 @@ import java.time.LocalDate;
 @ToString
 @Builder
 public class UsuarioDto{
+
     private String codigo;
-    private String nome;
-    private String sobreNome;
-    private String email;
-    private String senha;
+    @NotBlank private String nome;
+    @NotBlank private String sobreNome;
+    @NotBlank @Email private String email;
+    @NotBlank private String senha;
     private Sexo sexo;
 
     @JsonSerialize(using = LocalDateSerializer.class)

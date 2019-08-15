@@ -1,18 +1,18 @@
 
-Ksquid:S1199Ø"-Extract this nested code block into a method.(ïÄîY8«‰Û Ã-
-hsquid:S3252X"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Êı şÿÿÿÿ8ÍëØËÇ-
-jsquid:CommentedOutCodeLine¥"<This block of commented-out lines of code should be removed.(ØëçØ8«‰Û Ã-
-osquid:CommentedOutCodeLineµ"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ8«‰Û Ã-
-Lsquid:S1199Ç"-Extract this nested code block into a method.(åº¨ú8«‰Û Ã-
-jsquid:CommentedOutCodeLineâ"<This block of commented-out lines of code should be removed.(ß´µ8«‰Û Ã-
-osquid:CommentedOutCodeLineå"<This block of commented-out lines of code should be removed.(ü‡Ûùÿÿÿÿ8«‰Û Ã-
-osquid:CommentedOutCodeLine»"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ8«‰Û Ã-
-isquid:CommentedOutCodeLineÍ"<This block of commented-out lines of code should be removed.(Ô¤Ù8«‰Û Ã-
-Qsquid:S1199Á"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ8«‰Û Ã-
-jsquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(¡ÑªË8«‰Û Ã-
-Gsquid:S1148Ô"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8«‰Û Ã-
-=squid:S1640T"Convert this Map to an EnumMap.( ÄÊ”8¤‘ÀÅ-
-Msquid:S2696T"6Make the enclosing method "static" or remove this set.( ÄÊ”
-Tsquid:S2696U"6Make the enclosing method "static" or remove this set.(Âôÿµ8æÇø˜Ã-
-=squid:S1640U"Convert this Map to an EnumMap.(Âôÿµ8¤‘ÀÅ-
-Lsquid:S1199"-Extract this nested code block into a method.(À´Œë8«‰Û Ã-
+bsquid:CommentedOutCodeLineÇ"<This block of commented-out lines of code should be removed.(Ô¤Ù
+asquid:S3252W"EUse static access with "javafx.animation.Animation" for "INDEFINITE".(Êı şÿÿÿÿ
+6squid:S1640T"Convert this Map to an EnumMap.(Âôÿµ
+Esquid:S1199˜"-Extract this nested code block into a method.(À´Œë
+csquid:CommentedOutCodeLine“"<This block of commented-out lines of code should be removed.(¡ÑªË
+6squid:S1640S"Convert this Map to an EnumMap.( ÄÊ”
+Jsquid:S1199»"-Extract this nested code block into a method.(ùèšúøÿÿÿÿ
+csquid:CommentedOutCodeLineá"<This block of commented-out lines of code should be removed.(ß´µ
+Msquid:S2696S"6Make the enclosing method "static" or remove this set.( ÄÊ”
+@squid:S1148Ó"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+Msquid:S2696T"6Make the enclosing method "static" or remove this set.(Âôÿµ
+csquid:CommentedOutCodeLineŸ"<This block of commented-out lines of code should be removed.(ØëçØ
+hsquid:CommentedOutCodeLine¯"<This block of commented-out lines of code should be removed.(¾¶¸Ãøÿÿÿÿ
+hsquid:CommentedOutCodeLineµ"<This block of commented-out lines of code should be removed.(ÕÆˆëıÿÿÿÿ
+hsquid:CommentedOutCodeLineä"<This block of commented-out lines of code should be removed.(ü‡Ûùÿÿÿÿ
+Dsquid:S1199Ò"-Extract this nested code block into a method.(ïÄîY
+Esquid:S1199Á"-Extract this nested code block into a method.(åº¨ú

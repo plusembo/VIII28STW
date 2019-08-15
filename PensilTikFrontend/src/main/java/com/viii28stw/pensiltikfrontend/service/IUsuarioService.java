@@ -2,13 +2,14 @@ package com.viii28stw.pensiltikfrontend.service;
 
 
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
+
 import java.util.List;
 
-/**
- * @author Plamedi L. Lusembo
- */
-
 public interface IUsuarioService {
+
+    UsuarioDto buscarUsuarioMaiorCodigo();
+
+    boolean isUserLoggedIn(String email);
 
     UsuarioDto buscarUsuarioPorId(String id);
 
@@ -20,6 +21,8 @@ public interface IUsuarioService {
 
     boolean deletarUsuarioPorId(String id);
 
-    UsuarioDto fazerLogin(String email, String senha);
+    UsuarioDto login(String email, String password);
+
+    void sair(String email);
 
 }

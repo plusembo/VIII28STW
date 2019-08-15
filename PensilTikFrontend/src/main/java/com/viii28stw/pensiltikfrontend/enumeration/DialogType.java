@@ -4,10 +4,6 @@ import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author Plamedi L. Lusembo
  */

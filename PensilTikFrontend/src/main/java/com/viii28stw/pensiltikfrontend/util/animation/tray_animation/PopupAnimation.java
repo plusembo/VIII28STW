@@ -1,7 +1,9 @@
 package com.viii28stw.pensiltikfrontend.util.animation.tray_animation;
 
 import com.viii28stw.pensiltikfrontend.model.domain.tray_model.CustomStage;
-import javafx.animation.*;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.util.Duration;
 
 final class PopupAnimation extends AbstractAnimation {

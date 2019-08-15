@@ -1,14 +1,8 @@
 package com.viii28stw.pensiltikfrontend.controller.dialog;
 
 import com.jfoenix.controls.JFXTextField;
-
-import java.net.URL;
-import java.util.List;
-import java.util.ResourceBundle;
-
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
-import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -22,6 +16,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
 
 @NoArgsConstructor
 public class LocalizadorUsuarioController implements Initializable {
@@ -38,7 +36,7 @@ public class LocalizadorUsuarioController implements Initializable {
     @FXML private Label lblQtd;
     private final ObservableList<Usuario> obsUsuario = FXCollections.observableArrayList();
     private static LocalizadorUsuarioController uniqueInstance;
-    private IUsuarioService usuarioService = UsuarioService.getInstance();
+    private UsuarioService usuarioService = null;
 
     public static synchronized LocalizadorUsuarioController getInstance() {
         if (uniqueInstance == null) {

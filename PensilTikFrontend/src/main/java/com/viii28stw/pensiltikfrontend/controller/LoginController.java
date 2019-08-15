@@ -4,18 +4,16 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.controller.form.settings.LanguageSettingController;
 import com.viii28stw.pensiltikfrontend.enumeration.LanguagesSetting;
+import com.viii28stw.pensiltikfrontend.enumeration.Notifications;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
 import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
-import com.viii28stw.pensiltikfrontend.service.UsuarioService;
-import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import com.viii28stw.pensiltikfrontend.util.animation.FadeInLeftTransition;
 import com.viii28stw.pensiltikfrontend.util.animation.FadeInOtherLeftTransition;
 import com.viii28stw.pensiltikfrontend.util.animation.FadeInRightTransition;
 import com.viii28stw.pensiltikfrontend.util.animation.tray_animation.Animations;
 import com.viii28stw.pensiltikfrontend.util.dialogbox.DialogBoxFactory;
-import com.viii28stw.pensiltikfrontend.enumeration.Notifications;
 import com.viii28stw.pensiltikfrontend.util.notification.TrayNotification;
 import javafx.application.Platform;
 import javafx.beans.value.ObservableValue;
@@ -32,8 +30,10 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -49,14 +49,15 @@ import java.util.logging.Logger;
  * Handle all of the login implementation.
  * </p>
  *
+ * @author Plamedi L. Lusembo
  * @version 1.0.0
  * @since August 06, 2019
- * @author Plamedi L. Lusembo
  */
-@NoArgsConstructor
-public class LoginController implements Initializable {
 
-    private static LoginController uniqueInstance;
+@Controller
+public class LoginController implements Initializable {
+    private static final String FX_BORDER_COLOR = "-fx-border-color: ";
+    private static final String REMEMBER_MIM_FILE_PATH = "remember_me.txg";
     @Setter
     private Stage loginStage;
     @FXML
@@ -75,16 +76,8 @@ public class LoginController implements Initializable {
     private CheckBox ckbRememberMe;
     @FXML
     private Button btnLogin;
-    private static final String FX_BORDER_COLOR = "-fx-border-color: ";
-    private static final String REMEMBER_MIM_FILE_PATH = "remember_me.txg";
-    private IUsuarioService usuarioService = UsuarioService.getInstance();
-
-    public static synchronized LoginController getInstance() {
-        if (uniqueInstance == null) {
-            uniqueInstance = new LoginController();
-        }
-        return uniqueInstance;
-    }
+    @Autowired
+    private IUsuarioService usuarioService;
 
     /**
      * Initializes the controller class.
@@ -92,9 +85,9 @@ public class LoginController implements Initializable {
      * @param location
      * @param resources
      *
-     *  @version 1.0.0
-     *  @since August 06, 2019
-     *  @author Plamedi L. Lusembo
+     * @version 1.0.0
+     * @author Plamedi L. Lusembo
+     * @since August 06, 2019
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -119,7 +112,7 @@ public class LoginController implements Initializable {
         });
 
         pwfPassword.focusedProperty().addListener((ObservableValue<? extends Boolean> arg0,
-                                                Boolean oldPropertyValue, Boolean newPropertyValue) -> {
+                                                   Boolean oldPropertyValue, Boolean newPropertyValue) -> {
             if (Boolean.TRUE.equals(oldPropertyValue)) {
                 pwfPassword.setStyle(pwfPassword.getText().isEmpty() ?
                         FX_BORDER_COLOR.concat(Notifications.ERROR.getPaintHex()).concat(";") :
@@ -132,7 +125,8 @@ public class LoginController implements Initializable {
      * Check saved user (email and password) to be load from a .txg extension file.
      * In case of existing saved user, his email and password will be loaded to fill login fields.
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0.0
      * @since August 06, 2019
      */
@@ -155,7 +149,8 @@ public class LoginController implements Initializable {
      * Perform action such as Enter key pressed and execute btnLoginOnAction() method.
      * </p>
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0.0
      * @since August 06, 2019
      */
@@ -174,7 +169,8 @@ public class LoginController implements Initializable {
      *
      * @param evt
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0.0
      * @since August 06, 2019
      */
@@ -188,7 +184,8 @@ public class LoginController implements Initializable {
     /**
      * Launch the system language set up screen.
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0.0
      * @since August 06, 2019
      */
@@ -206,8 +203,6 @@ public class LoginController implements Initializable {
             configuracaoIdiomaStage.setTitle(I18nFactory.getInstance().getResourceBundle().getString("title.language.setup"));
             configuracaoIdiomaStage.initModality(Modality.WINDOW_MODAL);
             configuracaoIdiomaStage.initOwner(loginStage);
-            configuracaoIdiomaStage.setX(CentralizeLocationRelativeToScreen.getX(configuracaoIdiomaStackPane.getPrefWidth()));
-            configuracaoIdiomaStage.setY(CentralizeLocationRelativeToScreen.getY(configuracaoIdiomaStackPane.getPrefHeight()));
             configuracaoIdiomaStage.setScene(localizadorI18nScene);
             LanguageSettingController configuracaoIdiomaController = loader.getController();
             configuracaoIdiomaController.setLanguageSettingStage(configuracaoIdiomaStage);
@@ -230,13 +225,15 @@ public class LoginController implements Initializable {
      * if 'Remember me' checkbox is checked.
      * </p>
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0.0
      * @since August 06, 2019
      */
     @FXML
     private void btnLoginOnAction() {
-        UsuarioDto usuarioDto = usuarioService.fazerLogin(tfdEmail.getText(), pwfPassword.getText());
+
+        UsuarioDto usuarioDto = usuarioService.login(tfdEmail.getText(), pwfPassword.getText());
         if (usuarioDto == null) {
 
 //            try {
@@ -326,7 +323,8 @@ public class LoginController implements Initializable {
      * This method must be called after displaying login screen.
      * </p>
      *
-     * @return      none
+     * @return none
+     *
      * @version 1.0
      * @since August 06, 2019
      */

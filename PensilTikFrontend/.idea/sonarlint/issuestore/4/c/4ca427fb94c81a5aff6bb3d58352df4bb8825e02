@@ -1,0 +1,24 @@
+
+Bsquid:S5411"*Use the primitive boolean expression here.(ÂÇ²
+hsquid:CommentedOutCodeLineü"<This block of commented-out lines of code should be removed.(™ºŞÀúÿÿÿÿ
+Gsquid:S5411û"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Rsquid:S1854Å":Remove this useless assignment to local variable "salvou".(™‹°¼
+Lsquid:S1066Ä"/Merge this if statement with the enclosing one.(Ãä–şÿÿÿÿ
+@squid:S1148„"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ
+csquid:CommentedOutCodeLine—"<This block of commented-out lines of code should be removed.(ĞÉ§Œ
+Gsquid:S5411Ã"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+hsquid:CommentedOutCodeLineæ"<This block of commented-out lines of code should be removed.(á»ã¨şÿÿÿÿ
+Gsquid:S5411Û"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Bsquid:S00108®")Either remove or fill this block of code.(Ãôş•
+nsquid:S3776p"RRefactor this method to reduce its Cognitive Complexity from 55 to the 15 allowed.(ÛŒ¦…ıÿÿÿÿ
+usquid:S1192Š"XDefine a constant instead of duplicating this literal "-fx-text-fill: #c00d0d;" 4 times.(ÉÌ¤Ùùÿÿÿÿ
+Gsquid:S5411Í"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+@squid:S1604Ô"(Make this anonymous inner class a lambda(ô¸‡í
+hsquid:CommentedOutCodeLine™"<This block of commented-out lines of code should be removed.(èÄáøÿÿÿÿ
+Gsquid:S5411Ô"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Gsquid:S5411´"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+T
+squid:S106q"9Replace this use of System.out or System.err by a logger.(òÙ£µşÿÿÿÿ
+Csquid:S1481Å"+Remove this unused "salvou" local variable.(™‹°¼
+Gsquid:S5411è"*Use the primitive boolean expression here.(Ä˜İ×øÿÿÿÿ
+Esquid:S1604Œ"(Make this anonymous inner class a lambda(©­áÿÿÿÿÿÿ

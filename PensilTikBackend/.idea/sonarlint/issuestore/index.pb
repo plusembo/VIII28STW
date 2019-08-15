@@ -3,8 +3,6 @@
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
 W
 'src/main/resources/META-INF/MANIFEST.MF,9\6\96110cc0699cb7724cc180967f0867a05c447c49
-Y
-)src/main/resources/application.properties,0\6\06f65155ec73600b9fc5c4dc2883d4bb84d8e284
 ~
 Nsrc/main/java/com/viii28stw/pensiltikbackend/controller/UsuarioController.java,a\f\af12b04f1558f55f28a6abfd83caf56d7a09380f
 y
@@ -29,8 +27,6 @@ r
 Bsrc/main/java/com/viii28stw/pensiltikbackend/util/IdGenerator.java,6\a\6a566a376f17793f22af418d1d7b3b299b6dfbbf
 S
 #target/classes/META-INF/MANIFEST.MF,f\7\f76abc2c22b7d3412c31aa4fe8ff12afaab05b80
-U
-%target/classes/application.properties,b\b\bb173f9557479135e0f1bcd9c6c5f7b4ae5f77e8
 €
 Ptarget/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst,3\d\3da01db98b88a8057c03354880f06dba49d3e795
 ‚

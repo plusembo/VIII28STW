@@ -1,16 +1,15 @@
 package com.viii28stw.pensiltikfrontend.controller;
 
 import com.viii28stw.pensiltikfrontend.MainApp;
+import com.viii28stw.pensiltikfrontend.controller.form.registration.CadastroUsuarioController;
 import com.viii28stw.pensiltikfrontend.controller.form.help.AboutController;
-import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroDespesaController;
-import com.viii28stw.pensiltikfrontend.controller.form.cadastros.CadastroUsuarioController;
+import com.viii28stw.pensiltikfrontend.controller.form.registration.CadastroDespesaController;
 import com.viii28stw.pensiltikfrontend.controller.form.settings.LanguageSettingController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMDI;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMDI;
 import com.viii28stw.pensiltikfrontend.model.domain.FormMenu;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
-import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -19,9 +18,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
@@ -265,14 +264,9 @@ public class MDIController implements Initializable {
                 if (null != menuMatch.getIcon() && !menuMatch.getIcon().isEmpty()) {
                     formStage.getIcons().add(new Image(menuMatch.getIcon()));
                 }
-                formStage.setX(CentralizeLocationRelativeToScreen.getX(parent.getPrefWidth()));
-                formStage.setY(CentralizeLocationRelativeToScreen.getY(parent.getPrefHeight()));
-
                 Scene scene = new Scene(parent);
                 formStage.setScene(scene);
-
                 formStage.setOnCloseRequest((WindowEvent we) -> fechaJanela(menuMatch));
-
                 listFormsMenu.put(menuMatch, new FormMenu(menuMatch, formStage));
 
                 //Flexible zone begining

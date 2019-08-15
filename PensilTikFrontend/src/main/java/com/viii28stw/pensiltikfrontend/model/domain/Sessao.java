@@ -1,6 +1,9 @@
 package com.viii28stw.pensiltikfrontend.model.domain;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
  * @author Plamedi L. Lusembo

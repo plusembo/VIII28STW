@@ -1,5 +1,4 @@
 
-Xsquid:UnusedPrivateMethod6".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ
-Hsquid:S00108c")Either remove or fill this block of code.(ï­£Ä8üåíğ´-
-Bsquid:S1168)"+Return an empty collection instead of null.(¥¹ï
-Msquid:S11726"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ
+Isquid:S1168 "+Return an empty collection instead of null.(¥¹ï8ô²œêÈ-
+_squid:UnusedPrivateMethod-".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ8”ØêÈ-
+Tsquid:S1172-"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ8“ºêÈ-

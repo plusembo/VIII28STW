@@ -1,4 +1,4 @@
-package com.viii28stw.pensiltikfrontend.controller.form.cadastros;
+package com.viii28stw.pensiltikfrontend.controller.form.registration;
 
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
@@ -9,9 +9,7 @@ import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
-import com.viii28stw.pensiltikfrontend.service.IUsuarioService;
 import com.viii28stw.pensiltikfrontend.service.UsuarioService;
-import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.EmailValidator;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import com.viii28stw.pensiltikfrontend.util.PasswordValidator;
@@ -100,7 +98,7 @@ public class CadastroDespesaController implements Initializable {
     @Setter
     private boolean modoEdicao;
     private final ObservableList<Sexo> obsListSexo = FXCollections.observableArrayList();
-    private IUsuarioService usuarioService = UsuarioService.getInstance();
+    private UsuarioService usuarioService = null;
     private static CadastroDespesaController uniqueInstance;
 
     public static synchronized CadastroDespesaController getInstance() {
@@ -399,8 +397,6 @@ public class CadastroDespesaController implements Initializable {
             localizadorUsuarioStage.setResizable(false);
             localizadorUsuarioStage.initModality(Modality.WINDOW_MODAL);
             localizadorUsuarioStage.initOwner(cadastroDespesaStage);
-            localizadorUsuarioStage.setX(CentralizeLocationRelativeToScreen.getX(localizadorUsuarioStackPane.getPrefWidth()));
-            localizadorUsuarioStage.setY(CentralizeLocationRelativeToScreen.getY(localizadorUsuarioStackPane.getPrefHeight()));
             Scene localizadorScene = new Scene(localizadorUsuarioStackPane);
             localizadorUsuarioStage.setScene(localizadorScene);
             LocalizadorUsuarioController localizadorUsuarioController = loader.getController();

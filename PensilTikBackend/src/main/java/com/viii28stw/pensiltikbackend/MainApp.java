@@ -19,7 +19,8 @@ public class MainApp {
     }
 
     private static void setPropertiesConfiguration() throws ConfigurationException {
-        PropertiesConfiguration propertiesConfiguration = new PropertiesConfiguration(System.getProperty("user.dir").concat("/src/main/resources/application.properties"));
+        PropertiesConfiguration propertiesConfiguration = new PropertiesConfiguration(MainApp.class.getResource("/application.properties").toString()
+                .replace("file:/", ""));
         propertiesConfiguration.setHeader(LocalDateTime.now().toString());
 
         propertiesConfiguration.setProperty("server.port", "9000");

@@ -3,6 +3,7 @@ package com.viii28stw.pensiltikfrontend.model.domain;
 import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
 import com.viii28stw.pensiltikfrontend.enumeration.UsuarioNivelAcesso;
 import lombok.*;
+import org.springframework.stereotype.Service;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -14,6 +15,7 @@ import java.time.LocalDate;
 @EqualsAndHashCode
 @ToString
 @Builder
+@Service("usuario")
 public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     private String codigo;

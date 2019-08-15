@@ -1,9 +1,7 @@
 package com.viii28stw.pensiltikfrontend.util.dialogbox;
 
-import java.io.IOException;
 import com.viii28stw.pensiltikfrontend.MainApp;
 import com.viii28stw.pensiltikfrontend.enumeration.DialogType;
-import com.viii28stw.pensiltikfrontend.util.CentralizeLocationRelativeToScreen;
 import com.viii28stw.pensiltikfrontend.util.I18nFactory;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -11,6 +9,8 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
+
+import java.io.IOException;
 
 /**
  * @author Plamedi L. Lusembo
@@ -57,18 +57,13 @@ public class DialogBoxFactory {
         dialogBoxStage.setTitle(title.trim().isEmpty() ?
                 dialogType.getDescricao() :
                 dialogType.getDescricao().concat(" - ").concat(title));
-        dialogBoxStage.setX(CentralizeLocationRelativeToScreen.getX(dialogBoxStackPane.getPrefWidth()));
-        dialogBoxStage.setY(CentralizeLocationRelativeToScreen.getY(dialogBoxStackPane.getPrefHeight()));
-
         dialogBoxStage.setScene(dialogBoxScene);
-
         DialogBoxController dialogBoxController = loader.getController();
         dialogBoxController.setDialogBoxStage(dialogBoxStage);
         dialogBoxController.setDialogType(dialogType);
         dialogBoxController.getLblHeaderText().setText(headerText);
         dialogBoxController.getLblContentText().setText(contenText);
         dialogBoxStage.showAndWait();
-
         return dialogBoxController.isResultOkay();
     }
 
