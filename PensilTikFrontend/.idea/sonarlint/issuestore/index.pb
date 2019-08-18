@@ -1,8 +1,6 @@
 
 7
 pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
-j
-:src/main/java/com/viii28stw/pensiltikfrontend/MainApp.java,a\8\a8800b85c24dc5e310a34f49bbde23de2725dd98
 z
 Jsrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/DespesaEnum.java,2\e\2e97cab2441ad81d619f5ab1b99b4b1f360f5745
 w
@@ -15,8 +13,6 @@ z
 Jsrc/main/java/com/viii28stw/pensiltikfrontend/service/IUsuarioService.java,9\e\9e6d5ca88c516eb829fc3c37a1b82306ce0e62ba
 s
 Csrc/main/java/com/viii28stw/pensiltikfrontend/enumeration/Sexo.java,a\1\a193952d9e929aece92e0b0893ef0fbec80464fd
-
-Osrc/main/java/com/viii28stw/pensiltikfrontend/controller/UsuarioController.java,c\4\c4af0dce81a58d5d85f2ae9d8e3b4e575e9c22c2
 s
 Csrc/main/java/com/viii28stw/pensiltikfrontend/util/I18nFactory.java,8\e\8ef6dc7363a5d4e073ba8ec2fc782bcddd9538c2
 ’
@@ -71,12 +67,6 @@ Wsrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/help/AboutControl
 Ksrc/main/java/com/viii28stw/pensiltikfrontend/controller/MDIController.java,6\5\653a7bc7dd558d5c3f7c91473f19a64f80a480cb
 •
 esrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/settings/LanguageSettingController.java,4\3\43ca4f83ef4ca5a8fa588036df6740209de91c42
-r
-Bsrc/main/java/com/viii28stw/pensiltikfrontend/MainApplication.java,6\4\64738653f84fbe6e3301a5276b1b0532591dbd92
-o
-?src/main/java/com/viii28stw/pensiltikfrontend/model/Laptop.java,6\4\64d6289b3a2603d9cc3f21297194b269c7dae8d6
-n
->src/main/java/com/viii28stw/pensiltikfrontend/model/Alien.java,8\b\8b9a46998eadd008e7a029c4b47d26db144b51c1
 ™
 isrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/registration/CadastroDespesaController.java,4\c\4ca427fb94c81a5aff6bb3d58352df4bb8825e02
 ‘
@@ -87,3 +77,7 @@ isrc/main/java/com/viii28stw/pensiltikfrontend/controller/form/registration/Cada
 Tsrc/main/java/com/viii28stw/pensiltikfrontend/controller/SplashScreenController.java,c\b\cb7446c7524b1928ea039e38433d2a5e1a73acf1
 }
 Msrc/main/java/com/viii28stw/pensiltikfrontend/controller/LoginController.java,7\d\7d68409eff9e451ee1c9b8d2466d137c2c416180
+x
+Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
+j
+:src/main/java/com/viii28stw/pensiltikfrontend/MainApp.java,a\8\a8800b85c24dc5e310a34f49bbde23de2725dd98

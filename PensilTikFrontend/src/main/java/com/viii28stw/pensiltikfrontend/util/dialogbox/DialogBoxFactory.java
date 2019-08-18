@@ -17,7 +17,6 @@ import java.io.IOException;
  */
 @NoArgsConstructor
 public class DialogBoxFactory {
-
     private static DialogBoxFactory uniqueInstance;
 
     public static synchronized DialogBoxFactory getInstance() {
@@ -55,8 +54,8 @@ public class DialogBoxFactory {
         dialogBoxStage.setMaximized(false);
         dialogBoxStage.initModality(Modality.APPLICATION_MODAL);
         dialogBoxStage.setTitle(title.trim().isEmpty() ?
-                dialogType.getDescricao() :
-                dialogType.getDescricao().concat(" - ").concat(title));
+                dialogType.getDescription() :
+                dialogType.getDescription().concat(" - ").concat(title));
         dialogBoxStage.setScene(dialogBoxScene);
         DialogBoxController dialogBoxController = loader.getController();
         dialogBoxController.setDialogBoxStage(dialogBoxStage);

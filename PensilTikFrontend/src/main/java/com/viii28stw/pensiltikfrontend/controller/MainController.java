@@ -32,7 +32,6 @@ import javafx.util.Duration;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DateFormat;
@@ -48,11 +47,11 @@ import java.util.logging.Logger;
  */
 
 @NoArgsConstructor
-public class MDIController implements Initializable {
+public class MainController implements Initializable {
 
     private static HashMap<MenuMatch, FormMenu> listFormsMenu;
     private static  HashMap<MenuMDI, FormMDI> listFormsMDI;
-    private static MDIController uniqueInstance;
+    private static MainController uniqueInstance;
     @Setter
     private Stage mdiStage;
     @FXML
@@ -68,17 +67,15 @@ public class MDIController implements Initializable {
     @FXML
     private Menu mnCadastro;
 
-    public static synchronized MDIController getInstance() {
+    public static synchronized MainController getInstance() {
         if (uniqueInstance == null) {
-            uniqueInstance = new MDIController();
+            uniqueInstance = new MainController();
         }
         return uniqueInstance;
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        responsiveTbpMDI();
-
         lblDataHora.setText("");
         listFormsMenu = new HashMap<>();
         listFormsMDI = new HashMap<>();
@@ -91,25 +88,6 @@ public class MDIController implements Initializable {
                 .concat(" (")
                 .concat(Sessao.getInstance().getUsuario().getEmail())
                 .concat(")"));
-    }
-
-    private void responsiveTbpMDI() {
-        double swtHeight = 0;
-        double defaultScreenHeight = 1440;
-        double defaultSwtHeight = 621;
-
-        GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
-        double screenHeight = gd.getDisplayMode().getHeight();
-
-        if(screenHeight == defaultScreenHeight) {
-            swtHeight = defaultSwtHeight;
-            tbpMDI.setPrefHeight(swtHeight);
-        } else {
-            double percentage = (screenHeight * 100)/defaultScreenHeight;
-            double swtHeightDiff = (defaultSwtHeight * percentage)/100;
-            swtHeight = screenHeight < defaultScreenHeight ? defaultSwtHeight - swtHeightDiff : defaultSwtHeight + swtHeightDiff;
-            tbpMDI.setPrefHeight(swtHeight);
-        }
     }
 
     private void atualizaDataHora() {
@@ -125,7 +103,7 @@ public class MDIController implements Initializable {
                 listFormsMenu.remove(menuMatch);
             }
         } catch (NullPointerException ex) {
-            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
@@ -135,7 +113,7 @@ public class MDIController implements Initializable {
                 listFormsMDI.remove(menumenuMDI);
             }
         } catch (NullPointerException ex) {
-            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
     }
 
@@ -236,7 +214,7 @@ public class MDIController implements Initializable {
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
 
     }
@@ -354,7 +332,7 @@ public class MDIController implements Initializable {
             }
 
         } catch (IOException ex) {
-            Logger.getLogger(MDIController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            Logger.getLogger(MainController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
 
     }

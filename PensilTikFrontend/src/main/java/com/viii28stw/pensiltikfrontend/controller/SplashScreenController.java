@@ -20,8 +20,7 @@ import javafx.stage.Stage;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 
 import java.io.IOException;
 import java.net.Socket;
@@ -42,7 +41,7 @@ import java.util.logging.Logger;
  */
 
 @NoArgsConstructor
-@Controller
+@Component
 public class SplashScreenController implements Initializable {
     @Setter
     private Stage splashScreenStage;
@@ -52,6 +51,7 @@ public class SplashScreenController implements Initializable {
     private Text txtCecil;
     @FXML
     private Text txtMistersoft;
+    private boolean serverListened;
 
     /**
      * Initializes the controller class.
@@ -86,24 +86,45 @@ public class SplashScreenController implements Initializable {
         Service<ApplicationContext> service = new Service<ApplicationContext>() {
             @Override
             protected Task<ApplicationContext> createTask() {
-            return new Task<ApplicationContext>() {
-                @Override
-                protected ApplicationContext call() throws Exception {
-                boolean serverListening = isServerListening("127.0.0.1", 9000);
-                int max = MainApp.getApplicationContext().getBeanDefinitionCount();
-                updateProgress(0, max);
-                for (int k = 0; k < max; k++) {
-                    Thread.sleep(10);
-                    updateProgress(k + 1, max);
-                }
-                if (Boolean.TRUE.equals(serverListening)) {
-                    return MainApp.getApplicationContext();
-                } else {
-                    //Here handel notification about unavailable to estabilish connection with the server
-                    return null;
-                }
-                }
-            };
+                return new Task<ApplicationContext>() {
+                    @Override
+                    protected ApplicationContext call() throws InterruptedException {
+                        Thread listening = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                serverListened = isServerListened("127.0.0.1", 9000);
+                            }
+                        });
+
+                        Thread updating = new Thread(new Runnable() {
+                            @Override
+                            public void run() {
+                                int max = MainApp.getApplicationContext().getBeanDefinitionCount();
+                                updateProgress(0, max);
+                                for (int k = 0; k < max; k++) {
+                                    try {
+                                        Thread.sleep(2000 / max);
+                                    } catch (InterruptedException ex) {
+                                        Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+                                    } finally {
+                                        updateProgress(k + 1, max);
+                                    }
+                                }
+                            }
+                        });
+                        long startTime = System.nanoTime();
+                        listening.start();
+                        updating.start();
+                        listening.join();
+                        updating.join();
+                        long endTime = System.nanoTime();
+                        long timeElapsed = (endTime - startTime) / 1000000;
+                        if (timeElapsed < 3500) {
+                            Thread.sleep(3500 - timeElapsed);
+                        }
+                        return MainApp.getApplicationContext();
+                    }
+                };
             }
         };
         service.start();
@@ -113,6 +134,10 @@ public class SplashScreenController implements Initializable {
             new FadeInTransition(txtMistersoft).play();
         });
         service.setOnSucceeded((WorkerStateEvent event) -> {
+            if (Boolean.FALSE.equals(serverListened)) {
+                //Here handel notification about inability to establish connection with the server
+                return;
+            }
             try {
                 Stage loginStage = new Stage();
                 FXMLLoader loader = new FXMLLoader();
@@ -142,24 +167,24 @@ public class SplashScreenController implements Initializable {
      * @param port the port through which the server is listening
      *
      * @return true if the server is listening on the specify port,
-     * otherwise return false.
+     *         otherwise return false.
      *
      * @version 1.0.0
      * @author Plamedi L. Lusembo
      * @since August 11, 2019
      */
-    private boolean isServerListening(String host, int port) {
-        Socket s = null;
+    private boolean isServerListened(String host, int port) {
+        Socket socket = null;
         try {
-            s = new Socket(host, port);
+            socket = new Socket(host, port);
             return true;
         } catch (Exception ex) {
             Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
             return false;
         } finally {
-            if (s != null) {
+            if (socket != null) {
                 try {
-                    s.close();
+                    socket.close();
                 } catch (Exception ex) {
                     Logger.getLogger(SplashScreenController.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
                 }

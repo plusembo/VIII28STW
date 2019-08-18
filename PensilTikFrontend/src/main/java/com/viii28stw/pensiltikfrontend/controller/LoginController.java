@@ -32,8 +32,7 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
+import org.springframework.stereotype.Component;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -54,7 +53,7 @@ import java.util.logging.Logger;
  * @since August 06, 2019
  */
 
-@Controller
+@Component
 public class LoginController implements Initializable {
     private static final String FX_BORDER_COLOR = "-fx-border-color: ";
     private static final String REMEMBER_MIM_FILE_PATH = "remember_me.txg";
@@ -76,6 +75,7 @@ public class LoginController implements Initializable {
     private CheckBox ckbRememberMe;
     @FXML
     private Button btnLogin;
+
     @Autowired
     private IUsuarioService usuarioService;
 
@@ -285,14 +285,14 @@ public class LoginController implements Initializable {
             Stage mdiStage = new Stage();
             FXMLLoader loader = new FXMLLoader();
             loader.setResources(I18nFactory.getInstance().getResourceBundle());
-            loader.setLocation(MainApp.class.getResource("/fxml/mdi.fxml"));
+            loader.setLocation(MainApp.class.getResource("/fxml/main.fxml"));
             BorderPane bdpMDI = loader.load();
             Scene mdiScene = new Scene(bdpMDI);
             mdiStage.setMaximized(true);
             mdiStage.setTitle("PENSIL TIK");
             mdiStage.setScene(mdiScene);
-            MDIController mdiController = loader.getController();
-            mdiController.setMdiStage(mdiStage);
+            MainController mainController = loader.getController();
+            mainController.setMdiStage(mdiStage);
             mdiStage.setOnCloseRequest((WindowEvent we) -> {
                 try {
                     if (!DialogBoxFactory.getInstance().confirm(I18nFactory.getInstance().getResourceBundle().getString("dialog.title.close.the.system"),

@@ -9,8 +9,6 @@ public interface IUsuarioService {
 
     UsuarioDto buscarUsuarioMaiorCodigo();
 
-    boolean isUserLoggedIn(String email);
-
     UsuarioDto buscarUsuarioPorId(String id);
 
     List<UsuarioDto> buscarTodosOsUsuarios();
@@ -23,6 +21,6 @@ public interface IUsuarioService {
 
     UsuarioDto login(String email, String password);
 
-    void sair(String email);
+    void logout(String email);
 
 }

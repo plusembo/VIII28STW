@@ -1,6 +1,6 @@
 package com.viii28stw.pensiltikfrontend.controller.form.help;
 
-import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.MainController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -40,7 +40,7 @@ public class AboutController implements Initializable {
     @FXML
     private void jbtnFecharAction() {
         aboutStage.close();
-        MDIController.fechaJanela(MenuMatch.AJUDA_SOBRE);
+        MainController.fechaJanela(MenuMatch.AJUDA_SOBRE);
     }
 
 }

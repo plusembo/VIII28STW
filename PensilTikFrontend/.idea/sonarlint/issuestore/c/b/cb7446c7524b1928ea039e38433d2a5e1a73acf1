@@ -1,6 +1,9 @@
 
+usquid:S3776U"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(¿¤‰’ùÿÿÿÿ8íçÊşÉ-
 Csquid:S1602D",Remove useless curly braces around statement(ÃÉş©
-\squid:S2184a"@Cast one of the operands of this addition operation to a "long".(ˆàŠûÿÿÿÿ
+Ksquid:S1604c"(Make this anonymous inner class a lambda(£÷¡Îùÿÿÿÿ8ö°£şÉ-
+Nsquid:S2093²"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ8íÈëşÉ-
 Csquid:S1612D",Replace this lambda with a method reference.(ÃÉş©
-squid:UselessImportCheck"WRemove this unused import 'org.springframework.context.ConfigurableApplicationContext'.(ÉšêC8±Ô®íÈ-
-Gsquid:S2093™"*Change this "try" to a try-with-resources.(¡»¢üùÿÿÿÿ
+Ksquid:S1604\"(Make this anonymous inner class a lambda(éŞÈÕøÿÿÿÿ8Ù¾şıÉ-
+isquid:S2142k"FEither re-interrupt this method or rethrow the "InterruptedException".(è®ã¶øÿÿÿÿ8ÒÎ¦şÉ-
+csquid:S2184n"@Cast one of the operands of this addition operation to a "long".(ˆàŠûÿÿÿÿ8çı¬şÉ-

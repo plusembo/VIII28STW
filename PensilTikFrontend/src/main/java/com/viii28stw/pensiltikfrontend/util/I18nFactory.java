@@ -8,12 +8,12 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 @NoArgsConstructor
-@Getter
 public class I18nFactory {
-
+    @Getter
     private Locale locale;
+    @Getter
     private ResourceBundle resourceBundle;
-    private final static String RESOURCE_BUNDLE_BASE_NAME = "strings";
+    private final static String RESOURCE_BUNDLE_BASE_NAME = "messages";
 
     private static I18nFactory uniqueInstance;
 
@@ -36,4 +36,5 @@ public class I18nFactory {
     private void setResourceBundle() {
         resourceBundle = ResourceBundle.getBundle(RESOURCE_BUNDLE_BASE_NAME, locale);
     }
+
 }

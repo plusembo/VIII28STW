@@ -3,7 +3,7 @@ package com.viii28stw.pensiltikfrontend.controller.form.registration;
 import com.jfoenix.controls.*;
 import com.jfoenix.validation.RequiredFieldValidator;
 import com.viii28stw.pensiltikfrontend.MainApp;
-import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.MainController;
 import com.viii28stw.pensiltikfrontend.controller.dialog.LocalizadorUsuarioController;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.enumeration.Sexo;
@@ -529,7 +529,7 @@ public class CadastroUsuarioController implements Initializable {
     @FXML
     private void jbtnFecharAction() {
         cadastroUsuarioStage.close();
-        MDIController.fechaJanela(MenuMatch.CADASTRO_USUARIO);
+        MainController.fechaJanela(MenuMatch.CADASTRO_USUARIO);
     }
 
 }

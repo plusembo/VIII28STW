@@ -1,7 +1,7 @@
 package com.viii28stw.pensiltikfrontend.controller.form.settings;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.viii28stw.pensiltikfrontend.controller.MDIController;
+import com.viii28stw.pensiltikfrontend.controller.MainController;
 import com.viii28stw.pensiltikfrontend.enumeration.LanguagesSetting;
 import com.viii28stw.pensiltikfrontend.enumeration.MenuMatch;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
@@ -321,7 +321,7 @@ public class LanguageSettingController implements Initializable {
                 }
             }
         }
-        MDIController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
+        MainController.fechaJanela(MenuMatch.SETUP_SYSTEM_LANGUAGE);
         languageSettingStage.close();
     }
 

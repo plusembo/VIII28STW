@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="418.0" prefWidth="624.0" stylesheets="@../css/mdi.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.MDIController">
+<BorderPane prefHeight="418.0" prefWidth="624.0" stylesheets="@../css/mdi.css" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.viii28stw.pensiltikfrontend.controller.MainController">
    <center>
       <VBox fx:id="vbxTest" prefHeight="364.0" prefWidth="624.0" BorderPane.alignment="CENTER">
          <children>
