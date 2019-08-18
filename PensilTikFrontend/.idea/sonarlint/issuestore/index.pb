@@ -81,3 +81,7 @@ x
 Hsrc/main/java/com/viii28stw/pensiltikfrontend/util/UrlPrefixFactory.java,c\2\c2a94f7ab846af6e0871ac03bdd72b9d17a66fa6
 j
 :src/main/java/com/viii28stw/pensiltikfrontend/MainApp.java,a\8\a8800b85c24dc5e310a34f49bbde23de2725dd98
+|
+Lsrc/main/java/com/viii28stw/pensiltikfrontend/controller/MainController.java,d\2\d2601352c62a3cd5fec46a07c2b4a13e55613d75
+q
+Asrc/main/java/com/viii28stw/pensiltikfrontend/util/AppConfig.java,4\4\449e45a77cdadbda471af78f63564d14f692ef5a

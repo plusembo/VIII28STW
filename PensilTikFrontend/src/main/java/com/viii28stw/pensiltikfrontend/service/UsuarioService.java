@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.viii28stw.pensiltikfrontend.model.domain.Sessao;
 import com.viii28stw.pensiltikfrontend.model.domain.Usuario;
 import com.viii28stw.pensiltikfrontend.model.dto.UsuarioDto;
-import com.viii28stw.pensiltikfrontend.util.BasicAuth;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.*;
@@ -15,11 +15,21 @@ import java.util.List;
 
 @Component
 public class UsuarioService implements IUsuarioService {
-    @Value("${server.connection.url.prefix}")
+    @Value("${basic.auth.user}")
+    private String basicAuthUser;
+    @Value("${basic.auth.password}")
+    private String basicAuthPassword;
+    @Value("${url.prefix}")
     private String urlPrefix;
-
-    @Value("${server.connection.url.login}")
+    @Value("${url.login}")
     private String urlLogin;
+
+    @Autowired
+    private RestTemplateBuilder restTemplateBuilder;
+    @Autowired
+    private ObjectMapper mapper;
+    @Autowired
+    private HttpHeaders httpHeaders;
 
     public UsuarioDto buscarUsuarioMaiorCodigo() {
         return null;
@@ -56,17 +66,11 @@ public class UsuarioService implements IUsuarioService {
 
     @Override
     public UsuarioDto login(String email, String password) {
-        HttpHeaders httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-
-        ObjectMapper mapper = new ObjectMapper();
-
         UsuarioDto usuarioDto = UsuarioDto.builder()
                 .email(email)
                 .senha(password)
                 .build();
-        RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
-        RestTemplate restTemplate = restTemplateBuilder.basicAuthentication(BasicAuth.getUser(), BasicAuth.getPassword()).build();
+        RestTemplate restTemplate = restTemplateBuilder.basicAuthentication(basicAuthUser, basicAuthPassword).build();
 
         ResponseEntity responseEntityUsuario = restTemplate
                 .exchange(urlPrefix.concat(urlLogin), HttpMethod.POST,

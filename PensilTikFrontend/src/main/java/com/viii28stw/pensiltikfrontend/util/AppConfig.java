@@ -1,5 +1,6 @@
-package com.viii28stw.pensiltikbackend.config;
+package com.viii28stw.pensiltikfrontend.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
@@ -14,5 +15,7 @@ public class AppConfig {
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         return httpHeaders;
     }
+
+
 
 }

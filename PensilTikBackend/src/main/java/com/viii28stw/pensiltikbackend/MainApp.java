@@ -23,9 +23,13 @@ public class MainApp {
                 .replace("file:/", ""));
         propertiesConfiguration.setHeader(LocalDateTime.now().toString());
 
-        propertiesConfiguration.setProperty("server.port", "9000");
-        propertiesConfiguration.setProperty("management.server.port", "9001");
-        propertiesConfiguration.setProperty("management.server.address", "127.0.0.1");
+        int port = 9000;
+        String ipAdress = "127.0.0.1";
+        String antPattern = "/pensiltik";
+
+        propertiesConfiguration.setProperty("server.port", port);
+        propertiesConfiguration.setProperty("management.server.port", 9001);
+        propertiesConfiguration.setProperty("management.server.address", ipAdress);
 
         propertiesConfiguration.setProperty("spring.datasource.driver-class-name", "com.mysql.cj.jdbc.Driver");
         propertiesConfiguration.setProperty("spring.datasource.url", "jdbc:mysql://localhost:3306/pensiltikdb?serverTimezone=".concat(TimeZone.getDefault().getID()));
@@ -48,6 +52,8 @@ public class MainApp {
 
         propertiesConfiguration.setProperty("logging.level.org.hibernate.SQL","DEBUG");
         propertiesConfiguration.setProperty("logging.level.org.hibernate.type.descriptor.sql.BasicBinder","TRACE");
+
+        propertiesConfiguration.setProperty("url.prefix", "http://".concat(ipAdress).concat(":") + port + antPattern);
 
         propertiesConfiguration.save();
     }

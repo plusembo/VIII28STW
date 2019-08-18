@@ -1,5 +1,6 @@
 package com.viii28stw.pensiltikbackend.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -13,11 +14,17 @@ import org.springframework.security.web.firewall.StrictHttpFirewall;
 @SuppressWarnings("deprecation")
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
+    @Value("${basic.auth.user}")
+    private String basicAuthUser;
+    @Value("${basic.auth.password}")
+    private String basicAuthPassword;
+    @Value("${ant.pattern}")
+    private String antPattern;
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("Trim")
-                .password("Tab")
+                .withUser(basicAuthUser)
+                .password(basicAuthPassword)
                 .roles("ADMIN");
     }
 
@@ -25,7 +32,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.authorizeRequests()
-                .antMatchers("/pensiltik/**")
+                .antMatchers(antPattern.concat("/**"))
                 .fullyAuthenticated()
                 .and().httpBasic();
     }

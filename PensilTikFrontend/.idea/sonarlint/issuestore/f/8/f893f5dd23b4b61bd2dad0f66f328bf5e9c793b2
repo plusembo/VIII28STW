@@ -1,6 +1,6 @@
 
-¤squid:S1186b"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–á¯§ÿÿÿÿÿ8ÎÉå»É-
-Tsquid:S11720"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ8“ºêÈ-
-_squid:UnusedPrivateMethod0".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ8”ØêÈ-
-Hsquid:S00108\")Either remove or fill this block of code.(ï­£Ä8Ş¾ë»É-
-Isquid:S1168#"+Return an empty collection instead of null.(¥¹ï8ô²œêÈ-
+Isquid:S1168-"+Return an empty collection instead of null.(¥¹ï8ô²œêÈ-
+Hsquid:S00108`")Either remove or fill this block of code.(ï­£Ä8Ş¾ë»É-
+Tsquid:S1172:"1Remove this unused method parameter "usuarioDto".(ıÅÆùÿÿÿÿ8“ºêÈ-
+¤squid:S1186f"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–á¯§ÿÿÿÿÿ8ÎÉå»É-
+_squid:UnusedPrivateMethod:".Remove this unused private "persistir" method.(ıÅÆùÿÿÿÿ8”ØêÈ-
